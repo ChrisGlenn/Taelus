@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var COPPER = $Main/CopperLabel
 @onready var SILVER = $Main/SilverLabel
 @onready var GOLD = $Main/GoldLabel
+@onready var STATUS = $Main/StatusLabel
 
 
 func _ready():
@@ -19,3 +20,4 @@ func _ready():
 	COPPER.text = str(Globals.player_copper) # copper amount
 	SILVER.text = str(Globals.player_silver) # silver amount
 	GOLD.text = str(Globals.player_gold) # gold amount
+	STATUS.text = "Status: " + Globals.player_status # player status

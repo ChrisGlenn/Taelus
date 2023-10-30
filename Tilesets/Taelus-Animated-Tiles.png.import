@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ow3kntpur1m"
-path="res://.godot/imported/Lor-Map.png-f9e490223d0183cd2963637e9e65c748.ctex"
+uid="uid://yxu41eiqmaob"
+path="res://.godot/imported/Taelus-Animated-Tiles.png-228e5b54a953214c056de8536404bf85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/UI/HUDMain/Lor-Map.png"
-dest_files=["res://.godot/imported/Lor-Map.png-f9e490223d0183cd2963637e9e65c748.ctex"]
+source_file="res://Tilesets/Taelus-Animated-Tiles.png"
+dest_files=["res://.godot/imported/Taelus-Animated-Tiles.png-228e5b54a953214c056de8536404bf85.ctex"]
 
 [params]
 

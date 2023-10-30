@@ -68,6 +68,6 @@ position = Vector2(8, 0)
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_0gbeg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Selector"]
+[node name="SelectorSpr" type="Sprite2D" parent="Selector"]
 texture = ExtResource("3_qdr1f")
 centered = false

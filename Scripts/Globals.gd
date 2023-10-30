@@ -6,6 +6,7 @@ var in_combat = false # if the game is in combat mode or not
 
 # player variables
 var player_name = "Adan" # player's name
+var player_status = "Healthy" # player's current status
 var player_armor = [0,0,0,0] # player armor equipped see doc for reference
 var player_skills = [0,0,0,0,0] # player skills see doc for reference
 var player_copper = 20 # player's current amount of copper
@@ -18,6 +19,7 @@ var player_reputations = "Unknown" # see doc for reference
 var current_region = "Lor"
 var current_kingdom = "Kingdom A"
 var current_location = "Alphaville"
+var current_map_location = "01x01"
 
 # system variables
 var year = 300
