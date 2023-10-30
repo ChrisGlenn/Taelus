@@ -33,6 +33,7 @@ func player_movement(clock):
 			# MOVE RIGHT
 			# cast the ray and check for collision and if none then move
 			if RAY.target_position.x != 8:
+				ANIM.flip_h = false # face right
 				RAY.target_position = Vector2(8,0)
 				select_pos = 1 # set select pos
 			else: 
@@ -44,6 +45,7 @@ func player_movement(clock):
 			# MOVE LEFT
 			# cast the ray and check for collision
 			if RAY.target_position.x != -8:
+				ANIM.flip_h = true # face left
 				RAY.target_position = Vector2(-8,0)
 				select_pos = 3 # set select pos
 			else:
@@ -90,7 +92,6 @@ func player_movement(clock):
 			# MOVE RIGHT
 			if global_position.x < move_to:
 				# move the player
-				ANIM.flip_h = false
 				position.x += player_speed * clock
 			else:
 				global_position.x = move_to # make sure it hasn't gone past
@@ -107,7 +108,6 @@ func player_movement(clock):
 			# MOVE LEFT
 			if global_position.x > move_to:
 				# move the player
-				ANIM.flip_h = true
 				position.x -= player_speed * clock
 			else:
 				global_position.x = move_to # make sure it hasn't gone past

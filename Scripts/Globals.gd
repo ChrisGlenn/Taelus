@@ -20,6 +20,6 @@ var current_kingdom = "Kingdom A"
 var current_location = "Alphaville"
 
 # system variables
-var year = 1204
-var month = 6
-var day = 2
+var year = 300
+var month = 1
+var day = 1
