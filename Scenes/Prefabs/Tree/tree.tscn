@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://jsif1oqedlnm"]
+
+[ext_resource type="Texture2D" uid="uid://du4h1j70ujpko" path="res://Tilesets/Taelus-Tileset.png" id="1_grgdd"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Tree/tree.gd" id="1_tf33f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdpkw"]
+size = Vector2(16, 16)
+
+[node name="Tree" type="StaticBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_tf33f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_grgdd")
+centered = false
+hframes = 32
+vframes = 16
+frame = 23
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_xdpkw")

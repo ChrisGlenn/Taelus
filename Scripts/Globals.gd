@@ -1,10 +1,8 @@
 extends Node
 # GLOBAL VARIABLES
-# game variables
+# player variables
 var can_play = true # if the player can play
 var in_combat = false # if the game is in combat mode or not
-
-# player variables
 var player_name = "Adan" # player's name
 var player_status = "Healthy" # player's current status
 var player_armor = [0,0,0,0] # player armor equipped see doc for reference
@@ -20,12 +18,12 @@ var current_region = "Lor"
 var current_kingdom = "Kingdom A"
 var current_location = "Alphaville"
 var current_map_location = "01x01"
-
-
-# system variables
 var year = 300
 var month = 1
 var day = 1
 var season = 1
 var months = []
 var seasons = []
+var days_in_game = 0
+var cut_trees = [] # holds trees that have been cut
+var mined_rocks = [] # holds stones that have been mined
