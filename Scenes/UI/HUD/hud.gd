@@ -22,3 +22,4 @@ func _ready():
 	SILVER.text = str(Globals.player_silver) # silver amount
 	GOLD.text = str(Globals.player_gold) # gold amount
 	STATUS.text = "Status: " + Globals.player_status # player status
+	# Inventory HUD

@@ -155,6 +155,18 @@ autowrap_mode = 2
 [node name="Selection" type="Node2D" parent="."]
 visible = false
 
+[node name="SelectedLabel" type="Label" parent="Selection"]
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "ITEM NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Selected" type="Sprite2D" parent="Selection"]
 position = Vector2(8, 32)
 
