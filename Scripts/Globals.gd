@@ -21,7 +21,11 @@ var current_kingdom = "Kingdom A"
 var current_location = "Alphaville"
 var current_map_location = "01x01"
 
+
 # system variables
 var year = 300
 var month = 1
 var day = 1
+var season = 1
+var months = []
+var seasons = []

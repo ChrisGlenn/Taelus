@@ -3,7 +3,8 @@ extends CanvasLayer
 # the main hud for the game
 @onready var MAIN = $Main
 @onready var NAME = $NameLabel
-@onready var REGION = $Main/RegionLable
+@onready var REGION = $Main/RegionLabel
+@onready var DATE = $Main/DateTimeLabel
 @onready var REPUTATION = $Main/ReputationLabel
 @onready var COPPER = $Main/CopperLabel
 @onready var SILVER = $Main/SilverLabel
