@@ -32,3 +32,6 @@ var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 
 # story variables
+var roh_spawns = []
+var kallin_spawns = []
+var drun_spawns = []
