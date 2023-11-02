@@ -2,6 +2,7 @@ extends Node
 # GLOBAL VARIABLES
 # system variables
 var menu_mode = "MAIN" # MAIN, SELECTED, INVENTORY, MENU, STATUS
+var new_game = true # lets the loading screen know what course to take
 
 # player variables
 var can_play = true # if the player can play
@@ -35,3 +36,5 @@ var mined_rocks = [] # holds stones that have been mined
 var roh_spawns = []
 var kallin_spawns = []
 var drun_spawns = []
+var male_gradian_names = ["Denguh","Roh"]
+var female_gradian_names = []
