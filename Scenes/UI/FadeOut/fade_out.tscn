@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmntivhgu3lij"]
+
+[ext_resource type="Script" path="res://Scenes/UI/FadeOut/fade_out.gd" id="1_6r0mw"]
+
+[node name="FadeOut" type="ColorRect"]
+offset_right = 640.0
+offset_bottom = 368.0
+color = Color(0, 0, 0, 0)
+script = ExtResource("1_6r0mw")

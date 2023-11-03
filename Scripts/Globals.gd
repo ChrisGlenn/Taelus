@@ -3,6 +3,7 @@ extends Node
 # system variables
 var menu_mode = "MAIN" # MAIN, SELECTED, INVENTORY, MENU, STATUS
 var new_game = true # lets the loading screen know what course to take
+var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 
 # player variables
 var can_play = true # if the player can play
@@ -27,7 +28,7 @@ var month = 1
 var day = 1
 var season = 1
 var months = ["Morns Light","Inabar's Dance","Ransfir","Gundar's Wake","Noruv's Fire","Sunsfir","Bloodmun","Harvest Fall","First Frost","Night's Fall"]
-var month_max_days = []
+var month_max_days = [28,22,26,29,30,24,26,24,25,22]
 var seasons = ["winter","spring","summer","fall"]
 var days_in_game = 0
 var cut_trees = [] # holds trees that have been cut
@@ -37,5 +38,8 @@ var mined_rocks = [] # holds stones that have been mined
 var roh_spawns = []
 var kallin_spawns = []
 var drun_spawns = []
-var male_gradian_names = ["Denguh","Roh","Gundar"]
-var female_gradian_names = []
+# ABDEFGHIJKLNORUV
+var male_lor_names = []
+var female_lor_names = []
+var male_skodian_names = []
+var female_skodian_names = []

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d18p1us0bkk7u"]
+
+[ext_resource type="Script" path="res://Scenes/UI/FadeIn/fade_in.gd" id="1_1mtfo"]
+
+[node name="FadeIn" type="ColorRect"]
+offset_right = 640.0
+offset_bottom = 368.0
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_1mtfo")
