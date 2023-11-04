@@ -19,5 +19,6 @@ func _process(_delta):
 func new_game_setup():
 	# SETUP A NEW GAME
 	# spawn a 'birth' date
+	Globals.year = rng.randi_range(198,370)
 	Globals.month = rng.randi_range(1,Globals.months.size())
 	Globals.new_game = false # TESTING

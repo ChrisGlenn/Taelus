@@ -3,6 +3,7 @@ extends Node
 # system variables
 var menu_mode = "MAIN" # MAIN, SELECTED, INVENTORY, MENU, STATUS
 var new_game = true # lets the loading screen know what course to take
+var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 
 # player variables
@@ -35,11 +36,6 @@ var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 
 # story variables
-var roh_spawns = []
-var kallin_spawns = []
-var drun_spawns = []
-# ABDEFGHIJKLNORUV
-var male_lor_names = []
-var female_lor_names = []
-var male_skodian_names = []
-var female_skodian_names = []
+var king_of_lor = {}
+var queen_of_lor = {}
+var king_offspring = []

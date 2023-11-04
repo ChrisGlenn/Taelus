@@ -16,12 +16,15 @@ var combat_steps = 0 # how many steps the player can take in combat
 # SYSTEM FUNCTIONS
 func _ready():
 	SELECTOR.visible = false # hide the selector on creation
+	if Globals.new_scene_player_set: 
+		print("New scene set coords")
+		global_position = Globals.new_scene_player_origin
 
 func _process(_delta):
 	selection() # selection function
 
 func _physics_process(delta):
-	if !Globals.in_combat: player_movement(delta) # movement function
+	if !Globals.in_combat and Globals.can_play: player_movement(delta) # movement function
 
 
 # CUSTOM FUNCTIONS
