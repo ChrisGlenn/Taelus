@@ -35,7 +35,10 @@ var days_in_game = 0
 var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 
-# story variables
-var king_of_lor = {}
-var queen_of_lor = {}
-var king_offspring = []
+# story/npc variables
+var king_married = false # starts false
+var king_heir = false # starts false
+var king_of_lor = {} # king dictionary
+var queen_of_lor = {} # queen dictionary
+var prince_of_lor = {} # offspring dictionary
+var princcess_of_lor = {} # offspring dictionary

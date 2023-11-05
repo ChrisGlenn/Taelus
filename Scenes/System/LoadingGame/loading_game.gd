@@ -5,10 +5,16 @@ extends Node2D
 # a save then it will run through the save file and then load the game where the player last
 # left off.
 var rng = RandomNumberGenerator.new() # random number generator
+var json_file_path = "res://JSON/System/spawn.json" # file path to JSON file
+var json_data = {} # dictionary to hold json data
 
 
 func _ready():
 	rng.randomize() # seed random
+	# import and parse JSON data from file
+	var json_file = FileAccess.open(json_file_path, FileAccess.READ)
+	var content = json_file.get_as_text()
+	json_data = JSON.parse_string(content)
 
 func _process(_delta):
 	# check if this is a new game to setup or if the player is loading
@@ -21,4 +27,22 @@ func new_game_setup():
 	# spawn a 'birth' date
 	Globals.year = rng.randi_range(198,370)
 	Globals.month = rng.randi_range(1,Globals.months.size())
+	# npc spawns
+	# royals
+	Globals.king_married = rng.randi() % 2 == 0
+	if Globals.king_married: Globals.king_heir = rng.randi() % 2 == 0
+	Globals.king_of_lor = {
+		"Name": "King " + json_data.values()[0]["male_lor_names"][rng.randi_range(0,50)],
+		"Age": rng.randi_range(14,36),
+		"Max_Age": rng.randi_range(9472,20480)
+	}
+	Globals.queen_of_lor = {
+		"Name": "Queen " + json_data.values()[0]["female_lor_names"][rng.randi_range(0,99)],
+		"Age": rng.randi_range(13,28),
+		"Max_Age": rng.randi_range(9472,20480)
+	}
+	print(str(Globals.king_married))
+	print(str(Globals.king_heir))
+	print(Globals.king_of_lor)
+	print(Globals.queen_of_lor)
 	Globals.new_game = false # TESTING

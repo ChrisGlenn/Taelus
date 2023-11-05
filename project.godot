@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 Globals="*res://Scripts/Globals.gd"
 SaveLoad="*res://Scripts/SaveLoad.gd"
+Events="*res://Scripts/Events.gd"
 
 [display]
 
