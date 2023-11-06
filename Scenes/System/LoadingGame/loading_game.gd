@@ -34,15 +34,11 @@ func new_game_setup():
 	Globals.king_of_lor = {
 		"Name": "King " + json_data.values()[0]["male_lor_names"][rng.randi_range(0,50)],
 		"Age": rng.randi_range(14,36),
-		"Max_Age": rng.randi_range(9472,20480)
+		"Days_Left": rng.randi_range(20,8000)
 	}
 	Globals.queen_of_lor = {
 		"Name": "Queen " + json_data.values()[0]["female_lor_names"][rng.randi_range(0,99)],
 		"Age": rng.randi_range(13,28),
-		"Max_Age": rng.randi_range(9472,20480)
+		"Days_Left": rng.randi_range(20,8000)
 	}
-	print(str(Globals.king_married))
-	print(str(Globals.king_heir))
-	print(Globals.king_of_lor)
-	print(Globals.queen_of_lor)
 	Globals.new_game = false # TESTING

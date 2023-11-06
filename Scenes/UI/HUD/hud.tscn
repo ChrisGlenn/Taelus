@@ -191,3 +191,34 @@ theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
 text = "  Selected description goes here."
 autowrap_mode = 2
+
+[node name="DialogueHUD" type="Node2D" parent="."]
+visible = false
+
+[node name="DiagTitle" type="Label" parent="DialogueHUD"]
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 120.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "NPC Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DiagIcon" type="Sprite2D" parent="DialogueHUD"]
+position = Vector2(8, 32)
+
+[node name="DiagDesc" type="Label" parent="DialogueHUD"]
+offset_left = 8.0
+offset_top = 128.0
+offset_right = 120.0
+offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "  NPC description goes here."
+autowrap_mode = 2
+
+[node name="Status" type="Node2D" parent="."]
+visible = false

@@ -36,6 +36,7 @@ var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 
 # story/npc variables
+var world_billboard = {} # stories that are floating around
 var king_married = false # starts false
 var king_heir = false # starts false
 var king_of_lor = {} # king dictionary

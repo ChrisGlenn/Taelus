@@ -10,6 +10,16 @@ extends CanvasLayer
 @onready var SILVER = $Main/SilverLabel
 @onready var GOLD = $Main/GoldLabel
 @onready var STATUS = $Main/StatusLabel
+# item selection hud for the game
+@onready var SELECTION = $Selection
+@onready var SELECTLABEL = $Selection/SelectedLabel
+@onready var SELECTICON = $Selection/Selected
+# dialogue hud description for game
+# this is NOT the dialogue just a description and image for the NPC
+# that the player is talking to.
+@onready var DIAGHUD = $DialogueHUD
+@onready var DIAGICON = $DialogueHUD/DiagIcon
+@onready var DIAGDESC = $DialogueHUD/DiagDesc
 
 
 func _ready():
