@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var SELECTION = $Selection
 @onready var SELECTLABEL = $Selection/SelectedLabel
 @onready var SELECTICON = $Selection/Selected
+@onready var SELECTSTAT = $Selection/SelectStatLabel
 # dialogue hud description for game
 # this is NOT the dialogue just a description and image for the NPC
 # that the player is talking to.

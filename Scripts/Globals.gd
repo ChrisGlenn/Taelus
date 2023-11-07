@@ -5,6 +5,8 @@ var menu_mode = "MAIN" # MAIN, SELECTED, INVENTORY, MENU, STATUS
 var new_game = true # lets the loading screen know what course to take
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
+var chunk_a = []
+
 
 # player variables
 var can_play = true # if the player can play

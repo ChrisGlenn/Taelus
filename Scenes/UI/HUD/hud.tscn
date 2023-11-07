@@ -41,6 +41,7 @@ ESC = Menu"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -165,7 +166,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Selection" type="Node2D" parent="."]
-visible = false
 
 [node name="SelectedLabel" type="Label" parent="Selection"]
 offset_left = 8.0
@@ -179,12 +179,29 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="SelectStatLabel" type="Label" parent="Selection"]
+offset_left = 8.0
+offset_top = 144.0
+offset_right = 120.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Selected Status"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Selected" type="Sprite2D" parent="Selection"]
 position = Vector2(8, 32)
+scale = Vector2(14, 14)
+texture = ExtResource("5_0djge")
+centered = false
+hframes = 32
+vframes = 16
 
 [node name="SelDescriptLabel" type="Label" parent="Selection"]
 offset_left = 8.0
-offset_top = 128.0
+offset_top = 175.0
 offset_right = 120.0
 offset_bottom = 298.0
 theme_override_fonts/font = ExtResource("2_tebf7")
