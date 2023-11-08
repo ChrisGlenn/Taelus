@@ -41,7 +41,6 @@ ESC = Menu"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]
-visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -166,6 +165,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Selection" type="Node2D" parent="."]
+visible = false
 
 [node name="SelectedLabel" type="Label" parent="Selection"]
 offset_left = 8.0
