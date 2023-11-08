@@ -7,6 +7,13 @@ var new_scene_player_set = false # if true then the player will reset self based
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 var chunk_a = []
 
+# HUD variables
+# selector
+var hud_mode = "MAIN" # main, sel (selection), diag (dialogue), stat (status)
+var hud_sel_item_name = ""
+var hud_sel_icon_frame = 0
+var hud_sel_item_desc = ""
+var hud_sel_item_cntrl = ""
 
 # player variables
 var can_play = true # if the player can play

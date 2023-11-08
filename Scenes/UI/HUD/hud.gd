@@ -21,6 +21,8 @@ extends CanvasLayer
 @onready var DIAGHUD = $DialogueHUD
 @onready var DIAGICON = $DialogueHUD/DiagIcon
 @onready var DIAGDESC = $DialogueHUD/DiagDesc
+# hud variables
+var hud_mode = "MAIN"
 
 
 func _ready():
@@ -34,3 +36,14 @@ func _ready():
 	GOLD.text = str(Globals.player_gold) # gold amount
 	STATUS.text = "Status: " + Globals.player_status # player status
 	# Inventory HUD
+	# Selection HUD
+	# Dialogue HUD
+
+func _process(_delta):
+	pass
+
+func HUD():
+	# set the main hude to visible and hide the others
+	MAIN.visible = true
+	SELECTION.visible = false
+	DIAGHUD.visible = false

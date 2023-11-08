@@ -11,7 +11,7 @@ scale = Vector2(2, 2)
 script = ExtResource("1_vu6xw")
 metadata/_edit_group_ = true
 
-[node name="DoorSprite" type="Sprite2D" parent="."]
+[node name="DoorSprite" type="Sprite2D" parent="." groups=["SELECTABLE"]]
 texture = ExtResource("1_men4x")
 centered = false
 hframes = 32
