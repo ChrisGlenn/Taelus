@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hhbhs4gtse8d"
-path="res://.godot/imported/Adam-Sheet.png-b6c64b78801fccd16c5e0f31d6a866cb.ctex"
+uid="uid://b4alrc6yesliq"
+path="res://.godot/imported/Taelus-Characters.png-9aca4c92bad4085947909d68f85f5ed2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NPCs/Adam-Sheet.png"
-dest_files=["res://.godot/imported/Adam-Sheet.png-b6c64b78801fccd16c5e0f31d6a866cb.ctex"]
+source_file="res://Sprites/NPCs/Taelus-Characters.png"
+dest_files=["res://.godot/imported/Taelus-Characters.png-9aca4c92bad4085947909d68f85f5ed2.ctex"]
 
 [params]
 

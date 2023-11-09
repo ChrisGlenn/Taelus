@@ -2,7 +2,6 @@ extends CharacterBody2D
 # PLAYER SCRIPT
 # controls the player
 @onready var RAY = $RayCast2D
-@onready var ANIM = $AnimatedSprite2D
 @onready var SELECTOR = $Selector
 @export var player_speed : int = 80 # player movement speed
 var select_mode = false # if the player is trying to select something w/ the cursor
@@ -36,7 +35,7 @@ func player_movement(clock):
 			# MOVE RIGHT
 			# cast the ray and check for collision and if none then move
 			if RAY.target_position.x != 8:
-				ANIM.flip_h = false # face right
+				#ANIM.flip_h = false # face right
 				RAY.target_position = Vector2(8,0)
 				select_pos = 1 # set select pos
 			else: 
@@ -48,7 +47,7 @@ func player_movement(clock):
 			# MOVE LEFT
 			# cast the ray and check for collision
 			if RAY.target_position.x != -8:
-				ANIM.flip_h = true # face left
+				#ANIM.flip_h = true # face left
 				RAY.target_position = Vector2(-8,0)
 				select_pos = 3 # set select pos
 			else:
@@ -140,12 +139,12 @@ func selection():
 		if Input.is_action_just_pressed("tae_up"):
 			select_pos = 0
 		elif Input.is_action_just_pressed("tae_right"):
-			ANIM.flip_h = false # turn towards selector
+			#ANIM.flip_h = false # turn towards selector
 			select_pos = 1
 		elif Input.is_action_just_pressed("tae_down"):
 			select_pos = 2
 		elif Input.is_action_just_pressed("tae_left"):
-			ANIM.flip_h = true # turn towards selector
+			#ANIM.flip_h = true # turn towards selector
 			select_pos = 3
 		elif Input.is_action_just_pressed("tae_cancel"):
 			select_mode = false # turn off select mode

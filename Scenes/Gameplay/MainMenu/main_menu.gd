@@ -15,4 +15,5 @@ func input():
 		print("WARNING: Load game not available...")
 	elif Input.is_action_just_pressed("tae_cancel"):
 		# quit game
+		print("CLOSING GAME")
 		get_tree().quit()

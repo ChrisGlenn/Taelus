@@ -1,38 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ltriq7iom5pu"]
+[gd_scene load_steps=6 format=3 uid="uid://ltriq7iom5pu"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_d5p5d"]
-[ext_resource type="Texture2D" uid="uid://hhbhs4gtse8d" path="res://Sprites/NPCs/Adam-Sheet.png" id="1_tlhi1"]
+[ext_resource type="Texture2D" uid="uid://b4alrc6yesliq" path="res://Sprites/NPCs/Taelus-Characters.png" id="2_jwvpx"]
 [ext_resource type="Texture2D" uid="uid://cehkn8tnunvri" path="res://Sprites/UI/Selection.png" id="3_qdr1f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l10ak"]
 size = Vector2(8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_egn3d"]
-atlas = ExtResource("1_tlhi1")
-region = Rect2(0, 0, 8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqgx6"]
-atlas = ExtResource("1_tlhi1")
-region = Rect2(24, 0, 8, 8)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_b854o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_egn3d")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 0.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_iqgx6")
-}],
-"loop": true,
-"name": &"idle_w",
-"speed": 0.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gbeg"]
 size = Vector2(8, 8)
@@ -46,16 +19,25 @@ metadata/_edit_group_ = true
 position = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_l10ak")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_b854o")
-animation = &"idle"
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_jwvpx")
 centered = false
+hframes = 32
+vframes = 16
+frame = 3
 
-[node name="LeftArm" type="Marker2D" parent="."]
-position = Vector2(7, 4)
+[node name="Clothing" type="Sprite2D" parent="."]
 
-[node name="RightArm" type="Marker2D" parent="."]
-position = Vector2(0, 4)
+[node name="Hair" type="Sprite2D" parent="."]
+texture = ExtResource("2_jwvpx")
+centered = false
+hframes = 32
+vframes = 16
+frame = 20
+
+[node name="Weapon" type="Sprite2D" parent="."]
+
+[node name="Shield" type="Sprite2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(4, 4)

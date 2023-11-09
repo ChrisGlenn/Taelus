@@ -28,11 +28,9 @@ offset_top = 176.0
 offset_right = 464.0
 offset_bottom = 256.0
 theme_override_fonts/font = ExtResource("3_np4pm")
-theme_override_font_sizes/font_size = 17
+theme_override_font_sizes/font_size = 28
 text = "New Game - [SPACE]
- 
 Load Game - [CTRL]
-
 Quit Game - [ESC]"
 horizontal_alignment = 1
 
