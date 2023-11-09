@@ -24,12 +24,11 @@ texture = ExtResource("2_jwvpx")
 centered = false
 hframes = 32
 vframes = 16
-frame = 3
+frame = 1
 
 [node name="Clothing" type="Sprite2D" parent="."]
 
 [node name="Hair" type="Sprite2D" parent="."]
-texture = ExtResource("2_jwvpx")
 centered = false
 hframes = 32
 vframes = 16

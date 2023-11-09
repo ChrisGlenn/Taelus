@@ -1,5 +1,6 @@
 extends CanvasLayer
 # HUD
+@onready var CONTROLS = $Controls
 # the main hud for the game
 @onready var MAIN = $Main
 @onready var NAME = $NameLabel
@@ -27,6 +28,7 @@ var hud_mode = "MAIN"
 
 func _ready():
 	# SETUP THE HUD
+	CONTROLS.text = Globals.hud_controls
 	# Main HUD
 	NAME.text = Globals.player_name # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)

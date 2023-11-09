@@ -35,9 +35,7 @@ offset_top = 304.0
 offset_right = 120.0
 offset_bottom = 352.0
 theme_override_fonts/font = ExtResource("2_tebf7")
-text = "M = Main  I = Inventory
-J = Journal S = Status
-ESC = Menu"
+text = "Controls"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]

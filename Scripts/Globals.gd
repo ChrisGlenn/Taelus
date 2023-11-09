@@ -14,6 +14,7 @@ var hud_sel_item_name = ""
 var hud_sel_icon_frame = 0
 var hud_sel_item_desc = ""
 var hud_sel_item_cntrl = ""
+var hud_controls = "M = Main  I = Inventory\nJ = Journal S = Status\nESC = Menu"
 
 # player variables
 var can_play = true # if the player can play
