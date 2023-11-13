@@ -14,7 +14,11 @@ var hud_sel_item_name = ""
 var hud_sel_icon_frame = 0
 var hud_sel_item_desc = ""
 var hud_sel_item_cntrl = ""
-var hud_controls = "M = Main  I = Inventory\nJ = Journal S = Status\nESC = Menu"
+var hud_controls_main = "M = Main  I = Inventory\nJ = Journal S = Status\nESC = Menu"
+var hud_controls_select = ""
+var hud_controls_inventory = ""
+var hud_controls_diag = ""
+var hud_controls_combat = ""
 
 # player variables
 var can_play = true # if the player can play
@@ -44,6 +48,7 @@ var seasons = ["winter","spring","summer","fall"]
 var days_in_game = 0
 var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
+var crops = []
 
 # story/npc variables
 var world_billboard = {} # stories that are floating around
