@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cefhj1ycl8kqs"]
+[gd_scene load_steps=3 format=3 uid="uid://cefhj1ycl8kqs"]
 
+[ext_resource type="Script" path="res://Scenes/Gameplay/CharacterCreation/character_creation.gd" id="1_sye4t"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="1_ti7gj"]
 
 [node name="CharacterCreation" type="Node2D"]
+script = ExtResource("1_sye4t")
 
 [node name="Blackground" type="ColorRect" parent="."]
 offset_right = 640.0
@@ -18,34 +20,17 @@ text = "Create Thy Character"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CharPlaceholder" type="Sprite2D" parent="."]
+[node name="AvatarCreation" type="Node2D" parent="."]
 
-[node name="AvatarLabel" type="Label" parent="."]
-offset_left = 48.0
+[node name="CharPlaceholder" type="Sprite2D" parent="AvatarCreation"]
+position = Vector2(96, 96)
+
+[node name="AvatarLabel" type="Label" parent="AvatarCreation"]
+offset_left = 96.0
 offset_top = 48.0
-offset_right = 176.0
+offset_right = 224.0
 offset_bottom = 80.0
 theme_override_fonts/font = ExtResource("1_ti7gj")
 theme_override_font_sizes/font_size = 31
 text = "Avatar"
-horizontal_alignment = 1
-
-[node name="BackgroundLabel" type="Label" parent="."]
-offset_left = 256.0
-offset_top = 48.0
-offset_right = 384.0
-offset_bottom = 80.0
-theme_override_fonts/font = ExtResource("1_ti7gj")
-theme_override_font_sizes/font_size = 31
-text = "Background"
-horizontal_alignment = 1
-
-[node name="SkillLabel" type="Label" parent="."]
-offset_left = 464.0
-offset_top = 48.0
-offset_right = 592.0
-offset_bottom = 80.0
-theme_override_fonts/font = ExtResource("1_ti7gj")
-theme_override_font_sizes/font_size = 31
-text = "Skills"
 horizontal_alignment = 1
