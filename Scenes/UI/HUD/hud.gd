@@ -28,7 +28,7 @@ var hud_mode = "MAIN"
 
 func _ready():
 	# SETUP THE HUD
-	CONTROLS.text = Globals.hud_controls
+	CONTROLS.text = Globals.hud_controls_main
 	# Main HUD
 	NAME.text = Globals.player_name # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)

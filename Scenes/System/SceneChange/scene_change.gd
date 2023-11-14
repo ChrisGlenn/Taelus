@@ -1,21 +1,27 @@
 extends Area2D
 # SCENE CHANGE
 # when the player enters this collision shape the set next scene will load
-@onready var FADEOUT = preload("res://Scenes/UI/FadeOut/fade_out.tscn")
-@export var scene_to_load : String = ""
-@export var coord_to_set : String = "Y"
+@export var direction : String = "1" # 0 = up 1 = right 2 = down 3 = left
+@export var camera : Camera2D # the camera to control
 
 
 func _on_body_entered(body):
 	if body.is_in_group("PLAYER"):
-		if scene_to_load.length() > 0:
-			Globals.can_play = false # freeze player movement
-			Globals.new_scene_player_origin = Vector2(128,body.global_position.y)
-			Globals.new_scene_player_set = true # let the player know to move to the set coords
-			# load the scene transition and feed in the level to load
-			var fadeout = FADEOUT.instantiate()
-			fadeout.level_to_load = scene_to_load
-			get_parent().add_child(fadeout)
+		if camera:
+			Globals.can_play = false # stop player movement
+			# move the camera in the direction set
+			if direction == "0":
+				# up
+				pass
+			elif direction == "1":
+				# right
+				var new_camera_position = camera.global_position.x + 320
+				# move camera function
+			elif direction == "2":
+				# down
+				pass
+			elif direction == "3":
+				# left
+				pass
 		else:
-			# send error to Output
-			print("ERROR: No scene_to_load set...")
+			print("ERROR: No camera is assigned...")
