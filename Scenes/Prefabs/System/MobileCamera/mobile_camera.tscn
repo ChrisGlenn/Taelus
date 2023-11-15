@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6pem0mp75s1e"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/System/MobileCamera/mobile_camera.gd" id="1_2g86c"]
+
+[node name="MobileCamera" type="Camera2D"]
+anchor_mode = 0
+script = ExtResource("1_2g86c")

@@ -16,12 +16,13 @@ extends CanvasLayer
 @onready var SELECTLABEL = $Selection/SelectedLabel
 @onready var SELECTICON = $Selection/Selected
 @onready var SELECTSTAT = $Selection/SelectStatLabel
-# dialogue hud description for game
-# this is NOT the dialogue just a description and image for the NPC
-# that the player is talking to.
+# dialogue hud for game
 @onready var DIAGHUD = $DialogueHUD
 @onready var DIAGICON = $DialogueHUD/DiagIcon
 @onready var DIAGDESC = $DialogueHUD/DiagDesc
+@onready var DIAGBACK = $DialogueHUD/DialogueBackground
+@onready var DIAGNAME = $DialogueHUD/DialogueBackground/DialogueName
+@onready var DIAGTEXT = $DialogueHUD/DialogueBackground/DialogueText
 # hud variables
 var hud_mode = "MAIN"
 
@@ -38,8 +39,6 @@ func _ready():
 	GOLD.text = str(Globals.player_gold) # gold amount
 	STATUS.text = "Status: " + Globals.player_status # player status
 	# Inventory HUD
-	# Selection HUD
-	# Dialogue HUD
 
 func _process(_delta):
 	pass

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bm07napnbdhkc"]
 
-[ext_resource type="Script" path="res://Scenes/System/SceneChange/scene_change.gd" id="1_c0ygk"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/System/SceneChange/scene_change.gd" id="1_c0ygk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbpqj"]
 size = Vector2(16, 16)

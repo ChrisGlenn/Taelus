@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ltriq7iom5pu"]
+[gd_scene load_steps=7 format=3 uid="uid://ltriq7iom5pu"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_d5p5d"]
 [ext_resource type="Texture2D" uid="uid://b4alrc6yesliq" path="res://Sprites/NPCs/Taelus-Characters.png" id="2_jwvpx"]
 [ext_resource type="Texture2D" uid="uid://cehkn8tnunvri" path="res://Sprites/UI/Selection.png" id="3_qdr1f"]
+[ext_resource type="PackedScene" uid="uid://b6pem0mp75s1e" path="res://Scenes/Prefabs/System/MobileCamera/mobile_camera.tscn" id="4_tay58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l10ak"]
 size = Vector2(8, 8)
@@ -11,6 +12,7 @@ size = Vector2(8, 8)
 size = Vector2(8, 8)
 
 [node name="Player" type="CharacterBody2D" groups=["PLAYER"]]
+z_index = 5
 scale = Vector2(2, 2)
 script = ExtResource("1_d5p5d")
 metadata/_edit_group_ = true
@@ -52,3 +54,6 @@ shape = SubResource("RectangleShape2D_0gbeg")
 [node name="SelectorSpr" type="Sprite2D" parent="Selector"]
 texture = ExtResource("3_qdr1f")
 centered = false
+
+[node name="MobileCamera" parent="." instance=ExtResource("4_tay58")]
+anchor_mode = 1
