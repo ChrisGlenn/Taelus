@@ -24,6 +24,9 @@ var hud_controls_combat = ""
 var can_play = true # if the player can play
 var in_combat = false # if the game is in combat mode or not
 var player_name = "Adan" # player's name
+var player_avatar = 0 # 0 male version 1 female version (Gen. 1:27)
+var player_gender = "MALE" # male/female (Gen. 1:27)
+var player_race = "HUMAN - NORTHERNER" # player's race (default: human - northerner)
 var player_status = "Healthy" # player's current status
 var player_armor = [0,0,0,0] # player armor equipped see doc for reference
 var player_copper = 20 # player's current amount of copper
@@ -48,7 +51,7 @@ var seasons = ["winter","spring","summer","fall"]
 var days_in_game = 0
 var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
-var crops = []
+var crops = [] # holds crops that have been planted and their current statusii
 
 # story/npc variables
 var world_billboard = {} # stories that are floating around

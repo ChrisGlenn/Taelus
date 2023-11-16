@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=8 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ow3kntpur1m" path="res://Sprites/UI/Lor-Map.png" id="4_saaq7"]
 [ext_resource type="Texture2D" uid="uid://du4h1j70ujpko" path="res://Tilesets/Taelus-Tileset.png" id="5_0djge"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="6_lpdjx"]
+[ext_resource type="Texture2D" uid="uid://dha03oeongitf" path="res://Sprites/UI/Inventory-Box.png" id="7_qx34m"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_e2bak")
@@ -40,7 +41,6 @@ text = "Controls"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]
-visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -210,6 +210,7 @@ text = "  Selected description goes here."
 autowrap_mode = 2
 
 [node name="DialogueHUD" type="Node2D" parent="."]
+visible = false
 
 [node name="DiagTitle" type="Label" parent="DialogueHUD"]
 offset_left = 8.0
@@ -268,6 +269,7 @@ text = "test text, this seems good so far."
 autowrap_mode = 2
 
 [node name="DiagChoiceBackground" type="NinePatchRect" parent="DialogueHUD/DialogueBackground"]
+layout_mode = 0
 offset_left = 256.0
 offset_right = 376.0
 offset_bottom = 280.0
@@ -446,3 +448,213 @@ autowrap_mode = 2
 
 [node name="Status" type="Node2D" parent="."]
 visible = false
+
+[node name="StatusBackground" type="NinePatchRect" parent="Status"]
+offset_left = 168.0
+offset_top = 40.0
+offset_right = 544.0
+offset_bottom = 320.0
+texture = ExtResource("1_4nugt")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Inventory" type="Node2D" parent="."]
+visible = false
+
+[node name="InventoryBackground" type="NinePatchRect" parent="Inventory"]
+offset_left = 208.0
+offset_top = 64.0
+offset_right = 560.0
+offset_bottom = 320.0
+texture = ExtResource("1_4nugt")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="InvSlot-1" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(24, 88)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-2" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(56, 88)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-3" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(88, 88)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-4" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(120, 88)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-5" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(152, 88)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-6" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(24, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-7" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(56, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-8" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(88, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-9" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(120, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-10" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(152, 120)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-11" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(24, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-12" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(56, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-13" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(88, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-14" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(120, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-15" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(152, 152)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-16" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(24, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-17" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(56, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-18" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(88, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-19" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(120, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-20" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(152, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-21" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(24, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-22" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(56, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-23" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(88, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-24" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(120, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InvSlot-25" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(152, 216)
+scale = Vector2(2, 2)
+texture = ExtResource("7_qx34m")
+centered = false
+hframes = 2
+
+[node name="InventoryOverlay" type="NinePatchRect" parent="Inventory"]
+offset_left = 488.0
+offset_right = 640.0
+offset_bottom = 31.0
+texture = ExtResource("1_4nugt")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5

@@ -28,6 +28,10 @@ var hud_mode = "MAIN"
 
 
 func _ready():
+	# set the main hude to visible and hide the others
+	MAIN.visible = true
+	SELECTION.visible = false
+	DIAGHUD.visible = false
 	# SETUP THE HUD
 	CONTROLS.text = Globals.hud_controls_main
 	# Main HUD
@@ -44,7 +48,4 @@ func _process(_delta):
 	pass
 
 func HUD():
-	# set the main hude to visible and hide the others
-	MAIN.visible = true
-	SELECTION.visible = false
-	DIAGHUD.visible = false
+	pass

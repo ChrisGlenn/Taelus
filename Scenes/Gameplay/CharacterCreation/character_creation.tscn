@@ -26,11 +26,11 @@ vertical_alignment = 1
 position = Vector2(96, 96)
 
 [node name="AvatarLabel" type="Label" parent="AvatarCreation"]
-offset_left = 96.0
-offset_top = 48.0
-offset_right = 224.0
-offset_bottom = 80.0
+offset_left = 104.0
+offset_top = 56.0
+offset_right = 216.0
+offset_bottom = 75.0
 theme_override_fonts/font = ExtResource("1_ti7gj")
-theme_override_font_sizes/font_size = 31
-text = "Avatar"
+theme_override_font_sizes/font_size = 19
+text = "Select Thy Race"
 horizontal_alignment = 1

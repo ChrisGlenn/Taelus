@@ -36,6 +36,9 @@ func player_movement(clock):
 			# cast the ray and check for collision and if none then move
 			if RAY.target_position.x != 8:
 				#ANIM.flip_h = false # face right
+				$Body.flip_h = false
+				$Hair.flip_h = false
+				$Clothing.flip_h = false
 				RAY.target_position = Vector2(8,0)
 				select_pos = 1 # set select pos
 			else: 
@@ -48,6 +51,9 @@ func player_movement(clock):
 			# cast the ray and check for collision
 			if RAY.target_position.x != -8:
 				#ANIM.flip_h = true # face left
+				$Body.flip_h = true
+				$Hair.flip_h = true
+				$Clothing.flip_h = true
 				RAY.target_position = Vector2(-8,0)
 				select_pos = 3 # set select pos
 			else:
@@ -140,11 +146,17 @@ func selection():
 			select_pos = 0
 		elif Input.is_action_just_pressed("tae_right"):
 			#ANIM.flip_h = false # turn towards selector
+			$Body.flip_h = false
+			$Hair.flip_h = false
+			$Clothing.flip_h = false
 			select_pos = 1
 		elif Input.is_action_just_pressed("tae_down"):
 			select_pos = 2
 		elif Input.is_action_just_pressed("tae_left"):
 			#ANIM.flip_h = true # turn towards selector
+			$Body.flip_h = true
+			$Hair.flip_h = true
+			$Clothing.flip_h = true
 			select_pos = 3
 		elif Input.is_action_just_pressed("tae_cancel"):
 			select_mode = false # turn off select mode
