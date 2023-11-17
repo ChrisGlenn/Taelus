@@ -85,6 +85,7 @@ autowrap_mode = 2
 
 [node name="CopperIcon" type="Sprite2D" parent="Main"]
 position = Vector2(20, 168)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_0djge")
 hframes = 32
 vframes = 16
@@ -104,6 +105,7 @@ autowrap_mode = 2
 
 [node name="SilverIcon" type="Sprite2D" parent="Main"]
 position = Vector2(52, 168)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_0djge")
 hframes = 32
 vframes = 16
@@ -123,6 +125,7 @@ autowrap_mode = 2
 
 [node name="GoldIcon" type="Sprite2D" parent="Main"]
 position = Vector2(84, 168)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_0djge")
 hframes = 32
 vframes = 16

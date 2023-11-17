@@ -34,12 +34,12 @@ func player_movement(clock):
 		if Input.is_action_pressed("tae_right"):
 			# MOVE RIGHT
 			# cast the ray and check for collision and if none then move
-			if RAY.target_position.x != 8:
+			if RAY.target_position.x != 16:
 				#ANIM.flip_h = false # face right
 				$Body.flip_h = false
 				$Hair.flip_h = false
 				$Clothing.flip_h = false
-				RAY.target_position = Vector2(8,0)
+				RAY.target_position = Vector2(16,0)
 				select_pos = 1 # set select pos
 			else: 
 				if !RAY.is_colliding():
@@ -49,12 +49,12 @@ func player_movement(clock):
 		if Input.is_action_pressed("tae_left"):
 			# MOVE LEFT
 			# cast the ray and check for collision
-			if RAY.target_position.x != -8:
+			if RAY.target_position.x != -16:
 				#ANIM.flip_h = true # face left
 				$Body.flip_h = true
 				$Hair.flip_h = true
 				$Clothing.flip_h = true
-				RAY.target_position = Vector2(-8,0)
+				RAY.target_position = Vector2(-16,0)
 				select_pos = 3 # set select pos
 			else:
 				if !RAY.is_colliding():
@@ -64,8 +64,8 @@ func player_movement(clock):
 		if Input.is_action_pressed("tae_up"):
 			# MOVE UP
 			# cast the ray and check for collision
-			if RAY.target_position.y != -8:
-				RAY.target_position = Vector2(0,-8)
+			if RAY.target_position.y != -16:
+				RAY.target_position = Vector2(0,-16)
 				select_pos = 0 # set select pos
 			else:
 				if !RAY.is_colliding():
@@ -75,8 +75,8 @@ func player_movement(clock):
 		if Input.is_action_pressed("tae_down"):
 			# MOVE DOWN
 			# cast the ray and check for collision
-			if RAY.target_position.y != 8:
-				RAY.target_position = Vector2(0,8)
+			if RAY.target_position.y != 16:
+				RAY.target_position = Vector2(0,16)
 				select_pos = 2 # set select pos
 			else:
 				if !RAY.is_colliding():

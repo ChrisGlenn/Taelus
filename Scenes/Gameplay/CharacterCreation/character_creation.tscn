@@ -27,20 +27,20 @@ vertical_alignment = 1
 position = Vector2(96, 96)
 
 [node name="SelectRace" type="Label" parent="AvatarCreation"]
-offset_left = 104.0
-offset_top = 56.0
-offset_right = 216.0
-offset_bottom = 75.0
+offset_left = 256.0
+offset_top = 48.0
+offset_right = 384.0
+offset_bottom = 67.0
 theme_override_fonts/font = ExtResource("1_ti7gj")
 theme_override_font_sizes/font_size = 19
-text = "Select Thy Race"
+text = "Choose Thy Race"
 horizontal_alignment = 1
 
 [node name="RaceLabel" type="Label" parent="AvatarCreation/SelectRace"]
 layout_mode = 0
-offset_left = -16.0
+offset_left = -8.0
 offset_top = 19.0
-offset_right = 128.0
+offset_right = 136.0
 offset_bottom = 38.0
 theme_override_fonts/font = ExtResource("1_ti7gj")
 theme_override_font_sizes/font_size = 15
@@ -48,6 +48,7 @@ text = "HUMAN (northerner)"
 horizontal_alignment = 1
 
 [node name="RaceActive" type="Node2D" parent="AvatarCreation/SelectRace"]
+position = Vector2(8, 0)
 
 [node name="DiagCursorR" type="Sprite2D" parent="AvatarCreation/SelectRace/RaceActive"]
 position = Vector2(118, 26)
@@ -58,6 +59,45 @@ frame = 518
 
 [node name="DiagCursorL" type="Sprite2D" parent="AvatarCreation/SelectRace/RaceActive"]
 position = Vector2(-6, 26)
+texture = ExtResource("3_duwst")
+flip_h = true
+hframes = 32
+vframes = 17
+frame = 518
+
+[node name="SelectGender" type="Label" parent="AvatarCreation"]
+offset_left = 256.0
+offset_top = 96.0
+offset_right = 384.0
+offset_bottom = 115.0
+theme_override_fonts/font = ExtResource("1_ti7gj")
+theme_override_font_sizes/font_size = 19
+text = "Choose Thy Gender"
+horizontal_alignment = 1
+
+[node name="GenderLabel" type="Label" parent="AvatarCreation/SelectGender"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 19.0
+offset_right = 136.0
+offset_bottom = 38.0
+theme_override_fonts/font = ExtResource("1_ti7gj")
+theme_override_font_sizes/font_size = 15
+text = "Male"
+horizontal_alignment = 1
+
+[node name="GenderActive" type="Node2D" parent="AvatarCreation/SelectGender"]
+position = Vector2(8, 0)
+
+[node name="DiagCursorR" type="Sprite2D" parent="AvatarCreation/SelectGender/GenderActive"]
+position = Vector2(86, 26)
+texture = ExtResource("3_duwst")
+hframes = 32
+vframes = 17
+frame = 518
+
+[node name="DiagCursorL" type="Sprite2D" parent="AvatarCreation/SelectGender/GenderActive"]
+position = Vector2(26, 26)
 texture = ExtResource("3_duwst")
 flip_h = true
 hframes = 32

@@ -6,49 +6,45 @@
 [ext_resource type="PackedScene" uid="uid://b6pem0mp75s1e" path="res://Scenes/Prefabs/System/MobileCamera/mobile_camera.tscn" id="4_tay58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l10ak"]
-size = Vector2(8, 8)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gbeg"]
-size = Vector2(8, 8)
+size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D" groups=["PLAYER"]]
 z_index = 5
-scale = Vector2(2, 2)
 script = ExtResource("1_d5p5d")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 4)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_l10ak")
 
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("2_jwvpx")
 centered = false
 hframes = 32
-vframes = 16
+vframes = 32
 frame = 1
 
 [node name="Clothing" type="Sprite2D" parent="."]
 
 [node name="Hair" type="Sprite2D" parent="."]
 centered = false
-hframes = 32
-vframes = 16
-frame = 20
 
 [node name="Weapon" type="Sprite2D" parent="."]
 
 [node name="Shield" type="Sprite2D" parent="."]
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(4, 4)
-target_position = Vector2(0, 8)
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)
 
 [node name="Selector" type="Area2D" parent="."]
-position = Vector2(8, 0)
+position = Vector2(16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Selector"]
-position = Vector2(4, 4)
+position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_0gbeg")
 
 [node name="SelectorSpr" type="Sprite2D" parent="Selector"]
