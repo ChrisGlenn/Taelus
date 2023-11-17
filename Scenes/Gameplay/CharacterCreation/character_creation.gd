@@ -7,6 +7,11 @@ extends Node2D
 @onready var RACE_ACTIVE = $AvatarCreation/SelectRace/RaceActive
 @onready var GENDER_ACTIVE = $AvatarCreation/SelectGender/GenderActive
 @onready var GENDER_SEL = $AvatarCreation/SelectGender/GenderLabel
+@onready var BACKG_ACTIVE = $AvatarCreation/Background/BackgroundActive
+@onready var BACKG_SEL = $AvatarCreation/Background/BackgroundLabel
+@onready var BACKG_DESC = $AvatarCreation/Background/BackgroundDesc
+var json_file_path = "res://JSON/System/background.json" # file path to JSON file
+var json_data = {} # dictionary to hold json data
 var creation_section = 0 # character creation section that is active (0 is avatar/background/starting gold, 1 is stats)
 var active_subsection = 0 # active section player is currently using
 var char_input_pos = 0 # char_input starting position
@@ -16,6 +21,11 @@ var char_selected = false # if a selection has been made
 func _ready():
 	AVATAR.visible = true # show avatar creation first
 	GENDER_ACTIVE.visible = false # hide gender active
+	BACKG_ACTIVE.visible = false
+	# import and parse JSON data from file
+	var json_file = FileAccess.open(json_file_path, FileAccess.READ)
+	var content = json_file.get_as_text()
+	json_data = JSON.parse_string(content)
 
 func _process(_delta):
 	char_creation() # character creation function!!
@@ -51,6 +61,8 @@ func char_creation():
 				print(Globals.player_gender)
 				char_selected = false # rest char_selected
 				active_subsection += 1 # advance the char creation
+		elif active_subsection == 2:
+			pass
 
 func char_selection(num_max):
 	# used to select an active character attribute 

@@ -130,16 +130,16 @@ func selection():
 		# set the cursor positiion
 		if select_pos == 0:
 			# UP
-			SELECTOR.position = Vector2(0,-8)
+			SELECTOR.position = Vector2(0,-16)
 		elif select_pos == 1:
 			# RIGHT
-			SELECTOR.position = Vector2(8,0)
+			SELECTOR.position = Vector2(16,0)
 		elif select_pos == 2:
 			# DOWN
-			SELECTOR.position = Vector2(0,8)
+			SELECTOR.position = Vector2(0,16)
 		elif select_pos == 3:
 			# LEFT
-			SELECTOR.position = Vector2(-8,0)
+			SELECTOR.position = Vector2(-16,0)
 		# controls
 		# get player input and move the selector
 		if Input.is_action_just_pressed("tae_up"):
