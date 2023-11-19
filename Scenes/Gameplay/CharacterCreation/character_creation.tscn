@@ -117,7 +117,7 @@ scale = Vector2(8, 8)
 texture = ExtResource("4_vqj2h")
 hframes = 32
 vframes = 32
-frame = 15
+frame = 17
 
 [node name="AvatarActive" type="Node2D" parent="AvatarCreation"]
 position = Vector2(72, 200)

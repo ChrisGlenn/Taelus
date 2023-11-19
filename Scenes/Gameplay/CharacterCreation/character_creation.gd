@@ -10,6 +10,8 @@ extends Node2D
 @onready var BACKG_ACTIVE = $AvatarCreation/Background/BackgroundActive
 @onready var BACKG_SEL = $AvatarCreation/Background/BackgroundLabel
 @onready var BACKG_DESC = $AvatarCreation/Background/BackgroundDesc
+@onready var AVATAR_CHAR = $AvatarCreation/CharPlaceholder
+@onready var AVATAR_HAIR = $AvatarCreation/HairPlaceholder
 var json_file_path = "res://JSON/System/background.json" # file path to JSON file
 var json_data = {} # dictionary to hold json data
 var creation_section = 0 # character creation section that is active (0 is avatar/background/starting gold, 1 is stats)
@@ -41,6 +43,26 @@ func char_creation():
 				# no need to show or hide any other sections since this is the default starting selection
 				char_selection(Globals.races.size()-1) # choose a race
 				RACE_SEL.text = Globals.races[char_input_pos] # display which race is currently selected
+				# update the (male) avatar image based on race
+				if char_input_pos < 2:
+					# human/western half-fae
+					# no need for female frame since the default sex is male
+					AVATAR_CHAR.frame = 1
+					AVATAR_HAIR.frame = 17
+				elif char_input_pos == 2:
+					# half-fae (eastern)
+					AVATAR_CHAR.frame = 3
+					AVATAR_HAIR.frame = 37
+					AVATAR_HAIR.global_position.y = 224
+				elif char_input_pos == 3:
+					# fae westerner
+					AVATAR_CHAR.frame = 5
+					AVATAR_HAIR.frame = 17
+					AVATAR_HAIR.global_position.y = 208
+				elif char_input_pos == 4:
+					# fae easterner
+					AVATAR_CHAR.frame = 7
+					AVATAR_HAIR.frame = 37
 			else:
 				Globals.player_race = Globals.races[char_input_pos] # record the chosen race
 				char_input_pos = 0 # reset char_input_pos
