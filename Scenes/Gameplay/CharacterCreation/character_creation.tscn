@@ -112,7 +112,7 @@ vframes = 32
 frame = 1
 
 [node name="HairPlaceholder" type="Sprite2D" parent="AvatarCreation"]
-position = Vector2(128, 224)
+position = Vector2(128, 232)
 scale = Vector2(8, 8)
 texture = ExtResource("4_vqj2h")
 hframes = 32

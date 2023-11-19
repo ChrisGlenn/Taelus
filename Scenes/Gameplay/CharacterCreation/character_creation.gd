@@ -63,6 +63,13 @@ func char_creation():
 					# fae easterner
 					AVATAR_CHAR.frame = 7
 					AVATAR_HAIR.frame = 37
+					AVATAR_HAIR.global_position.y = 208
+				elif char_input_pos == 5:
+					# ilyad westerner
+					print("TEST")
+					AVATAR_CHAR.frame = 11
+					AVATAR_HAIR.frame = 17
+					AVATAR_HAIR.global_position.y = 256
 			else:
 				Globals.player_race = Globals.races[char_input_pos] # record the chosen race
 				char_input_pos = 0 # reset char_input_pos
@@ -76,6 +83,10 @@ func char_creation():
 			if !char_selected:
 				char_selection(Globals.genders.size()-1) # choose a gender
 				GENDER_SEL.text = Globals.genders[char_input_pos]
+				# update the charplaceholder avatar based on gender
+				if char_input_pos == 0:
+					# male
+					pass
 			else:
 				Globals.player_gender = Globals.genders[char_input_pos] # record the chosen gender
 				char_input_pos = 0 # reset char_input_pos
