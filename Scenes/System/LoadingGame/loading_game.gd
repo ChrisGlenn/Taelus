@@ -41,4 +41,6 @@ func new_game_setup():
 		"Age": rng.randi_range(13,28),
 		"Days_Left": rng.randi_range(20,8000)
 	}
+	if Globals.year > 320:
+		Globals.gradian_lor = randi() % 2 == 0
 	Globals.new_game = false # TESTING

@@ -3,6 +3,7 @@ extends Node
 # system variables
 var menu_mode = "MAIN" # MAIN, SELECTED, INVENTORY, MENU, STATUS
 var new_game = true # lets the loading screen know what course to take
+var new_random = false # if true then the loading screen will generate a random player
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 var chunk_a = []
@@ -67,3 +68,4 @@ var king_of_lor = {} # king dictionary
 var queen_of_lor = {} # queen dictionary
 var prince_of_lor = {} # offspring dictionary
 var princcess_of_lor = {} # offspring dictionary
+var gradian_lor = false # if set true then Gradia has taken over Lor
