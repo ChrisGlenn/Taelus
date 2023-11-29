@@ -35,7 +35,6 @@ func new_game_setup():
 		Globals.player["race"] = 0 # set for now,
 		Globals.player["status"] = "Healthy"
 		Globals.player["armor"] = [0,0,0,0]
-		Globals.player["weapon_equipped"] = false
 		Globals.player["days_left"] = rng.randi_range(2000,8000)
 	# spawn a 'birth' year
 	Globals.year = rng.randi_range(198,370)
