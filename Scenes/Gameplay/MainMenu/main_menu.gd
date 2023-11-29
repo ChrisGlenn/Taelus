@@ -9,8 +9,8 @@ func input():
 	# check input and act accordingly
 	if Input.is_action_just_pressed("f1"):
 		# new game (go to character creation screen)
-		var _start_game = get_tree().change_scene_to_file("res://Scenes/Gameplay/CharacterCreation/character_creation.tscn")
-		print("WARNING: Character creation not completed. Restart and choose 'new RANDOM game'...")
+		# var _start_game = get_tree().change_scene_to_file("res://Scenes/Gameplay/CharacterCreation/character_creation.tscn")
+		print("WARNING: Character creation not completed. Choose 'new RANDOM game'...")
 	elif Input.is_action_just_pressed("f2"):
 		# new RANDOM game
 		# this will go straight to the loading screen and randomly generate a character for the player to play as

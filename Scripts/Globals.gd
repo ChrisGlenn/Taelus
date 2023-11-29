@@ -24,20 +24,23 @@ var hud_controls_combat = ""
 # player variables
 var can_play = true # if the player can play
 var in_combat = false # if the game is in combat mode or not
-var player_name = "Adan" # player's name
-var player_avatar = 1 # the frame for the player's body
-var player_avatar_hair = 17 # frame for the hair
-var player_avatar_clothing = 0 # frame for clothing (dynamic in game)
-var player_gender = "Male" # male/female (Gen. 1:27)
-var player_race = "HUMAN - NORTHERNER" # player's race (default: human - northerner)
-var player_status = "Healthy" # player's current status
-var player_armor = [0,0,0,0] # player armor equipped see doc for reference
-var player_copper = 20 # player's current amount of copper
-var player_silver = 0 # player's current amount of silver
-var player_gold = 0 # player's current amount of Gold
-var pWeapon_equipped = false # if player weapon is equipped
-var player_reputations = "Unknown" # see doc for reference
-var player_inventory = [0,0,0,0,0,0,0,0,0,0,0,0] # see doc for reference
+var player = {
+	"name": "Adan",
+	"avatar": 1,
+	"head": 17,
+	"body": 0,
+	"gender": "Male",
+	"race": 0,
+	"status": "Healthy",
+	"armor": [0,0,0,0],
+	"copper": 20,
+	"silver": 0,
+	"gold": 0,
+	"weapon_equipped": false,
+	"reputation": "Unknown",
+	"inventory": [0,0,0,0,0,0,0,0,0,0,0,0],
+	"days_left": 5000
+}
 
 # lor variables
 var current_region = "Lor"

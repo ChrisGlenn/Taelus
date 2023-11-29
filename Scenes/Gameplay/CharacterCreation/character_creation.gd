@@ -71,10 +71,10 @@ func char_creation():
 					AVATAR_HAIR.frame = 17
 					AVATAR_HAIR.global_position.y = 256
 			else:
-				Globals.player_race = Globals.races[char_input_pos] # record the chosen race
+				Globals.player_race = char_input_pos # record the chosen race
 				char_input_pos = 0 # reset char_input_pos
 				RACE_ACTIVE.visible = false # hide the arrows
-				print(Globals.player_race)
+				print(Globals.races[Globals.player_race])
 				char_selected = false # reset char_selected
 				active_subsection += 1 # advance the player char creation
 		elif active_subsection == 1:

@@ -24,7 +24,20 @@ func _process(_delta):
 
 func new_game_setup():
 	# SETUP A NEW GAME
-	# spawn a 'birth' date
+	# if the player has chosen a new random game then generate the character
+	# FOR NOW SPAWNS MALE NORTHERNER
+	if Globals.new_random:
+		Globals.player["name"] = json_data.values()[0]["male_lor_names"][rng.randi_range(0,50)]
+		Globals.player["avatar"] = 0 # set for now
+		Globals.player["gender"] = "Male" # set for now
+		Globals.player["head"] = 72 # set for now
+		Globals.player["body"] = 88 # set for now
+		Globals.player["race"] = 0 # set for now,
+		Globals.player["status"] = "Healthy"
+		Globals.player["armor"] = [0,0,0,0]
+		Globals.player["weapon_equipped"] = false
+		Globals.player["days_left"] = rng.randi_range(2000,8000)
+	# spawn a 'birth' year
 	Globals.year = rng.randi_range(198,370)
 	Globals.month = rng.randi_range(1,Globals.months.size())
 	# npc spawns
@@ -43,4 +56,8 @@ func new_game_setup():
 	}
 	if Globals.year > 320:
 		Globals.gradian_lor = randi() % 2 == 0
+	# DEBUG PRINT WORLD GENERATION
+	print(Globals.player)
+	print(Globals.year, " 1-", Globals.months[Globals.month - 1])
+	print(Globals.gradian_lor)
 	Globals.new_game = false # TESTING
