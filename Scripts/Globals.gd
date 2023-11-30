@@ -37,6 +37,7 @@ var player = {
 	"silver": 0,
 	"gold": 0,
 	"weapon": 0,
+	"shield": 0,
 	"reputation": "Unknown",
 	"inventory": [0,0,0,0,0,0,0,0,0,0,0,0],
 	"days_left": 5000

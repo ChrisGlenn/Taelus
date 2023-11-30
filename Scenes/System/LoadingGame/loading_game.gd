@@ -54,6 +54,8 @@ func new_game_setup():
 		"Days_Left": rng.randi_range(20,8000)
 	}
 	if Globals.year > 320:
+		# if the year is over 320 see if Gradia is ruling over Lor or not. If not
+		# then they will be invading shortly after the game starts.
 		Globals.gradian_lor = randi() % 2 == 0
 	# DEBUG PRINT WORLD GENERATION
 	print(Globals.player)
