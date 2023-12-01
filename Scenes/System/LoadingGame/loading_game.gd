@@ -39,6 +39,7 @@ func new_game_setup():
 	# spawn a 'birth' year
 	Globals.year = rng.randi_range(198,370)
 	Globals.month = rng.randi_range(1,Globals.months.size())
+	Globals.day = rng.randi_range(1,16)
 	# npc spawns
 	# royals
 	Globals.king_married = rng.randi() % 2 == 0
@@ -59,6 +60,6 @@ func new_game_setup():
 		Globals.gradian_lor = randi() % 2 == 0
 	# DEBUG PRINT WORLD GENERATION
 	print(Globals.player)
-	print(Globals.year, " 1-", Globals.months[Globals.month - 1])
+	print(Globals.year, " ", Globals.day, "-", Globals.months[Globals.month - 1])
 	print(Globals.gradian_lor)
 	Globals.new_game = false # TESTING

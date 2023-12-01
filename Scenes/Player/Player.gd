@@ -149,6 +149,7 @@ func selection():
 			$Body.flip_h = false
 			$Hair.flip_h = false
 			$Clothing.flip_h = false
+			$Weapon.flip_h = false
 			select_pos = 1
 		elif Input.is_action_just_pressed("tae_down"):
 			select_pos = 2
@@ -157,6 +158,7 @@ func selection():
 			$Body.flip_h = true
 			$Hair.flip_h = true
 			$Clothing.flip_h = true
+			$Weapon.flip_h = true
 			select_pos = 3
 		elif Input.is_action_just_pressed("tae_cancel"):
 			select_mode = false # turn off select mode
