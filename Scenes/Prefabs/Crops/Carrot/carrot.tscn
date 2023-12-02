@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://yrl10mnuj74i"]
+
+[node name="Carrot" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
