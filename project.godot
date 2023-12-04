@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 Globals="*res://Scripts/Globals.gd"
 SaveLoad="*res://Scripts/SaveLoad.gd"
 Events="*res://Scripts/Events.gd"
+Clock="*res://Scenes/System/Clock/clock.tscn"
 
 [display]
 
