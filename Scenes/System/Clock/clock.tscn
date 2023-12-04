@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btorjn7v7x58h"]
+
+[ext_resource type="Script" path="res://Scenes/System/Clock/clock.gd" id="1_qliip"]
+
+[node name="Clock" type="Node"]
+script = ExtResource("1_qliip")

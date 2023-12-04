@@ -1,6 +1,9 @@
 extends Node2D
 # CARROT
 # carrot that will grow and become ready for harvest...or sit in the ground and rot.
+var crop_name = "Carrot" # this is for the selector/HUD
+var crop_desc = "An orange root vegetable. Grows in the Spring and Summer." # this is for the selector/HUD
+var crop_img = 6 # this is for the selector/HUD
 var can_grow = true # false if not during the spring/summer
 var stage = "SEED" # SEED, RIPE, ROTTEN are the 3 stages
 var days_to_grow = 0 # 34 days till ripe
@@ -32,6 +35,10 @@ func _process(_delta):
 		else:
 			# rotten
 			stage = "ROTTEN"
+			# change crop desc for selector
+			crop_name = "Rotten Carrot"
+			crop_desc = "An orange root vegetable that has been in the ground too long."
+			crop_img = 7
 			$Sprite2D.frame = 5
 	else:
 		# won't grow will stay seed until rotten days

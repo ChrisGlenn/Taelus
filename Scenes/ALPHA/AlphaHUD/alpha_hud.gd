@@ -6,4 +6,4 @@ extends CanvasLayer
 
 
 func _process(_delta):
-	HUD_Text.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, "\n")
+	HUD_Text.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, "\n", "Time: ", Globals.hour, ":", Globals.minutes, ":", Globals.seconds)
