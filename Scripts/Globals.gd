@@ -6,7 +6,6 @@ var new_game = true # lets the loading screen know what course to take
 var new_random = false # if true then the loading screen will generate a random player
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
-var chunk_a = []
 
 # HUD variables
 # selector
@@ -53,10 +52,10 @@ var genders = ["Male", "Female"] # (Gen. 1:27)
 var background = []
 var background_description = []
 var year = 300
-var month = 0
-var day = 1
+var month = 2
+var day = 6
 var season = 1
-var hour = 23 # noon
+var hour = 12 # noon
 var minutes = 0 # 60 seconds
 var seconds = 0
 var months = ["Morns Light","Inabar's Dance","Ransfir","Gundar's Wake","Noruv's Fire","Sunsfir","Bloodmun","Harvest Fall","First Frost","Night's Fall"]
@@ -76,3 +75,6 @@ var queen_of_lor = {} # queen dictionary
 var prince_of_lor = {} # offspring dictionary
 var princcess_of_lor = {} # offspring dictionary
 var gradian_lor = false # if set true then Gradia has taken over Lor
+# data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game. 
+# chunk a = NPC's/Players days left, health, ect
+var chunk_a = {}

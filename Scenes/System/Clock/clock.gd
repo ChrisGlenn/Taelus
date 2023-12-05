@@ -64,6 +64,32 @@ func seasons():
 	elif Globals.month == 2:
 		# Ransfir
 		Globals.season = 1 # spring
+	elif Globals.month == 3:
+		# Gundar's Wake
+		if Globals.day >= 17:
+			Globals.season = 2 # summer
+		else:
+			Globals.season = 1 # spring
+	elif Globals.month == 4:
+		# Noruv's Fire
+		Globals.season = 2 # summer
+	elif Globals.month == 5:
+		# Sunsfir
+		if Globals.day >= 20:
+			Globals.season = 3 # fall
+		else:
+			Globals.season = 2 # summer
+	elif Globals.month == 6:
+		# Bloodmun
+		Globals.season = 3 # fall
+	elif Globals.month == 7:
+		# Harvest Fall
+		if Globals.day >= 18:
+			Globals.season = 0 # winter
+		else:
+			Globals.season = 3 # fall
+	else:
+		Globals.season = 0 # winter
 
 func _on_timer_timeout():
 	Globals.seconds += 10
