@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://nqmnaa5y6xxo"]
 
-[ext_resource type="Script" path="res://Scenes/Prefabs/WoodDoor/wood_door.gd" id="1_vu6xw"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Decor/WoodDoor/wood_door.gd" id="1_vu6xw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvlii"]
 size = Vector2(8, 8)

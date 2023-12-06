@@ -38,9 +38,9 @@ func _ready():
 	NAME.text = Globals.player["name"] # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
 	REPUTATION.text = Globals.current_kingdom + ": " + Globals.player["reputation"] # current player reputation
-	COPPER.text = str(Globals.player["copper"]) # copper amount
-	SILVER.text = str(Globals.player["silver"]) # silver amount
-	GOLD.text = str(Globals.player["gold"]) # gold amount
+	COPPER.text = str(Globals.player["money"][0]) # copper amount
+	SILVER.text = str(Globals.player["money"][1]) # silver amount
+	GOLD.text = str(Globals.player["money"][2]) # gold amount
 	STATUS.text = "Status: " + Globals.player["status"] # player status
 	# Inventory HUD
 
