@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://8yxx6jd0wf1t"]
+[gd_scene load_steps=7 format=3 uid="uid://8yxx6jd0wf1t"]
 
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_wnq7b"]
 [ext_resource type="PackedScene" uid="uid://dfoa8ym7iswtm" path="res://Scenes/Prefabs/TaelusAnimMap/taelus_anim_map.tscn" id="2_4445g"]
 [ext_resource type="PackedScene" uid="uid://cj6b30bihpsny" path="res://Scenes/ALPHA/AlphaHUD/alpha_hud.tscn" id="2_twpin"]
 [ext_resource type="Script" path="res://Scenes/ALPHA/Alphafarm/AlphaFarmController.gd" id="4_5y7ts"]
 [ext_resource type="PackedScene" uid="uid://2uemnls2pcwv" path="res://Scenes/ALPHA/AlphaFarmers/FarmerJoe/farmer_joe.tscn" id="5_3cwtr"]
+[ext_resource type="PackedScene" uid="uid://yrl10mnuj74i" path="res://Scenes/Prefabs/Crops/Carrot/carrot.tscn" id="6_jhro2"]
 
 [node name="Alphafarm" type="Node2D"]
 
@@ -95,3 +96,6 @@ position = Vector2(208, 192)
 
 [node name="FarmerJoe" parent="AlphaFarmController" instance=ExtResource("5_3cwtr")]
 position = Vector2(128, 176)
+
+[node name="Carrot" parent="AlphaFarmController" instance=ExtResource("6_jhro2")]
+position = Vector2(240, 64)

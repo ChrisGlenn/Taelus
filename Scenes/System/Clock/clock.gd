@@ -49,6 +49,9 @@ func active_time(_clock):
 	else:
 		$Timer.stop() # stop the timer
 		timer_started = false # reset the timer started flag
+	if new_day:
+		# if it's a new day update
+		new_day = false
 
 func seasons():
 	# get the month and set the season accordingly

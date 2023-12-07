@@ -37,6 +37,8 @@ var player = {
 	"shield": 0,
 	"reputation": "Unknown",
 	"inventory": [0,0,0,0,0,0,0,0,0,0,0,0],
+	"thirst": 100,
+	"hunger": 100,
 	"days_left": 5000
 }
 
@@ -75,4 +77,4 @@ var princcess_of_lor = {} # offspring dictionary
 var gradian_lor = false # if set true then Gradia has taken over Lor
 # data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game. 
 # chunk a = NPC's/Players days left, health, ect
-var chunk_a = {}
+var chunk_days = {}
