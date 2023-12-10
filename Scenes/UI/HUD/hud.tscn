@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=9 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
 [ext_resource type="FontFile" uid="uid://imnkghkj0qrp" path="res://Fonts/m3x6.ttf" id="2_tebf7"]
 [ext_resource type="Texture2D" uid="uid://d1ow3kntpur1m" path="res://Sprites/UI/Lor-Map.png" id="4_saaq7"]
 [ext_resource type="Texture2D" uid="uid://du4h1j70ujpko" path="res://Tilesets/Taelus-Tileset.png" id="5_0djge"]
+[ext_resource type="Texture2D" uid="uid://k4bg4wc6tuex" path="res://Tilesets/Taelus-UI.png" id="5_c4gtb"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="6_lpdjx"]
 [ext_resource type="Texture2D" uid="uid://dha03oeongitf" path="res://Sprites/UI/Inventory-Box.png" id="7_qx34m"]
 
@@ -86,10 +87,10 @@ autowrap_mode = 2
 [node name="CopperIcon" type="Sprite2D" parent="Main"]
 position = Vector2(20, 168)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_0djge")
+texture = ExtResource("5_c4gtb")
 hframes = 32
-vframes = 16
-frame = 481
+vframes = 4
+frame = 1
 
 [node name="CopperLabel" type="Label" parent="Main"]
 offset_left = 24.0
@@ -106,10 +107,10 @@ autowrap_mode = 2
 [node name="SilverIcon" type="Sprite2D" parent="Main"]
 position = Vector2(52, 168)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_0djge")
+texture = ExtResource("5_c4gtb")
 hframes = 32
-vframes = 16
-frame = 482
+vframes = 4
+frame = 2
 
 [node name="SilverLabel" type="Label" parent="Main"]
 offset_left = 56.0
@@ -126,10 +127,10 @@ autowrap_mode = 2
 [node name="GoldIcon" type="Sprite2D" parent="Main"]
 position = Vector2(84, 168)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_0djge")
+texture = ExtResource("5_c4gtb")
 hframes = 32
-vframes = 16
-frame = 483
+vframes = 4
+frame = 3
 
 [node name="GoldLabel" type="Label" parent="Main"]
 offset_left = 88.0
