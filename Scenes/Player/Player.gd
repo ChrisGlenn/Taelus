@@ -3,7 +3,6 @@ extends CharacterBody2D
 # controls the player
 @onready var RAY = $RayCast2D
 @onready var SELECTOR = $Selector
-@export var player_speed : int = 80 # player movement speed
 var select_mode = false # if the player is trying to select something w/ the cursor
 var select_pos = 1 # 0 to 3 clockwise from up to left
 var move_dir = 0 # 0 to 3 clockwise from up to left
@@ -92,7 +91,7 @@ func player_movement(clock):
 			# MOVE UP
 			if global_position.y > move_to:
 				# move the player
-				position.y -= player_speed * clock
+				position.y -= Globals.movement_speed * clock
 			else:
 				global_position.y = move_to # make sure it hasn't gone past
 				moving = false # complete move
@@ -100,7 +99,7 @@ func player_movement(clock):
 			# MOVE RIGHT
 			if global_position.x < move_to:
 				# move the player
-				position.x += player_speed * clock
+				position.x += Globals.movement_speed * clock
 			else:
 				global_position.x = move_to # make sure it hasn't gone past
 				moving = false # complete move
@@ -108,7 +107,7 @@ func player_movement(clock):
 			# MOVE DOWN
 			if global_position.y < move_to:
 				# move the player
-				position.y += player_speed * clock
+				position.y += Globals.movement_speed * clock
 			else:
 				global_position.y = move_to # make sure it hasn't gone past
 				moving = false # complete move
@@ -116,7 +115,7 @@ func player_movement(clock):
 			# MOVE LEFT
 			if global_position.x > move_to:
 				# move the player
-				position.x -= player_speed * clock
+				position.x -= Globals.movement_speed * clock
 			else:
 				global_position.x = move_to # make sure it hasn't gone past
 				moving = false # complete move

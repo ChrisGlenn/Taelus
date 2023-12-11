@@ -40,9 +40,12 @@ position = Vector2(-2, 0)
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
 target_position = Vector2(0, 16)
+collide_with_areas = true
 
 [node name="Selector" type="Area2D" parent="."]
 position = Vector2(16, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Selector"]
 position = Vector2(8, 8)
@@ -54,3 +57,4 @@ centered = false
 
 [node name="MobileCamera" parent="." instance=ExtResource("4_tay58")]
 anchor_mode = 1
+enabled = false
