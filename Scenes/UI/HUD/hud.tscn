@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=10 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ow3kntpur1m" path="res://Sprites/UI/Lor-Map.png" id="4_saaq7"]
 [ext_resource type="Texture2D" uid="uid://du4h1j70ujpko" path="res://Tilesets/Taelus-Tileset.png" id="5_0djge"]
 [ext_resource type="Texture2D" uid="uid://k4bg4wc6tuex" path="res://Tilesets/Taelus-UI.png" id="5_c4gtb"]
+[ext_resource type="Texture2D" uid="uid://xm1q0kkfsepu" path="res://Sprites/UI/Map-Marker.png" id="5_wgm8r"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="6_lpdjx"]
 [ext_resource type="Texture2D" uid="uid://dha03oeongitf" path="res://Sprites/UI/Inventory-Box.png" id="7_qx34m"]
 
@@ -71,6 +72,10 @@ autowrap_mode = 2
 position = Vector2(8, 48)
 texture = ExtResource("4_saaq7")
 centered = false
+
+[node name="LocationMarker" type="Sprite2D" parent="Main"]
+position = Vector2(9, 143)
+texture = ExtResource("5_wgm8r")
 
 [node name="ReputationLabel" type="Label" parent="Main"]
 offset_left = 8.0

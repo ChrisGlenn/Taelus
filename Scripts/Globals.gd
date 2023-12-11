@@ -23,6 +23,8 @@ var hud_controls_combat = ""
 
 # player variables
 var can_play = true # if the player can play
+var player_x = 0 # player's current X
+var player_y = 0 # player's current Y
 var in_combat = false # if the game is in combat mode or not
 var player = {
 	"name": "Adan",

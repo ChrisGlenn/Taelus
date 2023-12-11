@@ -1,0 +1,2 @@
+extends Node2D
+# CELL 00X48 IN REGION LOR

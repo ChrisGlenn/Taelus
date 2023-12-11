@@ -17,6 +17,8 @@ func _ready():
 	if Globals.new_scene_player_set: 
 		print("New scene set coords")
 		global_position = Globals.new_scene_player_origin
+	Globals.player_x = global_position.x # update player X
+	Globals.player_y = global_position.y # update player Y
 
 func _process(_delta):
 	selection() # selection function
@@ -27,6 +29,8 @@ func _physics_process(delta):
 
 # CUSTOM FUNCTIONS
 func player_movement(clock):
+	Globals.player_x = global_position.x # update player X
+	Globals.player_y = global_position.y # update player Y
 	# player movement function
 	if !moving and !select_mode:
 		# check input

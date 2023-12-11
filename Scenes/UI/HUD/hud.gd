@@ -37,6 +37,7 @@ func _ready():
 	# Main HUD
 	NAME.text = Globals.player["name"] # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
+	DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, Globals.hour, ":", Globals.minutes, ":", Globals.seconds, Globals.seasons[Globals.season])
 	REPUTATION.text = Globals.current_kingdom + ": " + Globals.player["reputation"] # current player reputation
 	COPPER.text = str(Globals.player["money"][0]) # copper amount
 	SILVER.text = str(Globals.player["money"][1]) # silver amount
@@ -45,7 +46,8 @@ func _ready():
 	# Inventory HUD
 
 func _process(_delta):
-	pass
+	# update dynamic HUD elements
+	DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season], " ", Globals.hour, ":", Globals.minutes)
 
 func HUD():
 	pass
