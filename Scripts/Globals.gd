@@ -10,7 +10,7 @@ var movement_speed = 76 # global movement speed
 
 # HUD variables
 # selector
-var hud_mode = "MAIN" # main, sel (selection), diag (dialogue), stat (status)
+var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status)
 var hud_sel_item_name = ""
 var hud_sel_icon_frame = 0
 var hud_sel_item_desc = ""

@@ -42,7 +42,7 @@ position = Vector2(8, 8)
 target_position = Vector2(0, 16)
 collide_with_areas = true
 
-[node name="Selector" type="Area2D" parent="."]
+[node name="Selector" type="Area2D" parent="." groups=["SELECTOR"]]
 position = Vector2(16, 0)
 collision_layer = 2
 collision_mask = 2

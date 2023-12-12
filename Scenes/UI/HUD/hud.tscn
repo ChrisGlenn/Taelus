@@ -43,6 +43,7 @@ text = "Controls"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -174,7 +175,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Selection" type="Node2D" parent="."]
-visible = false
 
 [node name="SelectedLabel" type="Label" parent="Selection"]
 offset_left = 8.0
@@ -202,7 +202,7 @@ autowrap_mode = 2
 
 [node name="Selected" type="Sprite2D" parent="Selection"]
 position = Vector2(8, 32)
-scale = Vector2(14, 14)
+scale = Vector2(7, 7)
 texture = ExtResource("5_0djge")
 centered = false
 hframes = 32
