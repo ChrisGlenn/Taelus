@@ -56,14 +56,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="DateTimeLabel" type="Label" parent="Main"]
+[node name="DateLabel" type="Label" parent="Main"]
 offset_left = 8.0
 offset_top = 32.0
-offset_right = 120.0
-offset_bottom = 47.0
+offset_right = 80.0
+offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
-text = "Month Day Year Season"
+text = "Month"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

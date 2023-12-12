@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var MAIN = $Main
 @onready var NAME = $NameLabel
 @onready var REGION = $Main/RegionLabel
-@onready var DATE = $Main/DateTimeLabel
+@onready var DATE = $Main/DateLabel
 @onready var REPUTATION = $Main/ReputationLabel
 @onready var COPPER = $Main/CopperLabel
 @onready var SILVER = $Main/SilverLabel
@@ -37,7 +37,7 @@ func _ready():
 	# Main HUD
 	NAME.text = Globals.player["name"] # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
-	DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, Globals.hour, ":", Globals.minutes, ":", Globals.seconds, Globals.seasons[Globals.season])
+	DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season], " ", Globals.hour, ":", Globals.minutes)
 	REPUTATION.text = Globals.current_kingdom + ": " + Globals.player["reputation"] # current player reputation
 	COPPER.text = str(Globals.player["money"][0]) # copper amount
 	SILVER.text = str(Globals.player["money"][1]) # silver amount
@@ -48,6 +48,7 @@ func _ready():
 func _process(_delta):
 	# update dynamic HUD elements
 	DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season], " ", Globals.hour, ":", Globals.minutes)
+	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
 
 func HUD():
 	pass
