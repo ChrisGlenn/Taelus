@@ -21,7 +21,7 @@ func _ready():
 		global_position = Globals.new_scene_player_origin
 	Globals.player_x = global_position.x # update player X
 	Globals.player_y = global_position.y # update player Y
-	day_check = Globals.days # set the day check
+	day_check = Globals.day # set the day check
 	minute_check = Globals.minutes # set the minute check
 
 func _process(_delta):
@@ -139,8 +139,8 @@ func time_check():
 		if day_check != Globals.day:
 			day_check = Globals.day # reset day check
 		if minute_check != Globals.minutes:
-			Globals.player["hunger"] -= 1 # decrement hunger
-			Globals.player["thirst"] -= 2 # decrement thirst
+			Globals.player["hunger"] -= 0.5 # decrement hunger
+			Globals.player["thirst"] -= 1 # decrement thirst
 			minute_check = Globals.minutes # reset minute check
 
 func selection():

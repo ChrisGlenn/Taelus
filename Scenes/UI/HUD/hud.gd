@@ -59,7 +59,6 @@ func HUD():
 		MAIN.visible = true # show the main HUD
 		SELECTION.visible = false # hide the selection HUD
 		DIAGHUD.visible = false # hide the dialogue HUD
-		STATUS.visible = false # hide the status HUD
 		# INVENTORY.VISIBLE = FALSE
 		# update dynamic HUD elements
 		DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season])
@@ -71,7 +70,6 @@ func HUD():
 		MAIN.visible = false # hide the main HUD
 		SELECTION.visible = true # show the selection HUD
 		DIAGHUD.visible = false # hide the dialogue HUD
-		STATUS.visible = false # hide the status HUD
 		# update the selected title, image, and description
 		SELECTLABEL.text = Globals.hud_selected_name
 		SELECTICON.frame = Globals.hud_sel_icon_frame

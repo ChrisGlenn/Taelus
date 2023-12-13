@@ -44,8 +44,8 @@ var player = {
 	"shield": 0,
 	"reputation": "Unknown",
 	"inventory": [0,0,0,0,0,0,0,0,0,0,0,0],
-	"thirst": 100,
-	"hunger": 100,
+	"thirst": 100.0,
+	"hunger": 100.0,
 	"days_left": 5000
 }
 

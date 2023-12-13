@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=11 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xm1q0kkfsepu" path="res://Sprites/UI/Map-Marker.png" id="5_wgm8r"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="6_lpdjx"]
 [ext_resource type="Texture2D" uid="uid://dha03oeongitf" path="res://Sprites/UI/Inventory-Box.png" id="7_qx34m"]
+[ext_resource type="Script" path="res://Scenes/UI/HUD/Hunger.gd" id="7_vp2sa"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_e2bak")
@@ -163,9 +164,9 @@ autowrap_mode = 2
 
 [node name="StatusLabel" type="Label" parent="Main"]
 offset_left = 8.0
-offset_top = 208.0
+offset_top = 200.0
 offset_right = 120.0
-offset_bottom = 223.0
+offset_bottom = 215.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
 text = "Status: Null"
@@ -184,6 +185,89 @@ text = "CURRENT PARTY"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Hunger_Thirst" type="Node2D" parent="Main"]
+
+[node name="Thirst1" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(24, 216)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 5
+script = ExtResource("7_vp2sa")
+
+[node name="Thirst2" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(40, 216)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 5
+
+[node name="Thirst3" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(56, 216)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 5
+
+[node name="Thirst4" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(72, 216)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 5
+
+[node name="Thirst5" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(88, 216)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 5
+
+[node name="Hunger1" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(24, 232)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 6
+
+[node name="Hunger2" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(40, 232)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 6
+
+[node name="Hunger3" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(56, 232)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 6
+
+[node name="Hunger4" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(72, 232)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 6
+
+[node name="Hunger5" type="Sprite2D" parent="Main/Hunger_Thirst"]
+position = Vector2(88, 232)
+texture = ExtResource("5_c4gtb")
+centered = false
+hframes = 32
+vframes = 4
+frame = 6
 
 [node name="Selection" type="Node2D" parent="."]
 visible = false
@@ -209,9 +293,9 @@ hframes = 32
 vframes = 16
 
 [node name="SelDescriptLabel" type="Label" parent="Selection"]
-offset_left = 8.0
+offset_left = 16.0
 offset_top = 152.0
-offset_right = 120.0
+offset_right = 112.0
 offset_bottom = 298.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
