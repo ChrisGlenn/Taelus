@@ -4,6 +4,9 @@ extends Area2D
 # NEVER TO BE SEEN AGAIN.
 @onready var RAY = $RayCast2D
 @onready var HSPRITE = $Sprite2D
+@export var HORSE_TITLE : String = "HORSE TITLE" # the title of the sign
+@export_multiline var HORSE_TEXT : String = "HORSE DESC" # the sign text
+@export var FRAME_NO = 1
 @onready var RNG = RandomNumberGenerator.new() # random number generator
 var can_move = true # if false the timer stops along with any movement
 var move = false # if it's time to move or not
@@ -24,7 +27,8 @@ func _physics_process(delta):
 	if global_position.distance_to(Vector2(Globals.player_x, Globals.player_y)) < 32:
 		can_move = false
 	else:
-		can_move = true
+		if !Globals.combat:
+			can_move = true
 
 func move_horse(clock):
 	if can_move:
@@ -112,3 +116,16 @@ func move_horse(clock):
 func _on_timer_timeout():
 	move_dir = RNG.randi_range(0,3) # set random move dir
 	move = true # let the horse know it's time to move
+
+func _on_area_entered(area):
+	if area.is_in_group("SELECTOR"):
+		Globals.hud_mode = "SELECT" # change hud to select
+		# update the global variables for the HUD
+		Globals.hud_selected_name = HORSE_TITLE
+		Globals.hud_selected_desc = HORSE_TEXT
+		Globals.hud_sel_icon_frame = FRAME_NO
+
+func _on_area_exited(area):
+	if area.is_in_group("SELECTOR"):
+		# return the hud back to main
+		Globals.hud_mode = "MAIN"

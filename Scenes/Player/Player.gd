@@ -9,6 +9,8 @@ var move_dir = 0 # 0 to 3 clockwise from up to left
 var move_to = 0 # position to move to based on the move_dir
 var moving = false # if the player is moving currently
 var combat_steps = 0 # how many steps the player can take in combat
+var minute_check = 0 # checks minutes
+var day_check = 0 # checks days
 
 
 # SYSTEM FUNCTIONS
@@ -19,9 +21,12 @@ func _ready():
 		global_position = Globals.new_scene_player_origin
 	Globals.player_x = global_position.x # update player X
 	Globals.player_y = global_position.y # update player Y
+	day_check = Globals.days # set the day check
+	minute_check = Globals.minutes # set the minute check
 
 func _process(_delta):
 	selection() # selection function
+	time_check() # time check function
 
 func _physics_process(delta):
 	if !Globals.in_combat and Globals.can_play: player_movement(delta) # movement function
@@ -127,6 +132,17 @@ func player_movement(clock):
 	if Input.is_action_just_pressed("tae_end"):
 		get_tree().quit()
 
+func time_check():
+	# this keeps track of time for player specific time instances like hunger/thirst/ect 
+	# as long as the player is not in combat
+	if !Globals.combat:
+		if day_check != Globals.day:
+			day_check = Globals.day # reset day check
+		if minute_check != Globals.minutes:
+			Globals.player["hunger"] -= 1 # decrement hunger
+			Globals.player["thirst"] -= 2 # decrement thirst
+			minute_check = Globals.minutes # reset minute check
+
 func selection():
 	if select_mode:
 		SELECTOR.visible = true # show selector
@@ -170,6 +186,4 @@ func selection():
 	else:
 		# hide the selector if outside of select_mode
 		SELECTOR.visible = false
-
-
-# SIGNAL FUNCTIONS
+		SELECTOR.position = Vector2(0,0)
