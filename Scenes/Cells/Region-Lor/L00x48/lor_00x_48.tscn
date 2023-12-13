@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dojqsrpp2kaef"]
+[gd_scene load_steps=8 format=3 uid="uid://dojqsrpp2kaef"]
 
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_ft2ng"]
 [ext_resource type="Script" path="res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.gd" id="1_r5v8d"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://in3ywb6q1lg7" path="res://Scenes/UI/HUD/hud.tscn" id="3_08vrg"]
 [ext_resource type="PackedScene" uid="uid://dfoa8ym7iswtm" path="res://Scenes/Prefabs/TaelusAnimMap/taelus_anim_map.tscn" id="3_eq17c"]
 [ext_resource type="PackedScene" uid="uid://bafck6vrx1x0q" path="res://Scenes/Prefabs/Animals/Horse/horse.tscn" id="4_eymla"]
+[ext_resource type="PackedScene" uid="uid://saq1y3depm4h" path="res://Scenes/Prefabs/Decor/HangingSign/hanging_sign.tscn" id="7_dbwkt"]
 
 [node name="Lor00x48" type="Node2D"]
 script = ExtResource("1_r5v8d")
@@ -19,7 +20,15 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 65536, 0, 131072, 65536
 layer_0/tile_data = PackedInt32Array(262178, 131072, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_3xp4i")]
-position = Vector2(256, 192)
+position = Vector2(368, 304)
 
 [node name="Horse" parent="." instance=ExtResource("4_eymla")]
 position = Vector2(224, 96)
+
+[node name="HangingSign" parent="." instance=ExtResource("7_dbwkt")]
+position = Vector2(400, 272)
+collision_layer = 2
+collision_mask = 2
+SIGN_TITLE = "Wooden Sign"
+SIGN_TEXT = "Wooden sign that reads: Southern Watchtower."
+FRAME_NO = 247

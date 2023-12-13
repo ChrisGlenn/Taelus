@@ -11,10 +11,10 @@ var movement_speed = 76 # global movement speed
 # HUD variables
 # selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status)
-var hud_sel_item_name = ""
+var hud_selected_name = ""
 var hud_sel_icon_frame = 0
-var hud_sel_item_desc = ""
-var hud_sel_item_cntrl = ""
+var hud_selected_desc = ""
+var hud_selected_cntrl = ""
 var hud_controls_main = "M = Main  I = Inventory\nJ = Journal S = Status\nESC = Menu"
 var hud_controls_select = ""
 var hud_controls_inventory = ""
@@ -58,7 +58,7 @@ var year = 300
 var month = 2
 var day = 6
 var season = 1
-var hour = 12 # noon
+var hour = 9 # 9am
 var minutes = 0 # 60 seconds
 var seconds = 0
 var months = ["Morns Light","Inabar's Dance","Ransfir","Gundar's Wake","Noruv's Fire","Sunsfir","Bloodmun","Harvest Fall","First Frost","Night's Fall"]
