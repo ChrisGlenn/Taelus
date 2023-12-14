@@ -14,12 +14,12 @@ var combat = false # if true the game is in combat mode
 
 # HUD variables
 # selector
-var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status)
+var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
 var hud_selected_name = ""
 var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
 var hud_selected_cntrl = ""
-var hud_controls_main = "M = Main  I = Inventory\nJ = Journal S = Status\nESC = Menu"
+var hud_controls_main = "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"
 var hud_controls_select = ""
 var hud_controls_inventory = ""
 var hud_controls_diag = ""

@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://bplioanoe6cuf"]
+
+[ext_resource type="Script" path="res://Scenes/Gameplay/PauseMenu/pause_menu.gd" id="1_jj1e6"]
+[ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_x78aw"]
+[ext_resource type="FontFile" uid="uid://imnkghkj0qrp" path="res://Fonts/m3x6.ttf" id="2_jstgo"]
+[ext_resource type="Texture2D" uid="uid://k4bg4wc6tuex" path="res://Tilesets/Taelus-UI.png" id="3_qd42e"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_jj1e6")
+
+[node name="Background" type="NinePatchRect" parent="."]
+offset_left = 328.0
+offset_top = 144.0
+offset_right = 440.0
+offset_bottom = 240.0
+texture = ExtResource("1_x78aw")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="ResumeLabel" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 156.0
+offset_right = 440.0
+offset_bottom = 175.0
+theme_override_fonts/font = ExtResource("2_jstgo")
+theme_override_font_sizes/font_size = 23
+text = "RESUME"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LoadLabel" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 172.0
+offset_right = 440.0
+offset_bottom = 191.0
+theme_override_fonts/font = ExtResource("2_jstgo")
+theme_override_font_sizes/font_size = 23
+text = "LOAD GAME"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SettingsLabel" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 188.0
+offset_right = 440.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("2_jstgo")
+theme_override_font_sizes/font_size = 23
+text = "SETTINGS"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="QuitLabel" type="Label" parent="."]
+offset_left = 368.0
+offset_top = 204.0
+offset_right = 440.0
+offset_bottom = 223.0
+theme_override_fonts/font = ExtResource("2_jstgo")
+theme_override_font_sizes/font_size = 23
+text = "QUIT"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cursor" type="Sprite2D" parent="."]
+position = Vector2(340, 160)
+texture = ExtResource("3_qd42e")
+centered = false
+hframes = 32
+vframes = 4
+frame = 7
