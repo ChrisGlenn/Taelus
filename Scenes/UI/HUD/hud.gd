@@ -74,3 +74,4 @@ func HUD():
 		SELECTLABEL.text = Globals.hud_selected_name
 		SELECTICON.frame = Globals.hud_sel_icon_frame
 		SELECTDESC.text = Globals.hud_selected_desc
+

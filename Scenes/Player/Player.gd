@@ -13,7 +13,6 @@ var minute_check = 0 # checks minutes
 var day_check = 0 # checks days
 
 
-# SYSTEM FUNCTIONS
 func _ready():
 	SELECTOR.visible = false # hide the selector on creation
 	if Globals.new_scene_player_set: 
@@ -137,10 +136,14 @@ func time_check():
 	# as long as the player is not in combat
 	if !Globals.combat:
 		if day_check != Globals.day:
+			if Globals.player["days_left"] > 0: Globals.player["days_left"] -= 1 # decrement lifespan by a day
+			else: death() # or kill the player if their days have ended
 			day_check = Globals.day # reset day check
 		if minute_check != Globals.minutes:
-			Globals.player["hunger"] -= 0.5 # decrement hunger
-			Globals.player["thirst"] -= 1 # decrement thirst
+			if Globals.player["hunger"] > 0: Globals.player["hunger"] -= 0.5 # decrement hunger
+			else: death()
+			if Globals.player["thirst"] > 0: Globals.player["thirst"] -= 1 # decrement thirst
+			else: death()
 			minute_check = Globals.minutes # reset minute check
 
 func selection():
@@ -187,3 +190,10 @@ func selection():
 		# hide the selector if outside of select_mode
 		SELECTOR.visible = false
 		SELECTOR.position = Vector2(0,0)
+
+func death():
+	# the player has died
+	# check for permadeth and erase saves if so
+	# but for now just print that the player has died and end the game
+	print("Thou art DEAD")
+	get_tree().quit()
