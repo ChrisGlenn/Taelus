@@ -26,8 +26,10 @@ extends CanvasLayer
 @onready var DIAGTEXT = $DialogueHUD/DialogueBackground/DialogueText
 # inventory hud
 @onready var INVENTORY = $Inventory
-@export var INVSLOTS = []
+@export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
 # hud variables
+var inv_cursor_active = false # if false will be hidden
+var inv_cursor_pos = 0 # corresponds with the inventory slots
 
 
 func _ready():
@@ -103,5 +105,11 @@ func update_inventory():
 		match Globals.player["inventory"][n]:
 			0:
 				# null
-				print(INVSLOTS[n])
+				INVSLOTS[n].frame = 0
+			1:
+				# waterskin
+				INVSLOTS[n].frame = 1
 
+func arrange_inventory():
+	# will arrange the inventory to get rid of any empty spots
+	pass

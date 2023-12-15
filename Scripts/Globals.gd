@@ -39,7 +39,9 @@ var player = {
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
-	"inventory": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"inventory": [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	"inv_weight": 0,
+	"capactiy": 0,
 	"thirst": 100.0,
 	"hunger": 100.0,
 	"days_left": 5000
