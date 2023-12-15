@@ -13,6 +13,7 @@
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_e2bak")
+INVSLOTS = [NodePath("Inventory/InventoryBackground/InvSlot-1"), NodePath("Inventory/InventoryBackground/InvSlot-2"), NodePath("Inventory/InventoryBackground/InvSlot-3"), NodePath("Inventory/InventoryBackground/InvSlot-4"), NodePath("Inventory/InventoryBackground/InvSlot-5"), NodePath("Inventory/InventoryBackground/InvSlot-6"), NodePath("Inventory/InventoryBackground/InvSlot-7"), NodePath("Inventory/InventoryBackground/InvSlot-8"), NodePath("Inventory/InventoryBackground/InvSlot-9"), NodePath("Inventory/InventoryBackground/InvSlot-10"), NodePath("Inventory/InventoryBackground/InvSlot-11"), NodePath("Inventory/InventoryBackground/InvSlot-12"), NodePath("Inventory/InventoryBackground/InvSlot-13"), NodePath("Inventory/InventoryBackground/InvSlot-14"), NodePath("Inventory/InventoryBackground/InvSlot-15"), NodePath("Inventory/InventoryBackground/InvSlot-16"), NodePath("Inventory/InventoryBackground/InvSlot-17"), NodePath("Inventory/InventoryBackground/InvSlot-18"), NodePath("Inventory/InventoryBackground/InvSlot-19"), NodePath("Inventory/InventoryBackground/InvSlot-20"), NodePath("Inventory/InventoryBackground/InvSlot-21"), NodePath("Inventory/InventoryBackground/InvSlot-22"), NodePath("Inventory/InventoryBackground/InvSlot-23"), NodePath("Inventory/InventoryBackground/InvSlot-24"), NodePath("Inventory/InventoryBackground/InvSlot-25")]
 
 [node name="MainBackground" type="NinePatchRect" parent="."]
 offset_right = 128.0
@@ -44,6 +45,7 @@ text = "Controls"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -578,7 +580,6 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="Inventory" type="Node2D" parent="."]
-visible = false
 
 [node name="InventoryBackground" type="NinePatchRect" parent="Inventory"]
 offset_left = 208.0
