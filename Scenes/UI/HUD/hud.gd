@@ -27,6 +27,7 @@ extends CanvasLayer
 # inventory hud
 @onready var INVENTORY = $Inventory
 @export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
+@onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
@@ -102,6 +103,9 @@ func HUD():
 func update_inventory():
 	# update the player's inventory
 	for n in Globals.player["inventory"].size():
+		# check if the first slot has an item and activate the cursor
+		print(str(n))
+		# set the frames in the inventory slots
 		match Globals.player["inventory"][n]:
 			0:
 				# null

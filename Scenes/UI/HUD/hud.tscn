@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=12 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xm1q0kkfsepu" path="res://Sprites/UI/Map-Marker.png" id="5_wgm8r"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="6_lpdjx"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/Hunger.gd" id="7_vp2sa"]
+[ext_resource type="Texture2D" uid="uid://bc21qek0kylhp" path="res://Sprites/UI/Inventory-Box.png" id="10_6lsq5"]
 [ext_resource type="Texture2D" uid="uid://dilg7lx54esva" path="res://Tilesets/Taelus-Inventory.png" id="10_nbyga"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("INVSLOTS")]
@@ -601,6 +602,13 @@ offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("6_lpdjx")
 text = "Weight: x/x"
 horizontal_alignment = 1
+
+[node name="InvCursor" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(20, 60)
+texture = ExtResource("10_6lsq5")
+centered = false
+hframes = 2
+frame = 1
 
 [node name="InvSlot-1" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 64)
