@@ -31,6 +31,7 @@ extends CanvasLayer
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
+var inv_pos_types = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] # see documentation for reference...
 
 
 func _ready():
@@ -104,7 +105,12 @@ func update_inventory():
 	# update the player's inventory
 	for n in Globals.player["inventory"].size():
 		# check if the first slot has an item and activate the cursor
-		print(str(n))
+		if n == 0 and Globals.player["inventory"][n] != 0:
+			INVCURSOR.frame = 0
+			inv_cursor_active = true
+		elif n == 0 and Globals.player["inventory"][n] == 0:
+			INVCURSOR.frame = 1
+			inv_cursor_active = false
 		# set the frames in the inventory slots
 		match Globals.player["inventory"][n]:
 			0:
@@ -113,6 +119,17 @@ func update_inventory():
 			1:
 				# waterskin
 				INVSLOTS[n].frame = 1
+				Globals.player["weight"] += 0.2
+				inv_pos_types[n] = 1
+			2:
+				# ration
+				INVSLOTS[n].frame = 2
+				Globals.player["weight"] += 0.4
+				inv_pos_types[n] = 1
+			3:
+				# beer
+				INVSLOTS[n].frame = 3
+				Globals.player["weight"] += 0.5
 
 func arrange_inventory():
 	# will arrange the inventory to get rid of any empty spots

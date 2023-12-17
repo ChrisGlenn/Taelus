@@ -14,7 +14,7 @@ var combat = false # if true the game is in combat mode
 
 # HUD variables
 # selector
-var hud_mode = "INVENTORY" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
+var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
 var hud_selected_name = ""
 var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
@@ -34,14 +34,22 @@ var player = {
 	"gender": "Male",
 	"race": 0,
 	"status": "Healthy",
+	"strength": 7,
+	"agility": 12,
+	"endurance": 11,
+	"intelligence": 5,
+	"charisma": 5,
+	"armor_class": 7,
+	"bonus_mod": 2,
+	"hp": 8,
 	"armor": [0,0,0,0],
 	"money": [20,0,0],
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
 	"inventory": [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-	"inv_weight": 0,
-	"capactiy": 0,
+	"weight": 0.0,
+	"capactiy": 72.0,
 	"thirst": 100.0,
 	"hunger": 100.0,
 	"days_left": 5000
