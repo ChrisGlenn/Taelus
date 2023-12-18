@@ -785,6 +785,15 @@ centered = false
 hframes = 32
 vframes = 8
 
+[node name="HighlightedInv" type="Sprite2D" parent="Inventory/InventoryBackground"]
+position = Vector2(-192, -56)
+scale = Vector2(6, 6.5)
+texture = ExtResource("10_nbyga")
+centered = false
+hframes = 32
+vframes = 8
+frame = 1
+
 [node name="EquipmentOverlay" type="NinePatchRect" parent="Inventory"]
 offset_left = 400.0
 offset_top = 80.0
