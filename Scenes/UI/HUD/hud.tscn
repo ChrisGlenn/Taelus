@@ -792,7 +792,6 @@ texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 8
-frame = 1
 
 [node name="EquipmentOverlay" type="NinePatchRect" parent="Inventory"]
 offset_left = 400.0
