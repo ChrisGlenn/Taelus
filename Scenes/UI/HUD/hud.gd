@@ -28,6 +28,8 @@ extends CanvasLayer
 @onready var INVENTORY = $Inventory
 @export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
 @onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
+@onready var INVICON = $Inventory/InventoryBackground/HighlightedInv
+
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
@@ -114,7 +116,7 @@ func HUD():
 func update_inventory():
 	# update the player's inventory
 	for n in Globals.player["inventory"].size():
-		# print(Globals.player["inventory"][n]["item"])
+		print(Globals.player["inventory"][n])
 		INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
 		if n == 0 and Globals.player["inventory"][n]["item"] != 0:
 			# set the inventory selector as active
@@ -127,6 +129,13 @@ func update_inventory():
 		match Globals.player["inventory"][n]["item"]:
 			0:
 				# empty
+				# clear it out
+				Globals.player["inventory"][n]["type"] = "EMPTY" # clear type
+				Globals.player["inventory"][n]["name"] = "" # clear name
+				Globals.player["inventory"][n]["desc"] = "" # clear description
+				Globals.player["inventory"][n]["amnt"] = 0 # reset amount
+			1:
+				# wineskin
 				pass
 
 
