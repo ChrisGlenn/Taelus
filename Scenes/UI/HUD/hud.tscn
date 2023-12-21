@@ -824,6 +824,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="EquipmentLabel" type="Label" parent="Inventory/EquipmentOverlay"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 152.0
@@ -831,6 +832,8 @@ offset_bottom = 24.0
 theme_override_fonts/font = ExtResource("6_lpdjx")
 text = "Equipment"
 horizontal_alignment = 1
+
+[node name="EquipmentAvatar" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
 
 [node name="ExternalInventory" type="NinePatchRect" parent="Inventory"]
 visible = false
