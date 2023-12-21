@@ -28,12 +28,9 @@ extends CanvasLayer
 @onready var INVENTORY = $Inventory
 @export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
 @onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
-@onready var INVICON = $Inventory/InventoryBackground/HighlightedInv
-
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
-var inv_dict = [{"frame": 0},{"frame": 0},{"frame": 0},{"frame": 0},{"frame": 0},{"frame": 0},{"frame": 0},{"frame": 0}]
 
 
 func _ready():
@@ -83,7 +80,8 @@ func HUD():
 		elif Input.is_action_just_pressed("tae_s"):
 			pass # STATUS SCREEN GOES HERE
 		elif Input.is_action_just_pressed("tae_i"):
-			pass # INVENTORY GOES HERE
+			update_inventory() # refresh the inventory
+			Globals.hud_mode = "INVENTORY" # change to inventory
 	elif Globals.hud_mode == "SELECT":
 		# When the player uses the selector to select something the information is displayed here.
 		# this will also give the player a set of options they can choose to interact with the world
@@ -103,9 +101,11 @@ func HUD():
 		MAIN.visible = false # hide the main hud
 		SELECTION.visible = false # hide the selection hud
 		DIAGHUD.visible = false # hide the dialogue hud
+		$Inventory/InventoryBackground/WeightLabel.text = str("Carrying Weight: ", Globals.player["weight"], "/", Globals.player["capacity"])
 		# INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
-			pass # PAUSE MENU GOES HERE!!!
+			Globals.hud_mode = "MAIN" # return to main menu before pause menu
+			# GAME PAUSED
 		elif Input.is_action_just_pressed("tae_j"):
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
@@ -113,11 +113,13 @@ func HUD():
 		elif Input.is_action_just_pressed("tae_m"):
 			Globals.can_play = true # return player movement
 			Globals.hud_mode = "MAIN" # return to main menu
+
 func update_inventory():
 	# update the player's inventory
 	for n in Globals.player["inventory"].size():
-		print(Globals.player["inventory"][n])
+		# print(Globals.player["inventory"][n])
 		INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
+		Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
 		if n == 0 and Globals.player["inventory"][n]["item"] != 0:
 			# set the inventory selector as active
 			INVCURSOR.frame = 0
@@ -126,19 +128,10 @@ func update_inventory():
 			# set the inventory selector as NOT active
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
-		match Globals.player["inventory"][n]["item"]:
-			0:
-				# empty
-				# clear it out
-				Globals.player["inventory"][n]["type"] = "EMPTY" # clear type
-				Globals.player["inventory"][n]["name"] = "" # clear name
-				Globals.player["inventory"][n]["desc"] = "" # clear description
-				Globals.player["inventory"][n]["amnt"] = 0 # reset amount
-			1:
-				# wineskin
-				pass
-
 
 func arrange_inventory():
 	# will arrange the inventory to get rid of any empty spots
+	pass
+
+func inventory_cursor():
 	pass

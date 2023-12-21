@@ -598,7 +598,7 @@ layout_mode = 0
 offset_left = 16.0
 offset_top = 8.0
 offset_right = 176.0
-offset_bottom = 56.0
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("6_lpdjx")
 text = "Weight: x/x"
 horizontal_alignment = 1
@@ -793,6 +793,25 @@ centered = false
 hframes = 32
 vframes = 8
 
+[node name="ItemLabel" type="Label" parent="Inventory/InventoryBackground"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 56.0
+offset_right = -88.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+
+[node name="ItemDescription" type="Label" parent="Inventory/InventoryBackground"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 80.0
+offset_right = -88.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+theme_override_font_sizes/font_size = 15
+
 [node name="EquipmentOverlay" type="NinePatchRect" parent="Inventory"]
 offset_left = 400.0
 offset_top = 80.0
@@ -803,6 +822,15 @@ patch_margin_left = 5
 patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
+
+[node name="EquipmentLabel" type="Label" parent="Inventory/EquipmentOverlay"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 152.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Equipment"
+horizontal_alignment = 1
 
 [node name="ExternalInventory" type="NinePatchRect" parent="Inventory"]
 visible = false
