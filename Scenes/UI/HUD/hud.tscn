@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=13 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://Scenes/UI/HUD/Hunger.gd" id="7_vp2sa"]
 [ext_resource type="Texture2D" uid="uid://bc21qek0kylhp" path="res://Sprites/UI/Inventory-Box.png" id="10_6lsq5"]
 [ext_resource type="Texture2D" uid="uid://dilg7lx54esva" path="res://Tilesets/Taelus-Inventory.png" id="10_nbyga"]
+[ext_resource type="Texture2D" uid="uid://b4alrc6yesliq" path="res://Sprites/NPCs/Taelus-Characters.png" id="12_xa14g"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("INVSLOTS")]
 script = ExtResource("1_e2bak")
@@ -833,7 +834,28 @@ theme_override_fonts/font = ExtResource("6_lpdjx")
 text = "Equipment"
 horizontal_alignment = 1
 
-[node name="EquipmentAvatar" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+[node name="EquipAvatarBody" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(16, 64)
+scale = Vector2(4, 4)
+texture = ExtResource("12_xa14g")
+centered = false
+hframes = 32
+vframes = 32
+frame = 1
+
+[node name="EquipHelmet" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(96, 64)
+texture = ExtResource("12_xa14g")
+centered = false
+hframes = 32
+vframes = 32
+
+[node name="EquipArmor" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(96, 88)
+texture = ExtResource("12_xa14g")
+centered = false
+hframes = 32
+vframes = 32
 
 [node name="ExternalInventory" type="NinePatchRect" parent="Inventory"]
 visible = false
