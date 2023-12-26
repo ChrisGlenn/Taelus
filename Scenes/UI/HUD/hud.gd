@@ -102,6 +102,7 @@ func HUD():
 		SELECTION.visible = false # hide the selection hud
 		DIAGHUD.visible = false # hide the dialogue hud
 		$Inventory/InventoryBackground/WeightLabel.text = str("Carrying Weight: ", Globals.player["weight"], "/", Globals.player["capacity"])
+		$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\n", "Bonus Modifier: ", Globals.player["bonus_mod"])
 		# INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.hud_mode = "MAIN" # return to main menu before pause menu
