@@ -47,7 +47,7 @@ var player = {
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
-	"inventory": [{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},
+	"inventory": [{"item": 1,"type": "CONSUME","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"weight": 0.2},{"item": 2,"type": "CONSUME","name": "FOOD RATION","desc": "A bowl of food.","amnt": 2,"weight": 0.5},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},
 	{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},
 	{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},
 	{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},{"item": 0,"type": "EMPTY","name": "","desc": "","amnt": 0,"weight": 0},

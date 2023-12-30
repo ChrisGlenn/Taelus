@@ -97,6 +97,7 @@ func HUD():
 		# the inventory hud
 		# shows the player all the items and equipment in their inventory
 		Globals.can_play = false # stop player movement while inventory is open
+		Globals.hud_controls = "ESC = Return\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"
 		INVENTORY.visible = true # show the inventory 
 		MAIN.visible = false # hide the main hud
 		SELECTION.visible = false # hide the selection hud
@@ -105,15 +106,11 @@ func HUD():
 		$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\n", "Bonus Modifier: ", Globals.player["bonus_mod"])
 		# INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
-			Globals.hud_mode = "MAIN" # return to main menu before pause menu
-			# GAME PAUSED
+			Globals.hud_mode = "MAIN" # return to main menu
 		elif Input.is_action_just_pressed("tae_j"):
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
 			pass # STATUS SCREEN GOES HERE
-		elif Input.is_action_just_pressed("tae_m"):
-			Globals.can_play = true # return player movement
-			Globals.hud_mode = "MAIN" # return to main menu
 
 func update_inventory():
 	# update the player's inventory
