@@ -56,6 +56,7 @@ func _ready():
 
 func _process(_delta):
 	HUD() # the hud function
+	inventory_cursor() # inventory cursor function
 
 func HUD():
 	# check the Globals.hud_mode and act accordingly
@@ -106,6 +107,7 @@ func HUD():
 		$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\n", "Bonus Modifier: ", Globals.player["bonus_mod"])
 		# INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
+			Globals.can_play = true # return player control
 			Globals.hud_mode = "MAIN" # return to main menu
 		elif Input.is_action_just_pressed("tae_j"):
 			pass # JOURNAL GOES HERE
@@ -132,4 +134,8 @@ func arrange_inventory():
 	pass
 
 func inventory_cursor():
-	pass
+	if inv_cursor_active:
+		# update the selected item display on the hud
+		$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
+		$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
+		$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]

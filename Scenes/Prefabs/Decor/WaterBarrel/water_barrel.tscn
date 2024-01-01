@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://be2vk54f3i24f"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/Decor/WaterBarrel/water_barrel.gd" id="1_x0tx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ixkfy"]
+size = Vector2(12, 8)
+
+[node name="WaterBarrel" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_x0tx1")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ixkfy")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
