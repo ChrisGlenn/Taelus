@@ -116,17 +116,20 @@ func HUD():
 
 func update_inventory():
 	# update the player's inventory
-	for n in Globals.player["inventory"].size():
-		# DEBUG TODO:
-		# HAVE IT RUN THROUGH AND UPDATE EACH INVENTORY SLOT TO ADJUST TO THE NEW ARRAY SETTINGS
-		# print(Globals.player["inventory"][n])
-		INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
-		Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
-		if n == 0 and Globals.player["inventory"][n]["item"] != 0:
+	for n in INVSLOTS.size():
+		# run through each slot in the inventory slots array and see if there is a corresponding item in the player inventory
+		# if not then clear the slot out and revert the frame back to 0
+		if Globals.player["inventory"].size() >= n + 1:
+			INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
+			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
+		else:
+			# clear out the inventory slots
+			INVSLOTS[n].frame = 0
+		if Globals.player["inventory"].size() > 0:
 			# set the inventory selector as active
 			INVCURSOR.frame = 0
 			inv_cursor_active = true
-		elif n == 0 and Globals.player["inventory"][n]["item"] == 0:
+		else:
 			# set the inventory selector as NOT active
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
@@ -154,21 +157,5 @@ func inventory_cursor():
 			Globals.player["inventory"].remove_at(0) # remove item
 			Globals.player["weight"] = 0 # need to remove the weight to reset it as it is now
 			update_inventory() # update the inventory
-			print(Globals.player["inventory"]) # print for testing
-	# set the cursor location
-	match inv_cursor_pos:
-		0: 
-			# slot one
-			INVCURSOR.position = Vector2(20,60)
-		1:
-			# slot two
-			INVCURSOR.position = Vector2(52,60)
-		2:
-			# slot three
-			INVCURSOR.position = Vector2(84,60)
-		3:
-			# slot four
-			INVCURSOR.position = Vector2(116,60)
-		4:
-			# slot five
-			INVCURSOR.position = Vector2(148,60)
+		# set the cursor location
+		INVCURSOR.position = Vector2(INVSLOTS[inv_cursor_pos].position.x-4, INVSLOTS[inv_cursor_pos].position.y-4)

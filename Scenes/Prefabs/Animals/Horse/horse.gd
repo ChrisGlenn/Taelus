@@ -15,7 +15,7 @@ var move_dir = 0 # 0 to 3 clockwise (0 up 1 right 2 down 3 left)
 var move_speed = 78 # movement speed
 var move_to = 0 # position to move to
 var spooked = false # if the horse is spooked or not
-var distance_check = 32 # distance from player to stop movement
+var distance_check = 48 # distance from player to stop movement
 
 
 func _ready():
