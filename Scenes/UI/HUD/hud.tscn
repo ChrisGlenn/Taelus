@@ -805,12 +805,22 @@ theme_override_fonts/font = ExtResource("6_lpdjx")
 theme_override_font_sizes/font_size = 15
 horizontal_alignment = 1
 
+[node name="ItemAmountLabel" type="Label" parent="Inventory/InventoryBackground"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 184.0
+offset_right = -88.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+
 [node name="ItemDescription" type="Label" parent="Inventory/InventoryBackground"]
 layout_mode = 0
 offset_left = -200.0
 offset_top = 80.0
 offset_right = -88.0
-offset_bottom = 184.0
+offset_bottom = 176.0
 theme_override_fonts/font = ExtResource("6_lpdjx")
 theme_override_font_sizes/font_size = 15
 autowrap_mode = 2

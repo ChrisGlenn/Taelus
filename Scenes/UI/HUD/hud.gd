@@ -134,16 +134,18 @@ func update_inventory():
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
 
-func arrange_inventory():
-	# will arrange the inventory to get rid of any empty spots
-	pass
-
 func inventory_cursor():
 	if inv_cursor_active:
 		# update the selected item display on the hud
+		# also check the amount and type and update the itemamountlabel
 		$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
 		$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
 		$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
+		if Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
+			$Inventory/InventoryBackground/ItemAmountLabel.text = str("Uses left: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
+		else:
+			$Inventory/InventoryBackground/ItemAmountLabel.text = str("Amount: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
+		# $Inventory/InventoryBackground/ItemAmountLabel.text
 		# input
 		if Input.is_action_just_pressed("tae_right"):
 			if inv_cursor_pos < Globals.player["inventory"].size() - 1 and inv_cursor_pos != 14:
@@ -159,3 +161,4 @@ func inventory_cursor():
 			update_inventory() # update the inventory
 		# set the cursor location
 		INVCURSOR.position = Vector2(INVSLOTS[inv_cursor_pos].position.x-4, INVSLOTS[inv_cursor_pos].position.y-4)
+		# inventory cursor input (equip, eat, ect.)

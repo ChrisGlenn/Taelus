@@ -14,12 +14,18 @@ var combat = false # if true the game is in combat mode
 
 # HUD variables
 # selector
-var hud_mode = "INVENTORY" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
+var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
 var hud_selected_name = ""
 var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
 var hud_selected_cntrl = ""
+var hud_control_mode = "main"
 var hud_controls = "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"
+var hud_control = [
+	{"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
+	{"mode": "paused","controls": "ESC = Return"},
+	{"mode": ""}
+]
 
 # player variables
 var can_play = true # if the player can play
