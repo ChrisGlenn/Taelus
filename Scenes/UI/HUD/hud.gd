@@ -139,3 +139,27 @@ func inventory_cursor():
 		$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
 		$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
 		$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
+		# input
+		if Input.is_action_just_pressed("tae_right"):
+			if Globals.player["inventory"][inv_cursor_pos + 1]["item"] != 0 and inv_cursor_pos != 14:
+				inv_cursor_pos += 1 # move right
+		if Input.is_action_just_pressed("tae_left"):
+			if inv_cursor_pos != 0:
+				inv_cursor_pos -= 1 # move left
+	# set the cursor location
+	match inv_cursor_pos:
+		0: 
+			# slot one
+			INVCURSOR.position = Vector2(20,60)
+		1:
+			# slot two
+			INVCURSOR.position = Vector2(52,60)
+		2:
+			# slot three
+			INVCURSOR.position = Vector2(84,60)
+		3:
+			# slot four
+			INVCURSOR.position = Vector2(116,60)
+		4:
+			# slot five
+			INVCURSOR.position = Vector2(148,60)
