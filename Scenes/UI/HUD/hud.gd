@@ -117,6 +117,8 @@ func HUD():
 func update_inventory():
 	# update the player's inventory
 	for n in Globals.player["inventory"].size():
+		# DEBUG TODO:
+		# HAVE IT RUN THROUGH AND UPDATE EACH INVENTORY SLOT TO ADJUST TO THE NEW ARRAY SETTINGS
 		# print(Globals.player["inventory"][n])
 		INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
 		Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
@@ -141,11 +143,18 @@ func inventory_cursor():
 		$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
 		# input
 		if Input.is_action_just_pressed("tae_right"):
-			if Globals.player["inventory"][inv_cursor_pos + 1]["item"] != 0 and inv_cursor_pos != 14:
+			if inv_cursor_pos < Globals.player["inventory"].size() - 1 and inv_cursor_pos != 14:
 				inv_cursor_pos += 1 # move right
 		if Input.is_action_just_pressed("tae_left"):
 			if inv_cursor_pos != 0:
 				inv_cursor_pos -= 1 # move left
+		if Input.is_action_just_pressed("tae_debug"):
+			# INVENTORY TEST (DEBUG)
+			inv_cursor_pos = 0 # reset the cursor the preferred method will keep it at the spot IF it will be filled, otherwise go back one
+			Globals.player["inventory"].remove_at(0) # remove item
+			Globals.player["weight"] = 0 # need to remove the weight to reset it as it is now
+			update_inventory() # update the inventory
+			print(Globals.player["inventory"]) # print for testing
 	# set the cursor location
 	match inv_cursor_pos:
 		0: 
