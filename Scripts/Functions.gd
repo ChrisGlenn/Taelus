@@ -7,6 +7,7 @@ func drink_water(quench, _risk):
 	if quench > 0:
 		Globals.player["thirst"] += quench # restore player thirst
 		if Globals.player["thirst"] > 100.0: Globals.player["thirst"] = 100.0 # make sure it doesn't exceed 100
+		# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
 	else:
 		print("ERROR: QUENCH NOT SET FOR DRINK_WATER FUNCTION!!!")
 

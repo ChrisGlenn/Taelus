@@ -6,6 +6,7 @@ extends Area2D
 @export var SIGN_TITLE : String = "SIGN TITLE" # the title of the sign
 @export_multiline var SIGN_TEXT : String = "SIGN TEXT" # the sign text
 @export var FRAME_NO = 1
+@export var DRINK_RISK = 0 # percentage
 var hit_points = 10 # has 1 hit point
 var dead = false # death check * may not be needed *
 

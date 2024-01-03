@@ -39,7 +39,10 @@ func _ready():
 	SELECTION.visible = false
 	DIAGHUD.visible = false
 	# SETUP THE HUD
-	CONTROLS.text = Globals.hud_controls
+	# controls
+	for n in Globals.hud_control:
+		if Globals.hud_control[n]["mode"] == Globals.hud_control_mode:
+			CONTROLS.text = Globals.hud_control[n]["controls"]
 	# Main HUD
 	NAME.text = Globals.player["name"] # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
@@ -71,8 +74,6 @@ func HUD():
 		DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season])
 		TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2)
 		REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
-		Globals.hud_controls = "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"
-		CONTROLS.text = Globals.hud_controls
 		# INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			pass # PAUSE MENU GOES HERE!!!
@@ -98,7 +99,6 @@ func HUD():
 		# the inventory hud
 		# shows the player all the items and equipment in their inventory
 		Globals.can_play = false # stop player movement while inventory is open
-		Globals.hud_controls = "ESC = Return\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"
 		INVENTORY.visible = true # show the inventory 
 		MAIN.visible = false # hide the main hud
 		SELECTION.visible = false # hide the selection hud
@@ -162,3 +162,6 @@ func inventory_cursor():
 		# set the cursor location
 		INVCURSOR.position = Vector2(INVSLOTS[inv_cursor_pos].position.x-4, INVSLOTS[inv_cursor_pos].position.y-4)
 		# inventory cursor input (equip, eat, ect.)
+
+func update_controls():
+	pass

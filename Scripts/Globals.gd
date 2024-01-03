@@ -20,12 +20,13 @@ var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
 var hud_selected_cntrl = ""
 var hud_control_mode = "main"
-var hud_controls = "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"
-var hud_control = [
-	{"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
-	{"mode": "paused","controls": "ESC = Return"},
-	{"mode": ""}
-]
+var hud_controls = ""
+var hud_control = {
+	"001" : {"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
+	"002" : {"mode": "paused","controls": "ESC = Return"},
+	"003" : {"mode": "selector","controls": "ESC = Return"},
+	"004" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\nCTRL = Refill Waterskin"}
+}
 
 # player variables
 var can_play = true # if the player can play
