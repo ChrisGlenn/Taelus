@@ -7,6 +7,7 @@ extends Area2D
 @export_multiline var SIGN_TEXT : String = "SIGN TEXT" # the sign text
 @export var FRAME_NO = 1
 @export var DRINK_RISK = 0 # percentage
+@export var HUD_CTRL_MODE = "" # set the hud control mode
 var hit_points = 10 # has 1 hit point
 var dead = false # death check * may not be needed *
 
@@ -14,6 +15,7 @@ var dead = false # death check * may not be needed *
 func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):
 		Globals.hud_mode = "SELECT" # change hud to select
+		Globals.hud_control_mode = HUD_CTRL_MODE # set the hud control mode
 		# update the global variables for the HUD
 		Globals.hud_selected_name = SIGN_TITLE
 		Globals.hud_selected_desc = SIGN_TEXT
@@ -21,4 +23,4 @@ func _on_area_entered(area):
 
 func _on_area_exited(_area):
 	# return the hud back to main
-	Globals.hud_mode = "MAIN"
+	Globals.hud_mode = "MAIN" # return hud mode/screen

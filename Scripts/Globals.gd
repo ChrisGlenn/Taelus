@@ -20,12 +20,13 @@ var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
 var hud_selected_cntrl = ""
 var hud_control_mode = "main"
-var hud_controls = ""
 var hud_control = {
-	"001" : {"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
-	"002" : {"mode": "paused","controls": "ESC = Return"},
-	"003" : {"mode": "selector","controls": "ESC = Return"},
-	"004" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\nCTRL = Refill Waterskin"}
+	"001" : {"mode": "","controls": "ERROR: NO MODE SET"},
+	"002" : {"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
+	"003" : {"mode": "paused","controls": "ESC = Return"},
+	"004" : {"mode": "selector","controls": "ESC = Return"},
+	"005" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
+	"006" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"}
 }
 
 # player variables

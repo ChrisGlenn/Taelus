@@ -31,6 +31,7 @@ extends CanvasLayer
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
+var hud_control_check # keeps track of the hud control mode
 
 
 func _ready():
@@ -39,10 +40,9 @@ func _ready():
 	SELECTION.visible = false
 	DIAGHUD.visible = false
 	# SETUP THE HUD
-	# controls
-	for n in Globals.hud_control:
-		if Globals.hud_control[n]["mode"] == Globals.hud_control_mode:
-			CONTROLS.text = Globals.hud_control[n]["controls"]
+	# control update
+	update_controls(false)
+	hud_control_check = Globals.hud_control_mode # record the hud control mode
 	# Main HUD
 	NAME.text = Globals.player["name"] # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
@@ -63,6 +63,7 @@ func _process(_delta):
 
 func HUD():
 	# check the Globals.hud_mode and act accordingly
+	update_controls(true) # update the hud control map/text
 	if Globals.hud_mode == "MAIN":
 		# the main HUD of the game
 		# shows the player the map and all the relevant info they will need to see while playing the game
@@ -163,5 +164,17 @@ func inventory_cursor():
 		INVCURSOR.position = Vector2(INVSLOTS[inv_cursor_pos].position.x-4, INVSLOTS[inv_cursor_pos].position.y-4)
 		# inventory cursor input (equip, eat, ect.)
 
-func update_controls():
-	pass
+func update_controls(scan):
+	# update the hud controls
+	if !scan:
+		# if scan is false then just update without checking the hud mode
+		for n in Globals.hud_control:
+			if Globals.hud_control[n]["mode"] == Globals.hud_control_mode:
+				CONTROLS.text = Globals.hud_control[n]["controls"]
+	elif scan:
+		# check to see if the hud_control_mode Global has changed and if so then update the menu
+		if Globals.hud_control_mode != hud_control_check:
+			for n in Globals.hud_control:
+				if Globals.hud_control[n]["mode"] == Globals.hud_control_mode:
+					CONTROLS.text = Globals.hud_control[n]["controls"]
+					hud_control_check = Globals.hud_control_mode # update the hud control check at the end of the for loop
