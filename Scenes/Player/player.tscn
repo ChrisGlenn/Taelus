@@ -58,3 +58,6 @@ centered = false
 [node name="MobileCamera" parent="." instance=ExtResource("4_tay58")]
 anchor_mode = 1
 enabled = false
+
+[connection signal="area_entered" from="Selector" to="." method="_on_selector_area_entered"]
+[connection signal="area_exited" from="Selector" to="." method="_on_selector_area_exited"]

@@ -24,11 +24,12 @@ func _ready():
 	minute_check = Globals.minutes # set the minute check
 
 func _process(_delta):
-	selection() # selection function
 	time_check() # time check function
 
 func _physics_process(delta):
-	if !Globals.in_combat and Globals.can_play: player_movement(delta) # movement function
+	if !Globals.in_combat and Globals.can_play: 
+		player_movement(delta) # movement function
+		selection() # selection function
 
 
 # CUSTOM FUNCTIONS
@@ -197,3 +198,15 @@ func death():
 	# but for now just print that the player has died and end the game
 	print("Thou art DEAD")
 	get_tree().quit()
+
+
+func _on_selector_area_entered(area):
+	if select_mode:
+		Globals.hud_mode = "SELECT"
+		Globals.hud_selected_name = area.SIGN_TITLE
+		Globals.hud_selected_desc = area.SIGN_TEXT
+		Globals.hud_sel_icon_frame = area.FRAME_NO
+		Globals.hud_control_mode = area.HUD_CTRL_MODE
+
+func _on_selector_area_exited(_area):
+	Globals.hud_mode = "MAIN"

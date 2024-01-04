@@ -14,13 +14,15 @@ var dead = false # death check * may not be needed *
 
 func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):
-		Globals.hud_mode = "SELECT" # change hud to select
-		Globals.hud_control_mode = HUD_CTRL_MODE # set the hud control mode
-		# update the global variables for the HUD
-		Globals.hud_selected_name = SIGN_TITLE
-		Globals.hud_selected_desc = SIGN_TEXT
-		Globals.hud_sel_icon_frame = FRAME_NO
+		#Globals.hud_mode = "SELECT" # change hud to select
+		#Globals.hud_control_mode = HUD_CTRL_MODE # set the hud control mode
+		## update the global variables for the HUD
+		#Globals.hud_selected_name = SIGN_TITLE
+		#Globals.hud_selected_desc = SIGN_TEXT
+		#Globals.hud_sel_icon_frame = FRAME_NO
+		pass
 
 func _on_area_exited(_area):
 	# return the hud back to main
-	Globals.hud_mode = "MAIN" # return hud mode/screen
+	#Globals.hud_mode = "MAIN" # return hud mode/screen
+	pass

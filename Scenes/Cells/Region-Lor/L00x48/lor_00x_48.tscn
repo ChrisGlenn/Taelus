@@ -47,6 +47,7 @@ FRAME_NO = 247
 position = Vector2(192, 64)
 SIGN_TITLE = "WOOD BARREL"
 SIGN_TEXT = "A wooden barrel filled with water for the horses."
+FRAME_NO = 248
 DRINK_RISK = 10
 HUD_CTRL_MODE = "sel_drink"
 

@@ -1,6 +1,9 @@
 extends CanvasLayer
 # HUD
 @onready var CONTROLS = $Controls
+# message elements
+@onready var MESSAGE = $MsgBackground
+@onready var MESSAGETEXT = $MsgBackground/MsgLabel
 # the main hud for the game
 @onready var MAIN = $Main
 @onready var NAME = $NameLabel
@@ -32,6 +35,8 @@ extends CanvasLayer
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
 var hud_control_check # keeps track of the hud control mode
+var message_timer = 300 # message display timer
+var timer_ctrl = 100 # timer control
 
 
 func _ready():
@@ -39,6 +44,7 @@ func _ready():
 	MAIN.visible = true
 	SELECTION.visible = false
 	DIAGHUD.visible = false
+	MESSAGE.visible = false
 	# SETUP THE HUD
 	# control update
 	update_controls(false)
@@ -57,11 +63,11 @@ func _ready():
 	# Inventory HUD
 	update_inventory()
 
-func _process(_delta):
-	HUD() # the hud function
+func _process(delta):
+	HUD(delta) # the hud function
 	inventory_cursor() # inventory cursor function
 
-func HUD():
+func HUD(clock):
 	# check the Globals.hud_mode and act accordingly
 	update_controls(true) # update the hud control map/text
 	if Globals.hud_mode == "MAIN":
@@ -114,6 +120,19 @@ func HUD():
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
 			pass # STATUS SCREEN GOES HERE
+	# MESSAGE
+	# this message displays for various reasons waits for the timer to go out
+	# then it disappears
+	if Globals.message_on:
+		MESSAGETEXT.text = Globals.message_text # set the text
+		MESSAGE.visible = true # show the message
+		if message_timer > 0:
+			message_timer -= timer_ctrl * clock
+		else:
+			Globals.message_on = false
+	else:
+		MESSAGE.visible = false # turn off the message
+		message_timer = 100 # reset the message timer
 
 func update_inventory():
 	# update the player's inventory
