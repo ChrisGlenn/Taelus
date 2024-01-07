@@ -15,8 +15,8 @@ var combat = false # if true the game is in combat mode
 # HUD variables
 # selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
-var message_on = true # HUD message switch
-var message_text = "TEST TEST TEST" # text for message
+var message_on = false # HUD message switch
+var message_text = "" # text for message
 var hud_selected_name = ""
 var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
@@ -64,6 +64,7 @@ var player = {
 	"hunger": 100.0,
 	"days_left": 5000
 }
+var inventory_special = [1] # items that will be checked for 
 
 # lor variables
 var current_region = "Lor"
