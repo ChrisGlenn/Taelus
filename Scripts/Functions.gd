@@ -11,6 +11,10 @@ func drink_water(quench, _risk):
 	else:
 		print("ERROR: QUENCH NOT SET FOR DRINK_WATER FUNCTION!!!")
 
+func refill(_container, _liquid):
+	# will refill a container with a liquid...
+	pass
+
 func drink_alcohol(_quench, _alcohol):
 	# remove some of the player's thirst and increase their alcohol intake
 	# once their alcohol level reaches a certain part they are drunk

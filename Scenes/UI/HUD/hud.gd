@@ -142,6 +142,8 @@ func update_inventory():
 		if Globals.player["inventory"].size() >= n + 1:
 			INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
 			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
+			# special items check
+			
 		else:
 			# clear out the inventory slots
 			INVSLOTS[n].frame = 0

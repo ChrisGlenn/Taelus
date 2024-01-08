@@ -64,7 +64,9 @@ var player = {
 	"hunger": 100.0,
 	"days_left": 5000
 }
-var inventory_special = [1] # items that will be checked for 
+# inventory special items
+var special_items = [1] # special items to be taken out
+var special_items_in = [] # special items that are in the inventory
 
 # lor variables
 var current_region = "Lor"
