@@ -2,6 +2,7 @@ extends Node
 # GLOBAL VARIABLES
 # system variables
 var menu_mode = "MAIN" # MAIN, OPTIONS, LOAD
+var perma_death = false # if true save is deleted after death
 var new_game = true # lets the loading screen know what course to take
 var new_random = false # if true then the loading screen will generate a random player
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
@@ -64,9 +65,6 @@ var player = {
 	"hunger": 100.0,
 	"days_left": 5000
 }
-# inventory special items
-var special_items = [1] # special items to be taken out
-var special_items_in = [] # special items that are in the inventory
 
 # lor variables
 var current_region = "Lor"

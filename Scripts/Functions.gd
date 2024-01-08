@@ -1,8 +1,8 @@
 extends Node
 # FUNCTIONS FOR USE WHEN CALLED
 
-# drinking
-func drink_water(quench, _risk):
+# eating/drinking
+func drink_water(quench): # (quench, risk)
 	# restore the player's thirst by the 'quench' amount
 	if quench > 0:
 		Globals.player["thirst"] += quench # restore player thirst

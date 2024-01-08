@@ -9,3 +9,10 @@ func _ready():
 
 func create_event():
 	pass
+
+
+# misc functions that require RNG
+func sickness(_percentage, _sickness):
+	# get the percentage of getting sick, along with a random sickness
+	# and then check it against an RNG to see if the player is sick
+	pass
