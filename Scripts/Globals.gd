@@ -28,8 +28,9 @@ var hud_control = {
 	"002" : {"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
 	"003" : {"mode": "paused","controls": "ESC = Return"},
 	"004" : {"mode": "selector","controls": "ESC = Return"},
-	"005" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
-	"006" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"}
+	"005" : {"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
+	"006" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
+	"007" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"}
 }
 
 # player variables
@@ -58,7 +59,7 @@ var player = {
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
-	"inventory": [{"item": 1,"type": "CONSUME","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"weight": 0.2},{"item": 2,"type": "CONSUME","name": "FOOD RATION","desc": "A bowl of food.","amnt": 2,"weight": 0.5}],
+	"inventory": [{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 2,"max_amnt": 5,"weight": 0.2},{"item": 2,"control": "sel_eat","name": "FOOD RATION","desc": "A bowl of food.","amnt": 2,"max_amnt": 2,"weight": 0.5}],
 	"weight": 0.0,
 	"capacity": 72.0,
 	"thirst": 100.0,

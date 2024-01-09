@@ -199,7 +199,6 @@ func death():
 	print("Thou art DEAD")
 	get_tree().quit()
 
-
 func _on_selector_area_entered(area):
 	if select_mode:
 		Globals.hud_mode = "SELECT"

@@ -21,6 +21,8 @@ func _process(_delta):
 		if Input.is_action_just_pressed("tae_select"):
 			Functions.drink_water(DRINK_QUENCH) # water barrel quenches a lot of thirst
 		# REFILL WATERSKIN
+		if Input.is_action_just_pressed("tae_mode"):
+			Functions.refill(1, "Waterskin") # call refill function
 
 func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):

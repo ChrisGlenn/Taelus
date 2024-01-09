@@ -50,7 +50,7 @@ SIGN_TEXT = "A wooden barrel filled with water for the horses. It doesn't look t
 FRAME_NO = 248
 DRINK_QUENCH = 50.0
 DRINK_RISK = 10
-HUD_CTRL_MODE = "sel_drink"
+HUD_CTRL_MODE = "sel_drink_refill"
 
 [node name="WaterBarrel2" parent="Decor" instance=ExtResource("8_5lgm5")]
 position = Vector2(208, 80)
@@ -58,4 +58,4 @@ SIGN_TITLE = "WOOD BARREL"
 SIGN_TEXT = "A wooden barrel filled with water for the horses. It doesn't look too appealing..."
 DRINK_QUENCH = 50.0
 DRINK_RISK = 10
-HUD_CTRL_MODE = "sel_drink"
+HUD_CTRL_MODE = "sel_drink_refill"

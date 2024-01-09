@@ -35,7 +35,7 @@ extends CanvasLayer
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
 var hud_control_check # keeps track of the hud control mode
-var message_timer = 300 # message display timer
+var message_timer = 500 # message display timer
 var timer_ctrl = 100 # timer control
 
 
@@ -112,9 +112,22 @@ func HUD(clock):
 		DIAGHUD.visible = false # hide the dialogue hud
 		$Inventory/InventoryBackground/WeightLabel.text = str("Carrying Weight: ", Globals.player["weight"], "/", Globals.player["capacity"])
 		$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\n", "Bonus Modifier: ", Globals.player["bonus_mod"])
+		Globals.hud_control_mode = Globals.player["inventory"][inv_cursor_pos]["control"] # update the controls
 		# INPUT
+		# inventory cursor controls
+		if Input.is_action_just_pressed("tae_right"):
+			if inv_cursor_pos < Globals.player["inventory"].size() - 1 and inv_cursor_pos != 14:
+				inv_cursor_pos += 1 # move right
+		if Input.is_action_just_pressed("tae_left"):
+			if inv_cursor_pos != 0:
+				inv_cursor_pos -= 1 # move left
+		if Input.is_action_just_pressed("tae_down"):
+			if inv_cursor_pos + 5 < Globals.player["inventory"].size() - 1 and inv_cursor_pos < 16:
+				inv_cursor_pos += 5 # move down
+		# menu controls
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.can_play = true # return player control
+			Globals.hud_control_mode = "main" # reset controls
 			Globals.hud_mode = "MAIN" # return to main menu
 		elif Input.is_action_just_pressed("tae_j"):
 			pass # JOURNAL GOES HERE
@@ -142,8 +155,6 @@ func update_inventory():
 		if Globals.player["inventory"].size() >= n + 1:
 			INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
 			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
-			# special items check
-			
 		else:
 			# clear out the inventory slots
 			INVSLOTS[n].frame = 0
@@ -163,18 +174,11 @@ func inventory_cursor():
 		$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
 		$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
 		$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
-		if Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
+		if Globals.player["inventory"][inv_cursor_pos]["max_amnt"] < 99:
 			$Inventory/InventoryBackground/ItemAmountLabel.text = str("Uses left: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
 		else:
 			$Inventory/InventoryBackground/ItemAmountLabel.text = str("Amount: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
 		# $Inventory/InventoryBackground/ItemAmountLabel.text
-		# input
-		if Input.is_action_just_pressed("tae_right"):
-			if inv_cursor_pos < Globals.player["inventory"].size() - 1 and inv_cursor_pos != 14:
-				inv_cursor_pos += 1 # move right
-		if Input.is_action_just_pressed("tae_left"):
-			if inv_cursor_pos != 0:
-				inv_cursor_pos -= 1 # move left
 		if Input.is_action_just_pressed("tae_debug"):
 			# INVENTORY TEST (DEBUG)
 			inv_cursor_pos = 0 # reset the cursor the preferred method will keep it at the spot IF it will be filled, otherwise go back one
