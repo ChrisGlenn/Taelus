@@ -77,6 +77,8 @@ func HUD(clock):
 		SELECTION.visible = false # hide the selection HUD
 		DIAGHUD.visible = false # hide the dialogue HUD
 		INVENTORY.visible = false # hide the inventory
+		# set the hud controls
+		Globals.hud_control_mode = "main"
 		# update dynamic HUD elements
 		DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season])
 		TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2)
