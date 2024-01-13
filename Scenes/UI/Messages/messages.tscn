@@ -11,8 +11,9 @@ script = ExtResource("1_fs4i5")
 
 [node name="MsgBackground" type="NinePatchRect" parent="."]
 offset_left = 448.0
+offset_top = -48.0
 offset_right = 640.0
-offset_bottom = 24.0
+offset_bottom = -24.0
 texture = ExtResource("1_so80l")
 patch_margin_left = 5
 patch_margin_top = 5

@@ -2,8 +2,6 @@ extends CanvasLayer
 # HUD
 @onready var CONTROLS = $Controls
 # message elements
-@onready var MESSAGE = $MsgBackground
-@onready var MESSAGETEXT = $MsgBackground/MsgLabel
 # the main hud for the game
 @onready var MAIN = $Main
 @onready var NAME = $NameLabel
@@ -44,7 +42,6 @@ func _ready():
 	MAIN.visible = true
 	SELECTION.visible = false
 	DIAGHUD.visible = false
-	MESSAGE.visible = false
 	# SETUP THE HUD
 	# control update
 	update_controls(false)
@@ -135,19 +132,6 @@ func HUD(clock):
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
 			pass # STATUS SCREEN GOES HERE
-	# MESSAGE
-	# this message displays for various reasons waits for the timer to go out
-	# then it disappears
-	if Globals.message_on:
-		MESSAGETEXT.text = Globals.message_text # set the text
-		MESSAGE.visible = true # show the message
-		if message_timer > 0:
-			message_timer -= timer_ctrl * clock
-		else:
-			Globals.message_on = false
-	else:
-		MESSAGE.visible = false # turn off the message
-		message_timer = 100 # reset the message timer
 
 func update_inventory():
 	# update the player's inventory

@@ -16,7 +16,7 @@ var combat = false # if true the game is in combat mode
 # HUD variables
 # selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
-var messages = [] # message array
+var messages = 0 # goes from 0 to 8 before resetting
 var message_on = false # HUD message switch
 var message_text = "" # text for message
 var hud_selected_name = ""

@@ -1,6 +1,10 @@
 extends Node
 # FUNCTIONS FOR USE WHEN CALLED
 
+# system function
+func message(_message_no, _message_text):
+	pass
+
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)
 	# restore the player's thirst by the 'quench' amount

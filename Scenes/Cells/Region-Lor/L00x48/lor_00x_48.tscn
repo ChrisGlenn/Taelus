@@ -21,6 +21,7 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 65536, 0, 131072, 65536
 layer_0/tile_data = PackedInt32Array(262178, 131072, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_3xp4i")]
+process_mode = 1
 position = Vector2(192, 192)
 
 [node name="Horse" parent="." instance=ExtResource("4_eymla")]

@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://k4bg4wc6tuex" path="res://Tilesets/Taelus-UI.png" id="3_qd42e"]
 
 [node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_jj1e6")
 
 [node name="Paused" type="Node2D" parent="."]
-visible = false
 position = Vector2(328, 144)
 
 [node name="PBack" type="NinePatchRect" parent="Paused"]
@@ -129,6 +129,7 @@ vframes = 4
 frame = 9
 
 [node name="Load" type="Node2D" parent="."]
+visible = false
 position = Vector2(256, 88)
 
 [node name="PBack2" type="NinePatchRect" parent="Load"]
