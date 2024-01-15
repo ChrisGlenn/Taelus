@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpn4picfk4k2i"]
+
+[ext_resource type="Script" path="res://Scenes/System/InvisibleBlock/invisible_block.gd" id="1_skkxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ck8gg"]
+
+[node name="InvisibleBlock" type="Area2D"]
+script = ExtResource("1_skkxo")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ck8gg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

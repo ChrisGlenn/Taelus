@@ -16,7 +16,7 @@ var combat = false # if true the game is in combat mode
 # HUD variables
 # selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
-var messages = 0 # goes from 0 to 8 before resetting
+var messages = -1 # goes from 0 to 15 before resetting
 var message_on = false # HUD message switch
 var message_text = "" # text for message
 var hud_selected_name = ""
@@ -27,11 +27,12 @@ var hud_control_mode = "main"
 var hud_control = {
 	"001" : {"mode": "","controls": "ERROR: NO MODE SET"},
 	"002" : {"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
-	"003" : {"mode": "paused","controls": "ESC = Return"},
-	"004" : {"mode": "selector","controls": "ESC = Return"},
-	"005" : {"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
-	"006" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
-	"007" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"}
+	"003" : {"mode": "return","controls": "ESC = Return"},
+	"004" : {"mode": "paused","controls": "ESC = Return"},
+	"005" : {"mode": "selector","controls": "ESC = Return"},
+	"006" : {"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
+	"007" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
+	"008" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"}
 }
 
 # player variables
@@ -60,7 +61,8 @@ var player = {
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
-	"inventory": [{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 2,"max_amnt": 5,"weight": 0.2},{"item": 2,"control": "sel_eat","name": "FOOD RATION","desc": "A bowl of food.","amnt": 2,"max_amnt": 2,"weight": 0.5}],
+	# inventory example {"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 2,"max_amnt": 5,"weight": 0.2}
+	"inventory": [],
 	"weight": 0.0,
 	"capacity": 72.0,
 	"thirst": 100.0,

@@ -1,24 +1,30 @@
 extends Node
 # FUNCTIONS FOR USE WHEN CALLED
+@onready var MESSAGE = preload("res://Scenes/UI/Messages/messages.tscn")
+
 
 # system function
-func message(_message_no, _message_text):
-	pass
+func message(text):
+	Globals.messages += 1 # inc messages no.	
+	var new_message = MESSAGE.instantiate()
+	new_message.message_text = text
+	new_message.message_no = Globals.messages
+	get_parent().add_child(new_message)
+	if Globals.messages == 15:
+		Globals.messages = -1 # reset
 
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)
 	# restore the player's thirst by the 'quench' amount
 	if Globals.player["thirst"] >= 100.0:
-		Globals.message_on = true
-		Globals.message_text = "You are not thirsty."
+		message("You are not thirsty.")
 	else:
 		if quench > 0:
 			Globals.player["thirst"] += quench # restore player thirst
 			if Globals.player["thirst"] > 100.0: Globals.player["thirst"] = 100.0 # make sure it doesn't exceed 100
 			# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
 			# display a message
-			Globals.message_on = true
-			Globals.message_text = "You drink some water."
+			message("You drink some water.")
 		else:
 			print("ERROR: QUENCH NOT SET FOR DRINK_WATER FUNCTION!!!")
 
@@ -29,13 +35,11 @@ func refill(container, liquid):
 			# refill the container
 			Globals.player["inventory"][n]["amnt"] = Globals.player["inventory"][n]["max_amnt"]
 			# display a message
-			Globals.message_on = true
-			Globals.message_text = str(liquid, " has been refilled.")
+			message(str(liquid, " has been refilled."))
 			break # end loop
 		if n == Globals.player["inventory"].size()-1:
 			# display a failed message
-			Globals.message_on = true
-			Globals.message_text = str("You have no ", liquid)
+			str("You have no ", liquid)
 
 func drink_alcohol(_quench, _alcohol):
 	# remove some of the player's thirst and increase their alcohol intake

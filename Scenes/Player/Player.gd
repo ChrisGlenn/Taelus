@@ -31,8 +31,6 @@ func _physics_process(delta):
 		player_movement(delta) # movement function
 		selection() # selection function
 
-
-# CUSTOM FUNCTIONS
 func player_movement(clock):
 	Globals.player_x = global_position.x # update player X
 	Globals.player_y = global_position.y # update player Y
@@ -97,7 +95,6 @@ func player_movement(clock):
 		# pause the game
 		if Input.is_action_just_pressed("tae_cancel"):
 			GlobalInput.pause()
-			print("TEST")
 	elif moving and !select_mode:
 		# move the player and animate the sprite
 		if move_dir == 0:

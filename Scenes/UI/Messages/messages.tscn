@@ -5,15 +5,15 @@
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="2_3ui6r"]
 
 [node name="Messages" type="CanvasLayer"]
-offset = Vector2(0, 48)
-transform = Transform2D(1, 0, 0, 1, 0, 48)
 script = ExtResource("1_fs4i5")
 
 [node name="MsgBackground" type="NinePatchRect" parent="."]
-offset_left = 448.0
-offset_top = -48.0
-offset_right = 640.0
-offset_bottom = -24.0
+anchors_preset = -1
+anchor_left = 0.7
+anchor_right = 0.7
+offset_left = -3.05176e-05
+offset_right = 192.0
+offset_bottom = 24.0
 texture = ExtResource("1_so80l")
 patch_margin_left = 5
 patch_margin_top = 5

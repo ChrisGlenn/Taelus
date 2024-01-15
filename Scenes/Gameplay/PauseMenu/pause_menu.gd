@@ -39,13 +39,13 @@ func control():
 						queue_free() # delete pause menu
 					1:
 						# load game
-						print("Not implemented yet...")
+						print("Load not implemented yet...")
 						cur_pos = 0 # reset cur_pos
 						pause_mode = "LOAD" # move to load mode
 						can_move = false
 					2:
 						# settings
-						print("Not implemented yet...")
+						print("Settings not implemented yet...")
 						# pause_mode = "SETTINGS" # move to settings mode
 						can_move = false
 					3:

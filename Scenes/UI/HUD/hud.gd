@@ -64,7 +64,7 @@ func _process(delta):
 	HUD(delta) # the hud function
 	inventory_cursor() # inventory cursor function
 
-func HUD(clock):
+func HUD(_clock):
 	# check the Globals.hud_mode and act accordingly
 	update_controls(true) # update the hud control map/text
 	if Globals.hud_mode == "MAIN":
@@ -111,7 +111,10 @@ func HUD(clock):
 		DIAGHUD.visible = false # hide the dialogue hud
 		$Inventory/InventoryBackground/WeightLabel.text = str("Carrying Weight: ", Globals.player["weight"], "/", Globals.player["capacity"])
 		$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\n", "Bonus Modifier: ", Globals.player["bonus_mod"])
-		Globals.hud_control_mode = Globals.player["inventory"][inv_cursor_pos]["control"] # update the controls
+		if Globals.player["inventory"].size() > 0:
+			Globals.hud_control_mode = Globals.player["inventory"][inv_cursor_pos]["control"] # update the controls
+		else:
+			Globals.hud_control_mode = "return"
 		# INPUT
 		# inventory cursor controls
 		if Input.is_action_just_pressed("tae_right"):
