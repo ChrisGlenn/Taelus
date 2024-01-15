@@ -7,6 +7,7 @@ extends Area2D
 @export var item_no = 0 # defaults to 0 (null)
 @export var item_hp = 1 # defaults to 1
 @export var item_stackable = false # if true can stack in inventory
+@export var item_amount = 1 # defaults to 1
 @export_multiline var item_desc = ""
 
 
@@ -19,12 +20,16 @@ func picked():
 	if Globals.player["inventory"].size() < 24:
 		for n in Globals.player["inventory"]:
 			if item_stackable:
-				# if the item is stackable then search for the same item in the inventory and add it
-				# if it can't be found then just add the item
-				if Globals.player["inventory"][n]["item"] == item_no:
-					Globals.player["inventory"][n]["amnt"] += 1 # inc item amount
-					queue_free() # delete self
-					break
+				if n < Globals.player["inventory"].size()-1:
+					# if the item is stackable then search for the same item in the inventory and add it
+					# if it can't be found then just add the item
+					if Globals.player["inventory"][n]["item"] == item_no:
+						Globals.player["inventory"][n]["amnt"] += 1 # inc item amount
+						queue_free() # delete self
+						break
+				else:
+					# the item doesn't exist in the inventory so add it now
+					print("t-t-t-t-t-test")
 			else:
 				# add the item
 				pass

@@ -32,7 +32,8 @@ var hud_control = {
 	"005" : {"mode": "selector","controls": "ESC = Return"},
 	"006" : {"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
 	"007" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
-	"008" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"}
+	"008" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
+	"009" : {"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nXXX = Break"}
 }
 
 # player variables
