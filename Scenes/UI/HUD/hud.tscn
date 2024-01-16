@@ -48,7 +48,6 @@ text = "Controls"
 horizontal_alignment = 1
 
 [node name="Main" type="Node2D" parent="."]
-visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -583,6 +582,7 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="Inventory" type="Node2D" parent="."]
+visible = false
 
 [node name="InventoryBackground" type="NinePatchRect" parent="Inventory"]
 offset_left = 208.0

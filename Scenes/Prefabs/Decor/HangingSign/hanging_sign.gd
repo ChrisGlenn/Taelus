@@ -1,8 +1,8 @@
 extends Area2D
 # HANGING SIGN
 # A sign that will display a set text to the player
-@export var SIGN_TITLE : String = "SIGN TITLE" # the title of the sign
-@export_multiline var SIGN_TEXT : String = "SIGN TEXT" # the sign text
+@export var TITLE : String = "SIGN TITLE" # the title of the sign
+@export_multiline var DESCRIPTION : String = "SIGN TEXT" # the sign text
 @export var FRAME_NO = 1
 @export var HUD_CTRL_MODE = "" # set the hud control mode
 var hit_points = 1 # has 1 hit point

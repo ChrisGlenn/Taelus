@@ -16,6 +16,8 @@ var combat = false # if true the game is in combat mode
 # HUD variables
 # selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
+var narr_message_icon = 0 # set the narrative message icon
+var narr_message_text = "" # the message text to display
 var messages = -1 # goes from 0 to 15 before resetting
 var message_on = false # HUD message switch
 var message_text = "" # text for message
@@ -33,7 +35,7 @@ var hud_control = {
 	"006" : {"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
 	"007" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
 	"008" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
-	"009" : {"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nXXX = Break"}
+	"009" : {"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"}
 }
 
 # player variables

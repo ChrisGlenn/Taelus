@@ -30,16 +30,20 @@ func drink_water(quench): # (quench, risk, use)
 
 func refill(container, liquid):
 	# will refill a container with a liquid...
-	for n in Globals.player["inventory"].size():
-		if Globals.player["inventory"][n]["item"] == container:
-			# refill the container
-			Globals.player["inventory"][n]["amnt"] = Globals.player["inventory"][n]["max_amnt"]
-			# display a message
-			message(str(liquid, " has been refilled."))
-			break # end loop
-		if n == Globals.player["inventory"].size()-1:
-			# display a failed message
-			str("You have no ", liquid)
+	if Globals.player["inventory"].size() > 0:
+		for n in Globals.player["inventory"].size():
+			if Globals.player["inventory"][n]["item"] == container:
+				# refill the container
+				Globals.player["inventory"][n]["amnt"] = Globals.player["inventory"][n]["max_amnt"]
+				# display a message
+				message(str(liquid, " has been refilled."))
+				break # end loop
+			if n == Globals.player["inventory"].size()-1:
+				# display a failed message
+				message(str("You have no ", liquid))
+	else:
+		# nothing in the player inventory
+		message(str("You have no ", liquid))
 
 func drink_alcohol(_quench, _alcohol):
 	# remove some of the player's thirst and increase their alcohol intake

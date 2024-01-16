@@ -4,9 +4,10 @@ extends Area2D
 # NEVER TO BE SEEN AGAIN.
 @onready var RAY = $RayCast2D
 @onready var HSPRITE = $Sprite2D
-@export var HORSE_TITLE : String = "HORSE TITLE" # the title of the sign
-@export_multiline var HORSE_TEXT : String = "HORSE DESC" # the sign text
+@export var TITLE : String = "HORSE TITLE" # the title of the sign
+@export_multiline var DESCRIPTION : String = "HORSE DESC" # the sign text
 @export var FRAME_NO = 1
+@export var HUD_CTRL_MODE = "" # set the hud control mode
 @onready var RNG = RandomNumberGenerator.new() # random number generator
 var can_move = true # if false the timer stops along with any movement
 var move = false # if it's time to move or not
@@ -15,7 +16,7 @@ var move_dir = 0 # 0 to 3 clockwise (0 up 1 right 2 down 3 left)
 var move_speed = 78 # movement speed
 var move_to = 0 # position to move to
 var spooked = false # if the horse is spooked or not
-var distance_check = 48 # distance from player to stop movement
+var distance_check = 64 # distance from player to stop movement
 
 
 func _ready():
@@ -119,13 +120,9 @@ func _on_timer_timeout():
 
 func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):
-		Globals.hud_mode = "SELECT" # change hud to select
-		# update the global variables for the HUD
-		Globals.hud_selected_name = HORSE_TITLE
-		Globals.hud_selected_desc = HORSE_TEXT
-		Globals.hud_sel_icon_frame = FRAME_NO
+		pass
 
 func _on_area_exited(area):
 	if area.is_in_group("SELECTOR"):
 		# return the hud back to main
-		Globals.hud_mode = "MAIN"
+		pass

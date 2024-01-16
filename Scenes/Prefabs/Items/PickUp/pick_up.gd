@@ -3,6 +3,10 @@ extends Area2D
 # this is the base item for anything the player can pick up
 # set the relevant info and it will do the rest
 @onready var SPRITE = $Sprite2D
+@export var TITLE = "HUD Title" # hud title
+@export_multiline var DESCRIPTION = "HUD Description" # description
+@export var FRAME_NO = 0
+@export var HUD_CTRL_MODE = "" # set the hud control mode
 @export var item_name = "" # name of the item
 @export var item_no = 0 # defaults to 0 (null)
 @export var item_hp = 1 # defaults to 1
@@ -13,6 +17,7 @@ extends Area2D
 
 func _ready():
 	SPRITE.frame = item_no # change frame to coorespond with item no.
+	FRAME_NO = item_no # update the frame number just in case it's not set correctly
 
 func picked():
 	# cycle through the inventory looking for a slot that either has the same item (if stackable)

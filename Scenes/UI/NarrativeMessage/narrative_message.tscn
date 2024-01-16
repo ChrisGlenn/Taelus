@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://xvwd804myisw"]
+
+[ext_resource type="Script" path="res://Scenes/UI/NarrativeMessage/narrative_message.gd" id="1_2520p"]
+[ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_qfn38"]
+[ext_resource type="FontFile" uid="uid://imnkghkj0qrp" path="res://Fonts/m3x6.ttf" id="2_35x8p"]
+
+[node name="NarrativeMessage" type="CanvasLayer"]
+script = ExtResource("1_2520p")
+
+[node name="MainBackground" type="NinePatchRect" parent="."]
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 512.0
+offset_bottom = 296.0
+texture = ExtResource("1_qfn38")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 80)
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 152.0
+offset_right = 480.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("2_35x8p")
+text = "Text goes here..."
+
+[node name="ReturnLabel" type="Label" parent="."]
+offset_left = 288.0
+offset_top = 264.0
+offset_right = 480.0
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("2_35x8p")
+text = "PRESS ESC TO RETURN"
+horizontal_alignment = 1
+vertical_alignment = 1

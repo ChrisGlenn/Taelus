@@ -3,8 +3,8 @@ extends Area2D
 # A water barrel that is open. The player can refill their waterskin (if they have one)
 # or just take a straight drink. The waterskin will 'filter' it but if the player drinks straight out
 # then there is a small chance they may get sick...
-@export var SIGN_TITLE : String = "SIGN TITLE" # the title of the sign
-@export_multiline var SIGN_TEXT : String = "SIGN TEXT" # the sign text
+@export var TITLE : String = "SIGN TITLE" # the title of the sign
+@export_multiline var DESCRIPTION : String = "SIGN TEXT" # the sign text
 @export var FRAME_NO = 1
 @export var DRINK_QUENCH = 0.0 # how much it quenches thirst
 @export var DRINK_RISK = 0 # percentage
