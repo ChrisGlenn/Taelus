@@ -59,7 +59,4 @@ func new_game_setup():
 		# then they will be invading shortly after the game starts.
 		Globals.gradian_lor = randi() % 2 == 0
 	# DEBUG PRINT WORLD GENERATION
-	print(Globals.player)
-	print(Globals.year, " ", Globals.day, "-", Globals.months[Globals.month - 1])
-	print(Globals.gradian_lor)
 	Globals.new_game = false # TESTING

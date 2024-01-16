@@ -19,12 +19,12 @@ func _ready():
 	SPRITE.frame = item_no # change frame to coorespond with item no.
 	FRAME_NO = item_no # update the frame number just in case it's not set correctly
 
-func picked():
+func picked_up():
 	# cycle through the inventory looking for a slot that either has the same item (if stackable)
 	# or for a blank slot but if full will send a message that inventory is full
 	if Globals.player["inventory"].size() < 24:
-		for n in Globals.player["inventory"]:
-			if item_stackable:
+		if item_stackable:
+			for n in Globals.player["inventory"]:
 				if n < Globals.player["inventory"].size()-1:
 					# if the item is stackable then search for the same item in the inventory and add it
 					# if it can't be found then just add the item
@@ -35,9 +35,10 @@ func picked():
 				else:
 					# the item doesn't exist in the inventory so add it now
 					print("t-t-t-t-t-test")
-			else:
-				# add the item
-				pass
+		else:
+			# add the item
+			Globals.player["inventory"].append(Globals.items[item_no])
+			queue_free() # delete self
 	else:
 		# inventory is full
 		Functions.message("Your inventory is full...")

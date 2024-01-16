@@ -8,6 +8,7 @@ var new_random = false # if true then the loading screen will generate a random 
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 var movement_speed = 76 # global movement speed
+var items = [{"item": 0},{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"max_amnt": 5,"weight": 0.2,"type": "FOOD"}] # the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
 
 # GAMEPLAY
 # combat variables
@@ -64,7 +65,6 @@ var player = {
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
-	# inventory example {"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 2,"max_amnt": 5,"weight": 0.2}
 	"inventory": [],
 	"weight": 0.0,
 	"capacity": 72.0,
