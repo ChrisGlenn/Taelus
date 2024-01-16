@@ -5,8 +5,10 @@ extends Node
 @onready var PAUSE_MENU = preload("res://Scenes/Gameplay/PauseMenu/pause_menu.tscn")
 
 
-func player_input(_mode, _key, _function):
-	pass
+func player_input(mode, _key):
+	match mode:
+		"":
+			print("ERROR: Mode is not set...")
 
 func pause():
 	# pause the game and add a menu
