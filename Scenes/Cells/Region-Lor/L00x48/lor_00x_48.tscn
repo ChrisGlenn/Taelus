@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dojqsrpp2kaef"]
+[gd_scene load_steps=11 format=3 uid="uid://dojqsrpp2kaef"]
 
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_ft2ng"]
 [ext_resource type="Script" path="res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.gd" id="1_r5v8d"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://saq1y3depm4h" path="res://Scenes/Prefabs/Decor/HangingSign/hanging_sign.tscn" id="7_dbwkt"]
 [ext_resource type="PackedScene" uid="uid://be2vk54f3i24f" path="res://Scenes/Prefabs/Decor/WaterBarrel/water_barrel.tscn" id="8_5lgm5"]
 [ext_resource type="PackedScene" uid="uid://colha3bja4aiq" path="res://Scenes/Prefabs/Items/PickUp/pick_up.tscn" id="9_7wgv5"]
+[ext_resource type="PackedScene" uid="uid://nqmnaa5y6xxo" path="res://Scenes/Prefabs/Decor/WoodDoor/wood_door.tscn" id="9_gw4xx"]
 
 [node name="Lor00x48" type="Node2D"]
 script = ExtResource("1_r5v8d")
@@ -51,11 +52,15 @@ DRINK_QUENCH = 50.0
 DRINK_RISK = 10
 HUD_CTRL_MODE = "sel_drink_refill"
 
+[node name="WoodDoor" parent="Decor" instance=ExtResource("9_gw4xx")]
+position = Vector2(320, 160)
+HUD_CTRL_MODE = "door"
+locked = true
+
 [node name="Items" type="Node" parent="."]
 
 [node name="PickUp" parent="Items" instance=ExtResource("9_7wgv5")]
 position = Vector2(160, 176)
-Owner = NodePath("")
 TITLE = "Waterskin"
 DESCRIPTION = "A waterskin made of leather."
 FRAME_NO = 1

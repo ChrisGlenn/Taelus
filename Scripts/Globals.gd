@@ -28,17 +28,18 @@ var hud_sel_icon_frame = 0
 var hud_selected_desc = ""
 var hud_selected_cntrl = ""
 var hud_control_mode = "main"
-var hud_control = {
-	"001" : {"mode": "","controls": "ERROR: NO MODE SET"},
-	"002" : {"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
-	"003" : {"mode": "return","controls": "ESC = Return"},
-	"004" : {"mode": "paused","controls": "ESC = Return"},
-	"005" : {"mode": "selector","controls": "ESC = Return"},
-	"006" : {"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
-	"007" : {"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
-	"008" : {"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
-	"009" : {"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"}
-}
+var hud_control = [
+	{"mode": "","controls": "ERROR: NO MODE SET"},
+	{"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
+	{"mode": "return","controls": "ESC = Return"},
+	{"mode": "paused","controls": "ESC = Return"},
+	{"mode": "selector","controls": "ESC = Return"},
+	{"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
+	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink"},
+	{"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
+	{"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"},
+	{"mode": "door","controls": "ESC = Return\nSPACE = Open\nCTRL = Pick Lock\nXXX = Bash Open"}
+]
 
 # player variables
 var can_play = true # if the player can play

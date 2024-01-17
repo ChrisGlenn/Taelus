@@ -82,5 +82,6 @@ func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):
 		selector_in = true # the selector is inside this collision2D
 
-func _on_area_exited(_area):
-	selector_in = false # the selector is outside of this collision2D
+func _on_area_exited(area):
+	if area.is_in_group("SELECTOR"):
+		selector_in = false # the selector is outside this collision2D

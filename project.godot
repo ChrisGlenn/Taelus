@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Taelus"
 config/description="Open world fantasy RPG/Survival Sim."
-run/main_scene="res://Scenes/Gameplay/MainMenu/main_menu.tscn"
+run/main_scene="res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"
 

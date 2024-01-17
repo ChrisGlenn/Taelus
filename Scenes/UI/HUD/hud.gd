@@ -182,13 +182,13 @@ func update_controls(scan):
 	# update the hud controls
 	if !scan:
 		# if scan is false then just update without checking the hud mode
-		for n in Globals.hud_control:
+		for n in Globals.hud_control.size():
 			if Globals.hud_control[n]["mode"] == Globals.hud_control_mode:
 				CONTROLS.text = Globals.hud_control[n]["controls"]
 	elif scan:
 		# check to see if the hud_control_mode Global has changed and if so then update the menu
 		if Globals.hud_control_mode != hud_control_check:
-			for n in Globals.hud_control:
+			for n in Globals.hud_control.size():
 				if Globals.hud_control[n]["mode"] == Globals.hud_control_mode:
 					CONTROLS.text = Globals.hud_control[n]["controls"]
 					hud_control_check = Globals.hud_control_mode # update the hud control check at the end of the for loop
