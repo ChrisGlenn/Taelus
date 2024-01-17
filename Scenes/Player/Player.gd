@@ -186,8 +186,6 @@ func selection():
 			select_pos = 3
 		elif Input.is_action_just_pressed("tae_cancel"):
 			select_mode = false # turn off select mode
-		elif Input.is_action_just_pressed("tae_select"):
-			pass
 	else:
 		# hide the selector if outside of select_mode
 		SELECTOR.visible = false

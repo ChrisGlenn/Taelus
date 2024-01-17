@@ -55,7 +55,10 @@ HUD_CTRL_MODE = "sel_drink_refill"
 
 [node name="PickUp" parent="Items" instance=ExtResource("9_7wgv5")]
 position = Vector2(160, 176)
+TITLE = "Waterskin"
+DESCRIPTION = "A waterskin made of leather."
+FRAME_NO = 1
 HUD_CTRL_MODE = "pick_up"
 item_name = "TEST"
 item_stackable = true
-item_desc = "TEST SHIZ"
+item_desc = "A waterskin made of leather."
