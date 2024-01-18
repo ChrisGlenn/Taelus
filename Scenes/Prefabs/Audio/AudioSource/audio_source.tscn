@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://cunaoisx4f6tg"]
+
+[node name="AudioSource" type="AudioStreamPlayer2D"]
+max_distance = 512.0
