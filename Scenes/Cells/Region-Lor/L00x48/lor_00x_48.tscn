@@ -54,8 +54,7 @@ HUD_CTRL_MODE = "sel_drink_refill"
 
 [node name="WoodDoor" parent="Decor" instance=ExtResource("9_gw4xx")]
 position = Vector2(320, 160)
-HUD_CTRL_MODE = "door"
-locked = true
+HUD_CTRL_MODE = "sel_door_closed"
 
 [node name="Items" type="Node" parent="."]
 
