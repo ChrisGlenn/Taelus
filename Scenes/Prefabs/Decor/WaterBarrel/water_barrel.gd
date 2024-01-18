@@ -8,6 +8,7 @@ extends Area2D
 @export var FRAME_NO = 1
 @export var DRINK_QUENCH = 0.0 # how much it quenches thirst
 @export var DRINK_RISK = 0 # percentage
+@export var DISEASE = 0 # the index for the disease the player is at risk for
 @export var HUD_CTRL_MODE = "" # set the hud control mode
 var selector_in = false # if the selector is over this
 var hit_points = 10 # has 1 hit point

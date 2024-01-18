@@ -46,6 +46,7 @@ offset_bottom = 336.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 text = "Controls"
 horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Main" type="Node2D" parent="."]
 

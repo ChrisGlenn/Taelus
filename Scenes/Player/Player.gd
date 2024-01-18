@@ -11,6 +11,8 @@ var moving = false # if the player is moving currently
 var combat_steps = 0 # how many steps the player can take in combat
 var minute_check = 0 # checks minutes
 var day_check = 0 # checks days
+# outside scenes
+var selected = null
 
 
 func _ready():
@@ -198,13 +200,23 @@ func death():
 	print("Thou art DEAD")
 	get_tree().quit()
 
+func update_selector():
+	if select_mode:
+		if selected:
+			Globals.hud_selected_name = selected.TITLE
+			Globals.hud_selected_desc = selected.DESCRIPTION
+			Globals.hud_sel_icon_frame = selected.FRAME_NO
+			Globals.hud_control_mode = selected.HUD_CTRL_MODE
+
 func _on_selector_area_entered(area):
 	if select_mode:
+		selected = area
 		Globals.hud_mode = "SELECT"
-		Globals.hud_selected_name = area.TITLE
-		Globals.hud_selected_desc = area.DESCRIPTION
-		Globals.hud_sel_icon_frame = area.FRAME_NO
-		Globals.hud_control_mode = area.HUD_CTRL_MODE
+		Globals.hud_selected_name = selected.TITLE
+		Globals.hud_selected_desc = selected.DESCRIPTION
+		Globals.hud_sel_icon_frame = selected.FRAME_NO
+		Globals.hud_control_mode = selected.HUD_CTRL_MODE
 
 func _on_selector_area_exited(_area):
+	selected = null # reset
 	Globals.hud_mode = "MAIN"

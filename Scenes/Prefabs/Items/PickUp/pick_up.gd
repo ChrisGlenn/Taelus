@@ -3,6 +3,7 @@ extends Area2D
 # this is the base item for anything the player can pick up
 # set the relevant info and it will do the rest
 @onready var SPRITE = $Sprite2D
+@onready var AUDIO = $AudioStreamPlayer
 @export var id = 0 # id used to make sure this item doesn't spawn twice
 @export var Owner = Area2D
 @export var TITLE = "HUD Title" # hud title
