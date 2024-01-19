@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2e2wwgvb3wy"]
+
+[ext_resource type="Texture2D" uid="uid://d22juw35ok3ky" path="res://Sprites/NPCs/Taelus-NPCs.png" id="1_h7i1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47hjm"]
+size = Vector2(8, 8)
+
+[node name="LorGuard" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h7i1h")
+centered = false
+hframes = 32
+vframes = 16
+frame = 31
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_47hjm")

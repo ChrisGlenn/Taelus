@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Prefabs/Decor/WaterBarrel/water_barrel.gd" id="1_x0tx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixkfy"]
-size = Vector2(12, 8)
+size = Vector2(8, 8)
 
 [node name="WaterBarrel" type="Area2D"]
 collision_layer = 2

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/Prefabs/Items/PickUp/pick_up.gd" id="1_lxhg8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvecn"]
-size = Vector2(12, 8)
+size = Vector2(8, 8)
 
 [node name="PickUp" type="Area2D"]
 collision_layer = 3
