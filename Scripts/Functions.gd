@@ -1,5 +1,6 @@
 extends Node
 # FUNCTIONS FOR USE WHEN CALLED
+@onready var PAUSE_MENU = preload("res://Scenes/Gameplay/PauseMenu/pause_menu.tscn")
 @onready var MESSAGE = preload("res://Scenes/UI/Messages/messages.tscn")
 
 
@@ -12,6 +13,17 @@ func message(text):
 	get_parent().add_child(new_message)
 	if Globals.messages == 15:
 		Globals.messages = -1 # reset
+
+func pause():
+	# pause the game and add a menu
+	if !get_tree().paused:
+		var pause_menu = PAUSE_MENU.instantiate()
+		get_parent().add_child(pause_menu)
+		get_tree().paused = true # pause the game
+
+# inventory
+func inv_func(_func_num, _arg_one, _arg_two):
+	pass
 
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)

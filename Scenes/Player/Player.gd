@@ -96,7 +96,7 @@ func player_movement(clock):
 			select_mode = true # turn on select mode to enable cursor
 		# pause the game
 		if Input.is_action_just_pressed("tae_cancel"):
-			GlobalInput.pause()
+			Functions.pause()
 	elif moving and !select_mode:
 		# move the player and animate the sprite
 		if move_dir == 0:

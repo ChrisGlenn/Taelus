@@ -49,6 +49,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -583,7 +584,6 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="Inventory" type="Node2D" parent="."]
-visible = false
 
 [node name="InventoryBackground" type="NinePatchRect" parent="Inventory"]
 offset_left = 208.0
@@ -848,7 +848,7 @@ text = "Equipment"
 horizontal_alignment = 1
 
 [node name="EquipAvatarBody" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
-position = Vector2(48, 56)
+position = Vector2(48, 48)
 scale = Vector2(4, 4)
 texture = ExtResource("12_xa14g")
 centered = false
@@ -865,7 +865,7 @@ vframes = 32
 frame = 62
 
 [node name="EquipArmor" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
-position = Vector2(72, 128)
+position = Vector2(72, 120)
 texture = ExtResource("13_pcpjy")
 centered = false
 hframes = 32
@@ -873,7 +873,7 @@ vframes = 32
 frame = 63
 
 [node name="EquipShield" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
-position = Vector2(24, 88)
+position = Vector2(24, 64)
 texture = ExtResource("13_pcpjy")
 centered = false
 hframes = 32
@@ -881,7 +881,7 @@ vframes = 32
 frame = 60
 
 [node name="EquipWeapon" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
-position = Vector2(120, 88)
+position = Vector2(120, 64)
 texture = ExtResource("13_pcpjy")
 centered = false
 hframes = 32

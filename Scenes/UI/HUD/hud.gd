@@ -115,8 +115,7 @@ func HUD(_clock):
 			Globals.hud_control_mode = Globals.player["inventory"][inv_cursor_pos]["control"] # update the controls
 		else:
 			Globals.hud_control_mode = "return"
-		# INPUT
-		# inventory cursor controls
+		# INVENTORY INPUT
 		if Input.is_action_just_pressed("tae_right"):
 			if inv_cursor_pos < Globals.player["inventory"].size() - 1 and inv_cursor_pos != 14:
 				inv_cursor_pos += 1 # move right
@@ -126,7 +125,9 @@ func HUD(_clock):
 		if Input.is_action_just_pressed("tae_down"):
 			if inv_cursor_pos + 5 < Globals.player["inventory"].size() - 1 and inv_cursor_pos < 16:
 				inv_cursor_pos += 5 # move down
-		# menu controls
+		if Input.is_action_just_pressed("tae_select"):
+			Globals.player["inventory"][inv_cursor_pos]["func_one"]
+		# MENU INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.can_play = true # return player control
 			Globals.hud_control_mode = "main" # reset controls
