@@ -22,7 +22,7 @@ func pause():
 		get_tree().paused = true # pause the game
 
 # inventory
-func inv_func(_func_num, _arg_one, _arg_two):
+func inv_func(_func_num):
 	pass
 
 # eating/drinking

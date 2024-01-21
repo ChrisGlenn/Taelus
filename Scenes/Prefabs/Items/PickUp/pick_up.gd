@@ -16,6 +16,9 @@ extends Area2D
 @export var item_stackable = false # if true can stack in inventory
 @export var item_amount = 1 # defaults to 1
 @export_multiline var item_desc = ""
+@export var function_one = [0] # function one (space key)
+@export var function_two = [0] # function two (ctrl key)
+@export var function_three = [0] # function three (DEBUG key not set yet)
 var selector_in = false # yes if selector is in
 var picking_up = false # if true picked up will be running
 
@@ -64,6 +67,11 @@ func picked_up():
 				# PLAY SOUND
 				var new_item = Globals.items[item_no]
 				new_item["amnt"] = item_amount
+				new_item["desc"] = item_desc
+				new_item["name"] = item_name
+				new_item["func_one"] = function_one
+				new_item["func_two"] = function_two
+				new_item["func_three"] = function_three
 				Globals.player["inventory"].append(new_item)
 				Functions.message(str(TITLE, " has been picked up."))
 				Globals.placed_.append(id) # record item picked up
@@ -74,6 +82,10 @@ func picked_up():
 			var new_item = Globals.items[item_no]
 			new_item["amnt"] = item_amount
 			new_item["desc"] = item_desc
+			new_item["name"] = item_name
+			new_item["func_one"] = function_one
+			new_item["func_two"] = function_two
+			new_item["func_three"] = function_three
 			Globals.player["inventory"].append(new_item)
 			Functions.message(str(TITLE, " has been picked up."))
 			Globals.placed_.append(id) # record item picked up

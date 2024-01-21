@@ -58,12 +58,13 @@ HUD_CTRL_close = "sel_door_opened"
 [node name="PickUp" parent="Items" instance=ExtResource("9_7wgv5")]
 position = Vector2(160, 176)
 TITLE = "Waterskin"
-DESCRIPTION = "A waterskin made of leather."
+DESCRIPTION = "A wudderskin made of leather."
 FRAME_NO = 1
 HUD_CTRL_MODE = "pick_up"
 item_name = "TEST"
-item_amount = 3
+item_amount = 5
 item_desc = "A waterskin made of leather."
+function_one = [1, 50.5]
 
 [node name="NPCs" type="Node" parent="."]
 

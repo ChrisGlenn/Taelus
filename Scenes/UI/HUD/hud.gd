@@ -126,7 +126,8 @@ func HUD(_clock):
 			if inv_cursor_pos + 5 < Globals.player["inventory"].size() - 1 and inv_cursor_pos < 16:
 				inv_cursor_pos += 5 # move down
 		if Input.is_action_just_pressed("tae_select"):
-			Globals.player["inventory"][inv_cursor_pos]["func_one"]
+			# Globals.player["inventory"][inv_cursor_pos]["func_one"]
+			pass
 		# MENU INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.can_play = true # return player control
