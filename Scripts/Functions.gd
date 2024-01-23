@@ -22,8 +22,14 @@ func pause():
 		get_tree().paused = true # pause the game
 
 # inventory
-func inv_func(_func_num):
-	pass
+func inv_func(func_num, arg_one):
+	match func_num:
+		0:
+			# null
+			print("ERROR: No function set for inventory item")
+		1:
+			# drink water
+			drink_water(arg_one)
 
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)
@@ -32,11 +38,14 @@ func drink_water(quench): # (quench, risk, use)
 		message("You are not thirsty.")
 	else:
 		if quench > 0:
-			Globals.player["thirst"] += quench # restore player thirst
-			if Globals.player["thirst"] > 100.0: Globals.player["thirst"] = 100.0 # make sure it doesn't exceed 100
-			# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
-			# display a message
-			message("You drink some water.")
+			if Globals.player["thirst"] < 100.0:
+				Globals.player["thirst"] += quench # restore player thirst
+				if Globals.player["thirst"] > 100.0: Globals.player["thirst"] = 100.0 # make sure it doesn't exceed 100
+				# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
+				# display a message
+				message("You drink some water.")
+			else:
+				message("You are not thirsty.")
 		else:
 			print("ERROR: QUENCH NOT SET FOR DRINK_WATER FUNCTION!!!")
 
