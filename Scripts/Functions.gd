@@ -34,20 +34,14 @@ func inv_func(func_num, arg_one):
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)
 	# restore the player's thirst by the 'quench' amount
-	if Globals.player["thirst"] >= 100.0:
-		message("You are not thirsty.")
+	if quench > 0:
+		Globals.player["thirst"] += quench # restore player thirst
+		if Globals.player["thirst"] > 100.0: Globals.player["thirst"] = 100.0 # make sure it doesn't exceed 100
+		# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
+		# display a message
+		message("You drink some water.")
 	else:
-		if quench > 0:
-			if Globals.player["thirst"] < 100.0:
-				Globals.player["thirst"] += quench # restore player thirst
-				if Globals.player["thirst"] > 100.0: Globals.player["thirst"] = 100.0 # make sure it doesn't exceed 100
-				# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
-				# display a message
-				message("You drink some water.")
-			else:
-				message("You are not thirsty.")
-		else:
-			print("ERROR: QUENCH NOT SET FOR DRINK_WATER FUNCTION!!!")
+		print("ERROR: QUENCH NOT SET FOR DRINK_WATER FUNCTION!!!")
 
 func refill(container, liquid):
 	# will refill a container with a liquid...

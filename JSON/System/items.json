@@ -1,6 +1,5 @@
 [
 	{"item": 0},
-	{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"max_amnt": 5,"weight": 0.2,"type": "FOOD"},
-	{"item": 2,"control": "sel_eat","name": "RATION","desc": "A bowl of food.","amnt": 5,"max_amnt": 5,"weight": 0.5,"type": "FOOD"},
-	{"item": 3}
+	{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"max_amnt": 5,"weight": 0.2,"type": "CONSUME","func_one": [1,50.0],"func_two": [0],"func_three": [0]},
+	{"item": 2,"control": "sel_eat","name": "RATION","desc": "A bowl of food.","amnt": 1,"max_amnt": 99,"weight": 0.5,"type": "CONSUME","func_one": [1,30.0],"func_two": [0],"func_three": [0]}
 ]

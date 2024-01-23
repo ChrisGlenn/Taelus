@@ -67,11 +67,6 @@ func picked_up():
 				# PLAY SOUND
 				var new_item = Globals.items[item_no]
 				new_item["amnt"] = item_amount
-				new_item["desc"] = item_desc
-				new_item["name"] = item_name
-				new_item["func_one"] = function_one
-				new_item["func_two"] = function_two
-				new_item["func_three"] = function_three
 				Globals.player["inventory"].append(new_item)
 				Functions.message(str(TITLE, " has been picked up."))
 				Globals.placed_.append(id) # record item picked up
@@ -81,11 +76,6 @@ func picked_up():
 			# PLAY SOUND
 			var new_item = Globals.items[item_no]
 			new_item["amnt"] = item_amount
-			new_item["desc"] = item_desc
-			new_item["name"] = item_name
-			new_item["func_one"] = function_one
-			new_item["func_two"] = function_two
-			new_item["func_three"] = function_three
 			Globals.player["inventory"].append(new_item)
 			Functions.message(str(TITLE, " has been picked up."))
 			Globals.placed_.append(id) # record item picked up

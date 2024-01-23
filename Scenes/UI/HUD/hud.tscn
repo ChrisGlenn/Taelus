@@ -857,7 +857,7 @@ vframes = 32
 frame = 1
 
 [node name="EquipHelmet" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
-position = Vector2(72, 32)
+position = Vector2(56, 32)
 texture = ExtResource("13_pcpjy")
 centered = false
 hframes = 32
@@ -887,6 +887,30 @@ centered = false
 hframes = 32
 vframes = 32
 frame = 61
+
+[node name="EquipLRing" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(120, 88)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 59
+
+[node name="EquipRRing" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(24, 88)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 59
+
+[node name="EquipNecklace" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(88, 32)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 58
 
 [node name="StatusLabel" type="Label" parent="Inventory/EquipmentOverlay"]
 layout_mode = 0

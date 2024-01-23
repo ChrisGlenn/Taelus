@@ -12,7 +12,7 @@ var combat_steps = 0 # how many steps the player can take in combat
 var minute_check = 0 # checks minutes
 var day_check = 0 # checks days
 # outside scenes
-var selected = null
+var selected = null 
 
 
 func _ready():
@@ -93,6 +93,7 @@ func player_movement(clock):
 					moving = true
 		# selection input
 		if Input.is_action_just_pressed("tae_mode"):
+			Globals.hud_controlable = false # stop hud swapping
 			select_mode = true # turn on select mode to enable cursor
 		# pause the game
 		if Input.is_action_just_pressed("tae_cancel"):
@@ -187,6 +188,7 @@ func selection():
 			$Weapon.flip_h = true
 			select_pos = 3
 		elif Input.is_action_just_pressed("tae_cancel"):
+			Globals.hud_controlable = true # can swap huds
 			select_mode = false # turn off select mode
 	else:
 		# hide the selector if outside of select_mode

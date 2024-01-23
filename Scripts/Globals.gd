@@ -8,7 +8,7 @@ var new_random = false # if true then the loading screen will generate a random 
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 var movement_speed = 76 # global movement speed
-var items = [{"item": 0},{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A Waterskin made of leather.","amnt": 5,"max_amnt": 5,"weight": 0.2,"type": "FOOD","func_one": [1,50.0],"func_two": [0],"func_three": [0]}] # the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
+var items = [{"item": 0},{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A Waterskin made of leather.","amnt": 5,"max_amnt": 5,"weight": 0.2,"type": "CONSUME","func_one": [1,50.0],"func_two": [0],"func_three": [0]},{"item": 2,"control": "sel_eat","name": "RATION","desc": "A bowl of food.","amnt": 1,"max_amnt": 99,"weight": 0.5,"type": "CONSUME","func_one": [1,30.0],"func_two": [0],"func_three": [0]}] # the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
 var placed_ = [] # items, ect already placed in the game to stop double spawning
 
 # GAMEPLAY
@@ -18,6 +18,7 @@ var combat = false # if true the game is in combat mode
 # HUD variables
 # selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
+var hud_controlable = true # if false can't change hud modes
 var narr_message_icon = 0 # set the narrative message icon
 var narr_message_text = "" # the message text to display
 var messages = -1 # goes from 0 to 15 before resetting

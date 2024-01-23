@@ -81,15 +81,16 @@ func HUD(_clock):
 		TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2)
 		REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
 		# INPUT
-		if Input.is_action_just_pressed("tae_cancel"):
-			pass # PAUSE MENU GOES HERE!!!
-		elif Input.is_action_just_pressed("tae_j"):
-			pass # JOURNAL GOES HERE
-		elif Input.is_action_just_pressed("tae_s"):
-			pass # STATUS SCREEN GOES HERE
-		elif Input.is_action_just_pressed("tae_i"):
-			update_inventory() # refresh the inventory
-			Globals.hud_mode = "INVENTORY" # change to inventory
+		if Globals.hud_controlable:
+			if Input.is_action_just_pressed("tae_cancel"):
+				pass # PAUSE MENU GOES HERE!!!
+			elif Input.is_action_just_pressed("tae_j"):
+				pass # JOURNAL GOES HERE
+			elif Input.is_action_just_pressed("tae_s"):
+				pass # STATUS SCREEN GOES HERE
+			elif Input.is_action_just_pressed("tae_i"):
+				update_inventory() # refresh the inventory
+				Globals.hud_mode = "INVENTORY" # change to inventory
 	elif Globals.hud_mode == "SELECT":
 		# When the player uses the selector to select something the information is displayed here.
 		# this will also give the player a set of options they can choose to interact with the world
@@ -126,9 +127,16 @@ func HUD(_clock):
 			if inv_cursor_pos + 5 < Globals.player["inventory"].size() - 1 and inv_cursor_pos < 16:
 				inv_cursor_pos += 5 # move down
 		if Input.is_action_just_pressed("tae_select"):
-			# Globals.player["inventory"][inv_cursor_pos]["func_one"]
-			Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
-			
+			# FIRST FUNCTION
+			# check what kind of item is in the inventory then run the first function feeding in parameters as needed
+			if Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
+				if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
+					Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
+					Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
+				else:
+					Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
+			elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
+				print("INVENTORY EQUIP")
 		# MENU INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.can_play = true # return player control
@@ -158,6 +166,8 @@ func update_inventory():
 			# set the inventory selector as NOT active
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
+	# EQUIPMENT UPDATE
+	$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\nBonus Modifier: ", Globals.player["bonus_mod"])
 
 func inventory_cursor():
 	if inv_cursor_active:
