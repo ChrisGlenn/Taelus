@@ -133,6 +133,8 @@ func HUD(_clock):
 				if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
 					Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
 					Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
+					if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
+						Globals.player["inventory"].remove_at(inv_cursor_pos)
 				else:
 					Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
 			elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
@@ -167,6 +169,7 @@ func update_inventory():
 			inv_cursor_active = true
 		else:
 			# set the inventory selector as NOT active
+			Globals.player["weight"] = 0 # reset the player carrying weight
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
 	# EQUIPMENT UPDATE
@@ -174,25 +177,37 @@ func update_inventory():
 
 func inventory_cursor():
 	if inv_cursor_active:
-		# update the selected item display on the hud
-		# also check the amount and type and update the itemamountlabel
-		$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
-		$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
-		$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
-		if Globals.player["inventory"][inv_cursor_pos]["max_amnt"] < 99:
-			$Inventory/InventoryBackground/ItemAmountLabel.text = str("Uses left: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
+		if Globals.player["inventory"].size() > 0:
+			# update the selected item display on the hud
+			# also check the amount and type and update the itemamountlabel
+			$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
+			$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
+			$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
+			if Globals.player["inventory"][inv_cursor_pos]["max_amnt"] < 99:
+				$Inventory/InventoryBackground/ItemAmountLabel.text = str("Uses left: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
+			else:
+				$Inventory/InventoryBackground/ItemAmountLabel.text = str("Amount: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
+			# $Inventory/InventoryBackground/ItemAmountLabel.text
+			if Input.is_action_just_pressed("tae_debug"):
+				# INVENTORY TEST (DEBUG)
+				inv_cursor_pos = 0 # reset the cursor the preferred method will keep it at the spot IF it will be filled, otherwise go back one
+				Globals.player["inventory"].remove_at(0) # remove item
+				Globals.player["weight"] = 0 # need to remove the weight to reset it as it is now
+				update_inventory() # update the inventory
+			# set the cursor location
+			INVCURSOR.position = Vector2(INVSLOTS[inv_cursor_pos].position.x-4, INVSLOTS[inv_cursor_pos].position.y-4)
+			# inventory cursor input (equip, eat, ect.)
 		else:
-			$Inventory/InventoryBackground/ItemAmountLabel.text = str("Amount: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
-		# $Inventory/InventoryBackground/ItemAmountLabel.text
-		if Input.is_action_just_pressed("tae_debug"):
-			# INVENTORY TEST (DEBUG)
-			inv_cursor_pos = 0 # reset the cursor the preferred method will keep it at the spot IF it will be filled, otherwise go back one
-			Globals.player["inventory"].remove_at(0) # remove item
-			Globals.player["weight"] = 0 # need to remove the weight to reset it as it is now
-			update_inventory() # update the inventory
-		# set the cursor location
-		INVCURSOR.position = Vector2(INVSLOTS[inv_cursor_pos].position.x-4, INVSLOTS[inv_cursor_pos].position.y-4)
-		# inventory cursor input (equip, eat, ect.)
+			# inv_cursor_active becomes false if the player's inventory becomes empty
+			# reset the HUD elements
+			$Inventory/InventoryBackground/ItemLabel.text = ""
+			$Inventory/InventoryBackground/ItemDescription.text = ""
+			$Inventory/InventoryBackground/HighlightedInv.frame = 0
+			$Inventory/InventoryBackground/ItemAmountLabel.text = ""
+			update_inventory() # clear inventory
+			
+			INVCURSOR.frame = 1
+			inv_cursor_active = false
 
 func update_controls(scan):
 	# update the hud controls

@@ -22,7 +22,7 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 65536, 0, 131072, 65536
 
 [node name="Player" parent="." instance=ExtResource("2_3xp4i")]
 process_mode = 1
-position = Vector2(176, 208)
+position = Vector2(400, 80)
 
 [node name="Decor" type="Node" parent="."]
 
