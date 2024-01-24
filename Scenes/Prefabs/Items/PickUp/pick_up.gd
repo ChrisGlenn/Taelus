@@ -54,6 +54,7 @@ func picked_up():
 							Globals.player["inventory"][n]["amnt"] += 1 # inc item amount
 							Functions.message(str(TITLE, " has been picked up."))
 							Globals.placed_.append(id) # record item picked up
+							Globals.selector_on = false # turn off selector for auto_off
 							queue_free() # delete self
 					else:
 						# the item doesn't exist in the inventory so add it now
@@ -61,6 +62,7 @@ func picked_up():
 						Globals.player["inventory"].append(Globals.items[item_no])
 						Functions.message(str(TITLE, " has been picked up."))
 						Globals.placed_.append(id) # record item picked up
+						Globals.selector_on = false # turn off selector for auto_off
 						queue_free()
 			else:
 				# add the item
@@ -70,6 +72,7 @@ func picked_up():
 				Globals.player["inventory"].append(new_item)
 				Functions.message(str(TITLE, " has been picked up."))
 				Globals.placed_.append(id) # record item picked up
+				Globals.selector_on = false # turn off selector for auto_off
 				queue_free() # delete self
 		else:
 			# add the item
@@ -79,6 +82,7 @@ func picked_up():
 			Globals.player["inventory"].append(new_item)
 			Functions.message(str(TITLE, " has been picked up."))
 			Globals.placed_.append(id) # record item picked up
+			Globals.selector_on = false # turn off selector for auto_off
 			queue_free() # delete self
 	else:
 		# inventory is full

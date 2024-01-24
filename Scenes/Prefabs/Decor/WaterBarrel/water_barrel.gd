@@ -21,9 +21,11 @@ func _process(_delta):
 		# DRINK WATER
 		if Input.is_action_just_pressed("tae_select"):
 			Functions.drink_water(DRINK_QUENCH) # water barrel quenches a lot of thirst
+			Globals.selector_on = false # turn off selector for auto_off
 		# REFILL WATERSKIN
 		if Input.is_action_just_pressed("tae_mode"):
 			Functions.refill(1, "Waterskin") # call refill function
+			Globals.selector_on = false # turn off selector for auto_off
 
 func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):

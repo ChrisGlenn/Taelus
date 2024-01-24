@@ -190,10 +190,16 @@ func selection():
 		elif Input.is_action_just_pressed("tae_cancel"):
 			Globals.hud_controlable = true # can swap huds
 			select_mode = false # turn off select mode
+		# selector user setting check
+		if Globals.selector_auto_off:
+			if !Globals.selector_on:
+				Globals.hud_controlable = true # can swap huds
+				select_mode = false # turn off select mode
 	else:
 		# hide the selector if outside of select_mode
-		SELECTOR.visible = false
-		SELECTOR.position = Vector2(0,0)
+		SELECTOR.visible = false # hide selector icon
+		SELECTOR.position = Vector2(0,0) # reset selector position to player character
+		Globals.selector_on = true # the player can use the selector again if auto_off is on
 
 func death():
 	# the player has died

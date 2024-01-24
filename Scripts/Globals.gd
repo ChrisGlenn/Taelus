@@ -12,13 +12,15 @@ var items = [{"item": 0},{"item": 1,"control": "sel_drink","name": "WATERSKIN","
 var placed_ = [] # items, ect already placed in the game to stop double spawning
 
 # GAMEPLAY
+# player settings
+var selector_auto_off = true # if the selector disables after actions
 # combat variables
 var combat = false # if true the game is in combat mode
 
 # HUD variables
-# selector
 var hud_mode = "MAIN" # main, select (selection), diag (dialogue), stat (status), inv (inventory)
 var hud_controlable = true # if false can't change hud modes
+var selector_on = false # helps to keep track of selector
 var narr_message_icon = 0 # set the narrative message icon
 var narr_message_text = "" # the message text to display
 var messages = -1 # goes from 0 to 15 before resetting

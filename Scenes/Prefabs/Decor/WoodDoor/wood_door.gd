@@ -30,12 +30,14 @@ func _process(_delta):
 				if !locked:
 					AUDIO.play()
 					door_open = true # open the door
+					Globals.selector_on = false # turn off selector for auto_off
 					update_hud() # update the hud
 				else:
 					Functions.message("The door is locked...")
 			else:
 				AUDIO.play()
 				door_open = false # close the door
+				Globals.selector_on = false # turn off selector for auto_off
 				update_hud() # update the hud
 
 func update_hud():
