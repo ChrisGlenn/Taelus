@@ -30,6 +30,15 @@ func inv_func(func_num, arg_one):
 		1:
 			# drink water
 			drink_water(arg_one)
+		2:
+			# eat food
+			print("EAT FOOD GOES HERE")
+		3:
+			# drink beer
+			print("DRINK ALCOHOL GOES HERE")
+		4:
+			# empty container
+			empty_container(arg_one)
 
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)
@@ -59,6 +68,11 @@ func refill(container, liquid):
 	else:
 		# nothing in the player inventory
 		message(str("You have no ", liquid))
+
+func empty_container(container):
+	# empties a container from player's inventory leaving an empty one behind
+	Globals.player["inventory"][container]["amnt"] = 0
+	message(str("Your empty the ", Globals.player["inventory"][container]["name"]))
 
 func drink_alcohol(_quench, _alcohol):
 	# remove some of the player's thirst and increase their alcohol intake

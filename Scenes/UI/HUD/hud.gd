@@ -137,6 +137,9 @@ func HUD(_clock):
 					Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
 			elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
 				print("INVENTORY EQUIP")
+		if Input.is_action_just_pressed("tae_mode"):
+			# SECOND FUNCTION
+			Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_two"][0], inv_cursor_pos)
 		# MENU INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.can_play = true # return player control
