@@ -26,7 +26,7 @@ func inv_func(func_num, arg_one):
 	match func_num:
 		0:
 			# null
-			print("ERROR: No function set for inventory item")
+			print("ERROR: FUNCTION IS 0(NULL) IN INV_FUC FOR THIS ITEM")
 		1:
 			# drink water
 			drink_water(arg_one)
@@ -39,6 +39,9 @@ func inv_func(func_num, arg_one):
 		4:
 			# empty container
 			empty_container(arg_one)
+		5:
+			# destroy object
+			print("DESTROY INVENTORY OBJECT GOES HERE")
 
 # eating/drinking
 func drink_water(quench): # (quench, risk, use)

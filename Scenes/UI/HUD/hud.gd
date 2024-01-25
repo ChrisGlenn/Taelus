@@ -129,19 +129,22 @@ func HUD(_clock):
 		if Input.is_action_just_pressed("tae_select"):
 			# FIRST FUNCTION
 			# check what kind of item is in the inventory then run the first function feeding in parameters as needed
-			if Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
-				if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
-					Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
-					Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
-					if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
-						Globals.player["inventory"].remove_at(inv_cursor_pos)
-				else:
-					Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
-			elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
-				print("INVENTORY EQUIP")
+			if Globals.player["inventory"].size() > 0:
+				if Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
+					if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
+						Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
+						Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
+						if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
+							Globals.player["inventory"].remove_at(inv_cursor_pos)
+					else:
+						Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
+				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
+					print("INVENTORY EQUIP")
 		if Input.is_action_just_pressed("tae_mode"):
 			# SECOND FUNCTION
-			Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_two"][0], inv_cursor_pos)
+			# check what kind of item is in the inventory then run the first function feeding in parameters as needed
+			if Globals.player["inventory"].size() > 0:
+				Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_two"][0], inv_cursor_pos)
 		# MENU INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
 			Globals.can_play = true # return player control
