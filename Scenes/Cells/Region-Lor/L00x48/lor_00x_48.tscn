@@ -55,7 +55,7 @@ HUD_CTRL_close = "sel_door_opened"
 
 [node name="Items" type="Node" parent="."]
 
-[node name="PickUp" parent="Items" instance=ExtResource("9_7wgv5")]
+[node name="PickUp-WaterBottle" parent="Items" instance=ExtResource("9_7wgv5")]
 position = Vector2(160, 176)
 TITLE = "Waterskin"
 DESCRIPTION = "A wudderskin made of leather."
@@ -64,13 +64,16 @@ HUD_CTRL_MODE = "pick_up"
 item_name = "TEST"
 item_amount = 5
 item_desc = "A waterskin made of leather."
-function_one = [1, 50.5]
 
-[node name="PickUp2" parent="Items" instance=ExtResource("9_7wgv5")]
+[node name="PickUp-Rags" parent="Items" instance=ExtResource("9_7wgv5")]
 position = Vector2(320, 64)
-TITLE = "CLOTHING"
-DESCRIPTION = "Some basic blue clothing."
+TITLE = "RAGGY CLOTHES"
+DESCRIPTION = "Old raggy clothing."
+FRAME_NO = 257
 HUD_CTRL_MODE = "pick_up"
+item_name = "Ragged Clothes"
+item_no = 257
+item_desc = "Some old ragged clothes."
 
 [node name="NPCs" type="Node" parent="."]
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ltriq7iom5pu"]
+[gd_scene load_steps=8 format=3 uid="uid://ltriq7iom5pu"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_d5p5d"]
 [ext_resource type="Texture2D" uid="uid://b4alrc6yesliq" path="res://Sprites/NPCs/Taelus-Characters.png" id="2_jwvpx"]
 [ext_resource type="Texture2D" uid="uid://cehkn8tnunvri" path="res://Sprites/UI/Selection.png" id="3_qdr1f"]
+[ext_resource type="Texture2D" uid="uid://djog02usaq3xr" path="res://Tilesets/Taelus-Characters.png" id="3_stoqw"]
 [ext_resource type="PackedScene" uid="uid://b6pem0mp75s1e" path="res://Scenes/Prefabs/System/MobileCamera/mobile_camera.tscn" id="4_tay58"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l10ak"]
@@ -31,6 +32,10 @@ vframes = 32
 frame = 1
 
 [node name="Clothing" type="Sprite2D" parent="."]
+texture = ExtResource("3_stoqw")
+centered = false
+hframes = 32
+vframes = 32
 
 [node name="Hair" type="Sprite2D" parent="."]
 centered = false

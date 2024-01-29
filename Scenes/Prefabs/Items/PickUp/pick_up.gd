@@ -16,9 +16,6 @@ extends Area2D
 @export var item_stackable = false # if true can stack in inventory
 @export var item_amount = 1 # defaults to 1
 @export_multiline var item_desc = ""
-@export var function_one = [0] # function one (space key)
-@export var function_two = [0] # function two (ctrl key)
-@export var function_three = [0] # function three (DEBUG key not set yet)
 var selector_in = false # yes if selector is in
 var picking_up = false # if true picked up will be running
 
