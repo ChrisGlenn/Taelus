@@ -618,175 +618,175 @@ position = Vector2(24, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-2" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-3" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-4" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-5" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-6" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-7" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-8" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-9" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-10" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-11" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-12" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-13" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-14" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-15" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-16" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-17" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-18" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-19" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-20" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-21" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-22" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-23" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-24" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="InvSlot-25" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="HighlightedInv" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(-192, -56)
@@ -794,7 +794,7 @@ scale = Vector2(6, 6.5)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="ItemLabel" type="Label" parent="Inventory/InventoryBackground"]
 layout_mode = 0

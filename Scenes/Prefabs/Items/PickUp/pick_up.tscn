@@ -17,7 +17,7 @@ metadata/_edit_group_ = true
 texture = ExtResource("1_3swup")
 centered = false
 hframes = 32
-vframes = 8
+vframes = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)

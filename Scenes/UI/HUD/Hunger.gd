@@ -20,34 +20,45 @@ func _process(_delta):
 	# new minute check the hunger/thirst and depending on the icon_position change the frame to 0
 	# if below the threshold
 	if icon_position == 1:
+		# if icon below 10
 		# off if 0 and the player will DIE
-		if icon < 1:
-			frame = 0 # hide this frame
-		else: 
-			frame = rec_frame # show if above
+		if icon > 10:
+			frame = rec_frame
+		elif (icon < 10 && icon > 0):
+			frame = rec_frame + 2
+		else:
+			frame = 0
 	elif icon_position == 2:
-		# off if below 20
-		if icon < 20:
-			frame = 0 # hide this frame
+		# below 30
+		if icon > 30:
+			frame = rec_frame
+		elif (icon < 30 && icon > 20):
+			frame = rec_frame + 2
 		else:
-			frame = rec_frame # show if above
+			frame = 0
 	elif icon_position == 3:
-		# off if below 40
-		if icon < 40:
-			frame = 0 # hide this frame
+		# below 50
+		if icon > 50:
+			frame = rec_frame
+		elif (icon < 50 && icon > 40):
+			frame = rec_frame + 2
 		else:
-			frame = rec_frame # show if above
+			frame = 0
 	elif icon_position == 4:
-		# off if below 60
-		if icon < 60:
-			frame = 0 # hide this frame
+		# below 70
+		if icon > 70:
+			frame = rec_frame
+		elif (icon < 70 && icon > 60):
+			frame = rec_frame + 2
 		else:
-			frame = rec_frame # show if above
+			frame = 0
 	elif icon_position == 5:
-		# off if below 80
-		if icon < 80:
-			frame = 0 # hide this frame
+		# below 90
+		if icon > 90:
+			frame = rec_frame
+		elif (icon < 90 && icon > 80):
+			frame = rec_frame + 2
 		else:
-			frame = rec_frame # show if above
+			frame = 0
 	else:
 		print("ERROR: icon_position not setup correctly!!!")
