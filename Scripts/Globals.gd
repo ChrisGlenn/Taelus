@@ -36,7 +36,7 @@ var hud_control = [
 	{"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
 	{"mode": "return","controls": "ESC = Return"},
 	{"mode": "paused","controls": "ESC = Return"},
-	{"mode": "selector","controls": "ESC = Return"},
+	{"mode": "selector","controls": "ESC = Return\nSpace = Search"},
 	{"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
 	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink CTRL = Empty\n"},
 	{"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},

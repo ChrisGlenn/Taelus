@@ -147,14 +147,16 @@ func time_check():
 		if minute_check != Globals.minutes:
 			if Globals.player["hunger"] > 0: Globals.player["hunger"] -= 0.5 # decrement hunger
 			else: death()
-			if Globals.player["thirst"] > 0: Globals.player["thirst"] -= 1 # decrement thirst
+			if Globals.player["thirst"] > 0: Globals.player["thirst"] -= 1 # decrement thirstplay
 			else: death()
 			minute_check = Globals.minutes # reset minute check
 
 func selection():
 	if select_mode:
-		SELECTOR.visible = true # show selector
 		# set the cursor positiion
+		if !selected:
+			Globals.hud_control_mode = "selector"
+		SELECTOR.visible = true # show selector
 		if select_pos == 0:
 			# UP
 			SELECTOR.position = Vector2(0,-16)
@@ -187,6 +189,10 @@ func selection():
 			$Clothing.flip_h = true
 			$Weapon.flip_h = true
 			select_pos = 3
+		elif Input.is_action_just_pressed("tae_select"):
+			# if there is nothing selected then execute a basic find nothing search
+			if !selected:
+				Functions.message("You find nothing...")
 		elif Input.is_action_just_pressed("tae_cancel"):
 			Globals.hud_controlable = true # can swap huds
 			select_mode = false # turn off select mode
@@ -206,6 +212,8 @@ func death():
 	# check for permadeth and erase saves if so
 	# but for now just print that the player has died and end the game
 	print("Thou art DEAD")
+	print("Thou ART DEAD")
+	print("THOU art DEAD")
 	get_tree().quit()
 
 func update_selector():
@@ -228,3 +236,4 @@ func _on_selector_area_entered(area):
 func _on_selector_area_exited(_area):
 	selected = null # reset
 	Globals.hud_mode = "MAIN"
+

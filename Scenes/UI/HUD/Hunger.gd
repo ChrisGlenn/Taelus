@@ -24,7 +24,7 @@ func _process(_delta):
 		# off if 0 and the player will DIE
 		if icon > 10:
 			frame = rec_frame
-		elif (icon < 10 && icon > 0):
+		elif (icon < 11 && icon > 0):
 			frame = rec_frame + 2
 		else:
 			frame = 0
@@ -32,7 +32,7 @@ func _process(_delta):
 		# below 30
 		if icon > 30:
 			frame = rec_frame
-		elif (icon < 30 && icon > 20):
+		elif (icon < 31 && icon > 20):
 			frame = rec_frame + 2
 		else:
 			frame = 0
@@ -40,7 +40,7 @@ func _process(_delta):
 		# below 50
 		if icon > 50:
 			frame = rec_frame
-		elif (icon < 50 && icon > 40):
+		elif (icon < 51 && icon > 40):
 			frame = rec_frame + 2
 		else:
 			frame = 0
@@ -48,7 +48,7 @@ func _process(_delta):
 		# below 70
 		if icon > 70:
 			frame = rec_frame
-		elif (icon < 70 && icon > 60):
+		elif (icon < 71 && icon > 60):
 			frame = rec_frame + 2
 		else:
 			frame = 0
@@ -56,7 +56,7 @@ func _process(_delta):
 		# below 90
 		if icon > 90:
 			frame = rec_frame
-		elif (icon < 90 && icon > 80):
+		elif (icon < 91 && icon > 80):
 			frame = rec_frame + 2
 		else:
 			frame = 0
