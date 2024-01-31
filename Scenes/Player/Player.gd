@@ -154,8 +154,6 @@ func time_check():
 func selection():
 	if select_mode:
 		# set the cursor positiion
-		if !selected:
-			Globals.hud_control_mode = "selector"
 		SELECTOR.visible = true # show selector
 		if select_pos == 0:
 			# UP

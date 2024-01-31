@@ -15,7 +15,7 @@ config/description="Open world low-fantasy RPG/Survival Sim.
 
 VI VII IX IV"
 config/version="0.0.1"
-run/main_scene="res://Scenes/Gameplay/MainMenu/main_menu.tscn"
+run/main_scene="res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"
 
