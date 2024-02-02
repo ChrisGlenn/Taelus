@@ -18,10 +18,15 @@ extends Area2D
 @export_multiline var item_desc = ""
 var selector_in = false # yes if selector is in
 var picking_up = false # if true picked up will be running
+var holder_no = 0 # holds the new item index
 
 func _ready():
 	SPRITE.frame = item_no # change frame to coorespond with item no.
 	FRAME_NO = item_no # update the frame number just in case it's not set correctly
+	for n in Globals.items.size():
+		if Globals.items[n]["item"] == item_no:
+			holder_no = n # place n index into holder_no
+			break # exit the loop
 
 func _process(_delta):
 	# check input while the selector is in
@@ -74,7 +79,7 @@ func picked_up():
 		else:
 			# add the item
 			# PLAY SOUND
-			var new_item = Globals.items[item_no]
+			var new_item = Globals.items[holder_no]
 			new_item["amnt"] = item_amount
 			Globals.player["inventory"].append(new_item)
 			Functions.message(str(TITLE, " has been picked up."))

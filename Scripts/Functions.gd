@@ -87,5 +87,7 @@ func eat_food(sustenance, _risk):
 	if sustenance > 0:
 		Globals.player["hunger"] += sustenance
 		if Globals.player["hunger"] > 100.0: Globals.player["hunger"] = 100.0 # make sure the hunger doesn't exceed 100
+		# CALL AN EVENT FUNCTION FOR SICKNESS WITH THE RISK
+		# display a message
 	else:
 		print("ERROR: SUSTENANCE NOT SET FOR EAT_FOOD FUNCTION!!!")

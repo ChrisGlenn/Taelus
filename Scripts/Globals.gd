@@ -8,7 +8,13 @@ var new_random = false # if true then the loading screen will generate a random 
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 var movement_speed = 76 # global movement speed
-var items = [{"item": 0},{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"max_amnt": 5,"min_amnt": -4,"weight": 0.2,"type": "CONSUME","func_one": [1,50.0],"func_two": [0],"func_three": [0]},{"item": 2,"control": "sel_eat","name": "RATION","desc": "A bowl of food.","amnt": 1,"max_amnt": 99,"min_amnt": 0,"weight": 0.5,"type": "CONSUME","func_one": [1,30.0],"func_two": [0],"func_three": [0]},{"item": 101,"control": "sel_equip","name": "BLUE CLOTHES","desc": "Some basic blue clothing.","amnt": 1,"max_amnt": 1,"min_amnt": 0,"weight": 1.5,"type": "EQUIP","func_one": [],"func_two": [],"func_three": []}] # the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
+# the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
+var items = [
+	{"item": 0},
+	{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"max_amnt": 5,"min_amnt": -4,"weight": 0.2,"type": "CONSUME","func_one": [1,50.0],"func_two": [0],"func_three": [0]},
+	{"item": 2,"control": "sel_eat","name": "RATION","desc": "A bowl of food.","amnt": 1,"max_amnt": 99,"min_amnt": 0,"weight": 0.5,"type": "CONSUME","func_one": [1,30.0],"func_two": [0],"func_three": [0]},
+	{"item": 257,"control": "sel_equip","name": "RAGGY CLOTHES","desc": "Old raggy clothing.","amnt": 1,"max_amnt": 1,"min_amnt": 0,"weight": 1,"type": "EQUIP","func_one": [],"func_two": [],"func_three": []}
+] 
 var placed_ = [] # items, ect already placed in the game to stop double spawning
 
 # GAMEPLAY
