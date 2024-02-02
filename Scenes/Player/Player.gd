@@ -13,6 +13,7 @@ var minute_check = 0 # checks minutes
 var day_check = 0 # checks days
 # outside scenes
 var selected = null 
+var sel_coll = false # used to help set hud_control_mode
 
 
 func _ready():
