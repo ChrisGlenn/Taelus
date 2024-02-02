@@ -33,7 +33,7 @@ var hud_selected_cntrl = ""
 var hud_control_mode = "main"
 var hud_control = [
 	{"mode": "","controls": "ERROR: NO MODE SET"},
-	{"mode": "main","controls": "ESC = Menu\nJ = Journal S = Status\nI = Inventory CTRL = Interact\nF1 = Search"},
+	{"mode": "main","controls": "ESC = Menu\nJ = Journal S = Status\nI = Inventory\nCTRL = Interact\nF1 = Search"},
 	{"mode": "return","controls": "ESC = Return"},
 	{"mode": "paused","controls": "ESC = Return"},
 	{"mode": "selector","controls": "ESC = Return\nSpace = Search"},
