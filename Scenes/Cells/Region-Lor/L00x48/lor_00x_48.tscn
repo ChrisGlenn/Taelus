@@ -73,6 +73,18 @@ FRAME_NO = 257
 HUD_CTRL_MODE = "pick_up"
 item_name = "Ragged Clothes"
 item_no = 257
+item_stackable = true
+item_desc = "Some old ragged clothes."
+
+[node name="PickUp-Rags2" parent="Items" instance=ExtResource("9_7wgv5")]
+position = Vector2(336, 64)
+TITLE = "RAGGY CLOTHES"
+DESCRIPTION = "Old raggy clothing."
+FRAME_NO = 257
+HUD_CTRL_MODE = "pick_up"
+item_name = "Ragged Clothes"
+item_no = 257
+item_stackable = true
 item_desc = "Some old ragged clothes."
 
 [node name="NPCs" type="Node" parent="."]

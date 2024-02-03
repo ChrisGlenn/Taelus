@@ -13,7 +13,7 @@ var items = [
 	{"item": 0},
 	{"item": 1,"control": "sel_drink","name": "WATERSKIN","desc": "A waterskin made of leather.","amnt": 5,"max_amnt": 5,"min_amnt": -4,"weight": 0.2,"type": "CONSUME","func_one": [1,50.0],"func_two": [0],"func_three": [0]},
 	{"item": 2,"control": "sel_eat","name": "RATION","desc": "A bowl of food.","amnt": 1,"max_amnt": 99,"min_amnt": 0,"weight": 0.5,"type": "CONSUME","func_one": [1,30.0],"func_two": [0],"func_three": [0]},
-	{"item": 257,"control": "sel_equip","name": "RAGGY CLOTHES","desc": "Old raggy clothing.","amnt": 1,"max_amnt": 1,"min_amnt": 0,"weight": 1,"type": "EQUIP","func_one": [],"func_two": [],"func_three": []}
+	{"item": 257,"control": "sel_equip","name": "RAGGY CLOTHES","desc": "Old raggy clothing.","amnt": 1,"max_amnt": 99,"min_amnt": 0,"weight": 1,"type": "EQUIP","func_one": [],"func_two": [],"func_three": []}
 ] 
 var placed_ = [] # items, ect already placed in the game to stop double spawning
 
@@ -44,7 +44,7 @@ var hud_control = [
 	{"mode": "paused","controls": "ESC = Return"},
 	{"mode": "selector","controls": "ESC = Return\nSpace = Search"},
 	{"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
-	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink CTRL = Empty\n"},
+	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\nCTRL = Empty"},
 	{"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
 	{"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"},
 	{"mode": "sel_door_closed","controls": "ESC = Return\nSPACE = Open\nCTRL = Pick Lock\nXXX = Bash Open"},

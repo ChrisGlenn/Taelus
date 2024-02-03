@@ -48,11 +48,12 @@ func picked_up():
 		if item_stackable:
 			if Globals.player["inventory"].size() > 0:
 				for n in Globals.player["inventory"].size():
-					if n < Globals.player["inventory"].size()-1:
+					if n < Globals.player["inventory"].size():
 						# if the item is stackable then search for the same item in the inventory and add it
 						# if it can't be found then just add the item
 						if Globals.player["inventory"][n]["item"] == item_no:
 							# PLAY SOUND
+							print("Stacking!!!")
 							Globals.player["inventory"][n]["amnt"] += 1 # inc item amount
 							Functions.message(str(TITLE, " has been picked up."))
 							Globals.placed_.append(id) # record item picked up
@@ -61,7 +62,8 @@ func picked_up():
 					else:
 						# the item doesn't exist in the inventory so add it now
 						# PLAY SOUND
-						Globals.player["inventory"].append(Globals.items[item_no])
+						print("Not stacking :(")
+						Globals.player["inventory"].append(Globals.items[holder_no])
 						Functions.message(str(TITLE, " has been picked up."))
 						Globals.placed_.append(id) # record item picked up
 						Globals.selector_on = false # turn off selector for auto_off
@@ -69,7 +71,7 @@ func picked_up():
 			else:
 				# add the item
 				# PLAY SOUND
-				var new_item = Globals.items[item_no]
+				var new_item = Globals.items[holder_no]
 				new_item["amnt"] = item_amount
 				Globals.player["inventory"].append(new_item)
 				Functions.message(str(TITLE, " has been picked up."))
