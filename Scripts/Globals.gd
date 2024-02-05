@@ -7,7 +7,7 @@ var new_game = true # lets the loading screen know what course to take
 var new_random = false # if true then the loading screen will generate a random player
 var new_scene_player_set = false # if true then the player will reset self based on origin coords
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
-var movement_speed = 76 # global movement speed
+var movement_speed = 97 # global movement speed
 # the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
 var items = [
 	{"item": 0},
