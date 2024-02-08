@@ -19,6 +19,10 @@ run/main_scene="res://Scenes/System/SplashScreen/splash_screen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
+
 [display]
 
 window/size/viewport_width=640

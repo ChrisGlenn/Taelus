@@ -4,7 +4,6 @@ extends Node2D
 
 @export var splash_timer: int = 140 # splash timer
 var timer_rec # records the splash timer
-var timer_ctrl = 100 # timer control
 
 
 func _ready():
@@ -16,12 +15,12 @@ func _process(delta):
 	# increment the visible ratio for the splash label characters 
 	if SSNF.visible_ratio != 1:
 		if splash_timer > 0:
-			splash_timer -= timer_ctrl * delta
+			splash_timer -= Globals.timer_ctrl * delta
 		else:
 			SSNF.visible_ratio += 0.5 * delta
 	else:
 		if timer_rec > 0:
-			timer_rec -= timer_ctrl * delta
+			timer_rec -= Globals.timer_ctrl * delta
 		else:
 			# load the next scene (main menu)
 			var _scene_change = get_tree().change_scene_to_file("res://Scenes/System/MainMenu/main_menu.tscn")
