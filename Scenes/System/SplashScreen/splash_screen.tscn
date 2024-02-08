@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://frm1a7m3mx0g"]
+
+[ext_resource type="FontFile" uid="uid://c32fe5nfyyip" path="res://Fonts/Commodore Pixelized v1.2.ttf" id="1_2sxol"]
+[ext_resource type="Script" path="res://Scenes/System/SplashScreen/splash_screen.gd" id="1_wir7s"]
+
+[node name="SplashScreen" type="Node2D"]
+script = ExtResource("1_wir7s")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+color = Color(0, 0, 0, 1)
+
+[node name="SSNF" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 448.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0.964706, 0.819608, 0.329412, 1)
+theme_override_fonts/font = ExtResource("1_2sxol")
+theme_override_font_sizes/font_size = 22
+text = "VI VII . IX IV"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0

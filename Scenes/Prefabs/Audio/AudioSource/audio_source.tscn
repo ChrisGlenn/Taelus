@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cunaoisx4f6tg"]
-
-[ext_resource type="Script" path="res://Scenes/Prefabs/Audio/AudioSource/audio_source.gd" id="1_fgk6i"]
-
-[node name="AudioSource" type="AudioStreamPlayer2D"]
-max_distance = 512.0
-script = ExtResource("1_fgk6i")
