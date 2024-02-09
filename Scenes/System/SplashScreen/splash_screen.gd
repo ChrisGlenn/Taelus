@@ -3,7 +3,7 @@ extends Node2D
 @onready var SSNF = $SSNF # splash label
 
 @export var splash_timer: int = 140 # splash timer
-var timer_rec # records the splash timer
+var timer_rec: int # records the splash timer
 
 
 func _ready():

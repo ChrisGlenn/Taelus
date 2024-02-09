@@ -9,8 +9,8 @@ extends Node2D
 
 @export var load_terms: Array = [] # holds random terms for the load label to spawn
 @export var scroll_speed: int = 2 # defaults to 2
-@export var loading_timer = 100 # timer to pad out loading
-var loaded = false # if true stop loading...
+@export var loading_timer: int = 100 # timer to pad out loading
+var loaded: bool = false # if true stop loading...
 
 
 func _ready():
@@ -36,15 +36,21 @@ func random_label(clock):
 func load_game(clock):
 	if Globals.new_game:
 		if !loaded:
-			# the player has selected a new game...
-			pass
+			# if the player has chosen a new random game then generate the character
+			# FOR NOW SPAWNS MALE NORTHERNER
+			# generate a random year/month/day
+			Globals.year = RNG.randi_range(198,370)
+			Globals.month = RNG.randi_range(1,Globals.months.size())
+			Globals.day = RNG.randi_range(1,16)
+			print(str(Globals.year," ",Globals.months[Globals.month])," ",Globals.day)
+			loaded = true # set loaded
 		else:
 			# countdown the timer to pad out the laoding screen
 			if loading_timer > 0:
 				loading_timer -= Globals.timer_ctrl * clock
 			else:
 				# move to the loaded scene
-				print("LOADING COMPLETE")
+				pass
 	else:
 		# load a saved game
 		pass
