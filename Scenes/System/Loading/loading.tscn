@@ -5,20 +5,29 @@
 
 [node name="Loading" type="Node2D"]
 script = ExtResource("1_31yxu")
-load_terms = ["Loading...", "Mines...", "Helmets...", "Swords...", "Bows...", "Arrows...", "Caves...", "Mountains...", "Wizards...", "Towers...", "Farms...", "Crops...", "Armor...", "Pitchforks...", "Bread...", "Water...", "Castles...", "Shovels...", "Cities...", "Guards...", "Guardposts...", "Farmers...", "Miners...", "Rivers..."]
+load_terms = ["Spears", "Mines", "Helmets", "Swords", "Bows", "Arrows", "Caves", "Mountains", "Wizards", "Towers", "Farms", "Crops", "Armor", "Pitchforks", "Bread", "Water", "Castles", "Shovels", "Cities", "Guards", "Guardposts", "Farmers", "Miners", "Rivers", "Clubs", "Magic Rings", "Spells", "Axes", "Hammers", "Snow", "Boats", "Horses", "Birds", "Rabbits", "Bread", "Gruel", "Beer", "Mead", "Chickens", "Fish", "Hundlings", "Runes", "Bandits", "Merchants", "Gold", "Silver", "Copper", "Obsidius", "Paleus", "The Builders"]
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0, 0, 0, 1)
 
-[node name="LoadingLabel" type="Label" parent="."]
-offset_left = 448.0
+[node name="Loading" type="Label" parent="."]
+offset_left = 208.0
 offset_top = 320.0
-offset_right = 632.0
-offset_bottom = 343.0
+offset_right = 304.0
+offset_bottom = 345.0
 theme_override_fonts/font = ExtResource("1_hgfof")
 theme_override_font_sizes/font_size = 31
 text = "LOADING..."
-horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LoadingLabel" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 320.0
+offset_right = 496.0
+offset_bottom = 345.0
+theme_override_fonts/font = ExtResource("1_hgfof")
+theme_override_font_sizes/font_size = 31
+text = "XXXXXX"
 vertical_alignment = 1

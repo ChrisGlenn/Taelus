@@ -17,7 +17,7 @@ func _ready():
 	RNG.randomize() # seed random
 	# set a random word from the load_terms array and make sure the visible ratio is 0
 	LOADLABEL.visible_ratio = 0
-	LOADLABEL.text = load_terms[0]
+	LOADLABEL.text = load_terms[RNG.randi_range(0, load_terms.size()-1)]
 
 func _process(delta):
 	random_label(delta) # loading label function
