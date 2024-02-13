@@ -189,9 +189,7 @@ func selection():
 			$Weapon.flip_h = true
 			select_pos = 3
 		elif Input.is_action_just_pressed("tae_select"):
-			# if there is nothing selected then execute a basic find nothing search
-			if !selected:
-				Functions.message("You find nothing...")
+			pass
 		elif Input.is_action_just_pressed("tae_cancel"):
 			Globals.hud_controlable = true # can swap huds
 			select_mode = false # turn off select mode

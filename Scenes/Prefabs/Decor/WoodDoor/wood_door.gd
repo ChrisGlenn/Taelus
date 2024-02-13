@@ -47,15 +47,17 @@ func update_hud():
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)
 		# update the HUD controls
-		HUD_CTRL_MODE = HUD_CTRL_close
-		if selector: selector.update_selector()
+		if !Globals.selector_auto_off:
+			HUD_CTRL_MODE = HUD_CTRL_close
+			if selector: selector.update_selector()
 	else:
 		SPRITE.frame = 256 # closed door
 		set_collision_layer_value(1, true)
 		set_collision_mask_value(1, true)
 		# update the HUD controls
-		HUD_CTRL_MODE = HUD_CTRL_open
-		if selector: selector.update_selector()
+		if !Globals.selector_auto_off:
+			HUD_CTRL_MODE = HUD_CTRL_open
+			if selector: selector.update_selector()
 
 func _on_area_entered(area):
 	if area.is_in_group("SELECTOR"):

@@ -39,10 +39,10 @@ var hud_selected_cntrl = ""
 var hud_control_mode = "main"
 var hud_control = [
 	{"mode": "","controls": "ERROR: NO MODE SET"},
-	{"mode": "main","controls": "ESC = Menu\nJ = Journal S = Status\nI = Inventory\nCTRL = Interact\nF1 = Search"},
+	{"mode": "main","controls": "ESC = Menu\nJ = Journal S = Status\nI = Inventory\nCTRL = Interact"},
 	{"mode": "return","controls": "ESC = Return"},
 	{"mode": "paused","controls": "ESC = Return"},
-	{"mode": "selector","controls": "ESC = Return\nSpace = Search"},
+	{"mode": "selector","controls": "ESC = Return"},
 	{"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
 	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\nCTRL = Empty"},
 	{"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
