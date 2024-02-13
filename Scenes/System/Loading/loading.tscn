@@ -5,7 +5,7 @@
 
 [node name="Loading" type="Node2D"]
 script = ExtResource("1_31yxu")
-load_terms = ["Spears", "Mines", "Helmets", "Swords", "Bows", "Arrows", "Caves", "Mountains", "Wizards", "Towers", "Farms", "Crops", "Armor", "Pitchforks", "Bread", "Water", "Castles", "Shovels", "Cities", "Guards", "Guardposts", "Farmers", "Miners", "Rivers", "Clubs", "Magic Rings", "Spells", "Axes", "Hammers", "Snow", "Boats", "Horses", "Birds", "Rabbits", "Bread", "Gruel", "Beer", "Mead", "Chickens", "Fish", "Hundlings", "Runes", "Bandits", "Merchants", "Gold", "Silver", "Copper", "Obsidius", "Paleus", "The Builders", "Bears", "One Dragon", "Kings", "Queens", "Princesses", "Princes"]
+load_terms = ["Spears ", "Mines ", "Helmets ", "Swords ", "Bows ", "Arrows ", "Caves ", "Mountains ", "Wizards ", "Towers ", "Farms ", "Crops ", "Armor ", "Pitchforks ", "Bread ", "Water ", "Castles ", "Shovels ", "Cities ", "Guards ", "Guardposts ", "Farmers ", "Miners ", "Rivers ", "Clubs ", "Magic Rings ", "Spells ", "Axes ", "Hammers ", "Snow ", "Boats ", "Horses ", "Birds ", "Rabbits ", "Bread ", "Gruel ", "Beer ", "Mead ", "Chickens ", "Fish ", "Hundlings ", "Runes ", "Bandits ", "Merchants ", "Gold ", "Silver ", "Copper ", "Obsidius ", "Paleus ", "The Builders ", "Bears ", "One Dragon ", "Kings ", "Queens ", "Princesses ", "Princes "]
 loading_timer = 300
 
 [node name="Background" type="ColorRect" parent="."]

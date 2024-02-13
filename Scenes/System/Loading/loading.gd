@@ -42,7 +42,7 @@ func load_game(clock):
 			Globals.year = RNG.randi_range(198,370)
 			Globals.month = RNG.randi_range(1,Dates.Data.size()-1)
 			Globals.day = RNG.randi_range(1,18)
-			print(str(Globals.year," ",Dates.Data[Globals.month].name)," ",Globals.day)
+			print(str(Globals.year," ",Dates.Data[Globals.month].name),"-",Dates.Data[Globals.month].season," ",Globals.day)
 			# generate royal family
 			loaded = true # set loaded
 		else:
