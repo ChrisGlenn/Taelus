@@ -5,7 +5,8 @@ extends CharacterBody2D
 @onready var BODY = $Body # body sprite reference
 
 var is_moving: bool = false # if the player is moving
-var move_target: Vector2 # target to move towards
+var move_direction: String # UP, DOWN, LEFT, RIGHT
+var move_target: int # target to move towards
 
 
 func _ready():
@@ -18,7 +19,7 @@ func _physics_process(delta):
 	player_movement(delta) # movement function
 
 
-func player_movement(_clock):
+func player_movement(clock):
 	# input/movement idea list:
 	# check input and raycast to position
 	# if no collision then set the player to move in that direction
@@ -28,4 +29,23 @@ func player_movement(_clock):
 	# also throw in the animation
 	if !is_moving:
 		if Input.is_action_pressed("tae_down"):
-			pass
+			if RAY.target_position.y != 16:
+				RAY.target_position = Vector2(0,16) # set 'down' target position
+			else:
+				if !RAY.is_colliding():
+					print("DOWN")
+					move_direction = "DOWN"
+					move_target = global_position.y + 16
+					is_moving = true
+	else:
+		if move_direction == "DOWN":
+			if global_position.y < move_target:
+				position.y += Globals.movement_speed * clock
+				# check if button is still pressed and then increase the target
+				# by 16 PLUS the move_target
+				if global_position.y >= move_target-1:
+					if Input.is_action_pressed("tae_down"):
+						move_target = move_target + 16
+			else:
+				global_position.y = move_target
+				is_moving = false

@@ -2,7 +2,7 @@ extends Node
 # GLOBAL VARIABLES
 # GAME
 var new_game: bool = true # sets a new game or not
-var movement_speed = 79 # global movement speed
+var movement_speed = 69 # global movement speed
 
 # LOR
 # time/day
