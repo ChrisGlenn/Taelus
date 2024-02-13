@@ -40,9 +40,10 @@ func load_game(clock):
 			# FOR NOW SPAWNS MALE NORTHERNER
 			# generate a random year/month/day
 			Globals.year = RNG.randi_range(198,370)
-			Globals.month = RNG.randi_range(1,Globals.months.size())
-			Globals.day = RNG.randi_range(1,16)
-			print(str(Globals.year," ",Globals.months[Globals.month])," ",Globals.day)
+			Globals.month = RNG.randi_range(1,Dates.Data.size()-1)
+			Globals.day = RNG.randi_range(1,18)
+			print(str(Globals.year," ",Dates.Data[Globals.month].name)," ",Globals.day)
+			# generate royal family
 			loaded = true # set loaded
 		else:
 			# countdown the timer to pad out the laoding screen
