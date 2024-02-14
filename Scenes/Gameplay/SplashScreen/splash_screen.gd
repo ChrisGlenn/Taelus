@@ -4,7 +4,7 @@ extends Node2D
 # then count out to the main menu the user will not be able to skip this
 @onready var NAMELABEL = $Text6794
 var splash_timer = 100 # timer in
-var timer_out = 160 # timer rec
+var timer_out = 220 # timer rec
 var text_speed = 1 # speed to display the name text
 
 
