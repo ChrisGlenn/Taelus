@@ -10,6 +10,24 @@ var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new sc
 var movement_speed = 97 # global movement speed
 var timer_ctrl = 100 # timer control
 # the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
+var items = {
+	"Leather Bottle" : {
+		"name" : "Leather Bottle",
+		"description" : "A small empty bottle made of leather.",
+		"frame" : 1,
+		"weight" : 0.2,
+		"value" : 2,
+		"amnt" : 0,
+		"max_amnt" : 99,
+		"min_amnt" : -4,
+		"stackable" : false,
+		"type" : "CONSUME",
+		"hud_mode" : "sel_drink",
+		"func_one" : [0],
+		"func_two" : [0],
+		"func_three" : [0]
+	}
+}
 var placed_ = [] # items, ect already placed in the game to stop double spawning
 
 # GAMEPLAY

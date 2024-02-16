@@ -19,9 +19,9 @@ const Data = {
 		"weight" : 0.2,
 		"value" : 2,
 		"amnt" : 0,
-		"max_amnt" : 1,
+		"max_amnt" : 99,
 		"min_amnt" : -4,
-		"stackable" : true,
+		"stackable" : false,
 		"type" : "CONSUME",
 		"hud_mode" : "sel_drink",
 		"func_one" : [0],
@@ -49,6 +49,57 @@ const Data = {
 		"description" : ""
 	}
 }
+
+const items_test = [
+	{
+		"name" : "NULL",
+		"description" : "A small bottle made of leather that's full of water.",
+		"frame" : 1,
+		"weight" : 1,
+		"value" : 2,
+		"amnt" : 1,
+		"max_amnt" : 99,
+		"min_amnt" : -4,
+		"stackable" : true,
+		"type" : "CONSUME",
+		"hud_mode" : "sel_drink",
+		"func_one" : [0],
+		"func_two" : [0],
+		"func_three" : [0]
+	},
+	{
+		"name" : "Water Bottle",
+		"description" : "A small bottle made of leather that's full of water.",
+		"frame" : 1,
+		"weight" : 1,
+		"value" : 2,
+		"amnt" : 1,
+		"max_amnt" : 99,
+		"min_amnt" : -4,
+		"stackable" : true,
+		"type" : "CONSUME",
+		"hud_mode" : "sel_drink",
+		"func_one" : [0],
+		"func_two" : [0],
+		"func_three" : [0]
+	},
+	{
+		"name" : "Leather Bottle",
+		"description" : "A small empty bottle made of leather.",
+		"frame" : 1,
+		"weight" : 0.2,
+		"value" : 2,
+		"amnt" : 0,
+		"max_amnt" : 1,
+		"min_amnt" : -4,
+		"stackable" : false,
+		"type" : "CONSUME",
+		"hud_mode" : "sel_drink",
+		"func_one" : [0],
+		"func_two" : [0],
+		"func_three" : [0]
+	}
+]
 
 #var items = [
 	#{"item": 0},
