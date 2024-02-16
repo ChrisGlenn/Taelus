@@ -62,6 +62,20 @@ item_name = "Leather Bottle"
 TITLE = "Empty Bottle"
 DESCRIPTION = "Empty bottle made of dark leather."
 
+[node name="PickUp2" parent="Items" instance=ExtResource("8_s1djp")]
+position = Vector2(256, 224)
+id = "004802"
+item_name = "Water Bottle"
+TITLE = "Water Bottle"
+DESCRIPTION = "You see a small bottle that's filled with water."
+
+[node name="PickUp3" parent="Items" instance=ExtResource("8_s1djp")]
+position = Vector2(256, 240)
+id = "004803"
+item_name = "Water Bottle"
+TITLE = "Water Bottle"
+DESCRIPTION = "You see a small bottle that's filled with water."
+
 [node name="NPCs" type="Node" parent="."]
 
 [node name="LorGuard" parent="NPCs" instance=ExtResource("11_p4mc6")]

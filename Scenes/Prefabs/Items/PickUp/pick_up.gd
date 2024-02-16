@@ -47,17 +47,51 @@ func _process(_delta):
 func picking_up():
 	# cycle through the inventory looking for a slot that either has the same item (if stackable)
 	# or for a blank slot but if full will send a message that the inventory is full
-	if Globals.player["inventory"].size() < 24:
-		if Items.Data[item_name].stackable:
-			# if the item is stackable then see if the player has anything in their inventory
-			# if not then just add the item
-			if Globals.player["inventory"].size() > 0:
-				pass
-			else:
-				# just add the item to their inventory
-				pass
+	if Items.Data[item_name].stackable:
+		# if the item is stackable then see if the player has anything in their inventory
+		# if not then just add the item
+		if Globals.player["inventory"].size() > 0:
+			# run through the player's inventory array and find a match
+			# check if the max amount has been reached and if so then just append the item IF
+			# there is room otherwise let the player know inventory is full
+			for n in Globals.player["inventory"].size():
+				if Globals.player["inventory"][n]["name"] == item_name:
+					if Globals.player["inventory"][n]["amnt"] < Globals.player["inventory"][n]["max_amnt"]:
+						# PLAY SOUND HERE
+						print(str(Globals.player["inventory"][n]))
+						print(str(n))
+						Globals.placed_.append(id) # record item picked up
+						Functions.message(str(Items.Data[item_name].name, " has been picked up."))
+						if Globals.selector_auto_off:
+							Globals.selector_on = false # turn off selector
+						queue_free() # delete item
+						break
+					else:
+						# append the item to the inventory if the inventory is not full
+						if Globals.player["inventory"].size() < 24:
+							# PLAY SOUND HERE
+							Globals.player["inventory"][n]["amnt"] += 1 # increment item amount in inventory
+							Globals.placed_.append(id) # record item picked up
+							Functions.message(str(Items.Data[item_name].name, " has been picked up."))
+							if Globals.selector_auto_off:
+								Globals.selector_on = false # turn off selector
+							queue_free() # delete item
+							break
+						else:
+							Functions.message("Your inventory is full.") # player's inventory is full
+				else:
+					# check if the loop is at the end of the array and hasn't found the item so just append it
+					if n == Globals.player["inventory"].size():
+						# PLAY SOUND HERE
+						Globals.player["inventory"][n]["amnt"] += 1 # increment item amount in inventory
+						Globals.placed_.append(id) # record item picked up
+						Functions.message(str(Items.Data[item_name].name, " has been picked up."))
+						if Globals.selector_auto_off:
+							Globals.selector_on = false # turn off selector
+						queue_free() # delete item
+						break
 		else:
-			# item is not stackable so just pick the item up
+			# just add the item to their inventory
 			# PLAY SOUND HERE
 			Globals.player["inventory"].append(Items.Data[item_name]) # add item to player inventory array
 			Globals.placed_.append(id) # record item picked up
@@ -66,7 +100,14 @@ func picking_up():
 				Globals.selector_on = false # turn off selector
 			queue_free() # delete item
 	else:
-		Functions.message("Inventory is full.")
+		# item is not stackable so just pick the item up
+		# PLAY SOUND HERE
+		Globals.player["inventory"].append(Items.Data[item_name]) # add item to player inventory array
+		Globals.placed_.append(id) # record item picked up
+		Functions.message(str(Items.Data[item_name].name, " has been picked up."))
+		if Globals.selector_auto_off:
+			Globals.selector_on = false # turn off selector
+		queue_free() # delete item
 
 
 func _on_area_entered(area):
