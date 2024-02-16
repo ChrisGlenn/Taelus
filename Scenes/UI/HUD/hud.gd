@@ -113,7 +113,7 @@ func HUD(_clock):
 		$Inventory/InventoryBackground/WeightLabel.text = str("Carrying Weight: ", Globals.player["weight"], "/", Globals.player["capacity"])
 		$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\n", "Bonus Modifier: ", Globals.player["bonus_mod"])
 		if Globals.player["inventory"].size() > 0:
-			Globals.hud_control_mode = Globals.player["inventory"][inv_cursor_pos]["control"] # update the controls
+			Globals.hud_control_mode = Globals.player["inventory"][inv_cursor_pos]["hud_mode"] # update the controls
 		else:
 			Globals.hud_control_mode = "return"
 		# INVENTORY INPUT
@@ -130,7 +130,11 @@ func HUD(_clock):
 			# FIRST FUNCTION
 			# check what kind of item is in the inventory then run the first function feeding in parameters as needed
 			if Globals.player["inventory"].size() > 0:
-				if Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
+				if Globals.player["inventory"][inv_cursor_pos]["type"] == "NULL":
+					# no type is set on said inventory item
+					print("ERROR: NO TYPE SET FOR ITEM...")
+					get_tree().quit() # exit game
+				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
 					if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
 						Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
 						Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
@@ -161,7 +165,7 @@ func update_inventory():
 		# run through each slot in the inventory slots array and see if there is a corresponding item in the player inventory
 		# if not then clear the slot out and revert the frame back to 0
 		if Globals.player["inventory"].size() >= n + 1:
-			INVSLOTS[n].frame = Globals.player["inventory"][n]["item"] # update inventory slot frame
+			INVSLOTS[n].frame = Globals.player["inventory"][n]["frame"] # update inventory slot frame
 			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
 		else:
 			# clear out the inventory slots
@@ -184,8 +188,8 @@ func inventory_cursor():
 			# update the selected item display on the hud
 			# also check the amount and type and update the itemamountlabel
 			$Inventory/InventoryBackground/ItemLabel.text = Globals.player["inventory"][inv_cursor_pos]["name"]
-			$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["desc"]
-			$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["item"]
+			$Inventory/InventoryBackground/ItemDescription.text = Globals.player["inventory"][inv_cursor_pos]["description"]
+			$Inventory/InventoryBackground/HighlightedInv.frame = Globals.player["inventory"][inv_cursor_pos]["frame"]
 			if Globals.player["inventory"][inv_cursor_pos]["max_amnt"] < 99:
 				$Inventory/InventoryBackground/ItemAmountLabel.text = str("Uses left: ", Globals.player["inventory"][inv_cursor_pos]["amnt"])
 			else:
