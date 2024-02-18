@@ -20,7 +20,7 @@ var items = {
 		"amnt" : 0,
 		"max_amnt" : 99,
 		"min_amnt" : -4,
-		"stackable" : false,
+		"stackable" : true,
 		"type" : "CONSUME",
 		"hud_mode" : "sel_drink",
 		"func_one" : [0],

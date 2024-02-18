@@ -11,7 +11,7 @@ extends Area2D
 @export_multiline var DESCRIPTION = "HUD DESCRIPTION" # description for the title to display
 @export var item_amount = 0 # defaults to 1 amount of item on the ground
 @export var HUD_CTRL_MODE = "pick_up" # holds hud control mode for this item
-var item_placeholder = {}
+@export var item_placeholder = {}
 var FRAME_NO = 0 # the number of the frame for the HUD display
 var selector_in = false # if the player's selector is in or not
 
@@ -33,9 +33,11 @@ func _ready():
 	item_placeholder["amnt"] = item_amount # set item amount for item to be picked up
 	SPRITE.frame = Globals.items[item_name]["frame"]
 	FRAME_NO = Globals.items[item_name]["frame"]
-	print(item_placeholder["amnt"])
+	print(item_placeholder)
 
 func _process(_delta):
+	if Input.is_action_just_pressed("tae_debug"):
+		print(item_placeholder)
 	# check input while selector is colliding
 	if selector_in:
 		if Input.is_action_just_pressed("tae_select"):
