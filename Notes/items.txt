@@ -1,0 +1,35 @@
+*** ITEMS ***
+The list of items for the inventory the player will be able to get in
+the game. Will be split into different sections each given 50 slots.
+
+
+Item layout:
+{
+	"item": 0 # refers to item liste below
+	"type": "EMPTY" # consumable
+	"name": ""
+	"desc": ""
+	"amnt": 0
+}
+
+
+ITEMS/RATIONS/ECT 0-256
+0: NULL EMPTY SLOT
+1: Water Bottle
+2: Mead
+3: Beer
+4: Gruel
+5:  
+
+x: Carrot
+x: Rotten Carrot
+x: Carrot Seed
+x: Cabbage
+x: Rotten Cabbage
+x: Cabbage Seed
+
+EQUIPMENT 257-1024
+257: ARMOR ICON
+(clothing)
+258: Ragged Clothing
+259:  

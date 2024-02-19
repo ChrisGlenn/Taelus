@@ -1,0 +1,8 @@
+DATES AND TIMES
+
+Taelus has 8 months throughout the year. Each month consists of 58 days and covers thebeginning and end of a season. Two months for winter, two for spring, two for summer and two for fall. Each day is 24 hours. 
+
+Months:
+Each month is named for the season's beginning and end that it represents.
+
+ 

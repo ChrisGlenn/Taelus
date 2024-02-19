@@ -1,0 +1,25 @@
+	for n in Globals.player["inventory"].size():
+		# check if the first slot has an item and activate the cursor
+		if n == 0 and Globals.player["inventory"][n] != 0:
+			INVCURSOR.frame = 0
+			inv_cursor_active = true
+		elif n == 0 and Globals.player["inventory"][n] == 0:
+			INVCURSOR.frame = 1
+			inv_cursor_active = false
+		# set the frames in the inventory slots
+		match Globals.player["inventory"][n]:
+			0:
+				# null
+				INVSLOTS[n].frame = 0
+			1:
+				# waterskin
+				INVSLOTS[n].frame = 1
+				Globals.player["weight"] += 0.2
+			2:
+				# ration
+				INVSLOTS[n].frame = 2
+				Globals.player["weight"] += 0.4
+			3:
+				# beer
+				INVSLOTS[n].frame = 3
+				Globals.player["weight"] += 0.5

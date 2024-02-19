@@ -1,0 +1,8 @@
+*** CONTROLS ***
+A list of the HUD controls, control mode.
+
+[
+	{"mode": "main","controls": "ESC = Menu\nJ = Journal\n S = Status I = Inventory\n CTRL = Interact"},
+	{"mode": "pause","controls": "ESC = Return"},
+	{}
+]

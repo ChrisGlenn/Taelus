@@ -1,0 +1,8 @@
+*** TIMELINE ***
+Timeline of events that can(or maybe can't) happen during a playthrough.
+
+
+- 192 BEGIN SPAWN GAME/RANGE
+- 235-242 Gradian Invasion of Lor (see notes for details)
+- 370 END SPAWN RANGE
+- 450 END OF GAME

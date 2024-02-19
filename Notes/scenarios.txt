@@ -1,0 +1,25 @@
+*** SCENARIOS ***
+Events that happen in the gameworld
+
+Region Codes:
+01 = Lor
+
+Scenario Codes:
+01xxxx = Bandit Raid
+Bandits are raiding a certain area. 01(region)(area)(bandit strength) will define it the location and strength. Bandits will enter an area and fight with anyone near it OR will setup a camp. If the player is on good terms with bandits they won't attack.
+
+02xxxx = Rogue Wizard
+02(region)(area)(wizard strength)
+A wizard is setup somewhere for a set amount of time doing experiments. The player can kill them or just let them live and trade/learn from them if they have the right reputation.
+
+03xxxx = Seafairer Raid
+03(region)(area)(Seafairer strength)
+Seafairers working from secret area's nearby are raiding a village. 
+
+04xxxx = 
+05xxxx = 
+06xxxx =
+07xxxx =
+08xxxx =
+09xxxx =
+10xxxx =

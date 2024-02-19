@@ -1,0 +1,4 @@
+*** COMBAT ***
+How combat works in Taelus.
+
+The combat is turn based allowing the player to move one space and attack per turn. The armor is set by the armor the character is wearing. If the player has a chest armor rating of 2 then the chest has 2 hit points. Once that's done then the player will die if they get hit in the chest. If they get hit in the arms they can't attack and legs they can't move. Chest and head are insta-kills. 

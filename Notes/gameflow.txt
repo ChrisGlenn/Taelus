@@ -1,0 +1,15 @@
+*** GAMEFLOW ***
+How the gameflow will go.
+
+Start Game
+- Go to the character creation screen
+- Go to opening story text crawl
+- Go to a loading screen
+	- Generate date between 198 to 370
+	- Set the player's origin point based on background/nationality
+	- Generate Kings/Queens and Children
+	- if over 300 check if Gradia rules over Lor
+	- Generate an event
+	- Generate Billboard
+	- Switch over to the first stage and load the NPC's in the area
+	- Add the NPC's to the 'chunk' data for that region (see map for details)

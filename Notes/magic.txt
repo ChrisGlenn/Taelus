@@ -1,0 +1,21 @@
+*** MAGIC ***
+The magic system/spells for the game.
+
+Magic System:
+Magic in Taelus involves stone runes. The player must learn three Runes and combine them on a stone in order to create the spell. Then with the stone on their necklace, they can use a crystal on a wand to cast the spell. When the player has no more 'MP' or magic charge the crystal must be left alone during the day in order to recharge to cast a spell. Magic is different in this game in that it takes a lot to cast a single spell. 
+
+Learning Magic:
+The player can be born with affinities. An affinity to magic does not grant you a 'beginning spell'. It just means you have an easier time getting into the Tower of Lor to begin training to learn magic. The player must not be a wanted criminal or a notorious outlow otherwise they will be attacked by Meeker, Tulla, or Iol upon seeing them.
+
+
+Spells:
+HEAL - If the player has been disabled in the leg or arms then they can cast heal to renew.
+HEAL OTHER - Heal someone else.
+CURE - Cure disease on self.
+CURE OTHER - Cure disease on others.
+FIRE - Causes metal weapons to get hot and wooden ones to burn up.
+ICE - Ice spell freezes target causing ice damage.
+WIND - Will significantly decrease ranged weapon accuracy for a short time.
+INVISIBILITY - The player/target is invisible for a set amount of time.
+TRANSMORPHISM - The target will turn into an animal.
+

@@ -1,0 +1,26 @@
+*** SKILLS ***
+Skills the player can learn.
+
+
+Alchemy
+Blacksmithing
+Defense
+Farming
+Fishing
+Folklore
+Heavy Armor
+Herding
+Literacy
+Light Armor
+Magic
+Mathematics
+Marksmanship
+Medicine
+Mercantile
+Mining
+Musicianship
+Navigation
+Riding
+Speechcraft
+Swordsmanship
+Unarmed

@@ -1,0 +1,34 @@
+Playable Races
+
+Northerner Humans (Lor)
+Alphabet: ABDEFGHIJKLNORUV
+Humans who live in the region of Lor, or the Gradian lands in general. They are very tribal
+and not as advanced as the Fae. Natives to the Lor region are lighter in skin color. All around
+adept in all skills
+
+Eastern Fae (Skodian)
+Alphabet: Full
+Darker skin fae who are adept fighters. They are deeply religious, and consider themselves guardians
+of the world.
+
+Western Fae (Isabella, ect)
+Alphabet: Full
+Lighter skin Fae from the islands of Isabella. They are highly intelligent and adept in magic use. They
+are very few in Gradia, the ones the player does come in contact with are in Lor and the bridge town.
+
+Half-Fae (Worldwide)
+Alphabet: Dependant on their origin
+The product of a union between a human and a Fae. They are found throughout the known world and come in
+various sizes and colors. They are very strong and charismatic.
+
+Ilya (Southern Gradian islands)
+Alphabet: ACDEFHIJLNORUY
+Shorter people who live in the southern islands of Gradia, the Ischas are a hairy people with some beast
+like features. They live in burroughs and are adept at hiding and using magic.
+
+
+Non-Playable Races
+
+(Blue Giant Race)
+Alphabet: ADEFGHIJUY
+They are not available here in Lor

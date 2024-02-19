@@ -1,0 +1,12 @@
+*** NPC SCHEDULE NOTES ***
+Working out how NPC schedules work so this is basically just a rough notepad.
+
+Split the schedule up into seasons. Each season has 
+
+
+schedule = {
+	"winter": {
+		"morning": {"one": [x,y],"two": [x,y]},
+		"noon": {}
+	}
+}

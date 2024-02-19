@@ -1,0 +1,7 @@
+*** EQUIPMENT (ARMOR/WEAPONS) ***
+A list of armor, weapons, or any special 'equipment' the player can equip.
+
+ARMOR:
+Standard armor(helmet,chest,legs):
+Leather Armor
+Chainmail Armor

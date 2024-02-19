@@ -9,25 +9,6 @@ var new_scene_player_set = false # if true then the player will reset self based
 var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new scene
 var movement_speed = 97 # global movement speed
 var timer_ctrl = 100 # timer control
-# the inventory for the game that will be loaded upon loading game MAY BE SET ALREADY FOR TESTING
-var items = {
-	"Leather Bottle" : {
-		"name" : "Leather Bottle",
-		"description" : "A small empty bottle made of leather.",
-		"frame" : 1,
-		"weight" : 0.2,
-		"value" : 2,
-		"amnt" : 0,
-		"max_amnt" : 10,
-		"min_amnt" : -4,
-		"stackable" : false,
-		"type" : "CONSUME",
-		"hud_mode" : "sel_drink",
-		"func_one" : [0],
-		"func_two" : [0],
-		"func_three" : [0]
-	}
-}
 var placed_ = [] # items, ect already placed in the game to stop double spawning
 
 # GAMEPLAY
@@ -135,6 +116,8 @@ var queen_of_lor = {} # queen dictionary
 var prince_of_lor = {} # offspring dictionary
 var princcess_of_lor = {} # offspring dictionary
 var gradian_lor = false # if set true then Gradia has taken over Lor
+
 # data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game. 
-# chunk a = NPC's/Players days left, health, ect
-var chunk_days = {}
+var items = {
+	"Leather Bottle" : {"name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}
+}

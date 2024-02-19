@@ -1,0 +1,62 @@
+*** BACKGROUNDS ***
+
+Orphan:
+Your parentage is unknown. You were raised in an orphanage until you were thirteen, then your life on the streets began.
+Bonus: Speechcraft, Unarmed, Defense
+Starting Money: 5,0,0
+
+Squire: 
+Bonus: Swordsmanship, Riding
+Starting Money: 50,5,0
+
+Blacksmith:
+Bonus: Blacksmithing, Swordsmanship, Unarmed
+Staring Money: 100,0,0
+
+Caravaner:
+Bonus: Riding, Speechcraft
+Starting Money: 0,50,50
+
+Pauper:
+Bonus: Speechcraft, Unarmed
+Starting Money: 10,0,0
+
+Farmer:
+Bonus: Farming, Riding
+Starting Money, 60,0,0
+
+Miner:
+Bonus: Mining, Swordsmanship
+Starting Money: 50,1,0
+
+Fisherman:
+Bonus: Fishing, Navigation
+Starting Money: 30,0,0
+
+Musician:
+Bonus: Musicianship, Speechcraft
+Starting Money: 30,0,0
+
+Hunter:
+Bonus: Archery, Riding
+Starting Money: 40,0,0
+
+Soldier:
+Bonus: Swordsmanship, Archery, Defense
+Starting Money: 50,1,0
+
+Scholar:
+Bonus: Magic, Folklore, Speechcraft
+Starting Money: 50,5,0
+
+Mage:
+Bonus: Magic, Folklore, Alchemy
+Starting Money: 60,1,0
+
+Monk:
+Bonus: Folklore, Spirituality, Hand to Hand
+Starting Money: 0,1,0
+
+Priest:
+Bonus: Spirituality, Magic, Speechcraft
+Starting Money: 50,0,0

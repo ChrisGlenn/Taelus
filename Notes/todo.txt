@@ -1,0 +1,153 @@
+TO-DO LIST(ALPHA):
+-- These 'todos' are pre-testing after testing they will be 'pruned' and some of --
+-- them will be reset based on what works and what doesn't --
+
+!! ITEM/EQUIPMENT/HUD ICON NUMBERS ALL NEED TO MATCH ANIMATION CELLS  !!
+
+Player:
+	[x] Player Grid Movement
+	[x] New Selector
+    	[] Player Equipped Animations
+    	[] Class/Stats
+    	[x] Hunger/Thirst
+	[] Player Death
+	[] Riding a Horse
+	[] Driving a Carriage
+	[] Riding a Raft
+Gameplay:
+	[] Lockpicking
+	[] Musical Instruments
+	[] Pets
+	[] Cooking
+	[] Drunkeness
+	[] Building a Home
+	[] Ship Movement w/ Player
+	[] Sickness
+Combat:
+    	[] Combat System
+		[] Combat Outline
+    	[] Party NPCs
+NPC:
+    	[] Basic NPC
+	[] Pathfinding...
+	[] NPC Home(Property)
+	[] NPC Lifespan
+	[] NPC Spawning
+Overworld:
+	[] Item Spawn Check (if it's been taken delete it)
+	[] Region Border Block
+	[] ECONOMY!
+		[] Value table for each region?
+	[] Game 'Bulliten Board' System (BTS)
+	[] SEARCH
+		[] Selector Search Option
+		[] Returns NULL if nothing there
+		[] Search 'boxes' setup to describe what the player sees...
+	[] Items
+		[] Pickup
+		[] Attack/Bash/Ect...(second function)
+		[] Leather Bottle (all variations)
+		[] Cooked Food (Becomes a ration)
+	[] Trees
+		[] Standard
+		[] Apple
+		[] Pine
+		[] Swamp
+		[] Dead Standard
+		[] Dead Pine
+	[] Crops
+		[] Carrot
+		[] Cabbage
+		[] Potato
+    	[] Door(lock/unlocked)
+		[] Wood Door
+		[] Nice Wood Door
+		[] Gate Door
+		[] Metal Gate Door
+		[] Cell Door
+	[] Animals
+		[] Horse
+		[] Pig
+		[] Deer
+		[] Boar
+		[] Cow
+		[] Sheep
+		[] Goat
+		[] Chicken
+		[] Ducks
+Interiors:
+	[] Interior Map w/ Exploration
+	[] Entrance/Exits
+	[] Bed
+	[] Fire
+	[] Chest
+Exteriors:
+	[] Hangin Sign
+	[] Sign Post
+	[] Water Barrel
+	[] Empty Barrel 
+HUD:
+    	[] HUD
+	[x] 'Message' System w/ Multiple Messages Qeue
+	[] Narrative Message System
+    	[] Dialogue System
+    	[] World Map Image (updates based on year)
+    	[] Quest Journal
+	[] Player Inventory
+		[] Different Menu for Items/World interaction (i.e. throw in water or fire)
+		[] Change to class/const Inventory(Save/Load)
+		[x] Selector
+		[] Multiple of Same Object One Slot (e.g. Rations x2)
+		[x] Auto-Arrange
+		[] Menu 'Commands' Change
+		[] Overloaded
+		[] Equipment Handling
+	[] Player Equipment
+		[] Equip
+		[] Stat Update
+	[] External Inventory/Swap or Buy
+		[] Selector
+		[] Arrange
+		[] Menu 'Commands' Change
+System:
+	[] Fade In/Out
+	[x] Main Menu
+	[] Pause Menu
+	[] Camera System
+	[] Chunk Loading System :S
+	[] Splash Screen
+	[] Loading Screen
+	[] Initial Load Random NPC/Event Spawner
+	[] Item Pickups
+	[] Save/Load
+    	[] Options Menu
+    	[] PermaDETH
+    	[] Day/Night Cycle (Shading)
+    	[] Sleep
+	[] Wait
+    	[] Date/Time/Seasons System
+	[] Seasons Tilesets
+    	[] Construction/Player Home
+
+
+
+ALPHA BUG/FIX-LIST:
+	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes
+
+
+ALPHA FUTURE UPDATES???:
+
+
+TO-DO LIST(BETA):
+TO-DO LIST(RELEASE):
+
+EXPORT:
+[] Remove any 'DEBUG' references in scripts
+[] Make sure there are no 'SOUND' calls that haven't been fulfilled
+[] Test Across Platforms (Controllers Also)
+[] Icons (MacOS, Win, Linux)
+[] Set Version Info
+[] Set Release Date
+[] Linux
+[] Windows
+[] MacOS

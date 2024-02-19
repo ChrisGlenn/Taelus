@@ -1,0 +1,19 @@
+*** HUD/MENUS ***
+The HUD is where everything takes place. Dialogue, menu, inventory, map. There is nothing done outside of the HUD is the goal.
+
+HUD:
+Items to be display:
+Name
+Region
+Map
+Region Reputation
+Copper/Silver/Gold
+Player Status
+Date/Time
+Controls (M = Map, I = Inventory, ESC = Menu)
+
+
+INVENTORY:
+Copper/Silver/Gold
+Item slots (12 slots?)
+Equipped Clothes/Armor

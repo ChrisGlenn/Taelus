@@ -1,0 +1,66 @@
+*** NOTES ***
+List of ideas. A scratchpad for notes.
+
+
+OLD GAME IDEAS
+1. Wizards of Lor
+Iol, Meekar, Tulla are up in a high tower and once a plague hits they get blamed for it and a lynch mob comes for them.
+
+
+
+IDEAS
+1. Randomly Generated NPC's that can be born, age, and die.
+
+2. Users can upload custom tilesets/character art
+
+3. Deaths that effect the game. IE if a tribal leaders dies then there is a possible fight for succession. If a shopkeep dies and has no heirs to run it, then the shop is gone for that town.
+
+4. Jobs. The player can get hired/fired.
+
+5. The player randomly generates during a different time. There is a 200 year generation possibility with there being different NPC's and buildings for ages.
+
+6. HUD - the main hud is used for every menu other than the map.
+
+7. An overarching story is the main story that I've had all along.
+
+8. War's can and will happen. The player can fight in them or not, but may be affected by raids or battles depending on where they live.
+
+9. If the player plays until their character is killed in permadeth, then their actions could be recorded and kept if the next character they start is in the same timeline or afterwards.
+
+10. Any food 'harvested' automatically turns into a single ration.
+
+11. Musical Instruments - if the player has trained on an instrument they can play it better, otherwise the notes on screen are hidden and jumbled randomly after each note is played. The better they get the more notes are visible and static.
+
+12. A band of orphans in the woods who's parents have been killed in battle with Gradia.
+
+
+
+GEOGRAPHY
+1. Field of Swords: A great battle took place here. The ancient swords are still laying in the ground. There is a belief that the warriors of old will appear if any are pulled and attack. If anyone is in your party they will also leave, if they are from Lor.
+
+2. The Bog: A sunken city lies beneath the bog.
+
+3. The Temple of the Orb: There a light blue orb is displayed. It is believed to be the complete source of magic on Taelus.
+
+4. The Dead Forest: A section of forest that is always dead. The source of the decay is not known.
+
+5. Dragon's Nest: High up in the mountains rests a dragon and her children...and a mess of treasure.
+
+6. Fae Camp: A camp of Fae that are close to a city. They just travel together. They are here to find respite near the war Gradia is waging to consolidate the continent.
+
+7. Tree-Dwellers: A group of Humans who live deep in the forest. They are really hard to find unless you have been 'invited' you will have a really hard time finding their tribe.
+
+8. White horse carved into the land OR made from white brick ruins that the locals have taken.
+
+9. Locals with homes that have some white bricks from ruins that they've stolen.
+
+
+
+NPCS
+1. KingCobraJFS Reference...
+
+2. Famous Musician - Travels around Lor and plays his music. Is stuck in Lor while the Gradian Empire runs amok. 
+
+3. Daughters of Denguh - Group of women that are revolutionaries.
+
+4. 

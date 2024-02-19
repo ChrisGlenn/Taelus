@@ -1,0 +1,43 @@
+*** SICKNESSESS ***
+The list of various sicknessess that you can get in the game. Based off, or just a copy of, real life diseases and sicknesses.
+
+
+- The plague (name after some kind of evil entity)
+* caught by being around someone sick airborne *
+Fever, vomiting, body aches, plague-boils.
+In game effect: 
+Hard to walk (may take two or three presses of a direction to move)
+Disorientation (may move the wrong direction)
+Vomiting (the player vomits which decreases hydration)
+Carrying capacity drops significantly
+Passes out (game goes black and time increases)
+Death(80%)
+
+- St. Anthony's Fire (named after some mythical hero who died of it)
+* caught by eating old food/crops *
+Red spots, pain, swelling, hallucinations, rotting appendages
+In game effects:
+Hallucinations (screen objects/distortion, movement directions mixed)
+Slow movement (multiple hits to move)
+Unable to use weapons (can't handle weapons)
+Death(90%)
+
+- Sweating
+* caught by being around sickness *
+Hallucinations (screen distortion, movement directions mixed)
+Apprehention (Skills are disabled)
+Pain (slow movement)
+Death(60%)
+
+- Tuberculosis
+* caught by being around sick people *
+Death(30%)
+
+- Food Poisoning
+Death(5%)
+
+- Dysentery (water based name)
+* caught by drinking bad water *
+diarrhea, fever, dehydration
+
+
