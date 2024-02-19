@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddaljt1obg4og"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/NPCs/BaseNPC/basic_npc.gd" id="1_sqssm"]
+[ext_resource type="Texture2D" uid="uid://d22juw35ok3ky" path="res://Sprites/NPCs/Taelus-NPCs.png" id="1_veub2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx18v"]
+size = Vector2(8, 8)
+
+[node name="BasicNPC" type="Area2D"]
+script = ExtResource("1_sqssm")
+metadata/_edit_group_ = true
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("1_veub2")
+centered = false
+hframes = 32
+vframes = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_yx18v")

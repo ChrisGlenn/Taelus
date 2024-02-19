@@ -206,7 +206,6 @@ func picking_up():
 		Functions.message(str(item_name, " has been picked up."))
 		if Globals.selector_auto_off:
 			Globals.selector_on = false # turn off selector
-		print(Globals.player["inventory"])
 		queue_free() # delete item
 
 
