@@ -61,15 +61,15 @@ id = "00x48x01"
 item_name = "Leather Bottle"
 TITLE = "Empty Bottle"
 DESCRIPTION = "An empty bottle made of dark leather sits on the grass."
-item_amount = 1
+item_amount = 8
 
-[node name="FenceBottle" parent="Items" instance=ExtResource("8_s1djp")]
+[node name="PickUpTwo" parent="Items" instance=ExtResource("8_s1djp")]
 position = Vector2(272, 176)
 id = "00x48x02"
 item_name = "Leather Bottle"
 TITLE = "Empty Bottle"
 DESCRIPTION = "An empty bottle made of dark leather sits near a fence."
-item_amount = 2
+item_amount = 5
 
 [node name="NPCs" type="Node" parent="."]
 

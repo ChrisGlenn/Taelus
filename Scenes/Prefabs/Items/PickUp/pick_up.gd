@@ -57,18 +57,51 @@ func picking_up():
 				if Globals.player["inventory"][n]["name"] == item_name:
 					if Globals.player["inventory"][n]["amnt"] < Globals.player["inventory"][n]["max_amnt"]:
 						# check if the item_amount PLUS the amount already in a slot exceeds the max(99 usually) and if so then
-						# put the remainder in it's own slot...
-						#var slot_amount = Globals.player["inventory"][n]["amnt"] + item_amount
-						#if slot_amount > Globals.player["inventory"][n]["max_amnt"]:
-							#print("Too much stuff in one slot...")
-							#break # end loop
-						#else:
-						Globals.player["inventory"][n]["amnt"] += item_amount # increment amount
-						Functions.message(str(item_name, " has been picked up."))
-						if Globals.selector_auto_off:
-							Globals.selector_on = false # turn off selector
-						queue_free() # delete item
-						break # end loop
+						# put the remainder in it's own slot...fun fun fun
+						var slot_amount = Globals.player["inventory"][n]["amnt"] + item_amount
+						if slot_amount > Globals.player["inventory"][n]["max_amnt"]:
+							var difference = slot_amount - Globals.player["inventory"][n]["max_amnt"]
+							Globals.player["inventory"][n]["amnt"] = Globals.player["inventory"][n]["max_amnt"]
+							if Globals.player["inventory"].size() < 24:
+								# put the item in a new slot
+								var item = {
+									"name" : Globals.items[item_name]["name"],
+									"description" : Globals.items[item_name]["description"],
+									"frame" : Globals.items[item_name]["frame"],
+									"weight" : Globals.items[item_name]["weight"],
+									"value" : Globals.items[item_name]["value"],
+									"amnt" : difference,
+									"max_amnt" : Globals.items[item_name]["max_amnt"],
+									"min_amnt" : Globals.items[item_name]["min_amnt"],
+									"stackable" : Globals.items[item_name]["stackable"],
+									"type" : Globals.items[item_name]["type"],
+									"hud_mode" : Globals.items[item_name]["hud_mode"],
+									"func_one" : Globals.items[item_name]["func_one"],
+									"func_two" : Globals.items[item_name]["func_two"],
+									"func_three" : Globals.items[item_name]["func_three"]
+								}
+								Globals.player["inventory"].append(item) # add item to player inventory array
+								Functions.message(str(item_name, " has been picked up."))
+								if Globals.selector_auto_off:
+									Globals.selector_on = false # turn off selector
+								queue_free() # delete item
+							else:
+								# there's no more room so LEAVE this pickup but change the amount to the difference
+								Globals.player["inventory"][n]["amnt"] += item_amount # increment the amount
+								item_amount = difference # reset this item's item amount
+								Functions.message(str(item_name, " has been picked up."))
+								Globals.placed_.append(id) # record item picked up
+								if Globals.selector_auto_off:
+									Globals.selector_on = false # turn off selector
+								print(str(item_amount)) # DEBUG
+								break
+						else:
+							Globals.player["inventory"][n]["amnt"] += item_amount # increment amount
+							Functions.message(str(item_name, " has been picked up."))
+							if Globals.selector_auto_off:
+								Globals.selector_on = false # turn off selector
+							queue_free() # delete item
+							break # end loop
 					else:
 						# append the item to the inventory if the inventory is not full
 						if Globals.player["inventory"].size() < 24:
