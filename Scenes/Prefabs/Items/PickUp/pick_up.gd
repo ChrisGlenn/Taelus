@@ -2,6 +2,7 @@ extends Area2D
 # PICK UP ITEM
 # this is the base item for anything the player can pick up
 # set the relevant info and it will do the rest
+# EDIT to stop the pick ups from overriding each other a local item dictionary is created in each instance of 'picking up'...
 @onready var SPRITE = $Sprite2D
 @onready var AUDIO = $AudioStreamPlayer
 @export var id = "" # id used to make sure this item doesn't spawn twice
@@ -11,7 +12,6 @@ extends Area2D
 @export_multiline var DESCRIPTION = "HUD DESCRIPTION" # description for the title to display
 @export var item_amount = 0 # defaults to 1 amount of item on the ground
 @export var HUD_CTRL_MODE = "pick_up" # holds hud control mode for this item
-@export var item_placeholder = {}
 var FRAME_NO = 0 # the number of the frame for the HUD display
 var selector_in = false # if the player's selector is in or not
 
@@ -29,15 +29,10 @@ func _ready():
 		print("WARNING: NO ITEM SET FOR ", self)
 		# queue_free()
 	# setup the pickup object (frame, ect)
-	item_placeholder = Globals.items[item_name] # move item from item list into a placeholder
-	item_placeholder["amnt"] = item_amount # set item amount for item to be picked up
 	SPRITE.frame = Globals.items[item_name]["frame"]
 	FRAME_NO = Globals.items[item_name]["frame"]
-	print(item_placeholder)
 
 func _process(_delta):
-	if Input.is_action_just_pressed("tae_debug"):
-		print(item_placeholder)
 	# check input while selector is colliding
 	if selector_in:
 		if Input.is_action_just_pressed("tae_select"):
@@ -51,7 +46,7 @@ func _process(_delta):
 func picking_up():
 	# cycle through the inventory looking for a slot that either has the same item (if stackable)
 	# or for a blank slot but if full will send a message that the inventory is full
-	if item_placeholder["stackable"]:
+	if Globals.items[item_name]["stackable"]:
 		# if the item is stackable then see if the player has anything in their inventory
 		# if not then just add the item
 		if Globals.player["inventory"].size() > 0:
@@ -61,23 +56,42 @@ func picking_up():
 			for n in Globals.player["inventory"].size():
 				if Globals.player["inventory"][n]["name"] == item_name:
 					if Globals.player["inventory"][n]["amnt"] < Globals.player["inventory"][n]["max_amnt"]:
-						# PLAY SOUND HERE
+						# check if the item_amount PLUS the amount already in a slot exceeds the max(99 usually) and if so then
+						# put the remainder in it's own slot...
+						#var slot_amount = Globals.player["inventory"][n]["amnt"] + item_amount
+						#if slot_amount > Globals.player["inventory"][n]["max_amnt"]:
+							#print("Too much stuff in one slot...")
+							#break # end loop
+						#else:
 						Globals.player["inventory"][n]["amnt"] += item_amount # increment amount
-						Functions.message(str(item_placeholder["name"], " has been picked up."))
+						Functions.message(str(item_name, " has been picked up."))
 						if Globals.selector_auto_off:
 							Globals.selector_on = false # turn off selector
-						# make sure that the item does not go over item max
-						if Globals.player["inventory"][n]["amnt"] > Globals.player["inventory"][n]["max_amnt"]:
-							Globals.player["inventory"][n]["amnt"] = Globals.player["inventory"][n]["max_amnt"]
 						queue_free() # delete item
-						break
+						break # end loop
 					else:
 						# append the item to the inventory if the inventory is not full
 						if Globals.player["inventory"].size() < 24:
 							# PLAY SOUND HERE
-							Globals.player["inventory"].append(item_placeholder) # add item to the inventory
+							var item = {
+								"name" : Globals.items[item_name]["name"],
+								"description" : Globals.items[item_name]["description"],
+								"frame" : Globals.items[item_name]["frame"],
+								"weight" : Globals.items[item_name]["weight"],
+								"value" : Globals.items[item_name]["value"],
+								"amnt" : item_amount,
+								"max_amnt" : Globals.items[item_name]["max_amnt"],
+								"min_amnt" : Globals.items[item_name]["min_amnt"],
+								"stackable" : Globals.items[item_name]["stackable"],
+								"type" : Globals.items[item_name]["type"],
+								"hud_mode" : Globals.items[item_name]["hud_mode"],
+								"func_one" : Globals.items[item_name]["func_one"],
+								"func_two" : Globals.items[item_name]["func_two"],
+								"func_three" : Globals.items[item_name]["func_three"]
+							}
+							Globals.player["inventory"].append(item) # add item to player inventory array
 							Globals.placed_.append(id) # record item picked up
-							Functions.message(str(item_placeholder["name"], " has been picked up."))
+							Functions.message(str(item_name, " has been picked up."))
 							if Globals.selector_auto_off:
 								Globals.selector_on = false # turn off selector
 							queue_free() # delete item
@@ -88,9 +102,25 @@ func picking_up():
 					# check if the loop is at the end of the array and hasn't found the item so just append it
 					if n == Globals.player["inventory"].size():
 						# PLAY SOUND HERE
-						Globals.player["inventory"].append(item_placeholder) # put the item in the player's inventory
+						var item = {
+							"name" : Globals.items[item_name]["name"],
+							"description" : Globals.items[item_name]["description"],
+							"frame" : Globals.items[item_name]["frame"],
+							"weight" : Globals.items[item_name]["weight"],
+							"value" : Globals.items[item_name]["value"],
+							"amnt" : item_amount,
+							"max_amnt" : Globals.items[item_name]["max_amnt"],
+							"min_amnt" : Globals.items[item_name]["min_amnt"],
+							"stackable" : Globals.items[item_name]["stackable"],
+							"type" : Globals.items[item_name]["type"],
+							"hud_mode" : Globals.items[item_name]["hud_mode"],
+							"func_one" : Globals.items[item_name]["func_one"],
+							"func_two" : Globals.items[item_name]["func_two"],
+							"func_three" : Globals.items[item_name]["func_three"]
+						}
+						Globals.player["inventory"].append(item) # add item to player inventory array
 						Globals.placed_.append(id) # record item picked up
-						Functions.message(str(item_placeholder["name"], " has been picked up."))
+						Functions.message(str(item_name, " has been picked up."))
 						if Globals.selector_auto_off:
 							Globals.selector_on = false # turn off selector
 						queue_free() # delete item
@@ -98,23 +128,52 @@ func picking_up():
 		else:
 			# just add the item to their inventory
 			# PLAY SOUND HERE
-			Globals.player["inventory"].append(item_placeholder) # add item to player inventory array
-			Globals.placed_.append(id) # record item picked up
-			Functions.message(str(item_placeholder["name"], " has been picked up."))
+			var item = {
+				"name" : Globals.items[item_name]["name"],
+				"description" : Globals.items[item_name]["description"],
+				"frame" : Globals.items[item_name]["frame"],
+				"weight" : Globals.items[item_name]["weight"],
+				"value" : Globals.items[item_name]["value"],
+				"amnt" : item_amount,
+				"max_amnt" : Globals.items[item_name]["max_amnt"],
+				"min_amnt" : Globals.items[item_name]["min_amnt"],
+				"stackable" : Globals.items[item_name]["stackable"],
+				"type" : Globals.items[item_name]["type"],
+				"hud_mode" : Globals.items[item_name]["hud_mode"],
+				"func_one" : Globals.items[item_name]["func_one"],
+				"func_two" : Globals.items[item_name]["func_two"],
+				"func_three" : Globals.items[item_name]["func_three"]
+			}
+			Globals.player["inventory"].append(item) # add item to player inventory array
+			Functions.message(str(item_name, " has been picked up."))
 			if Globals.selector_auto_off:
 				Globals.selector_on = false # turn off selector
 			queue_free() # delete item
 	else:
 		# item is not stackable so just pick the item up
 		# PLAY SOUND HERE
-		print(item_placeholder["amnt"])
-		Globals.player["inventory"].append(item_placeholder) # add item to player inventory array
-		print(item_placeholder["amnt"])
-		print(Globals.player["inventory"])
+		var item = {
+			"name" : Globals.items[item_name]["name"],
+			"description" : Globals.items[item_name]["description"],
+			"frame" : Globals.items[item_name]["frame"],
+			"weight" : Globals.items[item_name]["weight"],
+			"value" : Globals.items[item_name]["value"],
+			"amnt" : item_amount,
+			"max_amnt" : Globals.items[item_name]["max_amnt"],
+			"min_amnt" : Globals.items[item_name]["min_amnt"],
+			"stackable" : Globals.items[item_name]["stackable"],
+			"type" : Globals.items[item_name]["type"],
+			"hud_mode" : Globals.items[item_name]["hud_mode"],
+			"func_one" : Globals.items[item_name]["func_one"],
+			"func_two" : Globals.items[item_name]["func_two"],
+			"func_three" : Globals.items[item_name]["func_three"]
+		}
+		Globals.player["inventory"].append(item) # add item to player inventory array
 		Globals.placed_.append(id) # record item picked up
-		Functions.message(str(item_placeholder["name"], " has been picked up."))
+		Functions.message(str(item_name, " has been picked up."))
 		if Globals.selector_auto_off:
 			Globals.selector_on = false # turn off selector
+		print(Globals.player["inventory"])
 		queue_free() # delete item
 
 
