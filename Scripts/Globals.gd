@@ -20,13 +20,12 @@ var items = {
 		"amnt" : 0,
 		"max_amnt" : 10,
 		"min_amnt" : -4,
-		"stackable" : true,
+		"stackable" : false,
 		"type" : "CONSUME",
 		"hud_mode" : "sel_drink",
 		"func_one" : [0],
 		"func_two" : [0],
-		"func_three" : [0],
-		"id" : 0
+		"func_three" : [0]
 	}
 }
 var placed_ = [] # items, ect already placed in the game to stop double spawning
