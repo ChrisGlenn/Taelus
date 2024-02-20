@@ -4,4 +4,3 @@ extends Area2D
 @export var npc_name : String = ""
 @export var npc_inventory : Array = []
 @export var family : Array = []
- 
