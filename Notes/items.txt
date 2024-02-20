@@ -3,33 +3,34 @@ The list of items for the inventory the player will be able to get in
 the game. Will be split into different sections each given 50 slots.
 
 
-Item layout:
-{
-	"item": 0 # refers to item liste below
-	"type": "EMPTY" # consumable
-	"name": ""
-	"desc": ""
-	"amnt": 0
-}
+ITEMS/RATIONS/ECT (USING DICTIONARIES SO NO NEED FOR NUMBERS)
+NULL EMPTY SLOT
+Leather Bottle (empty bottle)
+Water Bottle (leather bottle full of water)
+Wine Bottle (leather bottle filled w/ Wine)
+Empty Cup
+Mead
+Beer
+Gruel 
+Carrot
+Rotten Carrot
+Carrot Seed
+Cabbage
+Rotten Cabbage
+Cabbage Seed
 
 
-ITEMS/RATIONS/ECT 0-256
-0: NULL EMPTY SLOT
-1: Water Bottle
-2: Mead
-3: Beer
-4: Gruel
-5:  
 
-x: Carrot
-x: Rotten Carrot
-x: Carrot Seed
-x: Cabbage
-x: Rotten Cabbage
-x: Cabbage Seed
 
-EQUIPMENT 257-1024
-257: ARMOR ICON
+
+EQUIPMENT
+ARMOR ICON
 (clothing)
-258: Ragged Clothing
-259:  
+Ragged Clothing
+
+
+item list for script
+var items = {
+	"NULL" : {"name": "NULL"},
+	"Leather Bottle" : {"name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}
+}  
