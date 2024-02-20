@@ -34,6 +34,9 @@ NPC:
 	[] NPC Lifespan
 	[] NPC Spawning
 Overworld:
+	[] Day/Night Cycle
+	[] Weather
+	[] Sleep
 	[] Item Spawn Check (if it's been taken delete it)
 	[] Region Border Block
 	[] ECONOMY!
@@ -122,9 +125,6 @@ System:
 	[] Save/Load
     	[] Options Menu
     	[] PermaDETH
-    	[] Day/Night Cycle (Shading)
-    	[] Sleep
-	[] Wait
     	[] Date/Time/Seasons System
 	[] Seasons Tilesets
     	[] Construction/Player Home

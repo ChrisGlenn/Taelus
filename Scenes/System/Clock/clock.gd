@@ -2,7 +2,7 @@ extends Node
 # CLOCK
 # keeps track of seconds (by increments of 10 in game), minutes, days, years, months, seasons, ect.
 # will also have a flag that is set when a new day has dawned
-var active_clock = true # FALSE default
+var active_clock = false # FALSE default
 var timer_started = false # if false then activate timer and shut the flag off
 var new_day = false # default FALSE will go to true if it's a new day
 

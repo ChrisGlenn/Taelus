@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq70indwp2ajl"]
+[gd_scene load_steps=5 format=3 uid="uid://cq70indwp2ajl"]
 
 [ext_resource type="Texture2D" uid="uid://du4h1j70ujpko" path="res://Tilesets/Taelus-Tileset.png" id="1_bfm24"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eg3a7"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28b1b"]
 texture = ExtResource("1_bfm24")
@@ -578,6 +581,7 @@ texture = ExtResource("1_bfm24")
 14:5/0/physics_layer_0/angular_velocity = 0.0
 14:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:5/0 = 0
+15:5/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_eg3a7")
 15:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:5/0/physics_layer_0/angular_velocity = 0.0
 15:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1602,6 +1606,7 @@ texture = ExtResource("1_bfm24")
 31:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_467pl"]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_28b1b")
 

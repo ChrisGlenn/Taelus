@@ -42,6 +42,8 @@ func _ready():
 	MAIN.visible = true
 	SELECTION.visible = false
 	DIAGHUD.visible = false
+	# start the clock
+	Clock.active_clock = true
 	# SETUP THE HUD
 	# control update
 	update_controls(false)

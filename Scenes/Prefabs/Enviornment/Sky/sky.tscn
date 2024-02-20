@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcg642gvfdb0m"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Sky/sky.gd" id="1_tqilh"]
+
+[node name="Sky" type="CanvasModulate"]
+script = ExtResource("1_tqilh")
