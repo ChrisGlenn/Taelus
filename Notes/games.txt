@@ -1,0 +1,6 @@
+*** GAMES ***
+These are games that the player can play with others in Taelus. They are based on the region the player is currently in as there are no real games that will be completely the same throughout the entire world. At best you'll get variations of a game based on reagion.
+
+
+CONTINENT: Gradia
+REGION: Lor
