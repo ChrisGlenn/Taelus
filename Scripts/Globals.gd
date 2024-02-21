@@ -99,6 +99,7 @@ var season = 1
 var hour = 9 # 9am
 var minutes = 0 # 60 seconds
 var seconds = 0
+var sky_data = "" # records the color of the sky
 var months = ["Morns Light","Inabar's Dance","Ransfir","Gundar's Wake","Noruv's Fire","Sunsfir","Bloodmun","Harvest Fall","First Frost","Night's Fall"]
 var month_max_days = [28,22,26,29,30,24,26,24,25,22]
 var seasons = ["Winter","Spring","Summer","Fall"]
