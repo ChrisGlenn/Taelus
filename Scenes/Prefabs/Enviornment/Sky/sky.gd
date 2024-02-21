@@ -8,7 +8,6 @@ var t_cycle = 150 # between cycle times
 var cycle_timer = 15 # 150 gets you all the way, baby so 10 counts of 15 seconds each
 var cycles = 10 # checks the cycles (10 cycles)
 var dawn_dusk = [6,18] # sets time for dawn dusk winter/fall: 6:00am to 6:00pm [6,18] spring/summer: 5:00 to 8:00 [5,20]
-var d_time = 0 # used to set color off time
 var timer_rec # records timer_to_cycle
 var cTimer_rec # records cycle_timer
 var check_flag = false # used to make checks when needed
@@ -47,7 +46,6 @@ func _process(delta):
 			# use check_flag to stop this from running in the background ALL THE TIME
 			# reset and wait for next sunrise/sunset
 			cycles = 10 # reset cycles
-			d_time = 0 # reset d_time
 			check_flag = false # reset the check_flag
 			t_cycle = timer_rec # reset timer_to_cycle
 			cycle_timer = cTimer_rec # reset cycle_timer
@@ -64,24 +62,18 @@ func cycle(clock, sun_direction):
 		if sun_direction == 0:
 			# wake up!
 			cycle_timer -= Globals.timer_ctrl * clock
-			d_time += clock # increment d_time
-			color = NIGHT_COLOR.lerp(DAY_COLOR,sin(d_time)) # change the color
 		elif sun_direction == 1:
 			# go to bed!
 			cycle_timer -= Globals.timer_ctrl * clock
-			d_time += clock # increment d_time
-			# color = DAY_COLOR.lerp(NIGHT_COLOR,sin(d_time)) # change the color
-			color.r = 0.05
-			color.g = 0.05
-			color.b = 0.05
-			print(str(color))
+			color.r -= 0.4 * clock
+			color.g -= 0.4 * clock
+			color.b -= 0.4 * clock
 		else:
 			# DEBUG warning message DEBUG
 			print("ERROR: Direction for day/night cycle incorrectly set...")
 			get_tree().quit() # exit game
 	else:
 		cycles -= 1 # dec cycles
-		d_time = 0
 		print(str(cycles))
 		t_cycle = timer_rec # reset timer to cycle
 		cycle_timer = cTimer_rec # reset cycle timer
