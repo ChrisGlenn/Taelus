@@ -34,7 +34,7 @@ NPC:
 	[] NPC Lifespan
 	[] NPC Spawning
 Overworld:
-	[] Day/Night Cycle
+	[x] Day/Night Cycle
 	[] Weather
 	[] Sleep
 	[] Item Spawn Check (if it's been taken delete it)
