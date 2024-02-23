@@ -6,3 +6,4 @@
 script = ExtResource("1_tqilh")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
+position = Vector2(320, 0)

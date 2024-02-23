@@ -101,6 +101,7 @@ var minutes = 55 # 60 seconds
 var seconds = 0
 var sky_data = "" # records the color of the sky
 var weather_updated = false # true if weather event is 'running'
+var weather_event = "SUN" # the current weather event 
 var months = ["Morns Light","Inabar's Dance","Ransfir","Gundar's Wake","Noruv's Fire","Sunsfir","Bloodmun","Harvest Fall","First Frost","Night's Fall"]
 var month_max_days = [28,22,26,29,30,24,26,24,25,22]
 var seasons = ["Winter","Spring","Summer","Fall"]

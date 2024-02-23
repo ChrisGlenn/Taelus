@@ -2,6 +2,10 @@ extends Node
 # EVENTS
 # this holds the functions that create events in the game!!!
 
+
+func _ready():
+    print(str(Dice.dice_roll(10, 30)))
+
 func weather(season, _odds, _effect):
     # season = current season
     # odds[seasonal_odds] = the odds set for the current year
@@ -14,7 +18,9 @@ func weather(season, _odds, _effect):
         match season:
             0:
                 # winter
-                pass
+                # roll the dice with the odds to see if there will be an event
+                # based on the odds set
+                Globals.weather_updated = true # weather is updated
             1:
                 # spring
                 pass
