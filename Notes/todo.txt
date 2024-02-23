@@ -93,6 +93,7 @@ HUD:
     	[] HUD
 	[x] 'Message' System w/ Multiple Messages Qeue
 	[] Narrative Message System
+	[] Narrative Message Image System
     	[] Dialogue System
     	[] World Map Image (updates based on year)
     	[] Quest Journal
