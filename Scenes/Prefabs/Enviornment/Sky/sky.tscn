@@ -4,3 +4,5 @@
 
 [node name="Sky" type="CanvasModulate"]
 script = ExtResource("1_tqilh")
+
+[node name="Particles" type="GPUParticles2D" parent="."]

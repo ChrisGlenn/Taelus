@@ -35,7 +35,7 @@ NPC:
 	[] NPC Spawning
 Overworld:
 	[x] Day/Night Cycle
-	[] Weather
+	[] Weather (Rain/Snow/Wind + visibility)
 	[] Sleep
 	[] Item Spawn Check (if it's been taken delete it)
 	[] Region Border Block
