@@ -4,33 +4,30 @@ extends CanvasModulate
 # NOTE: save the color to a global for game saving???
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
-var t_cycle = 150 # between cycle times
-var cycle_timer = 15 # 150 gets you all the way, baby so 10 counts of 15 seconds each
-var cycles = 10 # checks the cycles (10 cycles)
+var t_cycle = 350 # between cycle times
+var cycles = 20 # checks the cycles (10 cycles)
 var dawn_dusk = [6,18] # sets time for dawn dusk winter/fall: 6:00am to 6:00pm [6,18] spring/summer: 5:00 to 8:00 [5,20]
+var color_tracker = 1.0 # used to update the cycle to know what to dec/inc to...
 var timer_rec # records timer_to_cycle
-var cTimer_rec # records cycle_timer
 var check_flag = false # used to make checks when needed
 
 
 func _ready():
 	set_season() # set the season
 	timer_rec = t_cycle # record timer_to_cycle
-	cTimer_rec = cycle_timer # record cycle_timer
 
 func _process(delta):
 	# the game starts off during the day time SO start this off looking for night...
 	if Globals.hour == dawn_dusk[0]:
 		# sunrise
-		# check the cycles against the minutes, run a cycle, then wait
+		# run the timer, run the dark function that checks if it's met the 'dark' criteria, if not
+		# then repeat until it has
 		if cycles > 0:
 			# check the timer and decrement
 			if t_cycle > 0:
-				t_cycle -= Globals.timer_ctrl * delta
+				t_cycle -= Globals.timer_ctrl * delta # dec t_cycle
 			else:
-				cycle(delta,0) # 0 run for sunrise
-		else:
-			set_season() # see if the season has changed
+				cycle(delta,0) # run the cycle function with a 0 (daytime to nighttime)
 	elif Globals.hour == dawn_dusk[1]:
 		# sunset
 		if cycles > 0:
@@ -45,38 +42,40 @@ func _process(delta):
 		if check_flag:
 			# use check_flag to stop this from running in the background ALL THE TIME
 			# reset and wait for next sunrise/sunset
-			cycles = 10 # reset cycles
+			cycles = 20 # reset cycles
 			check_flag = false # reset the check_flag
 			t_cycle = timer_rec # reset timer_to_cycle
-			cycle_timer = cTimer_rec # reset cycle_timer
-	# DEBUG EXAMPLE DEBUG
-	#if cycle_timer > 0:
-		#cycle_timer -= Globals.timer_ctrl * delta
-		#d_time += delta
-		#color = DAY_COLOR.lerp(NIGHT_COLOR,sin(d_time)) # change the color
 
 
 func cycle(clock, sun_direction):
 	# direction 0 is day 1 is night
-	if cycle_timer > 0:
-		if sun_direction == 0:
-			# wake up!
-			cycle_timer -= Globals.timer_ctrl * clock
-		elif sun_direction == 1:
-			# go to bed!
-			cycle_timer -= Globals.timer_ctrl * clock
-			color.r -= 0.4 * clock
-			color.g -= 0.4 * clock
-			color.b -= 0.4 * clock
+	# direction 0 is day 1 is night
+	if sun_direction == 0:
+		# sun is rising
+		if color.r < color_tracker:
+			color.r += 0.1 * clock # increment color RED
+			color.g += 0.1 * clock # increment color GREEN
+			color.b += 0.1 * clock # increment color BLUE
 		else:
-			# DEBUG warning message DEBUG
-			print("ERROR: Direction for day/night cycle incorrectly set...")
-			get_tree().quit() # exit game
-	else:
-		cycles -= 1 # dec cycles
-		print(str(cycles))
-		t_cycle = timer_rec # reset timer to cycle
-		cycle_timer = cTimer_rec # reset cycle timer
+			color.r = color_tracker # set to color tracker
+			color.g = color_tracker # set to color tracker
+			color.b = color_tracker # set to color tracker
+			cycles -= 1 # dec cycles
+			t_cycle = timer_rec # reset timer to cycle
+			color_tracker += 0.5 # increment color_tracker
+	elif sun_direction == 1:
+		# sun is setting
+		if color.r > color_tracker:
+			color.r -= 0.1 * clock # decrement color RED
+			color.g -= 0.1 * clock # decrement color GREEN
+			color.b -= 0.1 * clock # decrement color BLUE
+		else:
+			color.r = color_tracker # set to color tracker
+			color.g = color_tracker # set to color tracker
+			color.b = color_tracker # set to color tracker
+			cycles -= 1 # dec cycles
+			t_cycle = timer_rec # reset timer to cycle
+			color_tracker -= 0.05 # decrement color_tracker
 
 func set_season():
 	if !check_flag:
@@ -86,5 +85,5 @@ func set_season():
 			check_flag = true
 		elif Globals.season == 1 || Globals.season == 2:
 			# spring/summer
-			dawn_dusk = [5,10]
+			dawn_dusk = [5,20]
 			check_flag = true
