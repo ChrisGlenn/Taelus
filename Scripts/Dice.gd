@@ -7,11 +7,12 @@ func _ready():
     rng.randomize() # seed rng
 
 
-func dice_roll(one, two):
-    # generate a random number
-    if one > 0:
-        var result = rng.randi_range(0, one)
-        return result
+func dice_roll(die, odds):
+    # generate a random number against a dice roll
+    var result = rng.randi_range(1,die)
+    if result > odds:
+        return [odds - result,"lose"] # return the difference
+    elif result == odds:
+        return [0,"equal"] # return 0
     else:
-        print("ERROR: argument one not set...")
-        get_tree().quit() # DEBUG quit game with error
+        return [result - odds,"win"] # return the difference

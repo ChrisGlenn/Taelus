@@ -47,7 +47,7 @@ Overworld:
 		[] Returns NULL if nothing there
 		[] Search 'boxes' setup to describe what the player sees...
 	[] Items
-		[] Pickup
+		[x] Pickup
 		[] Attack/Bash/Ect...(second function)
 		[] Leather Bottle (all variations)
 		[] Cooked Food (Becomes a ration)
@@ -118,6 +118,7 @@ System:
 	[x] Main Menu
 	[] Pause Menu
 	[] Camera System
+	[] Dice Roll
 	[] Chunk Loading System :S
 	[] Splash Screen
 	[] Loading Screen

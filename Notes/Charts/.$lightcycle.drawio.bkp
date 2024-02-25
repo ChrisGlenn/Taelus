@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2024-02-23T17:33:57.536Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="ubvD7U5s60qbCsfjbM0I" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2024-02-24T15:49:50.315Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="9Ae3fWTIIewSbJY8VeVl" version="23.1.5" type="device">
   <diagram name="Page-1" id="sMBefzLCpiR2ebWWNsJE">
-    <mxGraphModel dx="922" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="786" dy="590" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -16,10 +16,10 @@
         <mxCell id="VVkygvZ0o7O_Oq38gnLx-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="VVkygvZ0o7O_Oq38gnLx-2" target="VVkygvZ0o7O_Oq38gnLx-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a-tWaZwPCyAhXtBM_cI1-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="VVkygvZ0o7O_Oq38gnLx-2" target="a-tWaZwPCyAhXtBM_cI1-1">
+        <mxCell id="a-tWaZwPCyAhXtBM_cI1-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="VVkygvZ0o7O_Oq38gnLx-2" target="a-tWaZwPCyAhXtBM_cI1-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="VVkygvZ0o7O_Oq38gnLx-2" value="Weather" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+        <mxCell id="VVkygvZ0o7O_Oq38gnLx-2" value="Weather&lt;br&gt;(sky.tscn)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
           <mxGeometry x="120" y="120" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="VVkygvZ0o7O_Oq38gnLx-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="VVkygvZ0o7O_Oq38gnLx-3" target="VVkygvZ0o7O_Oq38gnLx-22" edge="1">
@@ -148,11 +148,54 @@
         <mxCell id="KNaz0oER7aez-V8XWjQQ-3" value="Start/stop&lt;br&gt;depending on time" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" parent="1" vertex="1">
           <mxGeometry x="380" y="200" width="40" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="gsE4YjvTZbsSA2tztFBP-1" value="Visibility" style="rhombus;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
-          <mxGeometry x="560" y="460" width="80" height="80" as="geometry" />
+        <mxCell id="fDy-899vEHlfvW-3nuNf-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gsE4YjvTZbsSA2tztFBP-1" target="fDy-899vEHlfvW-3nuNf-9">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="a-tWaZwPCyAhXtBM_cI1-1" value="W" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+        <mxCell id="gsE4YjvTZbsSA2tztFBP-1" value="Weather&lt;br&gt;Change" style="rhombus;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="580" y="420" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="a-tWaZwPCyAhXtBM_cI1-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="a-tWaZwPCyAhXtBM_cI1-1" target="gsE4YjvTZbsSA2tztFBP-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="78" />
+              <mxPoint x="330" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a-tWaZwPCyAhXtBM_cI1-1" value="Clock will make calls to the weather system at set intervals based on some random odds set by the season that will update every year (rainy year? drought? it&#39;s up to chance) then that will be fed to the Sky scene to generate rain, snow, wind, ect. and for how long then Clock will NOT send updates if the weather is set. Just sunny can also be set for a set amount of time..." style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" parent="1" vertex="1">
           <mxGeometry x="20" y="10" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fDy-899vEHlfvW-3nuNf-9" target="fDy-899vEHlfvW-3nuNf-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fDy-899vEHlfvW-3nuNf-9" target="fDy-899vEHlfvW-3nuNf-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fDy-899vEHlfvW-3nuNf-9" target="fDy-899vEHlfvW-3nuNf-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fDy-899vEHlfvW-3nuNf-9" target="fDy-899vEHlfvW-3nuNf-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="620" />
+              <mxPoint x="380" y="620" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-9" value="Hour has changed. The clock will run a weather update" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="560" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-11" value="Winter" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="360" y="660" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-12" value="Spring" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="590" y="660" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-13" value="Summer" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="670" y="660" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fDy-899vEHlfvW-3nuNf-14" value="Fall" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="510" y="660" width="40" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
