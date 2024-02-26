@@ -22,6 +22,10 @@ func active_time(_clock):
 		# set the minutes
 		if Globals.seconds == 60:
 			Globals.seconds = 0 # reset seconds
+			# update the weather
+			if !Globals.weather_updated:
+				pass
+				Events.weather(Globals.season, (Globals.seasonal_attribute+Globals.seasonal_weather_mod[Globals.season]))
 			if Globals.minutes < 55:
 				# increment the minutes by 5
 				Globals.minutes += 5
@@ -31,13 +35,13 @@ func active_time(_clock):
 				if Globals.hour < 23:
 					Globals.hour += 1
 					# update the weather
-					if !Globals.weather_updated:
-						Events.weather(Globals.season, Globals.seasonal_weather[Globals.season]) 
+					#if !Globals.weather_updated:
+						#Events.weather(Globals.season, Globals.seasonal_weather[Globals.season]) 
 				else:
 					Globals.hour = 1 # reset hours to 1
 					# update the weather
-					if !Globals.weather_updated:
-						Events.weather(Globals.season, Globals.seasonal_weather[Globals.season]) 
+					#if !Globals.weather_updated:
+						#Events.weather(Globals.season, Globals.seasonal_weather[Globals.season]) 
 					# month/year advance
 					if Globals.day < Globals.month_max_days[Globals.month]:
 						Globals.day += 1 # advance the day

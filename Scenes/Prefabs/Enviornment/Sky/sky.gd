@@ -55,8 +55,8 @@ func _process(delta):
 	if Globals.weather_updated:
 		# IF the time_left is -4 then get the weather details from the globals script and then set the
 		# time_left by performing a die roll against a 12 sided die to get the hours
-		time_left = Dice.dice_roll(12,0) # get the hours left for the weather event
-		print(str(time_left))
+		#time_left = Dice.dice_roll(12,0) # get the hours left for the weather event
+		#print(str(time_left))
 		pass
 
 

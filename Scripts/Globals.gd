@@ -101,11 +101,13 @@ var minutes = 55 # increments by 5
 var seconds = 0
 var sky_data = "" # records the color of the sky
 var weather_updated = false # true if weather event is 'running'
-var weather_event = "SUN" # the current weather event 
+var weather_event = "SUN" # the current weather event
 var months = ["Morns Light","Inabar's Dance","Ransfir","Gundar's Wake","Noruv's Fire","Sunsfir","Bloodmun","Harvest Fall","First Frost","Night's Fall"]
 var month_max_days = [28,22,26,29,30,24,26,24,25,22]
 var seasons = ["Winter","Spring","Summer","Fall"]
-var seasonal_weather = [4,3,5,4] # the odds for a weather event for each season
+var seasonal_attribute = 4 # the initial stat needed to beat for weather events
+var seasonal_weather_mod = [3,1,2,2] # the odds for a weather event for each season
+var seasonal_rain = 15 # when it rains this gets incremented from 0 and affects crop output
 var days_in_game = 0
 var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
@@ -121,7 +123,7 @@ var prince_of_lor = {} # offspring dictionary
 var princcess_of_lor = {} # offspring dictionary
 var gradian_lor = false # if set true then Gradia has taken over Lor
 
-# data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game. 
+# data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game.
 var items = {
 	"Leather Bottle" : {"name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}
 }

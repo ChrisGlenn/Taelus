@@ -35,16 +35,22 @@ func weather(season, odds):
 				# based on the odds set
 				# SPRING means wind and various amounts of rain...
 				var roll = Dice.dice_roll(12,odds)
-				if roll[0] > 0: 
-					Globals.weather_event = "WIND" # windy
-				elif roll[0] >= 2:
-					Globals.weather_event = "LIGHT_RAIN" # regular rain
-				elif roll[0] >= 4:
-					Globals.weather_event = "RAIN" # standard rain
-				elif roll[0] >= 5:
-					Globals.weather_event = "RAIN_STORM" # rain storm
+				if roll[1] == "LOSE": 
+					if roll[0] == 2:
+						Globals.weather_event = "LIGHT_RAIN" # regular rain
+					elif roll[0] == 3:
+						Globals.weather_event = "RAIN" # standard rain
+					elif roll[0] == 4:
+						Globals.weather_event = "RAIN_STORM" # rain storm
+					else:
+						Globals.weather_event = "WIND" # windy
+				elif roll[1] == "EQUAL":
+					Globals.weather_event = "SUN" # sunny day
+				else:
+					Globals.weather_event = "SUN" # sunny day
 				print(Globals.weather_event) # DEBUG print the weather
-				Globals.weather_updated = true # weather is updated
+				print(str(roll))
+				#Globals.weather_updated = true # weather is updated
 			2:
 				# summer
 				# roll the dice with the odds to see if there will be an event

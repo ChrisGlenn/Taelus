@@ -1,0 +1,21 @@
+*** WEATHER ***
+The weather in Taelus...
+If the weather has an * it will cause player to move slower
+
+sunny/windy days
+SUN - sunny day
+OVERCAST - overcast day
+WIND - windy day
+WIND_STORM -*- really windy day
+
+rainy days
+LIGHT_RAIN - light sprinkling
+RAIN - basic rain
+HEAVY_RAIN -*- large raindrops
+RAIN_STORM -*- windy 'basic' rain
+
+snowy days
+LIGHT_SNOW - light snow (white dots)
+SNOW - basic snow (larger white dots)
+HEAVY_SNOW -*- larger white dots w/ snowflakes
+SNOW_STORM -*- larger white dots w/ wind and snowflakes
