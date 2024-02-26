@@ -11,6 +11,8 @@ var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [
 var color_tracker = 1.0 # used to update the cycle to know what to dec/inc to...
 var timer_rec # records timer_to_cycle
 var check_flag = false # used to make checks when needed
+var hour_flag # used to make hour checks
+var time_left = -4 # time left for weather event (hours)
 
 
 func _ready():
@@ -46,6 +48,16 @@ func _process(delta):
 			cycles = 20 # reset cycles
 			check_flag = false # reset the check_flag
 			t_cycle = timer_rec # reset timer_to_cycle
+	# WEATHER EVENTS CHECK
+	# weather events are checked every hour (on the hour) and when an event is generated
+	# it is given a random hour based on a 12 sided die roll then here it is checked and the
+	# time is decremented and the globals are updated once the event is over
+	if Globals.weather_updated:
+		# IF the time_left is -4 then get the weather details from the globals script and then set the
+		# time_left by performing a die roll against a 12 sided die to get the hours
+		time_left = Dice.dice_roll(12,0) # get the hours left for the weather event
+		print(str(time_left))
+		pass
 
 
 func cycle(clock, sun_direction):
