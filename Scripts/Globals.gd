@@ -55,7 +55,7 @@ var player = {
 	"avatar": 1,
 	"head": 17,
 	"body": 0,
-	"gender": "Male",
+	"gender": "Male", # (Gen. 1:27)
 	"race": 0,
 	"status": "Healthy",
 	"strength": 7,
@@ -96,8 +96,8 @@ var year = 300
 var month = 2
 var day = 6
 var season = 1
-var hour = 9 # 9am
-var minutes = 55 # increments by 5
+var hour = 19 # 9am
+var minutes = 50 # increments by 5
 var seconds = 0
 var sky_data = "" # records the color of the sky
 var weather_updated = false # true if weather event is 'running'

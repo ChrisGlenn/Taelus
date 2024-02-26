@@ -7,9 +7,9 @@ TO-DO LIST(ALPHA):
 Player:
 	[x] Player Grid Movement
 	[x] New Selector
-    	[] Player Equipped Animations
-    	[] Class/Stats
-    	[x] Hunger/Thirst
+	[] Player Equipped Animations
+	[] Class/Stats
+	[x] Hunger/Thirst
 	[] Player Death
 	[] Riding a Horse
 	[] Driving a Carriage
@@ -24,11 +24,11 @@ Gameplay:
 	[] Ship Movement w/ Player
 	[] Sickness
 Combat:
-    	[] Combat System
-		[] Combat Outline
-    	[] Party NPCs
+	[] Combat System
+	[] Combat Outline
+	[] Party NPCs
 NPC:
-    	[] Basic NPC
+	[] Basic NPC
 	[] Pathfinding...
 	[] NPC Home(Property)
 	[] NPC Lifespan
@@ -36,6 +36,7 @@ NPC:
 Overworld:
 	[x] Day/Night Cycle
 	[] Weather (Rain/Snow/Wind + visibility)
+		[] Overcast (Clouds)
 	[] Sleep
 	[] Item Spawn Check (if it's been taken delete it)
 	[] Region Border Block
@@ -90,7 +91,7 @@ Exteriors:
 	[] Water Barrel
 	[] Empty Barrel 
 HUD:
-    	[] HUD
+    [] HUD
 	[x] 'Message' System w/ Multiple Messages Qeue
 	[] Narrative Message System
 	[] Narrative Message Image System
@@ -125,11 +126,11 @@ System:
 	[] Initial Load Random NPC/Event Spawner
 	[] Item Pickups
 	[] Save/Load
-    	[] Options Menu
-    	[] PermaDETH
-    	[] Date/Time/Seasons System
+	[] Options Menu
+	[] PermaDETH
+	[] Date/Time/Seasons System
 	[] Seasons Tilesets
-    	[] Construction/Player Home
+	[] Construction/Player Home
 
 
 

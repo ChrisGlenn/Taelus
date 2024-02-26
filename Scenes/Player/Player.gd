@@ -146,9 +146,9 @@ func time_check():
 			else: death() # or kill the player if their days have ended
 			day_check = Globals.day # reset day check
 		if minute_check != Globals.minutes:
-			if Globals.player["hunger"] > 0: Globals.player["hunger"] -= 0.2 # decrement hunger
+			if Globals.player["hunger"] > 0: Globals.player["hunger"] -= 0.01 # decrement hunger (0.2)
 			else: death()
-			if Globals.player["thirst"] > 0: Globals.player["thirst"] -= 1 # decrement thirstplay
+			if Globals.player["thirst"] > 0: Globals.player["thirst"] -= 0.01 # decrement thirstplay (1)
 			else: death()
 			minute_check = Globals.minutes # reset minute check
 
