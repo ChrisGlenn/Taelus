@@ -17,6 +17,7 @@
 script = ExtResource("1_r5v8d")
 
 [node name="HUD" parent="." instance=ExtResource("3_08vrg")]
+layer = 3
 
 [node name="Sky" parent="." instance=ExtResource("3_rg60r")]
 
@@ -30,7 +31,7 @@ layer_0/tile_data = PackedInt32Array(8, 65536, 0, 65544, 65536, 0, 131080, 65536
 
 [node name="Player" parent="." instance=ExtResource("2_3xp4i")]
 process_mode = 1
-position = Vector2(304, 224)
+position = Vector2(272, 192)
 
 [node name="Decor" type="Node" parent="."]
 

@@ -2,6 +2,7 @@ extends CanvasModulate
 # THE SKY
 # day/night cycle that runs for the game
 # NOTE: save the color to a global for game saving???
+@onready var CLOUDS = preload("res://Scenes/Prefabs/Enviornment/Clouds/clouds.tscn")
 @onready var EMITTER = $Particles # particle emitter
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
@@ -21,41 +22,41 @@ func _ready():
 	if Globals.hour == dawn_dusk[0]:
 		# sun is rising
 		if Globals.minutes == 0:
-			set_visibility(0.1,0) 
+			set_visibility(0.1) 
 			color_tracker = 0.1
 		elif Globals.minutes == 10:
-			set_visibility(0.3,0) 
+			set_visibility(0.3) 
 			color_tracker = 0.3
 		elif Globals.minutes == 20:
-			set_visibility(0.5,0)
+			set_visibility(0.5)
 			color_tracker = 0.5
 		elif Globals.minutes == 30:
-			set_visibility(0.7,0)
+			set_visibility(0.7)
 			color_tracker = 0.7
 		elif Globals.minutes == 40:
-			set_visibility(0.9,0)
+			set_visibility(0.9)
 			color_tracker = 0.9
 		elif Globals.minutes > 50:
-			set_visibility(1,0)
+			set_visibility(1)
 			cycles = 0 # stop the cycles
 	elif Globals.hour == dawn_dusk[1]:
 		# sun is setting
 		if Globals.minutes == 0:
-			set_visibility(1,0)
+			set_visibility(1)
 		elif Globals.minutes == 10:
-			set_visibility(0.9,0)
+			set_visibility(0.9)
 			color_tracker = 0.9
 		elif Globals.minutes == 20:
-			set_visibility(0.7,0)
+			set_visibility(0.7)
 			color_tracker = 0.7
 		elif Globals.minutes == 30:
-			set_visibility(0.5,0)
+			set_visibility(0.5)
 			color_tracker = 0.5
 		elif Globals.minutes == 40:
-			set_visibility(0.3,0)
+			set_visibility(0.3)
 			color_tracker = 0.3
 		elif Globals.minutes > 50:
-			set_visibility(0.1,0)
+			set_visibility(0.1)
 			cycles = 0 # stop the cycles
 
 	
@@ -87,8 +88,8 @@ func _process(delta):
 			# use check_flag to stop this from running in the background ALL THE TIME
 			# reset and wait for next sunrise/sunset
 			cycles = 20 # reset cycles
-			check_flag = false # reset the check_flag
 			t_cycle = timer_rec # reset timer_to_cycle
+			check_flag = false # reset the check_flag
 	# WEATHER EVENTS CHECK
 	# weather events are checked every hour (on the hour) and when an event is generated
 	# it is given a random hour based on a 12 sided die roll then here it is checked and the
@@ -99,7 +100,25 @@ func _process(delta):
 		#time_left = Dice.dice_roll(12,0) # get the hours left for the weather event
 		#print(str(time_left))
 		if Globals.weather_event == "SUN":
-			pass
+			# check to see if it's daytime and if so then brighten up the skies if need be
+			if Globals.hour > dawn_dusk[0+1] and Globals.hour < dawn_dusk[1-1]:
+				if color.r < 1.0:
+					# increment the r,g,b values
+					color.r += 0.1 * delta
+					color.g += 0.1 * delta
+					color.b += 0.1 * delta
+				else:
+					# prevent it from going over 1.0
+					color.r = 1.0
+					color.g = 1.0
+					color.b = 1.0
+		elif Globals.weather_event == "CLOUDY":
+			# check to see if it's daytime and then instantiate the clouds
+			var clouds = CLOUDS.instantiate() 
+			clouds.lifespan = Globals.weather_lifespan # set the clouds lifespan
+			clouds.dawn_dusk = dawn_dusk # feed in the current dawn/dusk hours
+			get_parent().add_child(clouds)
+			Globals.weather_event = "" # set to null until next cycle
 
 
 func cycle(clock, sun_direction):
@@ -150,14 +169,9 @@ func set_season():
 			dawn_dusk = [5,20]
 			check_flag = true
 
-func set_visibility(visibility, type):
-	if type == 0:
-		# used to set the sky visibility when the game starts incase the player
-		# loads a game during sunrise or sunset, night or day
-		color.r = visibility
-		color.g = visibility
-		color.b = visibility
-	elif type == 1:
-		# used to set the visibility to darker or lighter depending on the
-		# weather event...which is waht type 1 is used for
-		pass
+func set_visibility(visibility):
+	# used to set the sky visibility when the game starts incase the player
+	# loads a game during sunrise or sunset, night or day
+	color.r = visibility
+	color.g = visibility
+	color.b = visibility
