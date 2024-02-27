@@ -21,40 +21,42 @@ func _ready():
 	if Globals.hour == dawn_dusk[0]:
 		# sun is rising
 		if Globals.minutes == 0:
-			set_visibility(0.1) 
+			set_visibility(0.1,0) 
 			color_tracker = 0.1
 		elif Globals.minutes == 10:
-			set_visibility(0.3) 
+			set_visibility(0.3,0) 
 			color_tracker = 0.3
 		elif Globals.minutes == 20:
-			set_visibility(0.5)
+			set_visibility(0.5,0)
 			color_tracker = 0.5
 		elif Globals.minutes == 30:
-			set_visibility(0.7)
+			set_visibility(0.7,0)
 			color_tracker = 0.7
 		elif Globals.minutes == 40:
-			set_visibility(0.9)
+			set_visibility(0.9,0)
 			color_tracker = 0.9
 		elif Globals.minutes > 50:
-			set_visibility(1)
+			set_visibility(1,0)
+			cycles = 0 # stop the cycles
 	elif Globals.hour == dawn_dusk[1]:
 		# sun is setting
 		if Globals.minutes == 0:
-			set_visibility(1)
+			set_visibility(1,0)
 		elif Globals.minutes == 10:
-			set_visibility(0.9)
+			set_visibility(0.9,0)
 			color_tracker = 0.9
 		elif Globals.minutes == 20:
-			set_visibility(0.7)
+			set_visibility(0.7,0)
 			color_tracker = 0.7
 		elif Globals.minutes == 30:
-			set_visibility(0.5)
+			set_visibility(0.5,0)
 			color_tracker = 0.5
 		elif Globals.minutes == 40:
-			set_visibility(0.3)
+			set_visibility(0.3,0)
 			color_tracker = 0.3
 		elif Globals.minutes > 50:
-			set_visibility(0.1)
+			set_visibility(0.1,0)
+			cycles = 0 # stop the cycles
 
 	
 
@@ -96,7 +98,8 @@ func _process(delta):
 		# time_left by performing a die roll against a 12 sided die to get the hours
 		#time_left = Dice.dice_roll(12,0) # get the hours left for the weather event
 		#print(str(time_left))
-		pass
+		if Globals.weather_event == "SUN":
+			pass
 
 
 func cycle(clock, sun_direction):
@@ -109,7 +112,6 @@ func cycle(clock, sun_direction):
 			color.g += 0.1 * clock # increment color GREEN
 			color.b += 0.1 * clock # increment color BLUE
 		else:
-			print("color test")
 			color.r = color_tracker # set to color tracker
 			color.g = color_tracker # set to color tracker
 			color.b = color_tracker # set to color tracker
@@ -119,8 +121,6 @@ func cycle(clock, sun_direction):
 				color_tracker += 0.05 # increment color_tracker
 			else:
 				cycles = 0 # stop the cycles!
-				print("Morning cycles are stopped!!!")
-				print(str(color.r))
 	elif sun_direction == 1:
 		# sun is setting
 		if color.r > color_tracker:
@@ -150,9 +150,14 @@ func set_season():
 			dawn_dusk = [5,20]
 			check_flag = true
 
-func set_visibility(visibility):
-	# used to set the sky visibility when the game starts incase the player
-	# loads a game during sunrise or sunset, night or day
-	color.r = visibility
-	color.g = visibility
-	color.b = visibility
+func set_visibility(visibility, type):
+	if type == 0:
+		# used to set the sky visibility when the game starts incase the player
+		# loads a game during sunrise or sunset, night or day
+		color.r = visibility
+		color.g = visibility
+		color.b = visibility
+	elif type == 1:
+		# used to set the visibility to darker or lighter depending on the
+		# weather event...which is waht type 1 is used for
+		pass

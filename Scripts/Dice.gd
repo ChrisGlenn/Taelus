@@ -10,7 +10,6 @@ func _ready():
 func dice_roll(die, odds):
     # generate a random number against a dice roll
     var result = rng.randi_range(1,die)
-    print(str(result))
     if result > odds:
         return [result - odds,"LOSE"] # return the difference
     elif result == odds:

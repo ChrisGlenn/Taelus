@@ -48,8 +48,12 @@ func weather(season, odds):
 					Globals.weather_event = "SUN" # sunny day
 				else:
 					Globals.weather_event = "SUN" # sunny day
+				var roll_two = Dice.dice_roll(20,0)
+				Globals.weather_lifespan = roll_two[0]
 				print(Globals.weather_event) # DEBUG print the weather
+				print(str(Globals.weather_lifespan))
 				print(str(roll))
+				print(str(roll_two))
 				#Globals.weather_updated = true # weather is updated
 			2:
 				# summer

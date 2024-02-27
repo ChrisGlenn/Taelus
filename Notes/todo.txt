@@ -36,7 +36,11 @@ NPC:
 Overworld:
 	[x] Day/Night Cycle
 	[] Weather (Rain/Snow/Wind + visibility)
+		[x] Set Time Based Visiblity (Saving/Loading)
 		[] Overcast (Clouds)
+		[] Rain (light/normal/heavy/wind)
+		[] Snow (light/normal/heavy/wind)
+		[] Wind (normal/heavy)
 	[] Sleep
 	[] Item Spawn Check (if it's been taken delete it)
 	[] Region Border Block
