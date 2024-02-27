@@ -18,6 +18,44 @@ func _ready():
 	set_season() # set the season
 	timer_rec = t_cycle # record timer_to_cycle
 	# check the time that this is created and then set the visibility accordingly
+	if Globals.hour == dawn_dusk[0]:
+		# sun is rising
+		if Globals.minutes == 0:
+			set_visibility(0.1) 
+			color_tracker = 0.1
+		elif Globals.minutes == 10:
+			set_visibility(0.3) 
+			color_tracker = 0.3
+		elif Globals.minutes == 20:
+			set_visibility(0.5)
+			color_tracker = 0.5
+		elif Globals.minutes == 30:
+			set_visibility(0.7)
+			color_tracker = 0.7
+		elif Globals.minutes == 40:
+			set_visibility(0.9)
+			color_tracker = 0.9
+		elif Globals.minutes > 50:
+			set_visibility(1)
+	elif Globals.hour == dawn_dusk[1]:
+		# sun is setting
+		if Globals.minutes == 0:
+			set_visibility(1)
+		elif Globals.minutes == 10:
+			set_visibility(0.9)
+			color_tracker = 0.9
+		elif Globals.minutes == 20:
+			set_visibility(0.7)
+			color_tracker = 0.7
+		elif Globals.minutes == 30:
+			set_visibility(0.5)
+			color_tracker = 0.5
+		elif Globals.minutes == 40:
+			set_visibility(0.3)
+			color_tracker = 0.3
+		elif Globals.minutes > 50:
+			set_visibility(0.1)
+
 	
 
 func _process(delta):
@@ -71,12 +109,18 @@ func cycle(clock, sun_direction):
 			color.g += 0.1 * clock # increment color GREEN
 			color.b += 0.1 * clock # increment color BLUE
 		else:
+			print("color test")
 			color.r = color_tracker # set to color tracker
 			color.g = color_tracker # set to color tracker
 			color.b = color_tracker # set to color tracker
 			cycles -= 1 # dec cycles
 			t_cycle = timer_rec # reset timer to cycle
-			color_tracker += 0.5 # increment color_tracker
+			if color_tracker < 1.0:
+				color_tracker += 0.05 # increment color_tracker
+			else:
+				cycles = 0 # stop the cycles!
+				print("Morning cycles are stopped!!!")
+				print(str(color.r))
 	elif sun_direction == 1:
 		# sun is setting
 		if color.r > color_tracker:
@@ -89,7 +133,11 @@ func cycle(clock, sun_direction):
 			color.b = color_tracker # set to color tracker
 			cycles -= 1 # dec cycles
 			t_cycle = timer_rec # reset timer to cycle
-			color_tracker -= 0.05 # decrement color_tracker
+			if color_tracker > 0.1:
+				color_tracker -= 0.05 # decrement color_tracker
+			else:
+				cycles = 0 # stop the cycles!
+
 
 func set_season():
 	if !check_flag:
@@ -101,3 +149,10 @@ func set_season():
 			# spring/summer
 			dawn_dusk = [5,20]
 			check_flag = true
+
+func set_visibility(visibility):
+	# used to set the sky visibility when the game starts incase the player
+	# loads a game during sunrise or sunset, night or day
+	color.r = visibility
+	color.g = visibility
+	color.b = visibility
