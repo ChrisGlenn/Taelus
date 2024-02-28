@@ -16,8 +16,8 @@ func _ready():
 
 func _process(delta):
     # scroll the background
-    PARALLAX.scroll_offset.x -= 2 * delta
-    PARALLAX.scroll_offset.y -= 2 * delta
+    PARALLAX.scroll_offset.x -= 3 * delta
+    PARALLAX.scroll_offset.y -= 3 * delta
     # check if interior and then hide
     if Globals.interior:
         CLOUDS.visible = false # hide if inside

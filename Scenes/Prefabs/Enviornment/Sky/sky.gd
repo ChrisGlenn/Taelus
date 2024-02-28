@@ -3,7 +3,6 @@ extends CanvasModulate
 # day/night cycle that runs for the game
 # NOTE: save the color to a global for game saving???
 @onready var CLOUDS = preload("res://Scenes/Prefabs/Enviornment/Clouds/clouds.tscn")
-@onready var EMITTER = $Particles # particle emitter
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
 var t_cycle = 250 # between cycle times
