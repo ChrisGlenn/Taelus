@@ -37,7 +37,7 @@ Overworld:
 	[x] Day/Night Cycle
 	[] Weather (Rain/Snow/Wind + visibility)
 		[x] Set Time Based Visiblity (Saving/Loading)
-		[] Overcast (Clouds)
+		[x] Overcast (Clouds)
 		[] Rain (light/normal/heavy/wind)
 		[] Snow (light/normal/heavy/wind)
 		[] Wind (normal/heavy)

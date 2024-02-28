@@ -4,8 +4,3 @@
 
 [node name="Sky" type="CanvasModulate"]
 script = ExtResource("1_tqilh")
-
-[node name="Particles" type="GPUParticles2D" parent="."]
-visibility_rect = Rect2(0, -100, 640, 200)
-
-[node name="WeatherSFX" type="AudioStreamPlayer" parent="."]

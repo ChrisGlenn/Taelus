@@ -18,6 +18,11 @@ func _process(delta):
     # scroll the background
     PARALLAX.scroll_offset.x -= 2 * delta
     PARALLAX.scroll_offset.y -= 2 * delta
+    # check if interior and then hide
+    if Globals.interior:
+        CLOUDS.visible = false # hide if inside
+    else:
+        CLOUDS.visible = true # show if outside
     if Globals.hour > dawn_dusk[0] + 1:
         # slowly fade in and once the time is up then fade out/queue free self
         if lifespan > 0:

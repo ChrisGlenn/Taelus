@@ -10,6 +10,7 @@ var new_scene_player_origin = Vector2(0,0) # where the player spawns in a new sc
 var movement_speed = 97 # global movement speed
 var timer_ctrl = 100 # timer control
 var placed_ = [] # items, ect already placed in the game to stop double spawning
+var interior = false # if the player is inside of a building/cave/ect...
 
 # GAMEPLAY
 # player settings

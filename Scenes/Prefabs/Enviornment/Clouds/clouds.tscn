@@ -5,6 +5,7 @@
 
 [node name="Clouds" type="CanvasLayer"]
 layer = 2
+follow_viewport_enabled = true
 script = ExtResource("1_d3dra")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
