@@ -1,3 +1,8 @@
 [gd_scene format=3 uid="uid://b01uvjq8fhtry"]
 
-[node name="WeatherParticles" type="GPUParticles2D"]
+[node name="WeatherParticles" type="CanvasLayer"]
+layer = 2
+
+[node name="Rain" type="GPUParticles2D" parent="."]
+position = Vector2(320, 0)
+emitting = false
