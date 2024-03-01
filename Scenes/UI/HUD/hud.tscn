@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=15 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xm1q0kkfsepu" path="res://Sprites/UI/Map-Marker.png" id="5_wgm8r"]
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="6_lpdjx"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/Hunger.gd" id="7_vp2sa"]
+[ext_resource type="Texture2D" uid="uid://ch1wwdhq2uofs" path="res://Sprites/NPCs/MessagePortraits/Guard.png" id="9_6lm2r"]
 [ext_resource type="Texture2D" uid="uid://bc21qek0kylhp" path="res://Sprites/UI/Inventory-Box.png" id="10_6lsq5"]
 [ext_resource type="Texture2D" uid="uid://dilg7lx54esva" path="res://Tilesets/Taelus-Inventory.png" id="10_nbyga"]
 [ext_resource type="Texture2D" uid="uid://b4alrc6yesliq" path="res://Sprites/NPCs/Taelus-Characters.png" id="12_xa14g"]
@@ -335,14 +336,14 @@ autowrap_mode = 2
 [node name="DialogueHUD" type="Node2D" parent="."]
 visible = false
 
-[node name="DiagTitle" type="Label" parent="DialogueHUD"]
+[node name="QuestionsResponses" type="Label" parent="DialogueHUD"]
 offset_left = 8.0
 offset_top = 16.0
 offset_right = 120.0
 offset_bottom = 31.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
-text = "NPC Name"
+text = "Response/Questions"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -350,20 +351,125 @@ autowrap_mode = 2
 [node name="DiagIcon" type="Sprite2D" parent="DialogueHUD"]
 position = Vector2(8, 32)
 
-[node name="DiagDesc" type="Label" parent="DialogueHUD"]
-offset_left = 8.0
+[node name="DiagCursor" type="Sprite2D" parent="DialogueHUD"]
+position = Vector2(20, 56)
+texture = ExtResource("5_0djge")
+hframes = 32
+vframes = 17
+frame = 518
+
+[node name="Choice1" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 48.0
+offset_right = 122.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-1"
+autowrap_mode = 2
+
+[node name="Choice2" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 64.0
+offset_right = 122.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-2"
+autowrap_mode = 2
+
+[node name="Choice3" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 80.0
+offset_right = 122.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-3"
+autowrap_mode = 2
+
+[node name="Choice4" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 96.0
+offset_right = 122.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-4"
+autowrap_mode = 2
+
+[node name="Choice5" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 112.0
+offset_right = 122.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-5"
+autowrap_mode = 2
+
+[node name="Choice6" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
 offset_top = 128.0
-offset_right = 120.0
-offset_bottom = 298.0
-theme_override_fonts/font = ExtResource("2_tebf7")
-theme_override_font_sizes/font_size = 15
-text = "  NPC description goes here."
+offset_right = 122.0
+offset_bottom = 144.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-6"
+autowrap_mode = 2
+
+[node name="Choice7" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 144.0
+offset_right = 122.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-7"
+autowrap_mode = 2
+
+[node name="Choice8" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 160.0
+offset_right = 122.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-8"
+autowrap_mode = 2
+
+[node name="Choice9" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 176.0
+offset_right = 122.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-9"
+autowrap_mode = 2
+
+[node name="Choice10" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 192.0
+offset_right = 122.0
+offset_bottom = 208.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-10"
+autowrap_mode = 2
+
+[node name="Choice11" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 208.0
+offset_right = 122.0
+offset_bottom = 224.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-11"
+autowrap_mode = 2
+
+[node name="Choice12" type="Label" parent="DialogueHUD"]
+offset_left = 34.0
+offset_top = 224.0
+offset_right = 122.0
+offset_bottom = 240.0
+theme_override_fonts/font = ExtResource("6_lpdjx")
+text = "Choice-12"
 autowrap_mode = 2
 
 [node name="DialogueBackground" type="NinePatchRect" parent="DialogueHUD"]
-offset_left = 168.0
+offset_left = 256.0
 offset_top = 40.0
-offset_right = 424.0
+offset_right = 512.0
 offset_bottom = 320.0
 texture = ExtResource("1_4nugt")
 patch_margin_left = 5
@@ -371,12 +477,17 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
+[node name="DialogueImage" type="Sprite2D" parent="DialogueHUD/DialogueBackground"]
+position = Vector2(64, 8)
+texture = ExtResource("9_6lm2r")
+centered = false
+
 [node name="DialogueName" type="Label" parent="DialogueHUD/DialogueBackground"]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 8.0
+offset_top = 96.0
 offset_right = 240.0
-offset_bottom = 24.0
+offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("6_lpdjx")
 text = "Name"
 autowrap_mode = 2
@@ -384,189 +495,11 @@ autowrap_mode = 2
 [node name="DialogueText" type="Label" parent="DialogueHUD/DialogueBackground"]
 layout_mode = 0
 offset_left = 16.0
-offset_top = 32.0
+offset_top = 112.0
 offset_right = 240.0
 offset_bottom = 264.0
 theme_override_fonts/font = ExtResource("6_lpdjx")
 text = "test text, this seems good so far."
-autowrap_mode = 2
-
-[node name="DiagChoiceBackground" type="NinePatchRect" parent="DialogueHUD/DialogueBackground"]
-layout_mode = 0
-offset_left = 256.0
-offset_right = 376.0
-offset_bottom = 280.0
-texture = ExtResource("1_4nugt")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-
-[node name="DiagCursor" type="Sprite2D" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-position = Vector2(14, 16)
-texture = ExtResource("5_0djge")
-hframes = 32
-vframes = 17
-frame = 518
-
-[node name="Choice1" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 8.0
-offset_right = 112.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-1"
-autowrap_mode = 2
-
-[node name="Choice2" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 112.0
-offset_bottom = 40.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-2"
-autowrap_mode = 2
-
-[node name="Choice3" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 40.0
-offset_right = 112.0
-offset_bottom = 56.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-3"
-autowrap_mode = 2
-
-[node name="Choice4" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 56.0
-offset_right = 112.0
-offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-4"
-autowrap_mode = 2
-
-[node name="Choice5" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 72.0
-offset_right = 112.0
-offset_bottom = 88.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-5"
-autowrap_mode = 2
-
-[node name="Choice6" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 88.0
-offset_right = 112.0
-offset_bottom = 104.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-6"
-autowrap_mode = 2
-
-[node name="Choice7" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 104.0
-offset_right = 112.0
-offset_bottom = 120.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-7"
-autowrap_mode = 2
-
-[node name="Choice8" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 120.0
-offset_right = 112.0
-offset_bottom = 136.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-8"
-autowrap_mode = 2
-
-[node name="Choice9" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 136.0
-offset_right = 112.0
-offset_bottom = 152.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-9"
-autowrap_mode = 2
-
-[node name="Choice10" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 152.0
-offset_right = 112.0
-offset_bottom = 168.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-10"
-autowrap_mode = 2
-
-[node name="Choice11" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 168.0
-offset_right = 112.0
-offset_bottom = 184.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-11"
-autowrap_mode = 2
-
-[node name="Choice12" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 184.0
-offset_right = 112.0
-offset_bottom = 200.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-12"
-autowrap_mode = 2
-
-[node name="Choice13" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 200.0
-offset_right = 112.0
-offset_bottom = 216.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-13"
-autowrap_mode = 2
-
-[node name="Choice14" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 216.0
-offset_right = 112.0
-offset_bottom = 232.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-14"
-autowrap_mode = 2
-
-[node name="Choice15" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 232.0
-offset_right = 112.0
-offset_bottom = 248.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Choice-15"
-autowrap_mode = 2
-
-[node name="Close" type="Label" parent="DialogueHUD/DialogueBackground/DiagChoiceBackground"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 256.0
-offset_right = 112.0
-offset_bottom = 272.0
-theme_override_fonts/font = ExtResource("6_lpdjx")
-text = "Close"
 autowrap_mode = 2
 
 [node name="Status" type="Node2D" parent="."]

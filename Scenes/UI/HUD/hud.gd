@@ -20,11 +20,11 @@ extends CanvasLayer
 @onready var SELECTDESC = $Selection/SelDescriptLabel
 # dialogue hud for game
 @onready var DIAGHUD = $DialogueHUD
-@onready var DIAGICON = $DialogueHUD/DiagIcon
-@onready var DIAGDESC = $DialogueHUD/DiagDesc
-@onready var DIAGBACK = $DialogueHUD/DialogueBackground
-@onready var DIAGNAME = $DialogueHUD/DialogueBackground/DialogueName
-@onready var DIAGTEXT = $DialogueHUD/DialogueBackground/DialogueText
+# @onready var DIAGICON = $DialogueHUD/DiagIcon
+# @onready var DIAGDESC = $DialogueHUD/DiagDesc
+# @onready var DIAGBACK = $DialogueHUD/DialogueBackground
+# @onready var DIAGNAME = $DialogueHUD/DialogueBackground/DialogueName
+# @onready var DIAGTEXT = $DialogueHUD/DialogueBackground/DialogueText
 # inventory hud
 @onready var INVENTORY = $Inventory
 @export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
@@ -160,6 +160,8 @@ func HUD(_clock):
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
 			pass # STATUS SCREEN GOES HERE
+	elif Globals.hud_mode == "DIALOGUE":
+		pass
 
 func update_inventory():
 	# update the player's inventory

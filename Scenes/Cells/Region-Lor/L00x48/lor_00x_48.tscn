@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dojqsrpp2kaef"]
+[gd_scene load_steps=13 format=3 uid="uid://dojqsrpp2kaef"]
 
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_ft2ng"]
 [ext_resource type="Script" path="res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.gd" id="1_r5v8d"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://nqmnaa5y6xxo" path="res://Scenes/Prefabs/Decor/WoodDoor/wood_door.tscn" id="9_gw4xx"]
 [ext_resource type="PackedScene" uid="uid://b2e2wwgvb3wy" path="res://Scenes/Prefabs/NPCs/LorGuard/lor_guard.tscn" id="11_p4mc6"]
 [ext_resource type="PackedScene" uid="uid://bpn4picfk4k2i" path="res://Scenes/System/InvisibleBlock/invisible_block.tscn" id="12_1gmkv"]
-[ext_resource type="PackedScene" uid="uid://b01uvjq8fhtry" path="res://Scenes/Prefabs/Enviornment/WeatherParticles/weather_particles.tscn" id="13_01r3s"]
 
 [node name="Lor00x48" type="Node2D"]
 script = ExtResource("1_r5v8d")
@@ -91,5 +90,3 @@ position = Vector2(112, 32)
 scale = Vector2(1, 18)
 
 [node name="Lights" type="Node" parent="."]
-
-[node name="WeatherParticles" parent="." instance=ExtResource("13_01r3s")]
