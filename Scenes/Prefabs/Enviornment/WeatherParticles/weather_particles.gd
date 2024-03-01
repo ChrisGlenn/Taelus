@@ -3,9 +3,9 @@ extends CanvasLayer
 # this scene controls particle based weather systems (rain, snow, wind)
 # it will slowly increment the particle amount over time until the max is reached
 # then wait until it's done and decrement until 0 and then deletes itself
-@onready var RAINPART = $Rain
-@onready var HRAINPART = $HeavyRain
-@onready var HSNOWPART = $HeavySnow
+# @onready var RAINPART = $Rain
+# @onready var HRAINPART = $HeavyRain
+# @onready var HSNOWPART = $HeavySnow
 var event_type = "RAIN" # gets the even type and then creates the event based off of it
 var lifespan = 3 # counted in hours
 var p_timer = 140 # particle timer used to increase particle amount
@@ -18,7 +18,7 @@ func _ready():
 	hour_rec = Globals.hour # record initial hour
 	p_timer_rec = p_timer # record p_timer
 
-func _process(delta):
+func _process(_delta):
 	# get the weather event type and then start/stop the applicable particle emitter
 	# check the lifespan against the current hour and update accordingly
 	# hour check
@@ -72,19 +72,4 @@ func _process(delta):
 	# 		else:
 	# 			Globals.weather_updated = false # reset the weather
 	# 			queue_free() # delete self
-	if Globals.weather_event == "LIGHT_RAIN":
-		if lifespan > 0:
-			HRAINPART.amount = 64
-			HRAINPART.emitting = true
-			# if the lifespan isn't 0 then decrement it
-			if hour_rec != Globals.hour:
-				lifespan -= 1 # decrement lifespan
-				hour_rec = Globals.hour # update hour
-		else:
-			# who will stop the rain? I'll stop the rain!
-			HRAINPART.emitting = false # stop the rain
-			if end_timer > 0:
-				end_timer -= Globals.timer_ctrl * delta
-			else:
-				Globals.weather_updated = false # reset the weather
-				queue_free() # delete self
+	pass

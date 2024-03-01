@@ -119,7 +119,7 @@ HUD:
 		[] Arrange
 		[] Menu 'Commands' Change
 System:
-	[] Fade In/Out
+	[x] Fade In/Out
 	[x] Main Menu
 	[] Pause Menu
 	[] Camera System
@@ -139,7 +139,7 @@ System:
 
 
 ALPHA BUG/FIX-LIST:
-	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes
+	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 
 
 ALPHA FUTURE UPDATES???:
