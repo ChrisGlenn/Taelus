@@ -52,8 +52,7 @@ func weather(season, odds):
 						Globals.weather_event = "SUN" # sunny day
 					else:
 						Globals.weather_event = "CLOUDY" # cloudy day
-				var roll_two = Dice.dice_roll(20,0)
-				Globals.weather_lifespan = 1
+				Globals.weather_lifespan = 4
 				print(Globals.weather_event) # DEBUG print the weather
 				print(str(Globals.weather_lifespan))
 				print(str(roll))
