@@ -3,7 +3,7 @@ extends CanvasModulate
 # day/night cycle that runs for the game
 # NOTE: save the color to a global for game saving???
 @onready var CLOUDS = preload("res://Scenes/Prefabs/Enviornment/Clouds/clouds.tscn")
-@onready var WEATHERPARTICLES = preload("res://Scenes/Prefabs/Enviornment/WeatherParticles/weather_particles.tscn")
+@onready var LIGHTRAIN = preload("res://Scenes/Prefabs/Enviornment/LightRain/light_rain.tscn")
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
 var t_cycle = 250 # between cycle times
@@ -126,7 +126,9 @@ func _process(delta):
 			# weatherparticles.event_type = Globals.weather_event # set the rain/snow/wind type
 			# get_parent().add_child(weatherparticles) # add to scene
 			# Globals.weather_event = "" # set to null until next cycle
-			pass
+			var lightrain = LIGHTRAIN.instantiate()
+			get_parent().add_child(lightrain)
+			Globals.weather_event = ""
 		elif Globals.weather_event == "RAIN":
 			# spawn the rain (time of day/night does not matter...)
 			# var weatherparticles = WEATHERPARTICLES.instantiate()

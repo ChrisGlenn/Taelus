@@ -1,0 +1,312 @@
+[gd_scene load_steps=19 format=3 uid="uid://cdr57wry3oj8l"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/LightRain/light_rain.gd" id="1_2o72o"]
+[ext_resource type="Texture2D" uid="uid://b52k21a0hfcma" path="res://Sprites/World/RainDown.png" id="1_f60hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wndue"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(0, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbc1x"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(3, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkprl"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(6, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdadk"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(9, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjq24"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(12, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bv2ey"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(15, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kstbt"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(18, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxi1e"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(21, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnjsn"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(24, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj8yx"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(27, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fuk6"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(30, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vd7sa"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(33, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u102"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(36, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwwit"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(39, 0, 3, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7au8"]
+atlas = ExtResource("1_f60hl")
+region = Rect2(42, 0, 3, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17e16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wndue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbc1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkprl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdadk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjq24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bv2ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kstbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxi1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnjsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj8yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fuk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vd7sa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u102")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwwit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7au8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="LightRain" type="CanvasLayer"]
+script = ExtResource("1_2o72o")
+
+[node name="RainDrops" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 32)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops2" type="AnimatedSprite2D" parent="."]
+position = Vector2(64, 72)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops3" type="AnimatedSprite2D" parent="."]
+position = Vector2(192, 216)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops4" type="AnimatedSprite2D" parent="."]
+position = Vector2(120, 312)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops5" type="AnimatedSprite2D" parent="."]
+position = Vector2(392, 280)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops6" type="AnimatedSprite2D" parent="."]
+position = Vector2(520, 144)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops7" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 184)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops8" type="AnimatedSprite2D" parent="."]
+position = Vector2(624, 328)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops9" type="AnimatedSprite2D" parent="."]
+position = Vector2(608, 40)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops10" type="AnimatedSprite2D" parent="."]
+position = Vector2(312, 72)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops11" type="AnimatedSprite2D" parent="."]
+position = Vector2(280, 112)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops12" type="AnimatedSprite2D" parent="."]
+position = Vector2(384, 136)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops13" type="AnimatedSprite2D" parent="."]
+position = Vector2(112, 136)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops14" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 208)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops15" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 336)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops16" type="AnimatedSprite2D" parent="."]
+position = Vector2(472, 24)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops17" type="AnimatedSprite2D" parent="."]
+position = Vector2(576, 208)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops18" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 320)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops19" type="AnimatedSprite2D" parent="."]
+position = Vector2(304, 168)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops20" type="AnimatedSprite2D" parent="."]
+position = Vector2(248, 32)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops21" type="AnimatedSprite2D" parent="."]
+position = Vector2(192, 56)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops22" type="AnimatedSprite2D" parent="."]
+position = Vector2(288, 256)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops23" type="AnimatedSprite2D" parent="."]
+position = Vector2(224, 328)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops24" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 232)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops25" type="AnimatedSprite2D" parent="."]
+position = Vector2(512, 320)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops26" type="AnimatedSprite2D" parent="."]
+position = Vector2(504, 240)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops27" type="AnimatedSprite2D" parent="."]
+position = Vector2(592, 248)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops28" type="AnimatedSprite2D" parent="."]
+position = Vector2(632, 128)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops29" type="AnimatedSprite2D" parent="."]
+position = Vector2(560, 56)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops30" type="AnimatedSprite2D" parent="."]
+position = Vector2(504, 64)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops31" type="AnimatedSprite2D" parent="."]
+position = Vector2(424, 48)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops32" type="AnimatedSprite2D" parent="."]
+position = Vector2(368, 48)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops33" type="AnimatedSprite2D" parent="."]
+position = Vector2(232, 160)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops34" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 120)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops35" type="AnimatedSprite2D" parent="."]
+position = Vector2(440, 200)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops36" type="AnimatedSprite2D" parent="."]
+position = Vector2(464, 320)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops37" type="AnimatedSprite2D" parent="."]
+position = Vector2(360, 216)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops38" type="AnimatedSprite2D" parent="."]
+position = Vector2(80, 248)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops39" type="AnimatedSprite2D" parent="."]
+position = Vector2(96, 40)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops40" type="AnimatedSprite2D" parent="."]
+position = Vector2(240, 240)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops41" type="AnimatedSprite2D" parent="."]
+position = Vector2(144, 336)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops42" type="AnimatedSprite2D" parent="."]
+position = Vector2(56, 304)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops43" type="AnimatedSprite2D" parent="."]
+position = Vector2(152, 72)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops44" type="AnimatedSprite2D" parent="."]
+position = Vector2(456, 104)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops45" type="AnimatedSprite2D" parent="."]
+position = Vector2(552, 192)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops46" type="AnimatedSprite2D" parent="."]
+position = Vector2(416, 352)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops47" type="AnimatedSprite2D" parent="."]
+position = Vector2(312, -8)
+sprite_frames = SubResource("SpriteFrames_17e16")
+
+[node name="RainDrops48" type="AnimatedSprite2D" parent="."]
+position = Vector2(88, 352)
+sprite_frames = SubResource("SpriteFrames_17e16")

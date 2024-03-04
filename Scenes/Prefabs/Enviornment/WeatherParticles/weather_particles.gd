@@ -22,7 +22,7 @@ func _process(_delta):
 	# get the weather event type and then start/stop the applicable particle emitter
 	# check the lifespan against the current hour and update accordingly
 	# hour check
-	# if event_type == "LIGHT_RAIN":
+	# if event_type == "LIGHT_RAIN": 
 	# 	if lifespan > 0:
 	# 		RAINPART.amount = 64
 	# 		RAINPART.emitting = true
