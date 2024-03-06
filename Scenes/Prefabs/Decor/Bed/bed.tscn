@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bffl6oyc81yaj"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/Decor/Bed/bed.gd" id="1_cpksx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4dhx"]
+size = Vector2(8, 8)
+
+[node name="Bed" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_cpksx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_k4dhx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

@@ -121,21 +121,11 @@ func _process(delta):
 			Globals.weather_event = "" # set to null until next cycle
 		elif Globals.weather_event == "LIGHT_RAIN":
 			# spawn the rain (time of day/night does not matter...)
-			# var weatherparticles = WEATHERPARTICLES.instantiate()
-			# weatherparticles.lifespan = Globals.weather_lifespan # set the rain lifespan
-			# weatherparticles.event_type = Globals.weather_event # set the rain/snow/wind type
-			# get_parent().add_child(weatherparticles) # add to scene
-			# Globals.weather_event = "" # set to null until next cycle
 			var lightrain = LIGHTRAIN.instantiate()
 			get_parent().add_child(lightrain)
 			Globals.weather_event = ""
 		elif Globals.weather_event == "RAIN":
 			# spawn the rain (time of day/night does not matter...)
-			# var weatherparticles = WEATHERPARTICLES.instantiate()
-			# weatherparticles.lifespan = Globals.weather_lifespan # set the rain lifespan
-			# weatherparticles.event_type = Globals.weather_event # set the rain/snow/wind type
-			# get_parent().add_child(weatherparticles) # add to scene
-			# Globals.weather_event = "" # set to null until next cycle
 			pass
 
 

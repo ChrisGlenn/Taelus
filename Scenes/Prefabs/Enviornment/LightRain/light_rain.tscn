@@ -113,200 +113,350 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 24.0
+"speed": 28.0
 }]
 
 [node name="LightRain" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_2o72o")
 
-[node name="RainDrops" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, 32)
-sprite_frames = SubResource("SpriteFrames_17e16")
+[node name="RainAudio" type="AudioStreamPlayer" parent="."]
 
-[node name="RainDrops2" type="AnimatedSprite2D" parent="."]
-position = Vector2(64, 72)
-sprite_frames = SubResource("SpriteFrames_17e16")
+[node name="Rain" type="Node2D" parent="."]
 
-[node name="RainDrops3" type="AnimatedSprite2D" parent="."]
-position = Vector2(192, 216)
+[node name="RainDrops" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(352, 314)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+frame = 6
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops4" type="AnimatedSprite2D" parent="."]
-position = Vector2(120, 312)
+[node name="RainDrops2" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(616, 168)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops5" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops3" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(584, 117)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
+
+[node name="RainDrops4" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(280, 334)
+scale = Vector2(1.2, 1.2)
+sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
+
+[node name="RainDrops5" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(392, 280)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops6" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops6" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(520, 144)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops7" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops7" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(480, 184)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops8" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops8" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(624, 328)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops9" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops9" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(608, 40)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops10" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops10" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(312, 72)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops11" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops11" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(280, 112)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops12" type="AnimatedSprite2D" parent="."]
-position = Vector2(384, 136)
+[node name="RainDrops12" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(390, 136)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops13" type="AnimatedSprite2D" parent="."]
-position = Vector2(112, 136)
+[node name="RainDrops13" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(594, 362)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops14" type="AnimatedSprite2D" parent="."]
-position = Vector2(40, 208)
+[node name="RainDrops14" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(200, 232)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops15" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, 336)
+[node name="RainDrops15" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(168, 352)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops16" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops16" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(472, 24)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops17" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops17" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(576, 208)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops18" type="AnimatedSprite2D" parent="."]
-position = Vector2(320, 320)
+[node name="RainDrops18" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(328, 314)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops19" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops19" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(304, 168)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops20" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops20" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(248, 32)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops21" type="AnimatedSprite2D" parent="."]
-position = Vector2(192, 56)
+[node name="RainDrops21" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(200, 56)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops22" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops22" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(288, 256)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops23" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops23" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(224, 328)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops24" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops24" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(160, 232)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops25" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops25" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(512, 320)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops26" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops26" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(504, 240)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops27" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops27" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(592, 248)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops28" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops28" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(632, 128)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops29" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops29" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(560, 56)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops30" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops30" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(504, 64)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops31" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops31" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(424, 48)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops32" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops32" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(368, 48)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops33" type="AnimatedSprite2D" parent="."]
-position = Vector2(232, 160)
+[node name="RainDrops33" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(240, 155)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops34" type="AnimatedSprite2D" parent="."]
-position = Vector2(24, 120)
+[node name="RainDrops34" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(184, 134)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops35" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops35" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(440, 200)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops36" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops36" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(464, 320)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops37" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops37" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(360, 216)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops38" type="AnimatedSprite2D" parent="."]
-position = Vector2(80, 248)
+[node name="RainDrops38" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(246, 266)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops39" type="AnimatedSprite2D" parent="."]
-position = Vector2(96, 40)
+[node name="RainDrops39" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(560, 306)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops40" type="AnimatedSprite2D" parent="."]
-position = Vector2(240, 240)
+[node name="RainDrops40" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(414, 184)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops41" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops41" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(144, 336)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops42" type="AnimatedSprite2D" parent="."]
-position = Vector2(56, 304)
+[node name="RainDrops42" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(438, 272)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops43" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops43" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(152, 72)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops44" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops44" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(456, 104)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops45" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops45" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(552, 192)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops46" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops46" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(416, 352)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops47" type="AnimatedSprite2D" parent="."]
+[node name="RainDrops47" type="AnimatedSprite2D" parent="Rain"]
+visible = false
 position = Vector2(312, -8)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
 
-[node name="RainDrops48" type="AnimatedSprite2D" parent="."]
-position = Vector2(88, 352)
+[node name="RainDrops48" type="AnimatedSprite2D" parent="Rain"]
+visible = false
+position = Vector2(248, 368)
+scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_17e16")
+offset = Vector2(2.08165e-12, 0)
