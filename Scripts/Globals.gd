@@ -44,7 +44,7 @@ var hud_control = [
 	{"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"},
 	{"mode": "sel_door_closed","controls": "ESC = Return\nSPACE = Open\nCTRL = Pick Lock\nXXX = Bash Open"},
 	{"mode": "sel_door_opened","controls": "ESC = Return\nSPACE = Close"},
-	{"mode": "sel_bed","controls": "ESC = Return\nSPACE = Sleep CTRL = Search"}
+	{"mode": "sel_bed","controls": "ESC = Return\nSPACE = Sleep"}
 ]
 
 # player variables

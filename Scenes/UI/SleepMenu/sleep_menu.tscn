@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://c63c7gd7jcdgv"]
+
+[ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4wkk5"]
+[ext_resource type="Script" path="res://Scenes/UI/SleepMenu/sleep_menu.gd" id="1_es56d"]
+[ext_resource type="FontFile" uid="uid://imnkghkj0qrp" path="res://Fonts/m3x6.ttf" id="2_7jmm2"]
+[ext_resource type="Texture2D" uid="uid://c57g5rqgewb10" path="res://Sprites/UI/Cursor.png" id="3_31ugl"]
+
+[node name="SleepMenu" type="CanvasLayer"]
+script = ExtResource("1_es56d")
+
+[node name="Background" type="NinePatchRect" parent="."]
+offset_left = 304.0
+offset_top = 96.0
+offset_right = 464.0
+offset_bottom = 224.0
+texture = ExtResource("1_4wkk5")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="SleepLabel" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 104.0
+offset_right = 456.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("2_7jmm2")
+text = "Select how many hours to sleep:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HourLabel" type="Label" parent="."]
+offset_left = 355.0
+offset_top = 122.0
+offset_right = 419.0
+offset_bottom = 178.0
+theme_override_fonts/font = ExtResource("2_7jmm2")
+theme_override_font_sizes/font_size = 59
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RightCursor" type="Sprite2D" parent="."]
+position = Vector2(416, 155)
+texture = ExtResource("3_31ugl")
+
+[node name="LeftCursor" type="Sprite2D" parent="."]
+position = Vector2(352, 155)
+texture = ExtResource("3_31ugl")
+flip_h = true
+
+[node name="PressSleepLabel" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 186.0
+offset_right = 456.0
+offset_bottom = 202.0
+theme_override_fonts/font = ExtResource("2_7jmm2")
+text = "Press SELECT to sleep"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PressCancelLabel" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 198.0
+offset_right = 456.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("2_7jmm2")
+text = "Press ESC to Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
