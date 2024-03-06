@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjiipij1odor6"]
+
+[ext_resource type="Texture2D" uid="uid://dlehsdxbtn2b3" path="res://Sprites/World/RainDroplet.png" id="1_ap41t"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/RainDroplet/rain_droplet.gd" id="2_8hjhb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5rah"]
+atlas = ExtResource("1_ap41t")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyors"]
+atlas = ExtResource("1_ap41t")
+region = Rect2(6, 0, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jd55o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5rah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyors")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="RainDroplet" type="AnimatedSprite2D"]
+visible = false
+z_index = 99
+sprite_frames = SubResource("SpriteFrames_jd55o")
+frame_progress = 0.730071
+centered = false
+script = ExtResource("2_8hjhb")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
