@@ -120,10 +120,23 @@ func _process(delta):
 			get_parent().add_child(clouds) # add to scene
 			Globals.weather_event = "" # set to null until next cycle
 		elif Globals.weather_event == "LIGHT_RAIN":
-			# spawn the rain (time of day/night does not matter...)
-			var lightrain = LIGHTRAIN.instantiate()
-			get_parent().add_child(lightrain)
-			Globals.weather_event = ""
+			# check the time and if it's the daytime darken the skies if not already darken
+			if color.r > 0.9:
+				# decrement rgb values
+				color.r -= 0.1 * delta # decrement color RED
+				color.g -= 0.1 * delta # decrement color GREEN
+				color.b -= 0.1 * delta # decrement color BLUE
+			else:
+				# set the color_tracker in case it becomes night time
+				# also set a stop incase it becomes dawn to stop the daylight from going to full
+				color_tracker = 0.9
+				color.r = 0.9
+				color.g = 0.9
+				color.b = 0.9
+				# spawn the rain (time of day/night does not matter...)
+				var lightrain = LIGHTRAIN.instantiate()
+				get_parent().add_child(lightrain)
+				Globals.weather_event = ""
 		elif Globals.weather_event == "RAIN":
 			# spawn the rain (time of day/night does not matter...)
 			pass
