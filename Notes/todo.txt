@@ -38,7 +38,7 @@ Overworld:
 	[] Weather (Rain/Snow/Wind + visibility)
 		[x] Set Time Based Visiblity (Saving/Loading)
 		[x] Overcast (Clouds)
-		[] Rain ([] light/[] normal/[] heavy/[] wind)
+		[] Rain ([x] light/[] normal/[] heavy/[] wind)
 		[] Snow (light/normal/heavy/wind)
 		[] Wind (normal/heavy)
 	[] Sleep

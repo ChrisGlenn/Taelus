@@ -24,9 +24,16 @@ func _process(delta):
 
 
 func rain(clock):
+	# check if player is in an interior and hide the rain if so
+	if Globals.interior:
+		LIGHTRAIN.visible = false # hide the rain
+		$Droplets.visible = false # hide the droplets
+	else:
+		LIGHTRAIN.visible = true # show the rain
+		if stage < 2: $Droplets.visible = true
 	# scroll the rain background
-	PARALLAX.scroll_offset.x -= 180 * clock
-	PARALLAX.scroll_offset.y += 180 * clock
+	PARALLAX.scroll_offset.x -= 200 * clock
+	PARALLAX.scroll_offset.y += 200 * clock
 	# RAIN
 	if stage == 0:
 		# fade the rain in and once it is at full 'visiblity' then start to spawn the droplets

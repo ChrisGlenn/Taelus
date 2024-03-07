@@ -10,6 +10,7 @@ var t_cycle = 250 # between cycle times
 var cycles = 20 # checks the cycles (10 cycles)
 var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [6,17] spring/summer: 5:00 to 8:00 [5,20]
 var color_tracker = 1.0 # used to update the cycle to know what to dec/inc to...
+var sun_shade = 1 # used to set the target daytime shade
 var timer_rec # records timer_to_cycle
 var check_flag = false # used to make checks when needed
 var hour_flag # used to make hour checks
@@ -112,6 +113,8 @@ func _process(delta):
 					color.r = 1.0
 					color.g = 1.0
 					color.b = 1.0
+					color_tracker = 1.0 # update the color tracker
+					sun_shade = 1.0 # update the sun_shade
 		elif Globals.weather_event == "CLOUDY":
 			# check to see if it's daytime and then instantiate the clouds
 			var clouds = CLOUDS.instantiate() 
@@ -130,6 +133,7 @@ func _process(delta):
 				# set the color_tracker in case it becomes night time
 				# also set a stop incase it becomes dawn to stop the daylight from going to full
 				color_tracker = 0.9
+				sun_shade = 0.9 # updated to make sure if the dawn comes it won't over-brighten
 				color.r = 0.9
 				color.g = 0.9
 				color.b = 0.9
@@ -158,7 +162,7 @@ func cycle(clock, sun_direction):
 			color.b = color_tracker # set to color tracker
 			cycles -= 1 # dec cycles
 			t_cycle = timer_rec # reset timer to cycle
-			if color_tracker < 1.0:
+			if color_tracker < sun_shade:
 				color_tracker += 0.05 # increment color_tracker
 			else:
 				cycles = 0 # stop the cycles!
