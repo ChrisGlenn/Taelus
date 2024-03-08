@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://fqak5xmtdgwg"]
+
+[ext_resource type="Texture2D" uid="uid://c5d4dvjirto5m" path="res://Sprites/World/Rain.png" id="1_0535j"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Rain/rain.gd" id="1_ebkdu"]
+
+[node name="Rain" type="CanvasLayer"]
+script = ExtResource("1_ebkdu")
+
+[node name="RainAudio" type="AudioStreamPlayer" parent="."]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_0535j")
+centered = false
+
+[node name="Droplets" type="Node2D" parent="."]

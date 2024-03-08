@@ -4,6 +4,7 @@ extends CanvasModulate
 # NOTE: save the color to a global for game saving???
 @onready var CLOUDS = preload("res://Scenes/Prefabs/Enviornment/Clouds/clouds.tscn")
 @onready var LIGHTRAIN = preload("res://Scenes/Prefabs/Enviornment/LightRain/light_rain.tscn")
+@onready var RAIN = preload("res://Scenes/Prefabs/Enviornment/Rain/rain.tscn")
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
 var t_cycle = 250 # between cycle times
@@ -142,7 +143,25 @@ func _process(delta):
 				get_parent().add_child(lightrain)
 				Globals.weather_event = ""
 		elif Globals.weather_event == "RAIN":
-			# spawn the rain (time of day/night does not matter...)
+			# check the time and if it's the daytime darken the skies if not already darken
+			if color.r > 0.7:
+				# decrement rgb values
+				color.r -= 0.1 * delta # decrement color RED
+				color.g -= 0.1 * delta # decrement color GREEN
+				color.b -= 0.1 * delta # decrement color BLUE
+			else:
+				# set the color_tracker in case it becomes night time
+				# also set a stop incase it becomes dawn to stop the daylight from going to full
+				color_tracker = 0.7
+				sun_shade = 0.7 # updated to make sure if the dawn comes it won't over-brighten
+				color.r = 0.7
+				color.g = 0.7
+				color.b = 0.7
+				# spawn the rain (time of day/night does not matter...)
+				var rain = RAIN.instantiate()
+				get_parent().add_child(rain)
+				Globals.weather_event = ""
+		elif Globals.weather_event == "RAIN_STORM":
 			pass
 
 
@@ -182,7 +201,6 @@ func cycle(clock, sun_direction):
 				color_tracker -= 0.05 # decrement color_tracker
 			else:
 				cycles = 0 # stop the cycles!
-
 
 func set_season():
 	if !check_flag:

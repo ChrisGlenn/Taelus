@@ -23,7 +23,7 @@ func _process(delta):
         CLOUDS.visible = false # hide if inside
     else:
         CLOUDS.visible = true # show if outside
-    if Globals.hour > dawn_dusk[0] + 1:
+    if Globals.hour > dawn_dusk[0]:
         # slowly fade in and once the time is up then fade out/queue free self
         if lifespan > 0:
             # check the lifespan
@@ -42,7 +42,7 @@ func _process(delta):
             else:
                 Globals.weather_updated = false # reset the weather
                 queue_free() # delete self
-    elif Globals.hour > dawn_dusk[1] - 1:
+    elif Globals.hour > dawn_dusk[1]:
         # just end the clouds event
         if CLOUDS.modulate.a > 0:
             # decrement CLOUDS visibility until 0

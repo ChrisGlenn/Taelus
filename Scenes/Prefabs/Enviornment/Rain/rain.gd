@@ -1,6 +1,6 @@
 extends CanvasLayer
-# LIGHT RAIN
-# light rain that fades in for a set amount of time and then fades out...
+# RAIN
+# rain that fades in for a set amount of time and then fades out...
 # this is done by using a bunch of animated sprites that are set to random start frames
 # in an attempt to create rain that is far more resource friendly then a particle emitter
 @onready var DROPLET = preload("res://Scenes/Prefabs/Enviornment/RainDroplet/rain_droplet.tscn")
@@ -31,8 +31,8 @@ func rain(clock):
 		LIGHTRAIN.visible = true # show the rain
 		if stage < 2: $Droplets.visible = true
 	# scroll the rain background
-	PARALLAX.scroll_offset.x -= 200 * clock
-	PARALLAX.scroll_offset.y += 200 * clock
+	PARALLAX.scroll_offset.x -= 260 * clock
+	PARALLAX.scroll_offset.y += 260 * clock
 	# RAIN
 	if stage == 0:
 		# fade the rain in and once it is at full 'visiblity' then start to spawn the droplets
@@ -44,9 +44,15 @@ func rain(clock):
 			var droplet_one = DROPLET.instantiate()
 			var droplet_two = DROPLET.instantiate()
 			var droplet_three = DROPLET.instantiate()
+			var droplet_four = DROPLET.instantiate()
+			var droplet_five = DROPLET.instantiate()
+			var droplet_six = DROPLET.instantiate()
 			$Droplets.add_child(droplet_one)
 			$Droplets.add_child(droplet_two)
 			$Droplets.add_child(droplet_three)
+			$Droplets.add_child(droplet_four)
+			$Droplets.add_child(droplet_five)
+			$Droplets.add_child(droplet_six)
 			stage += 1 # advance to next stage
 	elif stage == 1:
 		# check for lifespan

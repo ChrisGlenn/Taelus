@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyw86tg3v6s4l"
-path="res://.godot/imported/SnowFallHeavy.png-ef10580b2182b6262a35118c74d35298.ctex"
+uid="uid://b8sciql7q1bpu"
+path="res://.godot/imported/HeavyRain.png-ab340e53dce1e49dab3b89307c6386dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/World/SnowFallHeavy.png"
-dest_files=["res://.godot/imported/SnowFallHeavy.png-ef10580b2182b6262a35118c74d35298.ctex"]
+source_file="res://Sprites/World/HeavyRain.png"
+dest_files=["res://.godot/imported/HeavyRain.png-ab340e53dce1e49dab3b89307c6386dc.ctex"]
 
 [params]
 
