@@ -12,6 +12,7 @@ var cycles = 20 # checks the cycles (10 cycles)
 var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [6,17] spring/summer: 5:00 to 8:00 [5,20]
 var color_tracker = 1.0 # used to update the cycle to know what to dec/inc to...
 var sun_shade = 1 # used to set the target daytime shade
+var sky_timer = 250 # timer used mostly for day/night cycling
 var timer_rec # records timer_to_cycle
 var check_flag = false # used to make checks when needed
 var hour_flag # used to make hour checks
@@ -19,79 +20,87 @@ var hour_flag # used to make hour checks
 
 func _ready():
 	set_season() # set the season
-	timer_rec = t_cycle # record timer_to_cycle
+	timer_rec = sky_timer # record sky_timer
 	# check the time that this is created and then set the visibility accordingly
 	if Globals.hour == dawn_dusk[0]:
 		# sun is rising
 		if Globals.minutes == 0:
-			set_visibility(0.1) 
+			set_visibility(0.1,0,0) 
 			color_tracker = 0.1
 		elif Globals.minutes == 10:
-			set_visibility(0.3) 
+			set_visibility(0.3,0,0) 
 			color_tracker = 0.3
 		elif Globals.minutes == 20:
-			set_visibility(0.5)
+			set_visibility(0.5,0,0)
 			color_tracker = 0.5
 		elif Globals.minutes == 30:
-			set_visibility(0.7)
+			set_visibility(0.7,0,0)
 			color_tracker = 0.7
 		elif Globals.minutes == 40:
-			set_visibility(0.9)
+			set_visibility(0.9,0,0)
 			color_tracker = 0.9
 		elif Globals.minutes > 50:
-			set_visibility(1)
+			set_visibility(1,0,0)
 			cycles = 0 # stop the cycles
+	elif Globals.hour > dawn_dusk[0] and Globals.hour < dawn_dusk[1]:
+		# it is daytime
+		set_visibility(1,0,0)
 	elif Globals.hour == dawn_dusk[1]:
 		# sun is setting
 		if Globals.minutes == 0:
-			set_visibility(1)
+			set_visibility(1,0,0)
 		elif Globals.minutes == 10:
-			set_visibility(0.9)
+			set_visibility(0.9,0,0)
 			color_tracker = 0.9
 		elif Globals.minutes == 20:
-			set_visibility(0.7)
+			set_visibility(0.7,0,0)
 			color_tracker = 0.7
 		elif Globals.minutes == 30:
-			set_visibility(0.5)
+			set_visibility(0.5,0,0)
 			color_tracker = 0.5
 		elif Globals.minutes == 40:
-			set_visibility(0.3)
+			set_visibility(0.3,0,0)
 			color_tracker = 0.3
 		elif Globals.minutes > 50:
-			set_visibility(0.1)
-			cycles = 0 # stop the cycles
+			set_visibility(0.1,0,0)
+			color_tracker = 0.1
+	elif Globals.hour > dawn_dusk[1] and Globals.hour > dawn_dusk[0] or Globals.hour < dawn_dusk[0] and Globals.hour < dawn_dusk[1]:
+		# it is nighttime
+		set_visibility(0.1,0,0)
+		color_tracker = 1.0
 
 	
 
 func _process(delta):
+	# DAY/NIGHT CYCLE
 	# the game starts off during the day time SO start this off looking for night...
 	if Globals.hour == dawn_dusk[0]:
 		# sunrise
-		# run the timer, run the dark function that checks if it's met the 'dark' criteria, if not
+		# run the timer, run the visibility function that checks if it's met the 'bright' criteria, if not
 		# then repeat until it has
-		if cycles > 0:
-			# check the timer and decrement
-			if t_cycle > 0:
-				t_cycle -= Globals.timer_ctrl * delta # dec t_cycle
+		if color.r < 1.0:
+			if sky_timer > 0:
+				sky_timer -= Globals.timer_ctrl * delta # decrement timer
 			else:
-				cycle(delta,0) # run the cycle function with a 0 (daytime to nighttime)
+				print("LIGHTEN!!!")
+				color_tracker += 0.1 # increment by .1
+				print(str(color_tracker))
+				sky_timer = timer_rec # reset sky timer
+			set_visibility(color_tracker,2,delta) # have this running
 	elif Globals.hour == dawn_dusk[1]:
 		# sunset
-		if cycles > 0:
-			# check the timer and decrement
-			if t_cycle > 0:
-				t_cycle -= Globals.timer_ctrl * delta
+		# run the timer, run the visibility function that checks if it's met the 'dark' criteria, if not
+		# then repeat until it has
+		if color.r > 0.1:
+			if sky_timer > 0:
+				sky_timer -= Globals.timer_ctrl * delta # decrement timer
 			else:
-				cycle(delta,1) # 1 run for sunset
-		else:
-			set_season() # see if the season has changed
+				print("DARKER!!!")
+				color_tracker -= 0.1 # decrement by .1
+				sky_timer = timer_rec # reset sky timer
+			set_visibility(color_tracker,1,delta)
 	else:
-		if check_flag:
-			# use check_flag to stop this from running in the background ALL THE TIME
-			# reset and wait for next sunrise/sunset
-			cycles = 20 # reset cycles
-			t_cycle = timer_rec # reset timer_to_cycle
-			check_flag = false # reset the check_flag
+		sky_timer = timer_rec # reset sky timer
 	# WEATHER EVENTS CHECK
 	# weather events are checked every hour (on the hour) and when an event is generated
 	# it is given a random hour based on a 12 sided die roll then here it is checked and the
@@ -110,12 +119,7 @@ func _process(delta):
 					color.g += 0.1 * delta
 					color.b += 0.1 * delta
 				else:
-					# prevent it from going over 1.0
-					color.r = 1.0
-					color.g = 1.0
-					color.b = 1.0
-					color_tracker = 1.0 # update the color tracker
-					sun_shade = 1.0 # update the sun_shade
+					Globals.weather_event = "" # set to null until next cycle
 		elif Globals.weather_event == "CLOUDY":
 			# check to see if it's daytime and then instantiate the clouds
 			var clouds = CLOUDS.instantiate() 
@@ -126,18 +130,9 @@ func _process(delta):
 		elif Globals.weather_event == "LIGHT_RAIN":
 			# check the time and if it's the daytime darken the skies if not already darken
 			if color.r > 0.9:
-				# decrement rgb values
-				color.r -= 0.1 * delta # decrement color RED
-				color.g -= 0.1 * delta # decrement color GREEN
-				color.b -= 0.1 * delta # decrement color BLUE
+				# decrement rgb values for the sky
+				set_visibility(0.9,1,delta)
 			else:
-				# set the color_tracker in case it becomes night time
-				# also set a stop incase it becomes dawn to stop the daylight from going to full
-				color_tracker = 0.9
-				sun_shade = 0.9 # updated to make sure if the dawn comes it won't over-brighten
-				color.r = 0.9
-				color.g = 0.9
-				color.b = 0.9
 				# spawn the rain (time of day/night does not matter...)
 				var lightrain = LIGHTRAIN.instantiate()
 				get_parent().add_child(lightrain)
@@ -146,61 +141,14 @@ func _process(delta):
 			# check the time and if it's the daytime darken the skies if not already darken
 			if color.r > 0.7:
 				# decrement rgb values
-				color.r -= 0.1 * delta # decrement color RED
-				color.g -= 0.1 * delta # decrement color GREEN
-				color.b -= 0.1 * delta # decrement color BLUE
+				set_visibility(0.7,1,delta)
 			else:
-				# set the color_tracker in case it becomes night time
-				# also set a stop incase it becomes dawn to stop the daylight from going to full
-				color_tracker = 0.7
-				sun_shade = 0.7 # updated to make sure if the dawn comes it won't over-brighten
-				color.r = 0.7
-				color.g = 0.7
-				color.b = 0.7
 				# spawn the rain (time of day/night does not matter...)
 				var rain = RAIN.instantiate()
 				get_parent().add_child(rain)
 				Globals.weather_event = ""
 		elif Globals.weather_event == "RAIN_STORM":
 			pass
-
-
-
-func cycle(clock, sun_direction):
-	# direction 0 is day 1 is night
-	# direction 0 is day 1 is night
-	if sun_direction == 0:
-		# sun is rising
-		if color.r < color_tracker:
-			color.r += 0.1 * clock # increment color RED
-			color.g += 0.1 * clock # increment color GREEN
-			color.b += 0.1 * clock # increment color BLUE
-		else:
-			color.r = color_tracker # set to color tracker
-			color.g = color_tracker # set to color tracker
-			color.b = color_tracker # set to color tracker
-			cycles -= 1 # dec cycles
-			t_cycle = timer_rec # reset timer to cycle
-			if color_tracker < sun_shade:
-				color_tracker += 0.05 # increment color_tracker
-			else:
-				cycles = 0 # stop the cycles!
-	elif sun_direction == 1:
-		# sun is setting
-		if color.r > color_tracker:
-			color.r -= 0.1 * clock # decrement color RED
-			color.g -= 0.1 * clock # decrement color GREEN
-			color.b -= 0.1 * clock # decrement color BLUE
-		else:
-			color.r = color_tracker # set to color tracker
-			color.g = color_tracker # set to color tracker
-			color.b = color_tracker # set to color tracker
-			cycles -= 1 # dec cycles
-			t_cycle = timer_rec # reset timer to cycle
-			if color_tracker > 0.1:
-				color_tracker -= 0.05 # decrement color_tracker
-			else:
-				cycles = 0 # stop the cycles!
 
 func set_season():
 	if !check_flag:
@@ -213,9 +161,35 @@ func set_season():
 			dawn_dusk = [5,20]
 			check_flag = true
 
-func set_visibility(visibility):
-	# used to set the sky visibility when the game starts incase the player
-	# loads a game during sunrise or sunset, night or day
-	color.r = visibility
-	color.g = visibility
-	color.b = visibility
+func set_visibility(visibility, type, clock):
+	if type == 0:
+		# will instantly change the sky to set visibility
+		# used to set the sky visibility when the game starts incase the player
+		# loads a game during sunrise or sunset, night or day
+		color.r = visibility
+		color.g = visibility
+		color.b = visibility
+	elif type == 1:
+		# darken the skies to a set number in the established array (0.1, 0.3, 0.5, 0.7, 0.9, 1)
+		# then update the color_tracker
+		if color.r > visibility:
+			color.r -= 0.1 * clock
+			color.g -= 0.1 * clock
+			color.b -= 0.1 * clock
+		else:
+			color.r = visibility
+			color.g = visibility
+			color.b = visibility
+			#color_tracker = visibility # set the color tracker
+	elif type == 2:
+		# brighten the skies to a set number (visibility)
+		# then update the color_tracker
+		if color.r < visibility:
+			color.r += 0.1 * clock
+			color.g += 0.1 * clock
+			color.b += 0.1 * clock
+		else:
+			color.r = visibility
+			color.g = visibility
+			color.b = visibility
+			#color_tracker = visibility # set the color tracker

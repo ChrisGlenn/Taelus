@@ -23,3 +23,57 @@
 				# beer
 				INVSLOTS[n].frame = 3
 				Globals.player["weight"] += 0.5
+
+	elif Globals.hour == dawn_dusk[1]:
+		# sunset
+		if cycles > 0:
+			# check the timer and decrement
+			if t_cycle > 0:
+				t_cycle -= Globals.timer_ctrl * delta
+			else:
+				cycle(delta,1) # 1 run for sunset
+		else:
+			set_season() # see if the season has changed
+	else:
+		if check_flag:
+			# use check_flag to stop this from running in the background ALL THE TIME
+			# reset and wait for next sunrise/sunset
+			cycles = 20 # reset cycles
+			t_cycle = timer_rec # reset timer_to_cycle
+			check_flag = false # reset the check_flag
+
+func cycle(clock, sun_direction):
+	# direction 0 is day 1 is night
+	# direction 0 is day 1 is night
+	if sun_direction == 0:
+		# sun is rising
+		if color.r < color_tracker:
+			color.r += 0.1 * clock # increment color RED
+			color.g += 0.1 * clock # increment color GREEN
+			color.b += 0.1 * clock # increment color BLUE
+		else:
+			color.r = color_tracker # set to color tracker
+			color.g = color_tracker # set to color tracker
+			color.b = color_tracker # set to color tracker
+			cycles -= 1 # dec cycles
+			t_cycle = timer_rec # reset timer to cycle
+			if color_tracker < sun_shade:
+				color_tracker += 0.05 # increment color_tracker
+			else:
+				cycles = 0 # stop the cycles!
+	elif sun_direction == 1:
+		# sun is setting
+		if color.r > color_tracker:
+			color.r -= 0.1 * clock # decrement color RED
+			color.g -= 0.1 * clock # decrement color GREEN
+			color.b -= 0.1 * clock # decrement color BLUE
+		else:
+			color.r = color_tracker # set to color tracker
+			color.g = color_tracker # set to color tracker
+			color.b = color_tracker # set to color tracker
+			cycles -= 1 # dec cycles
+			t_cycle = timer_rec # reset timer to cycle
+			if color_tracker > 0.1:
+				color_tracker -= 0.05 # decrement color_tracker
+			else:
+				cycles = 0 # stop the cycles!
