@@ -52,7 +52,7 @@ func _ready():
 	NAME.text = Globals.player["name"] # player's name
 	REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
 	DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season])
-	TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2)
+	TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2) + " " + Globals.weather
 	REPUTATION.text = Globals.current_kingdom + ": " + Globals.player["reputation"] # current player reputation
 	COPPER.text = str(Globals.player["money"][0]) # copper amount
 	SILVER.text = str(Globals.player["money"][1]) # silver amount
@@ -80,7 +80,7 @@ func HUD(_clock):
 		Globals.hud_control_mode = "main"
 		# update dynamic HUD elements
 		DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season])
-		TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2)
+		TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2) + " " + Globals.weather
 		REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
 		# INPUT
 		if Globals.hud_controlable:

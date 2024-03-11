@@ -101,6 +101,7 @@ var season = 1
 var hour = 9 # 9am
 var minutes = 55 # increments by 5
 var seconds = 0
+var weather = "Sunny" # the current weather
 var weather_updated = false # true if weather event is 'running'
 var weather_event = "SUN" # the current weather event
 var weather_lifespan = 0 # records how long the weather event will last

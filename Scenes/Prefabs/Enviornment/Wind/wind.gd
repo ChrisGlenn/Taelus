@@ -16,7 +16,7 @@ var timer_rec # records spawn timer
 func _ready():
 	# PLAY SOUND
 	RNG.randomize() # seed random
-	swirl_amnt = RNG.randi_range(1,6) # set a random amount of wind swirls
+	swirl_amnt = RNG.randi_range(1,6) # set a random amount of wind swirl
 	timer_rec = spawn_timer # record the spawn timer
 	hour_check = Globals.hour # set the hour_check
 

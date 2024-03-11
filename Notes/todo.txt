@@ -23,6 +23,7 @@ Gameplay:
 	[] Building a Home
 	[] Ship Movement w/ Player
 	[] Sickness
+	[] FISHING!!!
 Combat:
 	[] Combat System
 	[] Combat Outline
@@ -39,8 +40,9 @@ Overworld:
 		[x] Set Time Based Visiblity (Saving/Loading)
 		[x] Overcast (Clouds)
 		[x] Rain ([x] light/[x] normal/[x] heavy)
-		[] Snow (light/normal/heavy/wind)
-		[x] Wind (normal/heavy)
+		[] Snow ([] light/[] normal/[] blizzard)
+		[] Wind (normal/heavy)
+		[] Lightening (Rainstorm w/ SFX)
 	[] Sleep
 	[x] Item Spawn Check (if it's been taken delete it)
 	[x] Region Border Block
@@ -121,7 +123,7 @@ HUD:
 System:
 	[x] Fade In/Out
 	[x] Main Menu
-	[] Pause Menu
+	[] Pause Menu ([x] Pause/[] Load Game/[] Settings)
 	[] Camera System
 	[] Dice Roll
 	[] Chunk Loading System :S
