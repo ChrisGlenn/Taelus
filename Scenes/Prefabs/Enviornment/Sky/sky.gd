@@ -6,6 +6,7 @@ extends CanvasModulate
 @onready var LIGHTRAIN = preload("res://Scenes/Prefabs/Enviornment/LightRain/light_rain.tscn")
 @onready var RAIN = preload("res://Scenes/Prefabs/Enviornment/Rain/rain.tscn")
 @onready var RAINSTORM = preload("res://Scenes/Prefabs/Enviornment/RainStorm/rain_storm.tscn")
+@onready var WIND = preload("res://Scenes/Prefabs/Enviornment/Wind/wind.tscn")
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
 var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [6,17] spring/summer: 5:00 to 8:00 [5,20]
@@ -157,7 +158,7 @@ func _process(delta):
 				sun_brightness = 0.9 # set the sun brightness
 				var lightrain = LIGHTRAIN.instantiate()
 				get_parent().add_child(lightrain)
-				Globals.weather_event = ""
+				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "RAIN":
 			# check the time and if it's the daytime darken the skies if not already darken
 			if color.r > 0.7:
@@ -168,7 +169,7 @@ func _process(delta):
 				sun_brightness = 0.7 # set the sun brightness
 				var rain = RAIN.instantiate()
 				get_parent().add_child(rain)
-				Globals.weather_event = ""
+				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "RAIN_STORM":
 			if color.r > 0.7:
 				# decrement rgb values
@@ -178,7 +179,12 @@ func _process(delta):
 				sun_brightness = 0.7 # set the sun brightness
 				var rainstorm = RAINSTORM.instantiate()
 				get_parent().add_child(rainstorm)
-				Globals.weather_event = ""
+				Globals.weather_event = "" # null weather event
+		elif Globals.weather_event == "WIND":
+			# spawn the wind
+			var wind = WIND.instantiate()
+			get_parent().add_child(wind)
+			Globals.weather_event = "" # null weather event
 	else:
 		# if the weather is done (rain is over, ect) then reset the sun brightness
 		if sun_brightness != 1.0: sun_brightness = 1.0

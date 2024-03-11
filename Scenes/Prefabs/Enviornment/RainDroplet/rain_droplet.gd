@@ -5,7 +5,6 @@ extends AnimatedSprite2D
 # until the rain is over
 @onready var RNG = RandomNumberGenerator.new() # RNG
 var new_location = Vector2(128, 0) # the location to move to (defaults to upper corner)
-var dead = false # if true then death function will fire
 
 
 func _ready():
@@ -14,17 +13,11 @@ func _ready():
     visible = true # show droplet
     play("default")
 
-func _process(_delta):
-    if dead: death() # kill self
-
 
 func droplet():
     global_position = Vector2(RNG.randi_range(128,640), RNG.randi_range(0,360)) # set random start position
     visible = true # show droplet
     play("default")
-
-func death():
-    queue_free() # delete self
 
 
 func _on_animation_finished():

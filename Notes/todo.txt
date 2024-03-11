@@ -40,7 +40,7 @@ Overworld:
 		[x] Overcast (Clouds)
 		[x] Rain ([x] light/[x] normal/[x] heavy)
 		[] Snow (light/normal/heavy/wind)
-		[] Wind (normal/heavy)
+		[x] Wind (normal/heavy)
 	[] Sleep
 	[x] Item Spawn Check (if it's been taken delete it)
 	[x] Region Border Block

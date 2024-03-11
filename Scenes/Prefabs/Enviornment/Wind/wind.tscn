@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwc6f4mmd1qh4"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Wind/wind.gd" id="1_mdqwk"]
+
+[node name="Wind" type="CanvasLayer"]
+script = ExtResource("1_mdqwk")
+
+[node name="WindSFX" type="AudioStreamPlayer" parent="."]
+
+[node name="Swirls" type="Node2D" parent="."]

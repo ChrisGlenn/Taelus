@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://dvrj72vkts2xh"]
+
+[ext_resource type="Texture2D" uid="uid://c6vl6b0crmj3x" path="res://Sprites/World/Wind.png" id="1_od1qc"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/WindSwirl/wind_swirl.gd" id="2_5j6mr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kttfs"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(0, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2xhr"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(32, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2agr"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(64, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_441bf"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(96, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgmwx"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(128, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bv7w"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(160, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wn6eg"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(192, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc4vp"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(224, 0, 32, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smxsd"]
+atlas = ExtResource("1_od1qc")
+region = Rect2(256, 0, 32, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8vt3c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kttfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2xhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2agr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_441bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgmwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bv7w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wn6eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bc4vp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smxsd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="WindSwirl" type="AnimatedSprite2D"]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_8vt3c")
+frame = 1
+centered = false
+script = ExtResource("2_5j6mr")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
