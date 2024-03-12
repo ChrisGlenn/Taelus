@@ -9,6 +9,7 @@ extends Area2D
 
 func _ready():
 	if interior:
+		# for interior = true
 		# turn off collision
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://5tph11x8cv7x"]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Snow/snow.gd" id="1_j5fh3"]
+[ext_resource type="Texture2D" uid="uid://cihxgvaq5b8g2" path="res://Sprites/World/Snow.png" id="1_kjuoh"]
+
+[node name="Snow" type="CanvasLayer"]
+script = ExtResource("1_j5fh3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_kjuoh")
+centered = false
+
+[node name="Droplets" type="Node2D" parent="."]

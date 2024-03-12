@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bklygtj4y2c4t"]
+
+[ext_resource type="Texture2D" uid="uid://cljdt77iwt1s2" path="res://Sprites/World/LightSnow.png" id="1_l1b6q"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/LightSnow/light_snow.gd" id="1_tj5kq"]
+
+[node name="LightSnow" type="CanvasLayer"]
+script = ExtResource("1_tj5kq")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 2
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(640, 360)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_l1b6q")
+centered = false
+
+[node name="Droplets" type="Node2D" parent="."]

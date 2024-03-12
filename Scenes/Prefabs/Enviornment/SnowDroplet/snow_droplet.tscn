@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4ne6wnk8c5vo"]
+
+[ext_resource type="Texture2D" uid="uid://bieune6xuumq2" path="res://Sprites/World/SnowLand.png" id="1_jt0jg"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/SnowDroplet/snow_droplet.gd" id="2_io6jq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsqiy"]
+atlas = ExtResource("1_jt0jg")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ndl6"]
+atlas = ExtResource("1_jt0jg")
+region = Rect2(6, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdudh"]
+atlas = ExtResource("1_jt0jg")
+region = Rect2(12, 0, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jj6fb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsqiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ndl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdudh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="SnowDroplet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jj6fb")
+script = ExtResource("2_io6jq")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
