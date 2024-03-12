@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://52k6ws2a350r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xanqk"]
+size = Vector2(12, 12)
+
+[node name="CollBlock" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_xanqk")

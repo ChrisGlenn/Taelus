@@ -86,8 +86,9 @@ Overworld:
 		[] Chicken
 		[] Ducks
 Interiors:
+	[x] Outdoor Roof Transition
 	[] Interior Map w/ Exploration
-	[] Entrance/Exits
+	[x] Entrance/Exits
 	[] Bed
 	[] Fire
 	[] Chest
