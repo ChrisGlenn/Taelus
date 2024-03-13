@@ -40,9 +40,9 @@ Overworld:
 		[x] Set Time Based Visiblity (Saving/Loading)
 		[x] Overcast (Clouds)
 		[x] Rain ([x] light/[x] normal/[x] heavy)
-		[] Snow ([] light/[] normal/[] blizzard)
-		[] Wind (normal/heavy)
-		[] Lightening (Rainstorm w/ SFX)
+		[x] Snow ([x] light/[x] normal/[x] blizzard)
+		[x] Wind
+		[] Lightening SFX (for rain storm)
 	[] Sleep
 	[x] Item Spawn Check (if it's been taken delete it)
 	[x] Region Border Block

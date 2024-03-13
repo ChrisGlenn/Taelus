@@ -86,7 +86,7 @@ DESCRIPTION = "An empty bottle made of dark leather sits on the grass."
 [node name="NPCs" type="Node" parent="."]
 
 [node name="LorGuard" parent="NPCs" instance=ExtResource("11_p4mc6")]
-position = Vector2(336, 176)
+position = Vector2(512, 80)
 
 [node name="Horse" parent="NPCs" instance=ExtResource("4_eymla")]
 position = Vector2(224, 96)

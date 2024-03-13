@@ -50,6 +50,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -334,7 +335,6 @@ text = "  Selected description goes here."
 autowrap_mode = 2
 
 [node name="DialogueHUD" type="Node2D" parent="."]
-visible = false
 
 [node name="QuestionsResponses" type="Label" parent="DialogueHUD"]
 offset_left = 8.0

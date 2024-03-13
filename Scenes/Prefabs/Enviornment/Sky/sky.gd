@@ -13,6 +13,7 @@ var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [
 var color_tracker = 1.0 # used to update the cycle to know what to dec/inc to...
 var sun_brightness = 1.0 # used to set the sun brightness
 var check_flag = false # used to make checks when needed
+var sky_controlled = false # if true this scene controls the weather event
 var hour_check # used to make hour checks
 var minute_check # used to check minutes
 
@@ -187,8 +188,17 @@ func _process(delta):
 			Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "OVERCAST":
 			# darken the skies
-			print("OVERCAST IS HAPPENING!!!")
-			pass
+			if !sky_controlled:
+				if color.r > 0.8 and Globals.hour < dawn_dusk[1]:
+					# decrement rgb values
+					set_visibility(0.8,1,delta)
+				else:
+					sky_controlled = true # set as true to keep track of lifespan
+			else:
+				if Globals.weather_lifespan > 0:
+					if hour_check != Globals.hour:
+						Globals.weather_lifespan -= 1 # decrement lifespan
+						hour_check = Globals.hour # reset hour check
 		elif Globals.weather_event == "LIGHT_SNOW":
 			# light snow
 			print("LIGHT SNOW IS HAPPENING!!!")
