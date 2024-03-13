@@ -185,6 +185,17 @@ func _process(delta):
 			var wind = WIND.instantiate()
 			get_parent().add_child(wind)
 			Globals.weather_event = "" # null weather event
+		elif Globals.weather_event == "OVERCAST":
+			# darken the skies
+			print("OVERCAST IS HAPPENING!!!")
+			pass
+		elif Globals.weather_event == "LIGHT_SNOW":
+			# light snow
+			print("LIGHT SNOW IS HAPPENING!!!")
+		elif Globals.weather_event == "SNOW":
+			print("SNOW IS HAPPENING!!!")
+		elif Globals.weather_event == "BLIZZARD":
+			print("BLIZZARD!!!!")
 	else:
 		# if the weather is done (rain is over, ect) then reset the sun brightness
 		if sun_brightness != 1.0: sun_brightness = 1.0

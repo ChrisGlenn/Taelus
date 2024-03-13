@@ -19,30 +19,45 @@ func weather(season, odds):
 				# based on the odds set
 				# WINTER means snow...lots of snow
 				var roll = Dice.dice_roll(12,odds)
-				if roll[0] > 0: 
-					Globals.weather_event = "LIGHT_SNOW" # just a light snow
-				elif roll[0] >= 2:
-					Globals.weather_event = "SNOW" # regular snow
-				elif roll[0] >= 4:
-					Globals.weather_event = "HEAVY_SNOW" # heavy snow
-				elif roll[0] >= 5:
-					Globals.weather_event = "SNOW_STORM" # blizzard
-				print(Globals.weather_event) # DEBUG print the weather
+				if roll[1] == "LOSE":
+					if roll[0] == 2:
+						Globals.weather_event = "LIGHT_SNOW" # light snow
+						Globals.weather = "Snowing" # update weather label
+					elif roll[0] == 3:
+						Globals.weather_event = "SNOW" # snow
+						Globals.weather = "Snowing" # update weather label
+					elif roll[0] == 4:
+						Globals.weather_event = "BLIZZARD" # blizzard!!!
+						Globals.weather = "Blizzard" # update weather label
+					else:
+						Globals.weather_event = "OVERCAST" # overcast skies
+						Globals.weather = "Cloudy" # update weather label
+				elif roll[1] == "EQUAL":
+					Globals.weather_event = "SUN" # sunny
+					Globals.weather = "Sunny" # update weather label
+				elif roll[1] == "WIN":
+					if roll[0] > 2:
+						Globals.weather_event = "SUN" # sunny
+						Globals.weather = "Sunny" # update weather label
+					else:
+						Globals.weather_event = "OVERCAST" # overcast skies
+						Globals.weather = "Cloudy" # update weather label
+				var life_roll = Dice.dice_roll(12,0)
+				Globals.weather_lifespan = life_roll[0] # set lifespan of weather event
 				Globals.weather_updated = true # weather is updated
 			1:
 				# spring
 				# roll the dice with the odds to see if there will be an event
 				# based on the odds set
 				# SPRING means wind and various amounts of rain...
-				#var roll = Dice.dice_roll(12,odds)
-				var roll = [3,"LOSE"]
+				var roll = Dice.dice_roll(12,odds)
 				if roll[1] == "LOSE": 
 					if roll[0] == 2:
-						Globals.weather_event = "LIGHT_RAIN" # regular rain
-						Globals.weather = "Light Rain" # update weather label
+						Globals.weather_event = "LIGHT_RAIN" # light rain
+						Globals.weather = "Raining" # update weather label
 					elif roll[0] == 3:
 						Globals.weather_event = "RAIN" # standard rain
-						Globals.weather = "Rain" # update weather label
+						Globals.weather = "Raining" # update weather label
 					elif roll[0] == 4:
 						Globals.weather_event = "RAIN_STORM" # rain storm
 						Globals.weather = "Rain Storm" # update weather label
@@ -52,17 +67,15 @@ func weather(season, odds):
 				elif roll[1] == "EQUAL":
 					Globals.weather_event = "SUN" # sunny day
 					Globals.weather = "Sunny" # update weather label
-				else:
+				elif roll[1] == "WIN":
 					if roll[0] > 2:
 						Globals.weather_event = "SUN" # sunny day
 						Globals.weather = "Sunny" # update weather label
 					else:
 						Globals.weather_event = "CLOUDY" # cloudy day
 						Globals.weather = "Cloudy" # update weather label
-				Globals.weather_lifespan = 2
-				print(Globals.weather_event) # DEBUG print the weather
-				print(str(Globals.weather_lifespan))
-				print(str(roll))
+				var life_roll = Dice.dice_roll(12,0)
+				Globals.weather_lifespan = life_roll[0] # set lifespan of weather event
 				Globals.weather_updated = true # weather is updated
 			2:
 				# summer
@@ -70,13 +83,28 @@ func weather(season, odds):
 				# based on the odds set
 				# SUMMER means wind and heavy rain (monsoon) that's pretty much it
 				var roll = Dice.dice_roll(12,odds)
-				if roll[0] >= 3:
-					Globals.weather_event = "WIND" # some wind
-				elif roll[0] >= 4:
-					Globals.weather_event = "HEAVY_WIND" # heavy wind
-				elif roll[0] >= 5:
-					Globals.weather_event = "RAIN_STORM" # rain storm
-				print(Globals.weather_event) # DEBUG print the weather
+				if roll[1] == "LOSE":
+					if roll[0] == 3:
+						Globals.weather_event = "WIND" # windy
+						Globals.weather = "Windy" # update weather label
+					elif roll[0] == 4:
+						Globals.weather_event = "RAIN_STORM" # rain storm
+						Globals.weather = "Rain Storm" # update weather label
+					else:
+						Globals.weather_event = "SUN" # sunny day
+						Globals.weather = "Sunny" # update weather label
+				elif roll[1] == "EQUAL":
+					Globals.weather_event = "WIND" # sunny day
+					Globals.weather = "Windy" # update weather label
+				elif roll[1] == "WIN":
+					if roll[0] > 2:
+						Globals.weather_event = "CLOUDY" # cloudy day
+						Globals.weather = "Cloudy" # update weather label
+					else:
+						Globals.weather_event = "SUN" # sunny again...
+						Globals.weather = "Sunny" # update weather label
+				var life_roll = Dice.dice_roll(12,0)
+				Globals.weather_lifespan = life_roll[0] # set lifespan of weather event
 				Globals.weather_updated = true # weather is updated
 			3:
 				# fall
@@ -84,9 +112,29 @@ func weather(season, odds):
 				# based on the odds set
 				# FALL means wind and rain, but mostly wind
 				var roll = Dice.dice_roll(12,odds)
-				if roll[0] >= 3:
-					Globals.weather_event = "WIND" # some wind
-				elif roll[0] >= 5:
-					Globals.weather_event = "HEAVY_WIND" # heavy wind
-				print(Globals.weather_event) # DEBUG print the weather
+				if roll[1] == "LOSE":
+					if roll[0] == 2:
+						Globals.weather_event = "LIGHT_RAIN" # light rain
+						Globals.weather = "Raining" # update weather label
+					elif roll[0] == 3:
+						Globals.weather_event = "OVERCAST" # rain storm
+						Globals.weather = "Cloudy" # update weather label
+					elif roll[0] == 4:
+						Globals.weather_event = "RAIN_STORM" # rain storm
+						Globals.weather = "Rain Storm" # update weather label
+					else:
+						Globals.weather_event = "WIND" # windy day
+						Globals.weather = "Windy" # update weather label
+				elif roll[1] == "EQUAL":
+					Globals.weather_event = "SUN" # sunny again...
+					Globals.weather = "Sunny" # update weather label
+				elif roll[1] == "WIN":
+					if roll[0] > 2:
+						Globals.weather_event = "SUN" # sunny day
+						Globals.weather = "Sunny" # update weather label
+					else:
+						Globals.weather_event = "WIND" # windy day
+						Globals.weather = "Windy" # update weather label
+				var life_roll = Dice.dice_roll(12,0)
+				Globals.lifespan = life_roll[0] # set lifespan for weather event
 				Globals.weather_updated = true # weather is updated
