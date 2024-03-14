@@ -115,6 +115,8 @@ var days_in_game = 0
 var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 var crops = [] # holds crops that have been planted and their current statusii
+# DEBUG CHUNK LOADING SYSTEM
+var loaded_chunks = [] # holds the loaded chunks
 
 # story/npc variables
 var world_billboard = {} # stories that are floating around

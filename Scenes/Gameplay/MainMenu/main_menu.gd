@@ -15,7 +15,7 @@ func input():
 		# new RANDOM game
 		# this will go straight to the loading screen and randomly generate a character for the player to play as
 		Globals.new_random = true # turn on new random flag
-		var _start_game = get_tree().change_scene_to_file("res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.tscn")
+		var _start_game = get_tree().change_scene_to_file("res://Scenes/System/LoadingGame/loading_game.tscn")
 	elif Input.is_action_just_pressed("f3"):
 		# options
 		# not set yet

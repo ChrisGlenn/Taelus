@@ -1,0 +1,31 @@
+<mxfile host="Electron" modified="2024-03-14T22:20:07.175Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.4 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="b1JzjlfAfRPQCLLmCSkE" version="24.0.4" type="device">
+  <diagram name="Page-1" id="izkWr9iO09L5bod1I85O">
+    <mxGraphModel dx="1051" dy="728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CQCShAn1gHX7gaEHrSIB-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="UlhIRSByfntT8-ibjQIL-1" target="UlhIRSByfntT8-ibjQIL-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlhIRSByfntT8-ibjQIL-1" value="CHUNK SYSTEM" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="40" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CQCShAn1gHX7gaEHrSIB-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UlhIRSByfntT8-ibjQIL-2" target="CQCShAn1gHX7gaEHrSIB-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CQCShAn1gHX7gaEHrSIB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="UlhIRSByfntT8-ibjQIL-2" target="CQCShAn1gHX7gaEHrSIB-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="UlhIRSByfntT8-ibjQIL-2" value="Taelus &#39;Overworld&#39;&lt;div&gt;Level&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" parent="1" vertex="1">
+          <mxGeometry x="380" y="150" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CQCShAn1gHX7gaEHrSIB-2" value="UI/Static" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="140" y="150" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="CQCShAn1gHX7gaEHrSIB-4" value="Cells" style="rounded=0;whiteSpace=wrap;html=1;fontSize=8;" vertex="1" parent="1">
+          <mxGeometry x="650" y="150" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
