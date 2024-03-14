@@ -7,6 +7,9 @@ extends CanvasModulate
 @onready var RAIN = preload("res://Scenes/Prefabs/Enviornment/Rain/rain.tscn")
 @onready var RAINSTORM = preload("res://Scenes/Prefabs/Enviornment/RainStorm/rain_storm.tscn")
 @onready var WIND = preload("res://Scenes/Prefabs/Enviornment/Wind/wind.tscn")
+@onready var LIGHTSNOW = preload("res://Scenes/Prefabs/Enviornment/LightSnow/light_snow.tscn")
+@onready var SNOW = preload("res://Scenes/Prefabs/Enviornment/Snow/snow.tscn")
+@onready var BLIZZARD = preload("res://Scenes/Prefabs/Enviornment/Blizzard/blizzard.tscn")
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
 var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [6,17] spring/summer: 5:00 to 8:00 [5,20]
@@ -107,8 +110,6 @@ func _process(delta):
 		if color.r < sun_brightness:
 			if minute_check != Globals.minutes:
 				color_tracker += 0.1 # increment by .1
-				print(str(color_tracker))
-				print(str(Globals.minutes))
 				minute_check = Globals.minutes # reset minute check
 			set_visibility(color_tracker,2,delta) # have this running
 	elif Globals.hour == dawn_dusk[1]:
@@ -118,7 +119,6 @@ func _process(delta):
 		if color.r > 0.1:
 			if minute_check != Globals.minutes:
 				color_tracker -= 0.1 # decrement by .1
-				print(str(color_tracker))
 				minute_check = Globals.minutes # reset minute check
 			set_visibility(color_tracker,1,delta)
 	else:
@@ -193,19 +193,49 @@ func _process(delta):
 					# decrement rgb values
 					set_visibility(0.8,1,delta)
 				else:
+					sun_brightness = 0.8 # set the brightness to 0.8 incase day comes
 					sky_controlled = true # set as true to keep track of lifespan
 			else:
 				if Globals.weather_lifespan > 0:
 					if hour_check != Globals.hour:
 						Globals.weather_lifespan -= 1 # decrement lifespan
 						hour_check = Globals.hour # reset hour check
+				else:
+					Globals.weather_event = "" # reset weather event
+					Globals.weather_updated = false # reset weather updated to spawn new event
 		elif Globals.weather_event == "LIGHT_SNOW":
-			# light snow
-			print("LIGHT SNOW IS HAPPENING!!!")
+			# check the time and if it's the daytime darken the skies if not already darken
+			if color.r > 0.8:
+				# decrement rgb values for the sky
+				set_visibility(0.8,1,delta)
+			else:
+				# spawn the light snow (time of day/night does not matter...)
+				sun_brightness = 0.8 # set the sun brightness
+				var lightsnow = LIGHTSNOW.instantiate()
+				get_parent().add_child(lightsnow)
+				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "SNOW":
-			print("SNOW IS HAPPENING!!!")
+			# check the time and if it's the daytime darken the skies if not already darken
+			if color.r > 0.7:
+				# decrement rgb values for the sky
+				set_visibility(0.7,1,delta)
+			else:
+				# spawn the snow (time of day/night does not matter...)
+				sun_brightness = 0.7 # set the sun brightness
+				var snow = SNOW.instantiate()
+				get_parent().add_child(snow)
+				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "BLIZZARD":
-			print("BLIZZARD!!!!")
+			# check the time and if it's the daytime darken the skies if not already darken
+			if color.r > 0.4:
+				# decrement rgb values for the sky
+				set_visibility(0.4,1,delta)
+			else:
+				# spawn the snow (time of day/night does not matter...)
+				sun_brightness = 0.4 # set the sun brightness
+				var blizzard = BLIZZARD.instantiate()
+				get_parent().add_child(blizzard)
+				Globals.weather_event = "" # null weather event
 	else:
 		# if the weather is done (rain is over, ect) then reset the sun brightness
 		if sun_brightness != 1.0: sun_brightness = 1.0

@@ -36,13 +36,12 @@ NPC:
 	[] NPC Spawning
 Overworld:
 	[x] Day/Night Cycle
-	[] Weather (Rain/Snow/Wind + visibility)
+	[x] Weather (Rain/Snow/Wind + visibility)
 		[x] Set Time Based Visiblity (Saving/Loading)
 		[x] Overcast (Clouds)
 		[x] Rain ([x] light/[x] normal/[x] heavy)
 		[x] Snow ([x] light/[x] normal/[x] blizzard)
 		[x] Wind
-		[] Lightening SFX (for rain storm)
 	[] Sleep
 	[x] Item Spawn Check (if it's been taken delete it)
 	[x] Region Border Block
@@ -121,6 +120,11 @@ HUD:
 		[] Selector
 		[] Arrange
 		[] Menu 'Commands' Change
+SFX:
+	[] Enviorment
+		[] Rain SFX
+		[] Wind/blizzard
+		[] Lightening
 System:
 	[x] Fade In/Out
 	[x] Main Menu
