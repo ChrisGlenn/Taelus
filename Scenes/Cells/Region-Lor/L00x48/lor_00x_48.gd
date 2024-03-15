@@ -3,6 +3,12 @@ extends Node2D
 @onready var ROOF = $Roofs
 @onready var BLACKOUT = $BlackOut
 @export_multiline var description = "" # used for if the player looks around
+var chunks_to_load = [
+	"",
+	"res://Scenes/Cells/Region-Lor/L01x48/lor_01x_48.tscn",
+	"",
+	""
+]
 
 
 func _ready():
