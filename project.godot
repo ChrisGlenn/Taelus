@@ -28,6 +28,7 @@ Events="*res://Scripts/Events.gd"
 Clock="*res://Scenes/System/Clock/clock.tscn"
 Functions="*res://Scripts/Functions.gd"
 Dice="*res://Scripts/Dice.gd"
+Chunks="*res://Scripts/Chunk/chunks.gd"
 
 [display]
 

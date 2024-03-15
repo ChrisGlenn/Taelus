@@ -87,8 +87,8 @@ var player = {
 
 # lor variables
 var current_region = "Lor"
-var current_kingdom = "Kingdom A"
-var current_location = "Alphaville"
+var current_kingdom = "Lor"
+var current_location = "S. Watchtower"
 var current_map_location = "01x01"
 var races = ["Human (Northerner)","Half-Fae (Western)","Half-Fae (Eastern)","Fae (Westerner)","Fae (Easterner)","Ilyan (Southerner)"]
 var genders = ["Male", "Female"] # (Gen. 1:27)

@@ -158,6 +158,7 @@ TO-DO LIST(RELEASE):
 
 EXPORT:
 [] Remove any 'DEBUG' references in scripts
+[] Remove the Notes/Art folders from project (any unessesary files/folder)
 [] Make sure there are no 'SOUND' calls that haven't been fulfilled
 [] Test Across Platforms (Controllers Also)
 [] Icons (MacOS, Win, Linux)

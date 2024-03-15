@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://croiqyfty8jp1"]
+[gd_scene load_steps=5 format=3 uid="uid://croiqyfty8jp1"]
 
+[ext_resource type="Script" path="res://Scenes/Taelus/taelus.gd" id="1_bhd3q"]
 [ext_resource type="PackedScene" uid="uid://in3ywb6q1lg7" path="res://Scenes/UI/HUD/hud.tscn" id="1_l56o4"]
 [ext_resource type="PackedScene" uid="uid://bcg642gvfdb0m" path="res://Scenes/Prefabs/Enviornment/Sky/sky.tscn" id="2_pxsty"]
 [ext_resource type="PackedScene" uid="uid://ltriq7iom5pu" path="res://Scenes/Player/player.tscn" id="3_ofvy8"]
 
 [node name="Taelus" type="Node2D"]
+script = ExtResource("1_bhd3q")
 
 [node name="HUD" parent="." instance=ExtResource("1_l56o4")]
-layer = 99
+layer = 98
 
 [node name="Sky" parent="." instance=ExtResource("2_pxsty")]
 
