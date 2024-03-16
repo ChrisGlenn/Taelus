@@ -30,6 +30,7 @@ func _ready():
 					var chunkT_instance = this_chunk.instantiate()
 					chunkT_instance.global_position = Vector2(global_position.x + 640, 0)
 					get_parent().add_child(chunkT_instance)
+					chunk_top = chunkT_instance
 					Globals.loaded_chunks.append(chunkT_instance)
 				elif n == 1:
 					# load right chunk
@@ -37,6 +38,7 @@ func _ready():
 					var chunkR_instance = this_chunk.instantiate()
 					chunkR_instance.global_position = Vector2(global_position.x + 640, 0)
 					get_parent().add_child(chunkR_instance)
+					chunk_top = chunkR_instance
 					Globals.loaded_chunks.append(chunkR_instance)
 				elif n == 2:
 					# load bottom chunk
@@ -44,6 +46,7 @@ func _ready():
 					var chunkB_instance = this_chunk.instantiate()
 					chunkB_instance.global_position = Vector2(global_position.x + 640, 0)
 					get_parent().add_child(chunkB_instance)
+					chunk_top = chunkB_instance					
 					Globals.loaded_chunks.append(chunkB_instance)
 				elif n == 3:
 					# load left chunk
@@ -51,10 +54,14 @@ func _ready():
 					var chunkL_instance = this_chunk.instantiate()
 					chunkL_instance.global_position = Vector2(global_position.x + 640, 0)
 					get_parent().add_child(chunkL_instance)
+					chunk_top = chunkL_instance					
 					Globals.loaded_chunks.append(chunkL_instance)
 		# clear out unneeded chunks from chunks_loaded Global
 		for m in Globals.loaded_chunks.size():
-			print(Globals.loaded_chunks[m])
+			var temp = Globals.loaded_chunks[m]
+			if temp != chunk_top or temp != chunk_right or temp != chunk_bottom or temp != chunk_left:
+				print(Globals.loaded_chunks[m])
+				Globals.loaded_chunks.remove_at(m) # remove
 
 
 
