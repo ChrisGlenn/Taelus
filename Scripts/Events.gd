@@ -51,6 +51,7 @@ func weather(season, odds):
 				# based on the odds set
 				# SPRING means wind and various amounts of rain...
 				var roll = Dice.dice_roll(12,odds)
+				#var roll = [2,"LOSE"] # DEBUG used to set weather
 				if roll[1] == "LOSE": 
 					if roll[0] == 2:
 						Globals.weather_event = "LIGHT_RAIN" # light rain

@@ -60,7 +60,7 @@ func _ready():
 		for m in Globals.loaded_chunks.size():
 			var temp = Globals.loaded_chunks[m]
 			if temp != chunk_top or temp != chunk_right or temp != chunk_bottom or temp != chunk_left:
-				print(Globals.loaded_chunks[m])
+				# print(Globals.loaded_chunks[m])
 				Globals.loaded_chunks.remove_at(m) # remove
 
 

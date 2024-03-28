@@ -12,8 +12,6 @@ script = ExtResource("1_bhd3q")
 [node name="HUD" parent="." instance=ExtResource("1_l56o4")]
 layer = 98
 
-[node name="Sky" parent="." instance=ExtResource("2_pxsty")]
-
 [node name="Player" parent="." instance=ExtResource("3_ofvy8")]
 process_mode = 1
 position = Vector2(272, 192)
@@ -22,3 +20,5 @@ collision_mask = 257
 
 [node name="MobileCamera" parent="." instance=ExtResource("5_y7jys")]
 enabled = false
+
+[node name="Sky" parent="MobileCamera" instance=ExtResource("2_pxsty")]
