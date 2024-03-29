@@ -11,5 +11,37 @@ script = ExtResource("1_cj27u")
 [node name="Camera2D" type="Camera2D" parent="CanvasLayer"]
 anchor_mode = 0
 
-[node name="Raindrop" parent="CanvasLayer/Camera2D" node_paths=PackedStringArray("parent") instance=ExtResource("2_5pahw")]
-parent = NodePath("..")
+[node name="Raindrop" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+
+[node name="Raindrop2" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(8, 0)
+
+[node name="Raindrop3" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(16, 0)
+
+[node name="Raindrop4" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(24, 0)
+
+[node name="Raindrop5" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(32, 0)
+
+[node name="Raindrop6" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(40, 0)
+
+[node name="Raindrop7" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(48, 0)
+
+[node name="Raindrop8" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(56, 0)
+
+[node name="Raindrop9" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(64, 0)
+
+[node name="Raindrop10" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(72, 0)
+
+[node name="Raindrop11" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(80, 0)
+
+[node name="Raindrop12" parent="CanvasLayer/Camera2D" instance=ExtResource("2_5pahw")]
+position = Vector2(88, 0)
