@@ -157,8 +157,7 @@ func _process(delta):
 			else:
 				# spawn the rain (time of day/night does not matter...)
 				sun_brightness = 0.9 # set the sun brightness
-				var lightrain = LIGHTRAIN.instantiate()
-				get_parent().add_child(lightrain)
+				# SPAWN RAIN WITH LIGHT_RAIN SET
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "RAIN":
 			# check the time and if it's the daytime darken the skies if not already darken
@@ -168,8 +167,7 @@ func _process(delta):
 			else:
 				# spawn the rain (time of day/night does not matter...)
 				sun_brightness = 0.7 # set the sun brightness
-				var rain = RAIN.instantiate()
-				get_parent().add_child(rain)
+				# SPAWN RAIN WITH RAIN SET
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "RAIN_STORM":
 			if color.r > 0.7:
@@ -178,8 +176,7 @@ func _process(delta):
 			else:
 				# spawn the rain (time of day/night does not matter...)
 				sun_brightness = 0.7 # set the sun brightness
-				var rainstorm = RAINSTORM.instantiate()
-				get_parent().add_child(rainstorm)
+				# SPAWN RAIN WITH RAIN STORM SET
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "WIND":
 			# spawn the wind
@@ -211,8 +208,7 @@ func _process(delta):
 			else:
 				# spawn the light snow (time of day/night does not matter...)
 				sun_brightness = 0.8 # set the sun brightness
-				var lightsnow = LIGHTSNOW.instantiate()
-				get_parent().add_child(lightsnow)
+				# SPAWN SNOW WITH LIGHT_SNOW SET
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "SNOW":
 			# check the time and if it's the daytime darken the skies if not already darken
@@ -222,8 +218,7 @@ func _process(delta):
 			else:
 				# spawn the snow (time of day/night does not matter...)
 				sun_brightness = 0.7 # set the sun brightness
-				var snow = SNOW.instantiate()
-				get_parent().add_child(snow)
+				# SPAWN SNOW WITH SNOW SET
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "BLIZZARD":
 			# check the time and if it's the daytime darken the skies if not already darken
@@ -233,8 +228,7 @@ func _process(delta):
 			else:
 				# spawn the snow (time of day/night does not matter...)
 				sun_brightness = 0.4 # set the sun brightness
-				var blizzard = BLIZZARD.instantiate()
-				get_parent().add_child(blizzard)
+				# SPAWN SNOW WITH BLIZZARD SET
 				Globals.weather_event = "" # null weather event
 	else:
 		# if the weather is done (rain is over, ect) then reset the sun brightness

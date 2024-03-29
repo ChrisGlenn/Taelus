@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdr57wry3oj8l"]
+[gd_scene load_steps=2 format=3 uid="uid://cdr57wry3oj8l"]
 
 [ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/LightRain/light_rain.gd" id="1_2o72o"]
-[ext_resource type="Texture2D" uid="uid://cthou2qp8cht1" path="res://Sprites/World/LightRain.png" id="2_igr22"]
 
 [node name="LightRain" type="CanvasLayer"]
 layer = 2
@@ -9,17 +8,6 @@ script = ExtResource("1_2o72o")
 
 [node name="RainAudio" type="AudioStreamPlayer" parent="."]
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-layer = 2
-follow_viewport_enabled = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_offset = Vector2(2.08165e-12, 2.08165e-12)
-motion_mirroring = Vector2(640, 360)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(2, 2)
-texture = ExtResource("2_igr22")
-centered = false
+[node name="Raindrops" type="Node2D" parent="."]
 
 [node name="Droplets" type="Node2D" parent="."]
