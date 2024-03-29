@@ -16,7 +16,7 @@ var chunks_to_load = [
 func _ready():
 	Globals.current_region = "Lor" # set current region
 	Globals.current_location = "S. Watchtower" # set current location
-	# if the load_chunks bool is true then iterate through the chunks_to_load array and 
+	# if the load_chunks bool is true then iterate through the chunks_to_load array and
 	# load the chunks around this level
 	if load_chunks:
 		# load the cooresponding chunks (can I spell?)

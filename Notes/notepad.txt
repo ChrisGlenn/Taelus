@@ -33,10 +33,12 @@ IDEAS
 
 12. A band of orphans in the woods who's parents have been killed in battle with Gradia.
 
+13. Witches. They live alone and can either be outright hostile, benevolent, or crafty and use their spells/assets to get something from the player.
+
 
 
 GEOGRAPHY
-1. Field of Swords: A great battle took place here. The ancient swords are still laying in the ground. There is a belief that the warriors of old will appear if any are pulled and attack. If anyone is in your party they will also leave, if they are from Lor.
+1. Field of Swords: A great battle took place here. The ancient swords are still laying in the ground. There is a belief that the warriors of old will appear if any are pulled and attack. If anyone is in your party they will also leave, if they are from Lor. Also you will be attacked.
 
 2. The Bog: A sunken city lies beneath the bog.
 
@@ -53,6 +55,8 @@ GEOGRAPHY
 8. White horse carved into the land OR made from white brick ruins that the locals have taken.
 
 9. Locals with homes that have some white bricks from ruins that they've stolen.
+
+10. Witch's Hut: A decreped hut that may hold a witch...who may or may not be hostile. 
 
 
 

@@ -321,7 +321,7 @@ scale = Vector2(7, 7)
 texture = ExtResource("5_0djge")
 centered = false
 hframes = 32
-vframes = 16
+vframes = 32
 
 [node name="SelDescriptLabel" type="Label" parent="Selection"]
 offset_left = 16.0

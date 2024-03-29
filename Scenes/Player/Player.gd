@@ -114,6 +114,10 @@ func player_movement(clock):
 			if global_position.x < move_to:
 				# move the player
 				position.x += Globals.movement_speed * clock
+				#ANIM.flip_h = false # face right
+				$Body.flip_h = false
+				$Hair.flip_h = false
+				$Clothing.flip_h = false
 			else:
 				global_position.x = move_to # make sure it hasn't gone past
 				moving = false # complete move
@@ -130,6 +134,10 @@ func player_movement(clock):
 			if global_position.x > move_to:
 				# move the player
 				position.x -= Globals.movement_speed * clock
+				#ANIM.flip_h = true # face left
+				$Body.flip_h = true
+				$Hair.flip_h = true
+				$Clothing.flip_h = true
 			else:
 				global_position.x = move_to # make sure it hasn't gone past
 				moving = false # complete move
