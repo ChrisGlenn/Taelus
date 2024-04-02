@@ -1,0 +1,32 @@
+*** ENEMIES ***
+The various enemies in the game.
+
+Bandits:
+Travel in groups. Not really skilled in the art of combat or speechcraft...or anything really, which is why they are bandits. They will handle swords, clubs, and bows but that's about it. Cheap weapons that can be obtained.
+
+Scavengers:
+If there's a battle, you will soon find these 'bandits' scavenging any equipment left behind. They are pretty hostile to anyone who comes around, as they see them as competition. They are no more skilled than your average bandits, but are better equipped. When not scavenging they are common folk.
+
+Hundlings:
+A short 'dog' race of creatures that live in holes in the ground. They are generally only aggressive if you are near their home. The men fight, the women take care of the pups, but may fight if they can't flee. They are a lower level group and are usually chased off by farmers to go live in the woods although they would prefer the plains.
+
+Soldiers:
+Whether Gradian or loyal to the King of Lor, if you've got a problem with soldiers, you've got a problem. Soldiers are highly skilled fighters, mages, ect. who are well trained. 
+
+Deserters:
+They were once soldiers, but for one reason or another couldn't hack the soldier's life. Mental instability, fear of death, PTSD from battle, either way they are still highly skilled, though lesser equipped than most soldiers, so they are a dangerous group to run afoul of.
+
+Pirates:
+Bandits of the sea. Pirates are a rare sight in the region of Lor. Lor is home to hardy seamen who can put up a good fight, but if desperate enough pirates can mount an attack on unsuspecting villages/ships. Like bandits they are untrained and not well equipped.
+
+Omgrin:
+A tall slender race of creatures who live high up in the mountains. They are very strong with some of them even knowing low level spells. They live in caves dug out of the mountain side where they live peaceful primitive lives. If you get close though, and they don't accept you, they will fight you off. While of lower intelligence they can establish trade with humans. Most humans leave them alone since no one really wants to live where they do.
+
+Wild Dogs:
+Untrained wild dogs will sometimes roam the countryside looking for food. They can be ferocious and deadly if cornered or approached while hungry. The months before winter are usually their most aggressive. 
+
+Big Cats:
+A staple of the mountainsides, big cats are generally skittish and will flee from people. If they are hungry enough though, and someone wonders into their space alone, they can become aggressive. They are really fast in combat.
+
+Bogrims:
+A short race of stocky blue creatures that inhabit the swamplands of Lor. They are secretive magic users who

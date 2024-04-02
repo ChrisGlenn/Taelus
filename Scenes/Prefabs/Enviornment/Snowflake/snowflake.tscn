@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctv8a44sleqn7"]
+
+[ext_resource type="Texture2D" uid="uid://b2ikxqw37ue8u" path="res://Sprites/World/Snow.png" id="1_wncoo"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Snowflake/snowflake.gd" id="2_lvrgy"]
+
+[node name="Snowflake" type="Sprite2D"]
+texture = ExtResource("1_wncoo")
+centered = false
+hframes = 2
+script = ExtResource("2_lvrgy")

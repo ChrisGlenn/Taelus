@@ -1,77 +1,98 @@
 extends CanvasLayer
 # SNOW
-# light snow that fades in for a set amount of time and then fades out...
+# snow appears for a set amount of time and then deletes out...
 # this is done by using a bunch of animated sprites that are set to random start frames
 # in an attempt to create snow that is far more resource friendly then a particle emitter
+@onready var SNOWFLAKE = preload("res://Scenes/Prefabs/Enviornment/Snowflake/snowflake.tscn")
 @onready var DROPLET = preload("res://Scenes/Prefabs/Enviornment/SnowDroplet/snow_droplet.tscn")
-@onready var SNOW = $ParallaxBackground/ParallaxLayer/Sprite2D
-@onready var PARALLAX = $ParallaxBackground
+@onready var SNOWFLAKES = $Snowflakes
+@onready var DROPLETS = $Droplets
+@onready var BLIZZAUDIO = $BlizzardAudio
 var stage = 0 # used to iterate through the lifecycle of light snow
 var lifespan = 1 # lifespan of snow defaults to 1 for testing
-var droplets = [] # stores the droplets for deletion later
-var hour_check : int # keeps track of hours for lifespan
+var hour_check = 1 # keeps track of hours for lifespan (defaults to 1 for testing)
+var snow_type = "SNOW" # the type of snow to generate
+var snow_frame = 0 # used to swap the snow sprite frame
+var snowdrops_max = 16 # default to light_snow
+var snowdrops_amnt = 0 # starts at 0 then loops to max
+var droplets_max = 4 # defaults to light snow
+var droplets_amnt = 0 # starts at 0 then loops to max
+var drop_timer = 0 # default 40
 
 
 func _ready():
 	hour_check = Globals.hour # set to current hour upon creation
-	SNOW.modulate.a = 0 # hide the snow
+	match snow_type:
+		"LIGHT_SNOW":
+			snowdrops_max = 16 # set max to 12
+			droplets_max = 3 # set max to 4
+		"SNOW":
+			snowdrops_max = 32 # set max to 24
+			droplets_max = 6 # set max to 6
+		"BLIZZARD":
+			snowdrops_max = 64 # set max to 36
+			droplets_max = 8 # set max to 6
 
 func _process(delta):
-	snow(delta) # snow function
+	raining(delta) # raining function
 
 
-func snow(clock):
-	# check if player is in an interior and hide the snow if so
+func raining(clock):
+	# show/hide depending on player's outside/inside status
 	if Globals.interior:
-		SNOW.visible = false # hide the snow
-		$Droplets.visible = false # hide the droplets
-	else:
-		SNOW.visible = true # show the snow
-		if stage < 2: $Droplets.visible = true
-	# scroll the snow background
-	PARALLAX.scroll_offset.x -= 34 * clock
-	PARALLAX.scroll_offset.y += 64 * clock
-	# snow
+		SNOWFLAKES.visible = false # hide raindrops
+		DROPLETS.visible = false # hide the droplets
+	elif !Globals.interior:
+		SNOWFLAKES.visible = true # show the raindrops
+		DROPLETS.visible = true # show the droplets
+	# increment through the stages until the rain is spawned, check the lifespan and then delete them
+	# once it's completed...
 	if stage == 0:
-		# fade the snow in and once it is at full 'visiblity' then start to spawn the droplets
-		if SNOW.modulate.a < 1:
-			SNOW.modulate.a += 0.4 * clock # slowly fade in
-			# PLAY SOUND (increment volume here as well)
+		# spawn the raindrops
+		if drop_timer > 0:
+			drop_timer -= Globals.timer_ctrl * clock
 		else:
-			SNOW.modulate.a = 1 # keep it from exceeding 1
-			var droplet_one = DROPLET.instantiate()
-			var droplet_two = DROPLET.instantiate()
-			var droplet_three = DROPLET.instantiate()
-			var droplet_four = DROPLET.instantiate()
-			var droplet_five = DROPLET.instantiate()
-			var droplet_six = DROPLET.instantiate()
-			var droplet_seven = DROPLET.instantiate()
-			var droplet_eight = DROPLET.instantiate()
-			$Droplets.add_child(droplet_one)
-			$Droplets.add_child(droplet_two)
-			$Droplets.add_child(droplet_three)
-			$Droplets.add_child(droplet_four)
-			$Droplets.add_child(droplet_five)
-			$Droplets.add_child(droplet_six)
-			$Droplets.add_child(droplet_seven)
-			$Droplets.add_child(droplet_eight)
-			stage += 1 # advance to next stage
+			if snowdrops_amnt < snowdrops_max:
+				var snowflake = SNOWFLAKE.instantiate()
+				if snow_type == "SNOW":
+					if snow_frame == 0:
+						snowflake.drop_type = 0
+						snow_frame = 1 # swap type
+					else:
+						snowflake.drop_type = 1
+						snow_frame = 0 # swap type
+				if snow_type == "BLIZZARD":
+					snowflake.blizzard = true # turn on BLIZZARD MODE!!!
+					snowflake.fall_speed_horiz = 420.0 # set the speed
+				SNOWFLAKES.add_child(snowflake)
+				snowdrops_amnt += 1 # increment
+				if droplets_amnt < droplets_max:
+					var droplet = DROPLET.instantiate()
+					DROPLETS.add_child(droplet)
+					droplets_amnt += 1
+				drop_timer = 10 # reset the timer
+			else:
+				stage += 1
 	elif stage == 1:
-		# check for lifespan
-		if lifespan > 0:
-			if hour_check != Globals.hour:
-				lifespan -= 1 # decrement the lifespan
-				hour_check = Globals.hour # reset hour_check
-		else:
-			stage += 1 # advance to fade out stage
-		if Input.is_action_just_pressed("tae_debug"): stage += 1
+		# keep track of lifespan of the rain event by checking if hour_check does not equal the current hour
+		if hour_check != Globals.hour:
+			if lifespan > 0:
+				lifespan -= 1 # decrement the weather event lifespan
+				hour_check = Globals.hour # reset hour_check]
+			else:
+				# increment stage to stop rain
+				drop_timer = 20 # reset the timer
+				stage += 1
 	elif stage == 2:
-		# run through and delete the children droplets
-		$Droplets.visible = false
-		# fade out and reset weather_updated
-		if SNOW.modulate.a > 0:
-			SNOW.modulate.a -= 0.4 * clock # slowly fade out
+		# the end of the rain event
+		DROPLETS.visible = false # hide the droplets
+		if SNOWFLAKES.get_child_count(false) > 0:
+			if drop_timer > 0:
+				drop_timer -= Globals.timer_ctrl * clock
+			else:
+				# delete the child in position 0
+				SNOWFLAKES.remove_child(SNOWFLAKES.get_child(0))
+				drop_timer = 20 # reset drop timer
 		else:
-			SNOW.modulate.a = 0 # stop it from going below zero
-			Globals.weather_updated = false # reset the weather updated so the weather can be updated again
+			Globals.weather_updated = false # reset the weather
 			queue_free() # delete self

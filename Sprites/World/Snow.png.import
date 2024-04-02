@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qskptnheqwf3"
-path="res://.godot/imported/RaindropSideways.png-e81b4f9b1749a26064fd501c7de7d93b.ctex"
+uid="uid://b2ikxqw37ue8u"
+path="res://.godot/imported/Snow.png-bd63c8bb6f8707ba2ef6af694265a7d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/World/RaindropSideways.png"
-dest_files=["res://.godot/imported/RaindropSideways.png-e81b4f9b1749a26064fd501c7de7d93b.ctex"]
+source_file="res://Sprites/World/Snow.png"
+dest_files=["res://.godot/imported/Snow.png-bd63c8bb6f8707ba2ef6af694265a7d7.ctex"]
 
 [params]
 

@@ -6,7 +6,9 @@ extends Sprite2D
 @onready var RNG = RandomNumberGenerator.new() # RNG
 var drop_type = 0 # 0 is short 1 is long
 var new_location = Vector2(128, 0) # the location to move to (defaults to upper corner)
-var fall_speed = 360.0 # raindrop fall speed
+var blizzard = false # if true then enable BLIZZARD MODE!!!
+var fall_speed_vert = 100.0 # vertical fall speed
+var fall_speed_horiz = 50.0 # horizontal fall speed
 
 
 func _ready():
@@ -17,10 +19,16 @@ func _ready():
 
 func _process(delta):
 	# fall
-	position.x -= fall_speed * delta
-	position.y += fall_speed * delta
+	position.x -= fall_speed_horiz * delta
+	position.y += fall_speed_vert * delta
 	# reset once outside of view
 	if global_position.x < get_parent().global_position.x:
-		global_position = Vector2(RNG.randi_range(200,1000), RNG.randi_range(-60,100)) # set random start position
+		if !blizzard:
+			global_position = Vector2(RNG.randi_range(200,1000), RNG.randi_range(-60,100)) # set random start position
+		else:
+			global_position = Vector2(RNG.randi_range(200,1800), RNG.randi_range(-60,100)) # set random start position
 	elif global_position.y > 364:
-		global_position = Vector2(RNG.randi_range(200,1000), RNG.randi_range(-60,100)) # set random start position
+		if !blizzard:
+			global_position = Vector2(RNG.randi_range(200,1000), RNG.randi_range(-60,100)) # set random start position
+		else:
+			global_position = Vector2(RNG.randi_range(200,1800), RNG.randi_range(-60,100)) # set random start position

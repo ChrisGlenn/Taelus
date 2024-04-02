@@ -50,8 +50,8 @@ func weather(season, odds):
 				# roll the dice with the odds to see if there will be an event
 				# based on the odds set
 				# SPRING means wind and various amounts of rain...
-				# var roll = Dice.dice_roll(12,odds)
-				var roll = [2,"LOSE"] # DEBUG used to set weather
+				var roll = Dice.dice_roll(12,odds)
+				#var roll = [2,"LOSE"] # DEBUG used to set weather
 				if roll[1] == "LOSE": 
 					if roll[0] == 2:
 						Globals.weather_event = "LIGHT_RAIN" # light rain
@@ -77,7 +77,7 @@ func weather(season, odds):
 						Globals.weather = "Cloudy" # update weather label
 				var life_roll = Dice.dice_roll(12,0)
 				Globals.weather_lifespan = life_roll[0] # set lifespan of weather event
-				print(str(Globals.weather_lifespan)) # debug
+				print("Weather Lifespan: ", str(Globals.weather_lifespan)) # debug
 				Globals.weather_updated = true # weather is updated
 			2:
 				# summer

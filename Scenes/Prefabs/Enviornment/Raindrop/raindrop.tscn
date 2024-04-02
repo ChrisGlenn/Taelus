@@ -1,9 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://b411m3clscpdc"]
 
-[ext_resource type="Texture2D" uid="uid://qskptnheqwf3" path="res://Sprites/World/RaindropSideways.png" id="1_rr7a3"]
+[ext_resource type="Texture2D" uid="uid://b2u5g5u57yqny" path="res://Sprites/World/Raindrops.png" id="1_awexs"]
 [ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Raindrop/raindrop.gd" id="2_dr18f"]
 
 [node name="Raindrop" type="Sprite2D"]
-texture = ExtResource("1_rr7a3")
+texture = ExtResource("1_awexs")
 centered = false
+hframes = 2
 script = ExtResource("2_dr18f")

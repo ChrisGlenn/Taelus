@@ -3,13 +3,8 @@ extends CanvasModulate
 # day/night cycle that runs for the game
 # NOTE: save the color to a global for game saving???
 @onready var CLOUDS = preload("res://Scenes/Prefabs/Enviornment/Clouds/clouds.tscn")
-@onready var LIGHTRAIN = preload("res://Scenes/Prefabs/Enviornment/LightRain/light_rain.tscn")
 @onready var RAIN = preload("res://Scenes/Prefabs/Enviornment/Rain/rain.tscn")
-@onready var RAINSTORM = preload("res://Scenes/Prefabs/Enviornment/RainStorm/rain_storm.tscn")
 @onready var WIND = preload("res://Scenes/Prefabs/Enviornment/Wind/wind.tscn")
-@onready var LIGHTSNOW = preload("res://Scenes/Prefabs/Enviornment/LightSnow/light_snow.tscn")
-@onready var SNOW = preload("res://Scenes/Prefabs/Enviornment/Snow/snow.tscn")
-@onready var BLIZZARD = preload("res://Scenes/Prefabs/Enviornment/Blizzard/blizzard.tscn")
 const DAY_COLOR = Color("#ffffff") # color for the day time
 const NIGHT_COLOR = Color("#0a0a0a") # color for the night time
 var dawn_dusk = [6,17] # sets time for dawn dusk winter/fall: 6:00am to 5:00pm [6,17] spring/summer: 5:00 to 8:00 [5,20]
@@ -157,7 +152,10 @@ func _process(delta):
 			else:
 				# spawn the rain (time of day/night does not matter...)
 				sun_brightness = 0.9 # set the sun brightness
-				# SPAWN RAIN WITH LIGHT_RAIN SET
+				var rain = RAIN.instantiate()
+				rain.lifespan = Globals.weather_lifespan
+				rain.rain_type = "LIGHT_RAIN"
+				get_parent().add_child(rain)
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "RAIN":
 			# check the time and if it's the daytime darken the skies if not already darken
@@ -167,7 +165,10 @@ func _process(delta):
 			else:
 				# spawn the rain (time of day/night does not matter...)
 				sun_brightness = 0.7 # set the sun brightness
-				# SPAWN RAIN WITH RAIN SET
+				var rain = RAIN.instantiate()
+				rain.lifespan = Globals.weather_lifespan
+				rain.rain_type = "RAIN"
+				get_parent().add_child(rain)
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "RAIN_STORM":
 			if color.r > 0.7:
@@ -176,7 +177,10 @@ func _process(delta):
 			else:
 				# spawn the rain (time of day/night does not matter...)
 				sun_brightness = 0.7 # set the sun brightness
-				# SPAWN RAIN WITH RAIN STORM SET
+				var rain = RAIN.instantiate()
+				rain.lifespan = Globals.weather_lifespan
+				rain.rain_type = "RAIN_STORM"
+				get_parent().add_child(rain)
 				Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "WIND":
 			# spawn the wind
