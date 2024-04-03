@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3o3im7xu8ll"]
+
+[ext_resource type="Texture2D" uid="uid://272nn2k5cf4i" path="res://Sprites/World/Clouds.png" id="1_wsj6b"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Cloud/cloud.gd" id="2_1xhni"]
+
+[node name="Cloud" type="Sprite2D"]
+scale = Vector2(10, 10)
+texture = ExtResource("1_wsj6b")
+centered = false
+script = ExtResource("2_1xhni")

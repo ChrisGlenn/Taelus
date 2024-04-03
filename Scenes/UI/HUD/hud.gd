@@ -93,6 +93,7 @@ func HUD(_clock):
 			elif Input.is_action_just_pressed("tae_i"):
 				update_inventory() # refresh the inventory
 				Globals.hud_mode = "INVENTORY" # change to inventory
+				get_tree().paused = true # pause the game
 	elif Globals.hud_mode == "SELECT":
 		# When the player uses the selector to select something the information is displayed here.
 		# this will also give the player a set of options they can choose to interact with the world
@@ -156,6 +157,7 @@ func HUD(_clock):
 			Globals.can_play = true # return player control
 			Globals.hud_control_mode = "main" # reset controls
 			Globals.hud_mode = "MAIN" # return to main menu
+			get_tree().paused = false # unpause
 		elif Input.is_action_just_pressed("tae_j"):
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
