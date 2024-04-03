@@ -54,14 +54,14 @@ func weather(season, odds):
 				#var roll = [2,"LOSE"] # DEBUG used to set weather
 				if roll[1] == "LOSE": 
 					if roll[0] == 2:
-						Globals.weather_event = "LIGHT_RAIN" # light rain
-						Globals.weather = "Raining" # update weather label
+						Globals.weather_event = "SUN" # light rain
+						Globals.weather = "Sunny" # update weather label
 					elif roll[0] == 3:
-						Globals.weather_event = "RAIN" # standard rain
+						Globals.weather_event = "LIGHT_RAIN" # standard rain
 						Globals.weather = "Raining" # update weather label
 					elif roll[0] == 4:
-						Globals.weather_event = "RAIN_STORM" # rain storm
-						Globals.weather = "Rain Storm" # update weather label
+						Globals.weather_event = "RAIN" # rain storm
+						Globals.weather = "Raining" # update weather label
 					else:
 						Globals.weather_event = "WIND" # windy
 						Globals.weather = "Windy" # update weather label

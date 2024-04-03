@@ -129,10 +129,10 @@ System:
 	[x] Fade In/Out
 	[x] Main Menu
 	[] Pause Menu ([x] Pause/[] Load Game/[] Settings)
-	[] Camera System
-	[] Dice Roll
+	[x] Camera System
+	[x] Dice Roll
 	[] Chunk Loading System :S
-	[] Splash Screen
+	[x] Splash Screen
 	[] Loading Screen
 	[] Initial Load Random NPC/Event Spawner
 	[] Item Pickups

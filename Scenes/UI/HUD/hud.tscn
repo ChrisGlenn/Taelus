@@ -50,6 +50,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -516,6 +517,18 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
+[node name="NameLabelStatus" type="Label" parent="Status"]
+offset_left = 176.0
+offset_top = 44.0
+offset_right = 536.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="Inventory" type="Node2D" parent="."]
 visible = false
 
@@ -554,12 +567,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-1"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-2" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-2"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-3" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 64)
@@ -568,12 +603,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-3"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-4" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 64)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-4"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-5" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 64)
@@ -582,12 +639,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-5"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-6" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-6"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-7" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 96)
@@ -596,12 +675,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-7"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-8" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-8"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-9" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 96)
@@ -610,12 +711,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-9"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-10" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 96)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-10"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-11" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 128)
@@ -624,12 +747,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-11"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-12" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-12"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-13" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 128)
@@ -638,12 +783,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-13"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-14" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 128)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-14"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-15" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 128)
@@ -652,12 +819,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-15"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-16" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-16"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-17" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 160)
@@ -666,12 +855,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-17"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-18" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-18"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-19" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 160)
@@ -680,12 +891,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-19"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-20" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 160)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-20"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-21" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(24, 192)
@@ -694,12 +927,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-21"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-22" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(56, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-22"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="InvSlot-23" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(88, 192)
@@ -708,6 +963,17 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-23"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-24" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(120, 192)
 texture = ExtResource("10_nbyga")
@@ -715,12 +981,34 @@ centered = false
 hframes = 32
 vframes = 64
 
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-24"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
+
 [node name="InvSlot-25" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(152, 192)
 texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
 vframes = 64
+
+[node name="E" type="Label" parent="Inventory/InventoryBackground/InvSlot-25"]
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 12
+text = "E"
+horizontal_alignment = 2
 
 [node name="HighlightedInv" type="Sprite2D" parent="Inventory/InventoryBackground"]
 position = Vector2(-192, -56)

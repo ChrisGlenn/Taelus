@@ -1,0 +1,28 @@
+<mxfile host="Electron" modified="2024-04-03T04:41:57.459Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="yh9GotTjMLsXrAvuyDG0" version="24.1.0" type="device">
+  <diagram name="Page-1" id="GHbOVjwwqBB_GEYdOUqm">
+    <mxGraphModel dx="996" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ET2zbkaORlQ8-p5SBkWZ-1" value="INVENTORY" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="40" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ET2zbkaORlQ8-p5SBkWZ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ET2zbkaORlQ8-p5SBkWZ-2" target="ET2zbkaORlQ8-p5SBkWZ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ET2zbkaORlQ8-p5SBkWZ-2" value="&lt;font face=&quot;Helvetica&quot; style=&quot;font-size: 11px;&quot;&gt;Inventory&lt;/font&gt;&lt;div style=&quot;font-size: 11px;&quot;&gt;&lt;font face=&quot;fFUxgAigd0S8FjL5MFBS&quot; style=&quot;font-size: 11px;&quot;&gt;Slot&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="320" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ET2zbkaORlQ8-p5SBkWZ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ET2zbkaORlQ8-p5SBkWZ-3" target="ET2zbkaORlQ8-p5SBkWZ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ET2zbkaORlQ8-p5SBkWZ-3" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;Equipped&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Status&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="380" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ET2zbkaORlQ8-p5SBkWZ-4" value="&lt;span style=&quot;font-size: 11px;&quot;&gt;Cooresponding&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Equip Slot&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="440" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
