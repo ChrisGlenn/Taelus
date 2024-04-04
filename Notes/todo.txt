@@ -86,7 +86,6 @@ Overworld:
 		[] Ducks
 Interiors:
 	[x] Outdoor Roof Transition
-	[] Interior Map w/ Exploration
 	[x] Entrance/Exits
 	[] Bed
 	[] Fire
@@ -102,7 +101,6 @@ HUD:
 	[] Narrative Message System
 	[] Narrative Message Image System
     	[] Dialogue System
-    	[] World Map Image (updates based on year)
     	[] Quest Journal
 	[] Player Inventory
 		[] Different Menu for Items/World interaction (i.e. throw in water or fire)
@@ -120,6 +118,10 @@ HUD:
 		[] Selector
 		[] Arrange
 		[] Menu 'Commands' Change
+	[] Map
+		[] Interior Map w/ Exploration
+    	[] World Map Image (updates based on year)
+		[x] Updating Location Marker (world map)
 SFX:
 	[] Enviorment
 		[] Rain SFX
@@ -149,6 +151,7 @@ ALPHA BUG/FIX-LIST:
 	[x] FIX THE WEATHER TO WORK WITH A CAMERA >:( (switch from parallax scrolling to sprites)
 	[x] Inventory/Status screens pause the game
 	[] Clouds are all dumb (won't follow the camera)
+	[] Dumb double message when player hits a border... (maybe try an 'id' system?)
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
 

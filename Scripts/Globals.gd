@@ -99,7 +99,7 @@ var month = 2
 var day = 6
 var season = 1
 var hour = 9 # 9am
-var minutes = 55 # increments by 5
+var minutes = 0 # increments by 5
 var seconds = 0
 var weather = "Sunny" # the current weather
 var weather_updated = false # true if weather event is 'running'
@@ -116,6 +116,9 @@ var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 var crops = [] # holds crops that have been planted and their current statusii
 # DEBUG CHUNK LOADING SYSTEM
+var cam_move_count = 0 # how many times the camera has moved (once it hits a certain number the unneeded chunks are deleted)
+var active_scene # the scene that is active
+var location_marker_dir = -4 # 0 is up 1 is right 2 is down 3 is left
 var loaded_chunks = [] # holds the loaded chunks
 
 # story/npc variables

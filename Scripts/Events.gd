@@ -73,7 +73,8 @@ func weather(season, odds):
 						Globals.weather_event = "SUN" # sunny day
 						Globals.weather = "Sunny" # update weather label
 					else:
-						Globals.weather_event = "CLOUDY" # cloudy day w/ sun (mark as sunny)
+						# Globals.weather_event = "CLOUDY" # cloudy day w/ sun (mark as sunny)
+						Globals.weather_event = "SUN" # STAND IN DEBUG WHILE CLOUDS ARE GETTING FIXED
 						Globals.weather = "Sunny" # update weather label
 				var life_roll = Dice.dice_roll(12,0)
 				Globals.weather_lifespan = life_roll[0] # set lifespan of weather event

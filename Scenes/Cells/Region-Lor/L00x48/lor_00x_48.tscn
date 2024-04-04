@@ -73,8 +73,8 @@ position = Vector2(224, 96)
 [node name="Border" type="Node" parent="."]
 
 [node name="InvisibleBlock" parent="Border" instance=ExtResource("12_1gmkv")]
-position = Vector2(64, 352)
-scale = Vector2(32, 1)
+position = Vector2(96, 352)
+scale = Vector2(30, 0.938)
 border = true
 
 [node name="InvisibleBlock2" parent="Border" instance=ExtResource("12_1gmkv")]

@@ -65,6 +65,7 @@ func _ready():
 func _process(delta):
 	HUD(delta) # the hud function
 	inventory_cursor() # inventory cursor function
+	update_location_marker()
 
 func HUD(_clock):
 	# check the Globals.hud_mode and act accordingly
@@ -221,6 +222,26 @@ func inventory_cursor():
 			
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
+
+func update_location_marker():
+	if Globals.location_marker_dir > -4:
+		match Globals.location_marker_dir:
+			0:
+				# up
+				$Main/LocationMarker.global_position.y -= 2
+				Globals.location_marker_dir = -4
+			1:
+				# right
+				$Main/LocationMarker.global_position.x += 2
+				Globals.location_marker_dir = -4
+			2:
+				# down
+				$Main/LocationMarker.global_position.y += 2
+				Globals.location_marker_dir = -4
+			3:
+				# left
+				$Main/LocationMarker.global_position.x -= 2
+				Globals.location_marker_dir = -4
 
 func update_controls(scan):
 	# update the hud controls

@@ -14,5 +14,6 @@ func _ready():
 			var chunk_instance = chunk.instantiate()
 			chunk_instance.load_chunks = true # tell it to load the chunks around it
 			add_child(chunk_instance)
+			Globals.active_scene = chunk_instance
 			Globals.loaded_chunks.append(chunk_instance)
 			break

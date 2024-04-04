@@ -1,21 +1,19 @@
 extends Node2D
-# CELL 00X48 IN REGION LOR
-@onready var ROOF = $Roofs
-@onready var BLACKOUT = $BlackOut
+# CELL 01X48 IN REGION LOR
 @export_multiline var description = "" # used for if the player looks around
 var load_chunks = false # if true it will iterate through and load the chunks below
 var chunk_top; var chunk_right; var chunk_bottom; var chunk_left # chunks
 var chunks_to_load = [
-	"res://Scenes/Cells/Region-Lor/L00x47/lor_00x_47.tscn",
-	"res://Scenes/Cells/Region-Lor/L01x48/lor_01x_48.tscn",
 	"",
-	""
+	"",
+	"",
+	"res://Scenes/Cells/Region-Lor/L00x48/lor_00x_48.tscn"
 ]
 
 
 func _ready():
 	Globals.current_region = "Lor" # set current region
-	Globals.current_location = "S. Watchtower" # set current location
+	Globals.current_location = "Southern Lor" # set current location
 	# if the load_chunks bool is true then iterate through the chunks_to_load array and
 	# load the chunks around this level
 	if load_chunks:
@@ -60,15 +58,6 @@ func _ready():
 
 
 func _process(_delta):
-	# check if the player is inside of an interior (the guardtower) and then show/hide the
-	# roof and blackout depending on the Globals interior status
-	if Globals.interior:
-		ROOF.visible = false # hide the roof
-		BLACKOUT.visible = true # show the blackout
-	else:
-		ROOF.visible = true # show the roof
-		BLACKOUT.visible = false # hide the blackout
-	# chunk loading
 	chunk_loading()
 
 
@@ -85,9 +74,11 @@ func swap_active(direction):
 	elif direction == "DOWN":
 		if chunk_bottom:
 			Globals.active_scene = chunk_bottom
+			print(Globals.active_scene)
 	elif direction == "LEFT":
 		if chunk_left:
 			Globals.active_scene = chunk_left
+			print(Globals.active_scene)
 
 func chunk_loading():
 	# load the local chunks
