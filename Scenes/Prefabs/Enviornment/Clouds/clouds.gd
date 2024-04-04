@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var CLOUDS = $Clouds
 var stage = 0 # used to iterate through the lifecycle of light rain
 var lifespan = 1 # lifespan of rain defaults to 1 for testing
+var dawn_dusk = [5,17] # the dawn dusk hours
 var hour_check = 1 # keeps track of hours for lifespan (defaults to 1 for testing)
 var cloud_max = 6 # default to light_rain
 var cloud_amnt = 0 # starts at 0 then loops to max
@@ -26,37 +27,44 @@ func clouds(clock):
 		CLOUDS.visible = false # hide raindrops
 	elif !Globals.interior:
 		CLOUDS.visible = true # show the raindrops
-	if stage == 0:
-		# spawn the clouds one by one
-		if spawn_timer > 0:
-			spawn_timer -= Globals.timer_ctrl * clock
+	# clouds
+	if hour_check > dawn_dusk[0] and hour_check < dawn_dusk[1]:
+		if stage == 0:
+			# spawn the clouds one by one
+			if spawn_timer > 0:
+				spawn_timer -= Globals.timer_ctrl * clock
+			else:
+				if cloud_amnt < cloud_max:
+					var cloud = CLOUD.instantiate()
+					CLOUDS.add_child(cloud)
+					cloud_amnt += 1 # increment cloud count
+					spawn_timer = 600
+				else:
+					stage += 1
+		elif stage == 1:
+			# keep track of lifespan of the rain event by checking if hour_check does not equal the current hour
+			if hour_check != Globals.hour:
+				if lifespan > 0:
+					lifespan -= 1 # decrement the weather event lifespan
+					hour_check = Globals.hour # reset hour_check]
+				else:
+					# increment stage to stop rain
+					spawn_timer = 100 # reset the timer
+					stage += 1
+			# DEBUG
+			if Input.is_action_just_pressed("tae_debug"):
+				stage += 1
+		elif stage == 2:
+			# fade out the clouds through their parent CLOUDS
+			if CLOUDS.modulate.a > 0:
+				CLOUDS.modulate.a -= 0.2 * clock # decrement the alpha
+			else:
+				Globals.weather_updated = false # update weather
+				queue_free() # delete self
+	else:
+		# if it's night time then fade out and just let the weather update
+		if CLOUDS.modulate.a > 0:
+			CLOUDS.modulate.a -= 0.2 * clock # decrement the alpha
 		else:
-			if cloud_amnt < cloud_max:
-				var cloud = CLOUD.instantiate()
-				CLOUDS.add_child(cloud)
-				cloud_amnt += 1 # increment cloud count
-				spawn_timer = 600
-			else:
-				stage += 1
-	elif stage == 1:
-		# keep track of lifespan of the rain event by checking if hour_check does not equal the current hour
-		if hour_check != Globals.hour:
-			if lifespan > 0:
-				lifespan -= 1 # decrement the weather event lifespan
-				hour_check = Globals.hour # reset hour_check]
-			else:
-				# increment stage to stop rain
-				spawn_timer = 100 # reset the timer
-				stage += 1
-		# DEBUG
-		if Input.is_action_just_pressed("tae_debug"):
-			stage += 1
-	elif stage == 2:
-		# iterate through and turn on the 'fade_out' bool for each child cloud
-		# then check if they're all gone and delete clouds and reset the weather check
-		for i in CLOUDS.get_child_count(false):
-			CLOUDS.get_child(i).fade_out = true
-		# check if any clouds are left and if not then reset the weather check and delete self
-		if CLOUDS.get_child_count(false) == 0:
-			Globals.weather_updated = false # reset the weather
+			Globals.weather_updated = false # update the weather
 			queue_free() # delete self

@@ -148,6 +148,7 @@ System:
 ALPHA BUG/FIX-LIST:
 	[x] FIX THE WEATHER TO WORK WITH A CAMERA >:( (switch from parallax scrolling to sprites)
 	[x] Inventory/Status screens pause the game
+	[] Clouds are all dumb (won't follow the camera)
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
 

@@ -142,7 +142,7 @@ func _process(delta):
 			var clouds = CLOUDS.instantiate() 
 			clouds.lifespan = Globals.weather_lifespan # set the clouds lifespan
 			clouds.dawn_dusk = dawn_dusk # feed in the current dawn/dusk hours
-			get_parent().add_child(clouds) # add to scene
+			add_child(clouds) # add to scene
 			Globals.weather_event = "" # set to null until next cycle
 		elif Globals.weather_event == "LIGHT_RAIN":
 			# check the time and if it's the daytime darken the skies if not already darken
@@ -185,6 +185,7 @@ func _process(delta):
 		elif Globals.weather_event == "WIND":
 			# spawn the wind
 			var wind = WIND.instantiate()
+			wind.dawn_dusk = dawn_dusk
 			get_parent().add_child(wind)
 			Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "OVERCAST":
