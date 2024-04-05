@@ -77,6 +77,7 @@ var player = {
 	"weapon": 0,
 	"shield": 0,
 	"reputation": "Unknown",
+	"bounty": 0,
 	"inventory": [],
 	"weight": 0.0,
 	"capacity": 72.0,

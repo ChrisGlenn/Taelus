@@ -154,6 +154,7 @@ ALPHA BUG/FIX-LIST:
 	[] Dumb double message when player hits a border... (maybe try an 'id' system?)
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
+	[x] FIX THE DAMN DOOR!!
 
 
 ALPHA FUTURE UPDATES???:

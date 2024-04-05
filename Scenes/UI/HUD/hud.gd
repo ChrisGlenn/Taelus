@@ -29,6 +29,13 @@ extends CanvasLayer
 @onready var INVENTORY = $Inventory
 @export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
 @onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
+@onready var INVSTATS = $Inventory/EquipmentOverlay/StatusLabel
+# status hud
+@onready var STATNAME = $Status/NameStatLabel
+@onready var STATGENDER = $Status/GenderStatLabel
+@onready var STATRACE = $Status/RaceStatLabel
+@onready var STATSTAT = $Status/StatusStatLabel
+@onready var STRSTAT = $Status/StrStatLabel
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
@@ -61,11 +68,14 @@ func _ready():
 	# Selected HUD
 	# Inventory HUD
 	update_inventory()
+	# Status HUD
+	update_status()
 
 func _process(delta):
 	HUD(delta) # the hud function
 	inventory_cursor() # inventory cursor function
 	update_location_marker()
+
 
 func HUD(_clock):
 	# check the Globals.hud_mode and act accordingly
@@ -165,6 +175,8 @@ func HUD(_clock):
 			pass # STATUS SCREEN GOES HERE
 	elif Globals.hud_mode == "DIALOGUE":
 		pass
+	elif Globals.hud_mode == "STATUS":
+		pass
 
 func update_inventory():
 	# update the player's inventory
@@ -187,7 +199,7 @@ func update_inventory():
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
 	# EQUIPMENT UPDATE
-	$Inventory/EquipmentOverlay/StatusLabel.text = str("Armor Class: ", Globals.player["armor_class"], "\nBonus Modifier: ", Globals.player["bonus_mod"])
+	INVSTATS = str("Armor Class: ", Globals.player["armor_class"], "\nBonus Modifier: ", Globals.player["bonus_mod"])
 
 func inventory_cursor():
 	if inv_cursor_active:
@@ -222,6 +234,14 @@ func inventory_cursor():
 			
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
+
+func update_status():
+	# update the status information
+	STATNAME.text = Globals.player["name"] # set the player name
+	STATGENDER.text = str("Gender: ", Globals.player["gender"]) # set player gender
+	STATRACE.text = str("Race: ", Globals.races[Globals.player["race"]]) # set player race
+	STATSTAT.text = str("Status: ", Globals.player["status"]) # set player status
+	STRSTAT.text = str("Strength: ", Globals.player["strength"])
 
 func update_location_marker():
 	if Globals.location_marker_dir > -4:

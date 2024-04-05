@@ -51,6 +51,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Main" type="Node2D" parent="."]
+visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -504,7 +505,6 @@ text = "test text, this seems good so far."
 autowrap_mode = 2
 
 [node name="Status" type="Node2D" parent="."]
-visible = false
 
 [node name="StatusBackground" type="NinePatchRect" parent="Status"]
 offset_left = 168.0
@@ -517,16 +517,172 @@ patch_margin_top = 5
 patch_margin_right = 5
 patch_margin_bottom = 5
 
-[node name="NameLabelStatus" type="Label" parent="Status"]
+[node name="StatusLabel" type="Label" parent="Status"]
 offset_left = 176.0
 offset_top = 44.0
 offset_right = 536.0
-offset_bottom = 60.0
+offset_bottom = 56.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
-text = "NAME"
+text = "STATUS"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NameStatLabel" type="Label" parent="Status"]
+offset_left = 176.0
+offset_top = 55.0
+offset_right = 536.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GenderStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 76.0
+offset_right = 320.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Gender: <Gender>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RaceStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 88.0
+offset_right = 320.0
+offset_bottom = 100.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Race: <Race>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StatusStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 100.0
+offset_right = 320.0
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Status: <Status>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AttributeStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 120.0
+offset_right = 320.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Attributes"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StrStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 136.0
+offset_right = 320.0
+offset_bottom = 148.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Strength: <Strength>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AgiStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 148.0
+offset_right = 320.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Agility: <Agility>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EndStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 172.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Endurance: <Endurance>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="IntStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 172.0
+offset_right = 320.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Intelligence: <Intelligence>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ChaStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 184.0
+offset_right = 320.0
+offset_bottom = 196.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Charisma: <Charisma>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ReputationStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 208.0
+offset_right = 320.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Reputation"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RepStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 224.0
+offset_right = 320.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Reputation: <Reputation>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BountyStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 236.0
+offset_right = 320.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Bounty: <Bounty>"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="InfoStatLabel" type="Label" parent="Status"]
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "*addtional information goes here..."
 autowrap_mode = 2
 
 [node name="Inventory" type="Node2D" parent="."]

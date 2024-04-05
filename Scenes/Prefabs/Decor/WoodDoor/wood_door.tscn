@@ -18,7 +18,7 @@ metadata/_edit_group_ = true
 texture = ExtResource("2_japhe")
 centered = false
 hframes = 32
-vframes = 16
+vframes = 32
 frame = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
