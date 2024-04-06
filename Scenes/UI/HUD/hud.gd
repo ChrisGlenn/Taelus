@@ -31,11 +31,22 @@ extends CanvasLayer
 @onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
 @onready var INVSTATS = $Inventory/EquipmentOverlay/StatusLabel
 # status hud
+@onready var STATUSMENU = $Status
 @onready var STATNAME = $Status/NameStatLabel
 @onready var STATGENDER = $Status/GenderStatLabel
 @onready var STATRACE = $Status/RaceStatLabel
 @onready var STATSTAT = $Status/StatusStatLabel
 @onready var STRSTAT = $Status/StrStatLabel
+@onready var AGISTAT = $Status/AgiStatLabel
+@onready var ENDSTAT = $Status/EndStatLabel
+@onready var INTSTAT = $Status/IntStatLabel
+@onready var CHRSTAT = $Status/ChaStatLabel
+@onready var REPSTAT = $Status/RepStatLabel
+@onready var BOUNTYSTAT = $Status/BountyStatLabel
+@onready var LOCSTAT = $Status/LocStatLabel
+@onready var ACSTAT = $Status/ACStatLabel
+@onready var BONUSSTAT = $Status/BModStatLabel
+@onready var WEIGHTSTAT = $Status/WeightStatLabel
 # hud variables
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
@@ -87,6 +98,7 @@ func HUD(_clock):
 		SELECTION.visible = false # hide the selection HUD
 		DIAGHUD.visible = false # hide the dialogue HUD
 		INVENTORY.visible = false # hide the inventory
+		STATUSMENU.visible = false # hide the status menu
 		# set the hud controls
 		Globals.hud_control_mode = "main"
 		# update dynamic HUD elements
@@ -100,7 +112,9 @@ func HUD(_clock):
 			elif Input.is_action_just_pressed("tae_j"):
 				pass # JOURNAL GOES HERE
 			elif Input.is_action_just_pressed("tae_s"):
-				pass # STATUS SCREEN GOES HERE
+				update_status() # refresh status screen
+				Globals.hud_mode = "STATUS"
+				get_tree().paused = true # pause the game
 			elif Input.is_action_just_pressed("tae_i"):
 				update_inventory() # refresh the inventory
 				Globals.hud_mode = "INVENTORY" # change to inventory
@@ -119,7 +133,6 @@ func HUD(_clock):
 	elif Globals.hud_mode == "INVENTORY":
 		# the inventory hud
 		# shows the player all the items and equipment in their inventory
-		Globals.can_play = false # stop player movement while inventory is open
 		INVENTORY.visible = true # show the inventory 
 		MAIN.visible = false # hide the main hud
 		SELECTION.visible = false # hide the selection hud
@@ -165,7 +178,6 @@ func HUD(_clock):
 				Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_two"][0], inv_cursor_pos)
 		# MENU INPUT
 		if Input.is_action_just_pressed("tae_cancel"):
-			Globals.can_play = true # return player control
 			Globals.hud_control_mode = "main" # reset controls
 			Globals.hud_mode = "MAIN" # return to main menu
 			get_tree().paused = false # unpause
@@ -176,7 +188,13 @@ func HUD(_clock):
 	elif Globals.hud_mode == "DIALOGUE":
 		pass
 	elif Globals.hud_mode == "STATUS":
-		pass
+		Globals.hud_control_mode = "paused" # set the hud control mode
+		STATUSMENU.visible = true # show the status screen
+		# controls
+		if Input.is_action_just_pressed("tae_cancel"):
+			Globals.hud_mode = "MAIN" # return to main menu
+			Globals.hud_control_mode = "main" # reset controls
+			get_tree().paused = false # unpause game
 
 func update_inventory():
 	# update the player's inventory
@@ -241,7 +259,17 @@ func update_status():
 	STATGENDER.text = str("Gender: ", Globals.player["gender"]) # set player gender
 	STATRACE.text = str("Race: ", Globals.races[Globals.player["race"]]) # set player race
 	STATSTAT.text = str("Status: ", Globals.player["status"]) # set player status
-	STRSTAT.text = str("Strength: ", Globals.player["strength"])
+	STRSTAT.text = str("Strength: ", Globals.player["strength"]) # set player strength
+	AGISTAT.text = str("Agility: ", Globals.player["agility"]) # set player agility
+	ENDSTAT.text = str("Endurance: ", Globals.player["endurance"]) # set player endurance
+	INTSTAT.text = str("Intelligence: ", Globals.player["intelligence"]) # set player intelligence
+	CHRSTAT.text = str("Charisma: ", Globals.player["charisma"]) # set player charisma
+	REPSTAT.text = str("Reputation: ", Globals.player["reputation"]) # set player reputation
+	BOUNTYSTAT.text = str("Bounty: ", Globals.player["bounty"]) # set player bounty
+	LOCSTAT.text = str("Location: ", Globals.current_location) # set current location
+	ACSTAT.text = str("Armor Class: ", Globals.player["armor_class"]) # set player armor class
+	BONUSSTAT.text = str("Bonus Mod: ", Globals.player["bonus_mod"]) # set player bonus mod
+	WEIGHTSTAT.text = str("Carrying Weight/Capacity: ", Globals.player["weight"], "/", Globals.player["capacity"]) # set player weight/capacity
 
 func update_location_marker():
 	if Globals.location_marker_dir > -4:

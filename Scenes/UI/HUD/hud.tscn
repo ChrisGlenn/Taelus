@@ -51,7 +51,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Main" type="Node2D" parent="."]
-visible = false
 
 [node name="RegionLabel" type="Label" parent="Main"]
 offset_left = 8.0
@@ -505,11 +504,12 @@ text = "test text, this seems good so far."
 autowrap_mode = 2
 
 [node name="Status" type="Node2D" parent="."]
+visible = false
 
 [node name="StatusBackground" type="NinePatchRect" parent="Status"]
-offset_left = 168.0
+offset_left = 200.0
 offset_top = 40.0
-offset_right = 544.0
+offset_right = 512.0
 offset_bottom = 320.0
 texture = ExtResource("1_4nugt")
 patch_margin_left = 5
@@ -542,9 +542,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="GenderStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 76.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 88.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -553,9 +553,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="RaceStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 88.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 100.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -564,9 +564,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="StatusStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 100.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -575,9 +575,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="AttributeStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 120.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 132.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -587,9 +587,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="StrStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 136.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 148.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -598,9 +598,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="AgiStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 148.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -609,9 +609,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="EndStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 160.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 172.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -620,9 +620,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="IntStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 172.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 184.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -631,9 +631,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ChaStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 184.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 196.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -642,9 +642,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="ReputationStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 208.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 220.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -654,9 +654,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="RepStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 224.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -665,9 +665,9 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="BountyStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
+offset_left = 216.0
 offset_top = 236.0
-offset_right = 320.0
+offset_right = 344.0
 offset_bottom = 248.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
@@ -675,14 +675,138 @@ text = "Bounty: <Bounty>"
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="LocStatLabel" type="Label" parent="Status"]
+offset_left = 216.0
+offset_top = 248.0
+offset_right = 344.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Location: <Location>"
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="InfoStatLabel" type="Label" parent="Status"]
-offset_left = 192.0
-offset_top = 256.0
-offset_right = 320.0
+offset_left = 216.0
+offset_top = 272.0
+offset_right = 496.0
 offset_bottom = 312.0
 theme_override_fonts/font = ExtResource("2_tebf7")
 theme_override_font_sizes/font_size = 15
-text = "*addtional information goes here..."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="EquipStatLabel" type="Label" parent="Status"]
+offset_left = 368.0
+offset_top = 76.0
+offset_right = 496.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Equipment"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="EquipAvatarBody" type="Sprite2D" parent="Status"]
+position = Vector2(400, 112)
+scale = Vector2(4, 4)
+texture = ExtResource("12_xa14g")
+centered = false
+hframes = 32
+vframes = 32
+frame = 1
+
+[node name="EquipHelmet" type="Sprite2D" parent="Status"]
+position = Vector2(408, 96)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 62
+
+[node name="EquipArmor" type="Sprite2D" parent="Status"]
+position = Vector2(424, 184)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 63
+
+[node name="EquipShield" type="Sprite2D" parent="Status"]
+position = Vector2(376, 128)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 60
+
+[node name="EquipWeapon" type="Sprite2D" parent="Status"]
+position = Vector2(472, 128)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 61
+
+[node name="EquipLRing" type="Sprite2D" parent="Status"]
+position = Vector2(472, 152)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 59
+
+[node name="EquipRRing" type="Sprite2D" parent="Status"]
+position = Vector2(376, 152)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 59
+
+[node name="EquipNecklace" type="Sprite2D" parent="Status"]
+position = Vector2(440, 96)
+texture = ExtResource("13_pcpjy")
+centered = false
+hframes = 32
+vframes = 32
+frame = 58
+
+[node name="ACStatLabel" type="Label" parent="Status"]
+offset_left = 360.0
+offset_top = 224.0
+offset_right = 496.0
+offset_bottom = 236.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Armor Class: <Armor Class>"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BModStatLabel" type="Label" parent="Status"]
+offset_left = 360.0
+offset_top = 236.0
+offset_right = 496.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Bonus Mod: <Bonus Mod>"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="WeightStatLabel" type="Label" parent="Status"]
+offset_left = 360.0
+offset_top = 248.0
+offset_right = 496.0
+offset_bottom = 260.0
+theme_override_fonts/font = ExtResource("2_tebf7")
+theme_override_font_sizes/font_size = 15
+text = "Weight/Capacity: <Weight/Capacity>"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Inventory" type="Node2D" parent="."]

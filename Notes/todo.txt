@@ -122,6 +122,12 @@ HUD:
 		[] Interior Map w/ Exploration
     	[] World Map Image (updates based on year)
 		[x] Updating Location Marker (world map)
+	[] Status
+		[x] Status Setup
+		[x] Stats
+		[] Additional Info System
+		[] Player Avatar Update (armor, ect)
+		[] Equipment Slots
 SFX:
 	[] Enviorment
 		[] Rain SFX
