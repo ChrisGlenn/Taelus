@@ -29,7 +29,13 @@ Horn (Water)
 Horn (Mead)
 Wood Bowl (Empty)
 Wood Bowl (Full)
-
+Wood Bowl (Rotten Food)
+Roast Fowl
+Roast Fowl (Rotten)
+Bread
+Bread (Moldy)
+Salt Fish
+Salt Pork
 
 
 EQUIPMENT

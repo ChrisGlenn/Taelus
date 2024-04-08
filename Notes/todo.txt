@@ -156,11 +156,13 @@ System:
 ALPHA BUG/FIX-LIST:
 	[x] FIX THE WEATHER TO WORK WITH A CAMERA >:( (switch from parallax scrolling to sprites)
 	[x] Inventory/Status screens pause the game
-	[] Clouds are all dumb (won't follow the camera)
+	[x] Clouds are all dumb (won't follow the camera...SHADER WORKED)
 	[] Dumb double message when player hits a border... (maybe try an 'id' system?)
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
 	[x] FIX THE DAMN DOOR!!
+	[] Fix Consumable empty items to not act like you can do anything with them until filled (stackable as well...)
+	[x] Stackables won't stack or even pick up if there's another item already in inventory. (Fix is the item_name and invnetory name need to be the same, change to id system?)
 
 
 ALPHA FUTURE UPDATES???:

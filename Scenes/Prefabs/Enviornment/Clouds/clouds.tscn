@@ -1,10 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8sypq5tvauq1"]
+[gd_scene load_steps=5 format=3 uid="uid://c8sypq5tvauq1"]
 
 [ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Clouds/clouds.gd" id="1_d3dra"]
+[ext_resource type="Shader" path="res://Scenes/Prefabs/Enviornment/Clouds/clouds.gdshader" id="2_0gss7"]
+[ext_resource type="Texture2D" uid="uid://diq8t7hulpjqf" path="res://Sprites/World/Cloud-Sheet.png" id="2_rbqi8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_derl3"]
+shader = ExtResource("2_0gss7")
+shader_parameter/motion = Vector2(8, 8)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
 
 [node name="Clouds" type="CanvasLayer"]
 layer = 2
-follow_viewport_enabled = true
 script = ExtResource("1_d3dra")
 
-[node name="Clouds" type="Node2D" parent="."]
+[node name="CloudTexture" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_derl3")
+texture = ExtResource("2_rbqi8")
+centered = false

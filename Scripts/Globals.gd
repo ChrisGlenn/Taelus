@@ -38,7 +38,7 @@ var hud_control = [
 	{"mode": "return","controls": "ESC = Return"},
 	{"mode": "paused","controls": "ESC = Return"},
 	{"mode": "selector","controls": "ESC = Return"},
-	{"mode": "sel_drink_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill Waterskin"},
+	{"mode": "sel_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill"},
 	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\nCTRL = Empty"},
 	{"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
 	{"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"},
@@ -100,7 +100,7 @@ var month = 2
 var day = 6
 var season = 1
 var hour = 9 # 9am
-var minutes = 0 # increments by 5
+var minutes = 55 # increments by 5
 var seconds = 0
 var weather = "Sunny" # the current weather
 var weather_updated = false # true if weather event is 'running'

@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://rxta6h0jqudm" path="res://Fonts/m5x7.ttf" id="2_3ui6r"]
 
 [node name="Messages" type="CanvasLayer"]
+process_mode = 3
 layer = 3
 script = ExtResource("1_fs4i5")
 
