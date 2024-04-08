@@ -37,6 +37,7 @@ func clouds(clock):
 		if hour_check != Globals.hour:
 			if lifespan > 0:
 				lifespan -= 1 # decrement lifespan if greater than 0
+				hour_check = Globals.hour
 			else:
 				stage += 1 # else increment stage
 	elif stage == 2:

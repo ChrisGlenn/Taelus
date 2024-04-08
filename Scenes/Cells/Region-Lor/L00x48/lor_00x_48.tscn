@@ -102,30 +102,25 @@ position = Vector2(512, 80)
 [node name="Horse" parent="NPCs" instance=ExtResource("4_eymla")]
 position = Vector2(224, 96)
 
-[node name="Border" type="Node" parent="."]
+[node name="Blocks00x48" type="Node2D" parent="."]
 
-[node name="InvisibleBlock" parent="Border" instance=ExtResource("12_1gmkv")]
-position = Vector2(96, 352)
-scale = Vector2(30, 0.938)
-border = true
-
-[node name="InvisibleBlock2" parent="Border" instance=ExtResource("12_1gmkv")]
-position = Vector2(112, 32)
-scale = Vector2(1, 18)
-border = true
-
-[node name="InvisibleBlock3" parent="Border" instance=ExtResource("12_1gmkv")]
+[node name="InvisibleBlock3" parent="Blocks00x48" instance=ExtResource("12_1gmkv")]
 position = Vector2(328, 69)
 scale = Vector2(14, 5)
 interior = true
 
-[node name="CollBlock" parent="Border" instance=ExtResource("14_dn1mw")]
+[node name="InvisibleBlock" parent="Blocks00x48" instance=ExtResource("12_1gmkv")]
+position = Vector2(168, 352)
+scale = Vector2(26, 1)
+border = true
+
+[node name="CollBlock" parent="Blocks00x48" instance=ExtResource("14_dn1mw")]
 position = Vector2(256, 64)
 
-[node name="CollBlock2" parent="Border" instance=ExtResource("14_dn1mw")]
+[node name="CollBlock2" parent="Blocks00x48" instance=ExtResource("14_dn1mw")]
 position = Vector2(272, 64)
 
-[node name="CollBlock3" parent="Border" instance=ExtResource("14_dn1mw")]
+[node name="CollBlock3" parent="Blocks00x48" instance=ExtResource("14_dn1mw")]
 position = Vector2(272, 80)
 
 [node name="Lights" type="Node" parent="."]

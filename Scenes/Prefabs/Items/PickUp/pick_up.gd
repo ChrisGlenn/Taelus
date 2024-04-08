@@ -82,7 +82,6 @@ func picking_up():
 									"func_two" : Items.items[item_name]["func_two"],
 									"func_three" : Items.items[item_name]["func_three"]
 								}
-								print("TEST ONE")
 								Globals.player["inventory"].append(item) # add item to player inventory array
 								Functions.message(str(TITLE, " has been picked up."))
 								if Globals.selector_auto_off:
@@ -98,7 +97,6 @@ func picking_up():
 									Globals.selector_on = false # turn off selector
 								break
 						else:
-							print("TEST POINT")
 							Globals.player["inventory"][n]["amnt"] += item_amount # increment amount
 							Functions.message(str(TITLE, " has been picked up."))
 							if Globals.selector_auto_off:
@@ -126,7 +124,6 @@ func picking_up():
 								"func_two" : Items.items[item_name]["func_two"],
 								"func_three" : Items.items[item_name]["func_three"]
 							}
-							print("TEST TWO")
 							Globals.player["inventory"].append(item) # add item to player inventory array
 							Globals.placed_.append(id) # record item picked up
 							Functions.message(str(TITLE, " has been picked up."))
@@ -157,7 +154,6 @@ func picking_up():
 							"func_two" : Items.items[item_name]["func_two"],
 							"func_three" : Items.items[item_name]["func_three"]
 						}
-						print("TEST THREE")
 						Globals.player["inventory"].append(item) # add item to player inventory array
 						Globals.placed_.append(id) # record item picked up
 						Functions.message(str(TITLE, " has been picked up."))
@@ -185,12 +181,10 @@ func picking_up():
 				"func_two" : Items.items[item_name]["func_two"],
 				"func_three" : Items.items[item_name]["func_three"]
 			}
-			print("TEST FOUR")
 			Globals.player["inventory"].append(item) # add item to player inventory array
 			Functions.message(str(TITLE, " has been picked up."))
 			if Globals.selector_auto_off:
 				Globals.selector_on = false # turn off selector
-			print(Globals.player["inventory"])
 			queue_free() # delete item
 	else:
 		# item is not stackable so just pick the item up
@@ -212,7 +206,6 @@ func picking_up():
 			"func_two" : Items.items[item_name]["func_two"],
 			"func_three" : Items.items[item_name]["func_three"]
 		}
-		print("TEST FIVE")
 		Globals.player["inventory"].append(item) # add item to player inventory array
 		Globals.placed_.append(id) # record item picked up
 		Functions.message(str(TITLE, " has been picked up."))
