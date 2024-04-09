@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_derl3"]
 shader = ExtResource("2_0gss7")
-shader_parameter/motion = Vector2(8, 8)
+shader_parameter/motion = Vector2(2, 2)
 shader_parameter/scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
 

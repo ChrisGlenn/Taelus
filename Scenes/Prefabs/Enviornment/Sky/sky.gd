@@ -185,7 +185,6 @@ func _process(delta):
 		elif Globals.weather_event == "WIND":
 			# spawn the wind
 			var wind = WIND.instantiate()
-			#wind.dawn_dusk = dawn_dusk
 			get_parent().add_child(wind)
 			Globals.weather_event = "" # null weather event
 		elif Globals.weather_event == "OVERCAST":

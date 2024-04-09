@@ -6,7 +6,6 @@ var message_text = "" # the text of the message
 var message_no = 0 # used to possibly reset
 var has_set = false # if it has originally set
 var life_timer = 260 # lifspan timer
-var timer_ctrl = 100 # timer control
 
 
 func _ready():
@@ -19,7 +18,7 @@ func _process(delta):
 func message(clock):
 	# check the lifetime timer and decrement
 	if life_timer > 0:
-		life_timer -= timer_ctrl * clock # decrement timer
+		life_timer -= Globals.timer_ctrl * clock # decrement timer
 	else:
 		# check to see if the messages amount needs to be reset
 		if message_no == Globals.messages:

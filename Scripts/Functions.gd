@@ -59,7 +59,7 @@ func refill(container, liquid):
 	# will refill a container with a liquid...
 	if Globals.player["inventory"].size() > 0:
 		for n in Globals.player["inventory"].size():
-			if Globals.player["inventory"][n]["item"] == container:
+			if Globals.player["inventory"][n]["type"] == container:
 				# refill the container
 				Globals.player["inventory"][n]["amnt"] = Globals.player["inventory"][n]["max_amnt"]
 				# display a message

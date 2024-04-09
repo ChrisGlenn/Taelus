@@ -27,11 +27,14 @@ func clouds(clock):
 	# check the stage and move from fading in to counting lifespan down to fading out (clearing item)
 	if stage == 0:
 		# fade in
-		if CLOUDS.modulate.a < 1:
-			CLOUDS.modulate.a += 0.1 * clock
+		if Globals.hour > dawn_dusk[0] + 1 and Globals.hour < dawn_dusk[1] - 1:
+			if CLOUDS.modulate.a < 1:
+				CLOUDS.modulate.a += 0.1 * clock
+			else:
+				CLOUDS.modulate.a = 1 # make sure it doesn't exceed one
+				stage += 1 # advance to next stage
 		else:
-			CLOUDS.modulate.a = 1 # make sure it doesn't exceed one
-			stage += 1 # advance to next stage
+			stage += 1 # advance to the next stage
 	elif stage == 1:
 		# check lifespan
 		if hour_check != Globals.hour:
@@ -40,6 +43,17 @@ func clouds(clock):
 				hour_check = Globals.hour
 			else:
 				stage += 1 # else increment stage
+		# keep track of dawn/dusk and then fade in or out
+		if Globals.hour > dawn_dusk[0] + 1 and Globals.hour < dawn_dusk[1] - 1:
+			if CLOUDS.modulate.a < 1:
+				CLOUDS.modulate.a += 0.1 * clock
+			else:
+				CLOUDS.modulate.a = 1 # keep max at 1
+		else:
+			if CLOUDS.modulate.a > 0:
+				CLOUDS.modulate.a -= 0.1 * clock
+			else:
+				CLOUDS.modulate.a = 0 # stop at 0
 	elif stage == 2:
 		# fade out
 		if CLOUDS.modulate.a > 0:

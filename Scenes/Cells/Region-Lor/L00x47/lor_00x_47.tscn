@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b32mf6ncwn8mn"]
+[gd_scene load_steps=3 format=3 uid="uid://b32mf6ncwn8mn"]
 
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_oxo33"]
+[ext_resource type="PackedScene" uid="uid://bpn4picfk4k2i" path="res://Scenes/System/InvisibleBlock/invisible_block.tscn" id="2_2k7dh"]
 
 [node name="Lor00x47" type="Node2D"]
 
@@ -16,3 +17,10 @@ layer_0/tile_data = PackedInt32Array(983055, 1966080, 3, 983056, 2031616, 3, 655
 z_index = 9
 position = Vector2(0, -8)
 layer_0/tile_data = PackedInt32Array(393232, 1703936, 2, 393233, 1769472, 2, 851996, 1703936, 2, 851997, 1769472, 2, 327705, 1703936, 2, 327706, 1769472, 2, 196637, 1703936, 2, 196638, 1769472, 2, 852003, 1966080, 2, 852004, 2031616, 2, 131109, 1966080, 2, 131110, 2031616, 2, 1048599, 1966080, 2, 1048600, 2031616, 2, 917519, 1966080, 2, 917520, 2031616, 2, 589844, 1966080, 2, 589845, 2031616, 2, 393247, 1966080, 2, 393248, 2031616, 2, 262165, 1966080, 2, 262166, 2031616, 2)
+
+[node name="Blocks00x47" type="Node2D" parent="."]
+
+[node name="InvisibleBlock2" parent="Blocks00x47" instance=ExtResource("2_2k7dh")]
+position = Vector2(113, 40)
+scale = Vector2(1, 17)
+border = true

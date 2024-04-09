@@ -16,7 +16,8 @@ extends CanvasLayer
 # item selection hud for the game
 @onready var SELECTION = $Selection
 @onready var SELECTLABEL = $Selection/SelectedLabel
-@onready var SELECTICON = $Selection/Selected
+@onready var SELECTWRLDICON = $Selection/SelectedWrld
+@onready var SELECTINVICON = $Selection/SelectedInv
 @onready var SELECTDESC = $Selection/SelDescriptLabel
 # dialogue hud for game
 @onready var DIAGHUD = $DialogueHUD
@@ -51,7 +52,6 @@ extends CanvasLayer
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
 var hud_control_check # keeps track of the hud control mode
-var message_timer = 500 # message display timer
 var timer_ctrl = 100 # timer control
 
 
@@ -128,7 +128,7 @@ func HUD(_clock):
 		INVENTORY.visible = false # hide the inventory hud
 		# update the selected title, image, and description
 		SELECTLABEL.text = Globals.hud_selected_name
-		SELECTICON.frame = Globals.hud_sel_icon_frame
+		SELECTWRLDICON.frame = Globals.hud_sel_icon_frame
 		SELECTDESC.text = Globals.hud_selected_desc
 	elif Globals.hud_mode == "INVENTORY":
 		# the inventory hud
@@ -162,13 +162,10 @@ func HUD(_clock):
 					print("ERROR: NO TYPE SET FOR ITEM...")
 					get_tree().quit() # exit game
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
-					if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
-						Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
-						Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
-						if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
-							Globals.player["inventory"].remove_at(inv_cursor_pos)
-					else:
-						Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
+					Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
+					Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
+					if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
+						Globals.player["inventory"].remove_at(inv_cursor_pos)
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
 					print("INVENTORY EQUIP")
 		if Input.is_action_just_pressed("tae_mode"):

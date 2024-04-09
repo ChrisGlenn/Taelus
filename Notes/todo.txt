@@ -68,7 +68,8 @@ Overworld:
 		[] Carrot
 		[] Cabbage
 		[] Potato
-    	[] Door(lock/unlocked)
+	[] Doors
+     	[] Door(lock/unlocked)
 		[] Wood Door
 		[] Nice Wood Door
 		[] Gate Door
@@ -156,8 +157,8 @@ System:
 ALPHA BUG/FIX-LIST:
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
-	[] Fix Consumable empty items to not act like you can do anything with them until filled (stackable as well...)
 	[] Show correct sprite for selected pickup (use the inventory sheet instead of tileset)
+	[] Considate the scripts for interactable objects (water barrel, sign) down to one script...
 
 
 ALPHA FUTURE UPDATES???:
@@ -187,3 +188,4 @@ FIXED BUGS:
 	[x] FIX THE DAMN DOOR!! (Sprite issue)
 	[x] Stackables won't stack or even pick up if there's another item already in inventory. (Fix is the item_name and invnetory name need to be the same, change to id system?)
 	[x] Dumb double message when player hits a border... (maybe try an 'id' system? CHANGE PARENT FROM NODE TO NODE2D AND GIVE IT UNIQUE NAME)
+	[x] Fix Consumable empty items to not act like you can do anything with them until filled (stackable as well...)

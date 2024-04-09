@@ -28,7 +28,7 @@ layer_0/z_index = 9
 layer_0/navigation_enabled = false
 layer_0/tile_data = PackedInt32Array(262163, 720896, 5, 327699, 720896, 5, 393235, 720896, 5, 458771, 720896, 5, 524307, 720896, 5, 589843, 720896, 5, 262164, 720896, 5, 327700, 720896, 5, 393236, 720896, 5, 458772, 720896, 5, 524308, 720896, 5, 589844, 720896, 5, 262165, 720896, 5, 327701, 720896, 5, 393237, 720896, 5, 458773, 720896, 5, 524309, 720896, 5, 589845, 720896, 5, 262166, 720896, 5, 327702, 720896, 5, 393238, 720896, 5, 458774, 720896, 5, 524310, 720896, 5, 589846, 720896, 5, 262167, 720896, 5, 327703, 720896, 5, 393239, 720896, 5, 458775, 720896, 5, 524311, 720896, 5, 589847, 720896, 5, 262168, 720896, 5, 327704, 720896, 5, 393240, 720896, 5, 458776, 720896, 5, 524312, 720896, 5, 589848, 720896, 5, 262169, 720896, 5, 327705, 720896, 5, 393241, 720896, 5, 458777, 720896, 5, 524313, 720896, 5, 589849, 720896, 5, 262170, 720896, 5, 327706, 720896, 5, 393242, 720896, 5, 458778, 720896, 5, 524314, 720896, 5, 589850, 720896, 5, 262171, 720896, 5, 327707, 720896, 5, 393243, 720896, 5, 458779, 720896, 5, 524315, 720896, 5, 589851, 720896, 5, 262172, 720896, 5, 327708, 720896, 5, 393244, 720896, 5, 458780, 720896, 5, 524316, 720896, 5, 589852, 720896, 5, 262173, 720896, 5, 327709, 720896, 5, 393245, 720896, 5, 458781, 720896, 5, 524317, 720896, 5, 589853, 720896, 5, 262174, 720896, 5, 327710, 720896, 5, 393246, 720896, 5, 458782, 720896, 5, 524318, 720896, 5, 589854, 720896, 5, 262175, 720896, 5, 327711, 720896, 5, 393247, 720896, 5, 458783, 720896, 5, 524319, 720896, 5, 589855, 720896, 5, 262176, 720896, 5, 327712, 720896, 5, 393248, 720896, 5, 458784, 720896, 5, 524320, 720896, 5, 589856, 720896, 5, 262177, 720896, 5, 327713, 720896, 5, 393249, 720896, 5, 458785, 720896, 5, 524321, 720896, 5, 589857, 720896, 5, 262178, 720896, 5, 327714, 720896, 5, 393250, 720896, 5, 458786, 720896, 5, 524322, 720896, 5, 589858, 720896, 5, 262179, 720896, 5, 327715, 720896, 5, 393251, 720896, 5, 458787, 720896, 5, 524323, 720896, 5, 589859, 720896, 5)
 
-[node name="Decor" type="Node" parent="."]
+[node name="Decor" type="Node2D" parent="."]
 
 [node name="HangingSign" parent="Decor" instance=ExtResource("7_dbwkt")]
 position = Vector2(400, 272)
@@ -40,6 +40,7 @@ FRAME_NO = 247
 
 [node name="WaterBarrel" parent="Decor" instance=ExtResource("8_5lgm5")]
 position = Vector2(192, 64)
+TITLE = "Water Barrel"
 FRAME_NO = 248
 DRINK_QUENCH = 50.0
 DRINK_RISK = 10
@@ -60,7 +61,7 @@ HUD_CTRL_MODE = "sel_door_closed"
 HUD_CTRL_open = "sel_door_closed"
 HUD_CTRL_close = "sel_door_opened"
 
-[node name="Items" type="Node" parent="."]
+[node name="Items" type="Node2D" parent="."]
 
 [node name="PickUpBottle" parent="Items" instance=ExtResource("8_s1djp")]
 position = Vector2(304, 176)
@@ -94,7 +95,7 @@ TITLE = "Wooden Bowl"
 DESCRIPTION = "An empty wooden bowl sits on the stone floor."
 item_amount = 1
 
-[node name="NPCs" type="Node" parent="."]
+[node name="NPCs" type="Node2D" parent="."]
 
 [node name="LorGuard" parent="NPCs" instance=ExtResource("11_p4mc6")]
 position = Vector2(512, 80)
@@ -114,6 +115,11 @@ position = Vector2(168, 352)
 scale = Vector2(26, 1)
 border = true
 
+[node name="InvisibleBlock2" parent="Blocks00x48" instance=ExtResource("12_1gmkv")]
+position = Vector2(113, 40)
+scale = Vector2(1, 17)
+border = true
+
 [node name="CollBlock" parent="Blocks00x48" instance=ExtResource("14_dn1mw")]
 position = Vector2(256, 64)
 
@@ -123,4 +129,4 @@ position = Vector2(272, 64)
 [node name="CollBlock3" parent="Blocks00x48" instance=ExtResource("14_dn1mw")]
 position = Vector2(272, 80)
 
-[node name="Lights" type="Node" parent="."]
+[node name="Lights" type="Node2D" parent="."]

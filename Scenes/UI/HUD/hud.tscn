@@ -316,13 +316,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Selected" type="Sprite2D" parent="Selection"]
+[node name="SelectedWrld" type="Sprite2D" parent="Selection"]
 position = Vector2(8, 32)
 scale = Vector2(7, 7)
 texture = ExtResource("5_0djge")
 centered = false
 hframes = 32
 vframes = 32
+
+[node name="SelectedInv" type="Sprite2D" parent="Selection"]
+visible = false
+position = Vector2(8, 32)
+scale = Vector2(7, 7)
+texture = ExtResource("10_nbyga")
+centered = false
+hframes = 32
+vframes = 64
 
 [node name="SelDescriptLabel" type="Label" parent="Selection"]
 offset_left = 16.0
