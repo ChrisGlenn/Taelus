@@ -1,0 +1,35 @@
+<mxfile host="Electron" modified="2024-04-10T21:42:42.613Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="HqjeY_X6JxsGJtaVwmMC" version="24.1.0" type="device">
+  <diagram name="Page-1" id="gKYqRI-5yuIGOABqSGbJ">
+    <mxGraphModel dx="721" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DsBhjwMzgaidIlR-vrUR-1" target="DsBhjwMzgaidIlR-vrUR-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-1" value="EQUIP FUNCTION" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="40" width="115" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DsBhjwMzgaidIlR-vrUR-2" target="DsBhjwMzgaidIlR-vrUR-8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="DsBhjwMzgaidIlR-vrUR-2" target="DsBhjwMzgaidIlR-vrUR-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="137.66666666666663" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-2" value="&lt;p style=&quot;line-height: 40%;&quot;&gt;&lt;font style=&quot;font-size: 6px;&quot;&gt;Selector is over an &#39;equippable&#39; item. Is it currently equipped?&lt;/font&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="97.5" y="120" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-7" value="&lt;p style=&quot;line-height: 40%;&quot;&gt;&lt;span style=&quot;font-size: 6px;&quot;&gt;YES&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="117.5" y="220" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DsBhjwMzgaidIlR-vrUR-8" value="&lt;p style=&quot;line-height: 40%;&quot;&gt;&lt;span style=&quot;font-size: 6px;&quot;&gt;NO&lt;/span&gt;&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="40" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

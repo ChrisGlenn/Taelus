@@ -32,6 +32,7 @@ Wood Bowl (Porrige)
 Wood Bowl (Rotten Food)
 Roast Fowl
 Roast Fowl (Rotten)
+Raw Fowl
 Bread
 Bread (Moldy)
 Salt Fish

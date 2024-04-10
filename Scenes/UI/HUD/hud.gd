@@ -31,6 +31,8 @@ extends CanvasLayer
 @export var INVSLOTS : Array[Sprite2D] = [] # inventory slots
 @onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
 @onready var INVSTATS = $Inventory/EquipmentOverlay/StatusLabel
+# inventory equipment
+@onready var EQUIPARMOR = $Inventory/EquipmentOverlay/EquipArmor
 # status hud
 @onready var STATUSMENU = $Status
 @onready var STATNAME = $Status/NameStatLabel
@@ -226,6 +228,8 @@ func update_inventory():
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
 	# EQUIPMENT UPDATE
+	# update the equipment overlays
+	# update the armor class stat
 	INVSTATS = str("Armor Class: ", Globals.player["armor_class"], "\nBonus Modifier: ", Globals.player["bonus_mod"])
 
 func inventory_cursor():

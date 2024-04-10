@@ -4,7 +4,9 @@ extends Node
 @onready var MESSAGE = preload("res://Scenes/UI/Messages/messages.tscn")
 
 
+# =============================
 # SYSTEM RELATED FUNCTIONS
+# =============================
 func message(text):
 	Globals.messages += 1 # inc messages no.	
 	var new_message = MESSAGE.instantiate()
@@ -21,7 +23,13 @@ func pause():
 		get_parent().add_child(pause_menu)
 		get_tree().paused = true # pause the game
 
+func equip(_slot, _equipment,):
+	pass
+
+
+# =============================
 # INVENTORY RELATED FUNCTIONS
+# =============================
 func inv_func(func_num, arg_one):
 	match func_num:
 		0:
