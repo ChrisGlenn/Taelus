@@ -28,7 +28,7 @@ Horn (Empty)
 Horn (Water)
 Horn (Mead)
 Wood Bowl (Empty)
-Wood Bowl (Full)
+Wood Bowl (Porrige)
 Wood Bowl (Rotten Food)
 Roast Fowl
 Roast Fowl (Rotten)

@@ -30,6 +30,7 @@ Functions="*res://Scripts/Functions.gd"
 Dice="*res://Scripts/Dice.gd"
 Chunks="*res://Scripts/Chunk/chunks.gd"
 Items="*res://Scripts/Data/Items.gd"
+Equipment="*res://Scripts/Data/Equipment.gd"
 
 [display]
 

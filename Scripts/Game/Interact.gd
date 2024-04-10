@@ -6,9 +6,7 @@ extends Node
 @export_multiline var DESCRIPTION : String = "INTERACTIVE OBJECT" # the sign text
 @export var FRAME_NO = 1 # frame number
 @export var HUD_CTRL_MODE = "" # set the hud control mode
-@export var FUNCTION_ONE = "" # the first function
-@export var FUNCTION_TWO = "" # the secont function
-@export var FUNCTION_THREE = "" # the third function
+@export var TYPE = "" # the type of interaction (ex. REFILL, SLEEP, ect.)
 var desctructable = false # if the player can destroy this item...
 var hit_points = 1 # has 1 hit point
 var dead = false # death check * may not be needed *

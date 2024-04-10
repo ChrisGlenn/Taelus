@@ -122,6 +122,14 @@ func HUD(_clock):
 	elif Globals.hud_mode == "SELECT":
 		# When the player uses the selector to select something the information is displayed here.
 		# this will also give the player a set of options they can choose to interact with the world
+		# =========================================================================
+		# check if this is a pick-up item or not and set the visibilty on the icons
+		if Globals.hud_control_mode == "pick_up":
+			SELECTINVICON.visible = true # show
+			SELECTWRLDICON.visible = false # hide
+		else:
+			SELECTWRLDICON.visible = true # show
+			SELECTINVICON.visible = false # hide
 		MAIN.visible = false # hide the main HUD
 		SELECTION.visible = true # show the selection HUD
 		DIAGHUD.visible = false # hide the dialogue HUD
@@ -129,6 +137,7 @@ func HUD(_clock):
 		# update the selected title, image, and description
 		SELECTLABEL.text = Globals.hud_selected_name
 		SELECTWRLDICON.frame = Globals.hud_sel_icon_frame
+		SELECTINVICON.frame = Globals.hud_sel_icon_frame
 		SELECTDESC.text = Globals.hud_selected_desc
 	elif Globals.hud_mode == "INVENTORY":
 		# the inventory hud

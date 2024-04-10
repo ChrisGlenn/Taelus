@@ -66,13 +66,7 @@ HUD_CTRL_close = "sel_door_opened"
 [node name="PickUpBottle" parent="Items" instance=ExtResource("8_s1djp")]
 position = Vector2(304, 176)
 id = "00x48x01"
-item_name = "Leather Bottle"
-TITLE = "Empty Bottle"
-DESCRIPTION = "An empty bottle made of dark leather sits on the grass."
-
-[node name="PickUpBottle2" parent="Items" instance=ExtResource("8_s1djp")]
-position = Vector2(288, 176)
-id = "00x48x44"
+finder = "LBE"
 item_name = "Leather Bottle"
 TITLE = "Empty Bottle"
 DESCRIPTION = "An empty bottle made of dark leather sits on the grass."

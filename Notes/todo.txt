@@ -14,6 +14,7 @@ Player:
 	[] Riding a Horse
 	[] Driving a Carriage
 	[] Riding a Raft
+	[] Sneaking
 Gameplay:
 	[] Lockpicking
 	[] Musical Instruments
@@ -55,8 +56,7 @@ Overworld:
 	[] Items
 		[x] Pickup
 		[] Attack/Bash/Ect...(second function)
-		[] Leather Bottle (all variations)
-		[] Cooked Food (Becomes a ration)
+		[] Stealing
 	[] Trees
 		[] Standard
 		[] Apple
@@ -105,11 +105,12 @@ HUD:
     	[] Quest Journal
 	[] Player Inventory
 		[] Different Menu for Items/World interaction (i.e. throw in water or fire)
-		[] Change to class/const Inventory(Save/Load)
+		[x] Change to class/const Inventory(Save/Load)
 		[x] Selector
-		[] Multiple of Same Object One Slot (e.g. Rations x2)
+		[x] Multiple of Same Object One Slot (e.g. Rations x2)
 		[x] Auto-Arrange
 		[] Menu 'Commands' Change
+		[] Discard
 		[] Overloaded
 		[] Equipment Handling
 	[] Player Equipment
@@ -157,7 +158,6 @@ System:
 ALPHA BUG/FIX-LIST:
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
-	[] Show correct sprite for selected pickup (use the inventory sheet instead of tileset)
 	[] Considate the scripts for interactable objects (water barrel, sign) down to one script...
 
 
@@ -189,3 +189,4 @@ FIXED BUGS:
 	[x] Stackables won't stack or even pick up if there's another item already in inventory. (Fix is the item_name and invnetory name need to be the same, change to id system?)
 	[x] Dumb double message when player hits a border... (maybe try an 'id' system? CHANGE PARENT FROM NODE TO NODE2D AND GIVE IT UNIQUE NAME)
 	[x] Fix Consumable empty items to not act like you can do anything with them until filled (stackable as well...)
+	[x] Show correct sprite for selected pickup (use the inventory sheet instead of tileset)

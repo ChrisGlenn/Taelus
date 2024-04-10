@@ -28,7 +28,7 @@ var messages = -1 # goes from 0 to 15 before resetting
 var message_on = false # HUD message switch
 var message_text = "" # text for message
 var hud_selected_name = ""
-var hud_sel_icon_frame = 0
+var hud_sel_icon_frame = 0 # enviornment item selected
 var hud_selected_desc = ""
 var hud_selected_cntrl = ""
 var hud_control_mode = "main"
@@ -44,7 +44,8 @@ var hud_control = [
 	{"mode": "pick_up","controls": "ESC = Return\nSPACE = Pick Up\nCTRL = Attack"},
 	{"mode": "sel_door_closed","controls": "ESC = Return\nSPACE = Open\nCTRL = Pick Lock\nXXX = Bash Open"},
 	{"mode": "sel_door_opened","controls": "ESC = Return\nSPACE = Close"},
-	{"mode": "sel_bed","controls": "ESC = Return\nSPACE = Sleep"}
+	{"mode": "sel_bed","controls": "ESC = Return\nSPACE = Sleep"},
+	{"mode": "sel_equip","controls": "ESC = Return\nSPACE = Equip\nCTRL = Discard"}
 ]
 
 # player variables

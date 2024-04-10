@@ -226,8 +226,8 @@ func update_selector():
 		if selected:
 			Globals.hud_selected_name = selected.TITLE
 			Globals.hud_selected_desc = selected.DESCRIPTION
-			Globals.hud_sel_icon_frame = selected.FRAME_NO
 			Globals.hud_control_mode = selected.HUD_CTRL_MODE
+			Globals.hud_sel_icon_frame = selected.FRAME_NO
 
 func _on_selector_area_entered(area):
 	if select_mode:
