@@ -38,6 +38,7 @@ var hud_control = [
 	{"mode": "return","controls": "ESC = Return"},
 	{"mode": "paused","controls": "ESC = Return"},
 	{"mode": "selector","controls": "ESC = Return"},
+	{"mode": "sel_inv_default","controls": "ESC = Return\nSPACE = Discard"},
 	{"mode": "sel_refill","controls": "ESC = Return\nSPACE = Drink\n CTRL = Refill"},
 	{"mode": "sel_drink","controls": "ESC = Return\nSPACE = Drink\nCTRL = Empty"},
 	{"mode": "sel_eat","controls": "ESC = Return\nSPACE = Eat"},
@@ -67,17 +68,23 @@ var player = {
 	"intelligence": 5,
 	"charisma": 5,
 	"armor_class": 7,
+	"str_mod": 0,
+	"agi_mod": 5,
+	"end_mod": 4,
+	"int_mod": -1,
+	"cha_mod": -1,
 	"bonus_mod": 2,
 	"hp": 8,
 	"money": [20,0,0],
-	"armor": 0,
-	"helmet": 0,
-	"amulet": 0,
-	"ring_one": 0,
-	"ring_two": 0,
-	"weapon": 0,
-	"shield": 0,
+	"armor": "null",
+	"helmet": "null",
+	"amulet": "null",
+	"ring_one": "null",
+	"ring_two": "null",
+	"weapon": "null",
+	"shield": "null",
 	"reputation": "Unknown",
+	"influence": 0,
 	"bounty": 0,
 	"inventory": [],
 	"weight": 0.0,
@@ -113,7 +120,7 @@ var seasons = ["Winter","Spring","Summer","Fall"]
 var seasonal_attribute = 4 # the initial stat needed to beat for weather events
 var seasonal_weather_mod = [3,1,2,2] # the odds for a weather event for each season
 var seasonal_rain = 15 # when it rains this gets incremented from 0 and affects crop output
-var days_in_game = 0
+var days_in_game = 0 # how many days the player has been 'alive' in the game
 var cut_trees = [] # holds trees that have been cut
 var mined_rocks = [] # holds stones that have been mined
 var crops = [] # holds crops that have been planted and their current statusii
@@ -134,6 +141,6 @@ var princcess_of_lor = {} # offspring dictionary
 var gradian_lor = false # if set true then Gradia has taken over Lor
 
 # data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game.
-var items = {
-	"Leather Bottle" : {"name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}
+var start_items = {
+	"Leather Bottle" : {"finder": "LBE","name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 5,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"equip": false,"equipped": false,"equip_slot": "null","type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0,20],"func_two" : [0],"func_three" : [0]}
 }

@@ -171,10 +171,13 @@ func HUD(_clock):
 					print("ERROR: NO TYPE SET FOR ITEM...")
 					get_tree().quit() # exit game
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "CONSUME":
-					Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
-					Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
-					if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
-						Globals.player["inventory"].remove_at(inv_cursor_pos)
+					if Globals.player["inventory"][inv_cursor_pos]["amnt"] > 0:
+						Functions.inv_func(Globals.player["inventory"][inv_cursor_pos]["func_one"][0], Globals.player["inventory"][inv_cursor_pos]["func_one"][1])
+						Globals.player["inventory"][inv_cursor_pos]["amnt"] -= 1
+						if Globals.player["inventory"][inv_cursor_pos]["min_amnt"] == 0 and Globals.player["inventory"][inv_cursor_pos]["amnt"] == 0:
+							Globals.player["inventory"].remove_at(inv_cursor_pos)
+					else:
+						Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
 					print("INVENTORY EQUIP")
 		if Input.is_action_just_pressed("tae_mode"):

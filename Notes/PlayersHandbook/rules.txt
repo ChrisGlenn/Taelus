@@ -90,7 +90,7 @@ The Endurance MOD is set the same as all the other stat modifiers.
 10: 3
 11: 4
 12: 5
-30+: 6
+30+: 6 (???)
 
 SO if the player has an 11 END then their modifier is 4. If they are wearing Scale Mail then it's 12 + 4 which is 16. With a 24 roll they have to get ABOVE 16 to score a hit. The max AC you can have is 21 with some possible elemental protection.
 

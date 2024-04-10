@@ -91,3 +91,11 @@ func eat_food(sustenance, _risk):
 		# display a message
 	else:
 		print("ERROR: SUSTENANCE NOT SET FOR EAT_FOOD FUNCTION!!!")
+
+func drop_item(_item):
+	# places the item onto the spot next to the player
+	pass
+
+func destroy_item(_item):
+	# decrement/discard the item in the player's inventory
+	pass

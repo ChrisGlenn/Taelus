@@ -18,7 +18,7 @@ var sel_coll = false # used to help set hud_control_mode
 
 func _ready():
 	SELECTOR.visible = false # hide the selector on creation
-	if Globals.new_scene_player_set: 
+	if Globals.new_scene_player_set:
 		print("New scene set coords")
 		global_position = Globals.new_scene_player_origin
 	Globals.player_x = global_position.x # update player X
