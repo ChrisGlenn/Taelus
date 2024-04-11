@@ -224,7 +224,7 @@ func update_inventory():
 			else:
 				var current_slot = INVSLOTS[n].get_child(false)
 				current_slot.visible = false
-			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
+			Globals.player["weight"] += Globals.player["inventory"][n]["weight"] # FIX THIS DEBUG DEBUG DEBUG
 		else:
 			# clear out the inventory slots
 			INVSLOTS[n].frame = 0

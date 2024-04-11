@@ -64,7 +64,7 @@ HUD_CTRL_close = "sel_door_opened"
 [node name="Items" type="Node2D" parent="."]
 
 [node name="PickUp" parent="Items" instance=ExtResource("8_s1djp")]
-position = Vector2(304, 64)
+position = Vector2(288, 192)
 id = "00x48x01"
 finder = "RAG"
 item_name = "Rags"

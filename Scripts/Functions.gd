@@ -28,9 +28,12 @@ func equip(equipment, equip_type, inv_slot):
 	# equipment is the equipment (uses the finder)
 	# equip_type is the 'type' (armor, shield, helmet, ect.)
 	# inv_slot is the inventory slot
-	if Globals.player[equip_type] == "null":
-		Globals.player[equip_type] = equipment # set the player equipment to the slot argument
-		Globals.player["inventory"][inv_slot]["equipped"] = true # set equipped to true to enable the 'E'
+	Globals.player[equip_type] = equipment
+	for n in Equipment.armor.size():
+		# find the equipment in the equipment data array
+		if Equipment.armor[n]["finder"] == equipment:
+			# set the armor class
+			pass
 
 func unequip(_slot, _equipment):
 	pass

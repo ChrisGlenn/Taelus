@@ -160,6 +160,7 @@ LEFT OFF:
 ALPHA BUG/FIX-LIST:
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
+	[] Fix the player carry weight set from endlessly incrementing
 
 
 ALPHA FUTURE UPDATES???:
