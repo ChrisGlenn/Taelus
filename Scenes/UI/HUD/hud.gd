@@ -181,7 +181,10 @@ func HUD(_clock):
 					else:
 						Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
-					print("INVENTORY EQUIP")
+					if Globals.player["inventory"][inv_cursor_pos]["hud_mode"] == "sel_equip":
+						# equip the armor by running Functions.equip
+						Functions.equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"], Globals.player["inventory"][inv_cursor_pos])
+						update_inventory() # update the inventory
 		if Input.is_action_just_pressed("tae_mode"):
 			# SECOND FUNCTION
 			# check what kind of item is in the inventory then run the first function feeding in parameters as needed
@@ -214,6 +217,13 @@ func update_inventory():
 		# if not then clear the slot out and revert the frame back to 0
 		if Globals.player["inventory"].size() >= n + 1:
 			INVSLOTS[n].frame = Globals.player["inventory"][n]["frame"] # update inventory slot frame
+			# update the inventory 'E' equipped symbol
+			if Globals.player["inventory"][n]["equipped"]:
+				var current_slot = INVSLOTS[n].get_child(false)
+				current_slot.visible = true
+			else:
+				var current_slot = INVSLOTS[n].get_child(false)
+				current_slot.visible = false
 			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
 		else:
 			# clear out the inventory slots

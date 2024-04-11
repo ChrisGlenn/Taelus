@@ -64,12 +64,13 @@ HUD_CTRL_close = "sel_door_opened"
 [node name="Items" type="Node2D" parent="."]
 
 [node name="PickUp" parent="Items" instance=ExtResource("8_s1djp")]
-position = Vector2(256, 176)
-id = "11111"
-finder = "LBE"
-item_name = "Leather Bottle"
-TITLE = "TESTY BOTTLE"
-DESCRIPTION = "A test you fool."
+position = Vector2(304, 64)
+id = "00x48x01"
+finder = "RAG"
+item_name = "Rags"
+TITLE = "Ragged Clothing"
+DESCRIPTION = "Some old ragged clothing lay on the stone floor. You doubt anyone would miss it."
+item_amount = 1
 
 [node name="NPCs" type="Node2D" parent="."]
 

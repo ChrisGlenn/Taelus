@@ -142,6 +142,7 @@ System:
 	[x] Camera System
 	[x] Dice Roll
 	[] Chunk Loading System :S
+	[] Save/Catalog Dropped Items
 	[x] Splash Screen
 	[] Loading Screen
 	[] Initial Load Random NPC/Event Spawner
@@ -153,12 +154,12 @@ System:
 	[] Seasons Tilesets
 	[] Construction/Player Home
 
-
+LEFT OFF:
+	- need to update the pick_up to add the full dictionary for an item
 
 ALPHA BUG/FIX-LIST:
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
-	[] Considate the scripts for interactable objects (water barrel, sign) down to one script...
 
 
 ALPHA FUTURE UPDATES???:
