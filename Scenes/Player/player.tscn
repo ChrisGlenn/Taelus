@@ -1,29 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://kb8w3m8qiyh3"]
+[gd_scene load_steps=3 format=3 uid="uid://kb8w3m8qiyh3"]
 
-[ext_resource type="Texture2D" uid="uid://dmr1pn3swea3m" path="res://Sprites/Characters/Taelus-Players.png" id="1_85bd1"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_vl6tw"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4jfd4"]
-atlas = ExtResource("1_85bd1")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_spqgq"]
-atlas = ExtResource("1_85bd1")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rohjp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4jfd4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_spqgq")
-}],
-"loop": true,
-"name": &"norMale",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vph50"]
 size = Vector2(16, 16)
@@ -32,8 +9,7 @@ size = Vector2(16, 16)
 script = ExtResource("1_vl6tw")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_rohjp")
-animation = &"norMale"
+animation = &""
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

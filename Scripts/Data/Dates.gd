@@ -1,6 +1,7 @@
-class_name Dates
+extends Node
+# the dates, seasons, and length of each month in Taelus
 
-const Data = [
+const Months = [
 	{
 		"name" : "Morns Light",
 		"season" : "Winter",

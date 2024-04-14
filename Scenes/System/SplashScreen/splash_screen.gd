@@ -17,7 +17,7 @@ func _process(delta):
 		if splash_timer > 0:
 			splash_timer -= Globals.timer_ctrl * delta
 		else:
-			SSNF.visible_ratio += 0.5 * delta
+			SSNF.visible_ratio += 0.8 * delta
 	else:
 		if timer_rec > 0:
 			timer_rec -= Globals.timer_ctrl * delta
