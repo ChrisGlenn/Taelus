@@ -23,17 +23,17 @@ func pause():
 		get_parent().add_child(pause_menu)
 		get_tree().paused = true # pause the game
 
-func equip(equipment, equip_type, inv_slot):
-	# check to see if anything is equipped and if not then equip the item
-	# equipment is the equipment (uses the finder)
-	# equip_type is the 'type' (armor, shield, helmet, ect.)
-	# inv_slot is the inventory slot
-	Globals.player[equip_type] = equipment
-	for n in Equipment.armor.size():
-		# find the equipment in the equipment data array
-		if Equipment.armor[n]["finder"] == equipment:
-			# set the armor class
-			pass
+# func equip(equipment, equip_type, inv_slot):
+# 	# check to see if anything is equipped and if not then equip the item
+# 	# equipment is the equipment (uses the finder)
+# 	# equip_type is the 'type' (armor, shield, helmet, ect.)
+# 	# inv_slot is the inventory slot
+# 	Globals.player[equip_type] = equipment
+# 	for n in Equipment.armor.size():
+# 		# find the equipment in the equipment data array
+# 		if Equipment.armor[n]["finder"] == equipment:
+# 			# set the armor class
+# 			pass
 
 func unequip(_slot, _equipment):
 	pass

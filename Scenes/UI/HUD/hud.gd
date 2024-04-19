@@ -33,6 +33,7 @@ extends CanvasLayer
 @onready var INVSTATS = $Inventory/EquipmentOverlay/StatusLabel
 # inventory equipment
 @onready var EQUIPARMOR = $Inventory/EquipmentOverlay/EquipArmor
+var armor_equipped = {} # holds the information for the armor equipped
 # status hud
 @onready var STATUSMENU = $Status
 @onready var STATNAME = $Status/NameStatLabel
@@ -93,6 +94,7 @@ func _process(delta):
 func HUD(_clock):
 	# check the Globals.hud_mode and act accordingly
 	update_controls(true) # update the hud control map/text
+	# ***********************************
 	if Globals.hud_mode == "MAIN":
 		# the main HUD of the game
 		# shows the player the map and all the relevant info they will need to see while playing the game
@@ -121,6 +123,7 @@ func HUD(_clock):
 				update_inventory() # refresh the inventory
 				Globals.hud_mode = "INVENTORY" # change to inventory
 				get_tree().paused = true # pause the game
+	# ***********************************
 	elif Globals.hud_mode == "SELECT":
 		# When the player uses the selector to select something the information is displayed here.
 		# this will also give the player a set of options they can choose to interact with the world
@@ -141,6 +144,7 @@ func HUD(_clock):
 		SELECTWRLDICON.frame = Globals.hud_sel_icon_frame
 		SELECTINVICON.frame = Globals.hud_sel_icon_frame
 		SELECTDESC.text = Globals.hud_selected_desc
+	# ***********************************
 	elif Globals.hud_mode == "INVENTORY":
 		# the inventory hud
 		# shows the player all the items and equipment in their inventory
@@ -183,7 +187,7 @@ func HUD(_clock):
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
 					if Globals.player["inventory"][inv_cursor_pos]["hud_mode"] == "sel_equip":
 						# equip the armor by running Functions.equip
-						Functions.equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"], Globals.player["inventory"][inv_cursor_pos])
+						#Functions.equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"], Globals.player["inventory"][inv_cursor_pos])
 						update_inventory() # update the inventory
 		if Input.is_action_just_pressed("tae_mode"):
 			# SECOND FUNCTION
@@ -199,8 +203,10 @@ func HUD(_clock):
 			pass # JOURNAL GOES HERE
 		elif Input.is_action_just_pressed("tae_s"):
 			pass # STATUS SCREEN GOES HERE
+	# ***********************************
 	elif Globals.hud_mode == "DIALOGUE":
 		pass
+	# ***********************************
 	elif Globals.hud_mode == "STATUS":
 		Globals.hud_control_mode = "paused" # set the hud control mode
 		STATUSMENU.visible = true # show the status screen
@@ -272,9 +278,11 @@ func inventory_cursor():
 			$Inventory/InventoryBackground/HighlightedInv.frame = 0
 			$Inventory/InventoryBackground/ItemAmountLabel.text = ""
 			update_inventory() # clear inventory
-			
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
+
+func equip():
+	pass
 
 func update_status():
 	# update the status information

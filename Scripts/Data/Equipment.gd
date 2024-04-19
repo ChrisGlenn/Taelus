@@ -3,6 +3,7 @@ extends Node
 # a database or dictionary of the equippable weapons, armor, shields, ect.
 
 var armor = [
+    {"finder": "NKD","name": "Naked","influence": -10,"class": "Unequipped","type": "Clothing","armor_class_mod": 0,"durabiliity": -4,"inv_frame": 0,"equip_frame": 0},
     {"finder": "RAG","name": "Cloth Rags","influence": -5,"class": "Light Armor","type": "Clothing","armor_class_mod": 3,"durability": -4,"inv_frame": 257,"equip_frame": 0}
 ]
 
