@@ -186,8 +186,8 @@ func HUD(_clock):
 						Functions.message(str(Globals.player["inventory"][inv_cursor_pos]["name"], " is empty."))
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
 					if Globals.player["inventory"][inv_cursor_pos]["hud_mode"] == "sel_equip":
-						# equip the armor by running Functions.equip
-						#Functions.equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"], Globals.player["inventory"][inv_cursor_pos])
+						# equip the armor by running a function to run through the equipment
+						equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"])
 						update_inventory() # update the inventory
 		if Input.is_action_just_pressed("tae_mode"):
 			# SECOND FUNCTION
@@ -218,6 +218,8 @@ func HUD(_clock):
 
 func update_inventory():
 	# update the player's inventory
+	Globals.player["weight"] = 0 # zero out the weight for recalculation
+	Globals.player["influence"] = 0 # zero out the influence for recalculation
 	for n in INVSLOTS.size():
 		# run through each slot in the inventory slots array and see if there is a corresponding item in the player inventory
 		# if not then clear the slot out and revert the frame back to 0
@@ -230,23 +232,26 @@ func update_inventory():
 			else:
 				var current_slot = INVSLOTS[n].get_child(false)
 				current_slot.visible = false
-			Globals.player["weight"] += Globals.player["inventory"][n]["weight"] # FIX THIS DEBUG DEBUG DEBUG
+			Globals.player["weight"] += Globals.player["inventory"][n]["weight"]
 		else:
 			# clear out the inventory slots
 			INVSLOTS[n].frame = 0
-		if Globals.player["inventory"].size() > 0:
-			# set the inventory selector as active
-			INVCURSOR.frame = 0
-			inv_cursor_active = true
-		else:
-			# set the inventory selector as NOT active
-			Globals.player["weight"] = 0 # reset the player carrying weight
-			INVCURSOR.frame = 1
-			inv_cursor_active = false
+	# inventory selector/weight and influence control
+	if Globals.player["inventory"].size() > 0:
+		# set the inventory selector as active
+		INVCURSOR.frame = 0
+		inv_cursor_active = true
+	else:
+		# set the inventory selector as NOT active
+		Globals.player["weight"] = 0 # reset the player carrying weight
+		INVCURSOR.frame = 1
+		inv_cursor_active = false
 	# EQUIPMENT UPDATE
 	# update the equipment overlays
+	EQUIPARMOR.frame = Globals.player["armor"]["inv_frame"]
 	# update the armor class stat
 	INVSTATS = str("Armor Class: ", Globals.player["armor_class"], "\nBonus Modifier: ", Globals.player["bonus_mod"])
+	# update the player's influence based on equipment/silver
 
 func inventory_cursor():
 	if inv_cursor_active:
@@ -281,8 +286,18 @@ func inventory_cursor():
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
 
-func equip():
-	pass
+func equip(finder, equip_slot):
+	print(finder, " ", equip_slot)
+	# set the equipment type to find it in the equipment database
+	var equip_type
+	match equip_slot:
+		"armor":
+			equip_type = Equipment.armor
+	# loop through the relevant equipment database and find/set the equipment
+	for n in equip_type.size():
+		if equip_type[n]["finder"] == finder:
+			Globals.player[equip_slot] = equip_type[n]
+			break
 
 func update_status():
 	# update the status information

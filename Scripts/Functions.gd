@@ -35,9 +35,6 @@ func pause():
 # 			# set the armor class
 # 			pass
 
-func unequip(_slot, _equipment):
-	pass
-
 
 # =============================
 # INVENTORY RELATED FUNCTIONS

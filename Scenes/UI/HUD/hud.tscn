@@ -1377,11 +1377,11 @@ frame = 62
 
 [node name="EquipArmor" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
 position = Vector2(72, 120)
-texture = ExtResource("13_pcpjy")
+texture = ExtResource("10_nbyga")
 centered = false
 hframes = 32
-vframes = 32
-frame = 63
+vframes = 64
+frame = 256
 
 [node name="EquipShield" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
 position = Vector2(24, 64)

@@ -6,7 +6,6 @@ extends Node
 func weather(season, odds):
 	# season = current season
 	# odds[seasonal_odds] = the odds set for the current year
-	# effect = rain, snow, wind, sun
 	# this function updates the weather using a 12 sided die roll
 	# it takes in some parameters then does a 'dice roll' which will return a number
 	# then updates the Globals for the Sky.tscn scene to read and update
