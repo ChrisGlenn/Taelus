@@ -77,7 +77,7 @@ var player = {
 	"bonus_mod": 2,
 	"hp": 8,
 	"money": [20,0,0],
-	"armor": "null",
+	"armor": {"finder": "NKD","name": "Naked","influence": -10,"class": "Unequipped","type": "Clothing","armor_class_mod": 0,"durabiliity": -4,"inv_frame": 0,"equip_frame": 0},
 	"helmet": "null",
 	"amulet": "null",
 	"ring_one": "null",
