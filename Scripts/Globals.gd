@@ -14,6 +14,7 @@ var interior = false # if the player is inside of a building/cave/ect...
 
 # GAMEPLAY
 # player settings
+var player_scene # player holder
 var selector_auto_off = true # if the selector disables after actions
 # combat variables
 var combat = false # if true the game is in combat mode
@@ -60,7 +61,8 @@ var player = {
 	"avatar": 1,
 	"head": 17,
 	"body": 0,
-	"gender": "Male", # (Gen. 1:27)
+	"gender": "Male", # (Gen. 1:27),
+	"gender_mod": 0,
 	"race": 0,
 	"status": "Healthy",
 	"strength": 7,

@@ -3,6 +3,7 @@ extends CharacterBody2D
 # controls the player
 @onready var RAY = $RayCast2D
 @onready var SELECTOR = $Selector
+@onready var ARMOR = $Clothing
 var select_mode = false # if the player is trying to select something w/ the cursor
 var select_pos = 1 # 0 to 3 clockwise from up to left
 var move_dir = 0 # 0 to 3 clockwise from up to left
@@ -17,6 +18,7 @@ var sel_coll = false # used to help set hud_control_mode
 
 
 func _ready():
+	Globals.player_scene = self # assign player scene to self
 	SELECTOR.visible = false # hide the selector on creation
 	if Globals.new_scene_player_set:
 		print("New scene set coords")
@@ -25,6 +27,8 @@ func _ready():
 	Globals.player_y = global_position.y # update player Y
 	day_check = Globals.day # set the day check
 	minute_check = Globals.minutes # set the minute check
+	# update equipment frames
+	ARMOR.frame = Globals.player["armor"]["equip_frame"]
 
 func _process(_delta):
 	time_check() # time check function
@@ -228,6 +232,10 @@ func update_selector():
 			Globals.hud_selected_desc = selected.DESCRIPTION
 			Globals.hud_control_mode = selected.HUD_CTRL_MODE
 			Globals.hud_sel_icon_frame = selected.FRAME_NO
+
+func update_appearance():
+	ARMOR.frame = Globals.player["armor"]["equip_frame"] + Globals.player["gender_mod"] # update armor
+
 
 func _on_selector_area_entered(area):
 	if select_mode:

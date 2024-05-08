@@ -32,6 +32,7 @@ extends CanvasLayer
 @onready var INVCURSOR = $Inventory/InventoryBackground/InvCursor
 @onready var INVSTATS = $Inventory/EquipmentOverlay/StatusLabel
 # inventory equipment
+@onready var ARMORAVATAR = $Inventory/EquipmentOverlay/EquipAvatarArmor
 @onready var EQUIPARMOR = $Inventory/EquipmentOverlay/EquipArmor
 var armor_equipped = {} # holds the information for the armor equipped
 # status hud
@@ -247,7 +248,8 @@ func update_inventory():
 		INVCURSOR.frame = 1
 		inv_cursor_active = false
 	# EQUIPMENT UPDATE
-	# update the equipment overlays
+	# update the equipment icons/avatar
+	ARMORAVATAR.frame = Globals.player["armor"]["equip_frame"] + Globals.player["gender_mod"]
 	EQUIPARMOR.frame = Globals.player["armor"]["inv_frame"]
 	# update the armor class stat
 	INVSTATS = str("Armor Class: ", Globals.player["armor_class"], "\nBonus Modifier: ", Globals.player["bonus_mod"])
@@ -296,7 +298,10 @@ func equip(finder, equip_slot):
 	# loop through the relevant equipment database and find/set the equipment
 	for n in equip_type.size():
 		if equip_type[n]["finder"] == finder:
-			Globals.player[equip_slot] = equip_type[n]
+			Globals.player[equip_slot] = equip_type[n] # assign equipment to player equipment variable
+			Functions.message(str(equip_type[n]["name"], " have been equipped.")) # create equipped message
+			# turn on the E
+			Globals.player_scene.update_appearance() # update player's appearance
 			break
 
 func update_status():

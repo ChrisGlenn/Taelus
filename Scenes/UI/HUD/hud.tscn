@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://in3ywb6q1lg7"]
+[gd_scene load_steps=16 format=3 uid="uid://in3ywb6q1lg7"]
 
 [ext_resource type="Texture2D" uid="uid://cyccdspqh3wso" path="res://Sprites/UI/nine-slice.png" id="1_4nugt"]
 [ext_resource type="Script" path="res://Scenes/UI/HUD/hud.gd" id="1_e2bak"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dilg7lx54esva" path="res://Tilesets/Taelus-Inventory.png" id="10_nbyga"]
 [ext_resource type="Texture2D" uid="uid://b4alrc6yesliq" path="res://Sprites/NPCs/Taelus-Characters.png" id="12_xa14g"]
 [ext_resource type="Texture2D" uid="uid://djog02usaq3xr" path="res://Tilesets/Taelus-Characters.png" id="13_pcpjy"]
+[ext_resource type="Texture2D" uid="uid://bxhqhb26jyb20" path="res://Sprites/Player/PlayerArmor.png" id="15_a0h2m"]
 
 [node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("INVSLOTS")]
 process_mode = 3
@@ -1366,6 +1367,14 @@ centered = false
 hframes = 32
 vframes = 32
 frame = 1
+
+[node name="EquipAvatarArmor" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
+position = Vector2(48, 48)
+scale = Vector2(4, 4)
+texture = ExtResource("15_a0h2m")
+centered = false
+hframes = 32
+vframes = 16
 
 [node name="EquipHelmet" type="Sprite2D" parent="Inventory/EquipmentOverlay"]
 position = Vector2(56, 32)
