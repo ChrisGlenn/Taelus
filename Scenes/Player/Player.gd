@@ -20,8 +20,9 @@ var sel_coll = false # used to help set hud_control_mode
 func _ready():
 	# set player globals
 	Globals.player_scene = self # assign player scene to self
-	Globals.player["inventory"] = Globals.start_items
-	print(Globals.player["inventory"])
+	Globals.player["inventory"] = Globals.start_items # give the player the start modifiers
+	Functions.set_player_modifiers() # set the player modifiers before...
+	update_appearance() # update/equip
 	SELECTOR.visible = false # hide the selector on creation
 	if Globals.new_scene_player_set:
 		print("New scene set coords")

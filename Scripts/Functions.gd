@@ -37,6 +37,14 @@ func pause():
 
 
 # =============================
+# PLAYER RELATED FUNCTIONS
+# =============================
+func set_player_modifiers():
+	# run through and set the player modifiers based on their set skills
+	print("Setting player modifiers...")
+
+
+# =============================
 # INVENTORY RELATED FUNCTIONS
 # =============================
 func inv_func(func_num, arg_one):

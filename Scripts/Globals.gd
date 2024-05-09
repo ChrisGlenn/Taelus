@@ -96,6 +96,9 @@ var player = {
 	"hunger": 100.0,
 	"days_left": 5000
 }
+var player_skills = {
+	
+}
 # the following used to set the player's AC/DMG/Buffs, ect.
 var equipment_armor = [
 	player["armor"],
