@@ -188,7 +188,9 @@ func HUD(_clock):
 				elif Globals.player["inventory"][inv_cursor_pos]["type"] == "EQUIP":
 					if Globals.player["inventory"][inv_cursor_pos]["hud_mode"] == "sel_equip":
 						# equip the armor by running a function to run through the equipment
+						Globals.player["inventory"][inv_cursor_pos]["equipped"] = true # set the flag to true
 						equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"])
+						Globals.player["inventory"][inv_cursor_pos]["hud_mode"] = "sel_unequip" # change the hud_mode
 						update_inventory() # update the inventory
 		if Input.is_action_just_pressed("tae_mode"):
 			# SECOND FUNCTION

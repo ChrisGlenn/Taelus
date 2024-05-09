@@ -48,7 +48,7 @@ var hud_control = [
 	{"mode": "sel_door_opened","controls": "ESC = Return\nSPACE = Close"},
 	{"mode": "sel_bed","controls": "ESC = Return\nSPACE = Sleep"},
 	{"mode": "sel_equip","controls": "ESC = Return\nSPACE = Equip\nCTRL = Discard"},
-	{"mode": "sel_equipped","controls": "ESC = Return\nSPACE = Unequip"}
+	{"mode": "sel_unequip","controls": "ESC = Return\nSPACE = Unequip"}
 ]
 
 # player variables
@@ -96,6 +96,18 @@ var player = {
 	"hunger": 100.0,
 	"days_left": 5000
 }
+# the following used to set the player's AC/DMG/Buffs, ect.
+var equipment_armor = [
+	player["armor"],
+	player["helmet"],
+	player["shield"]
+]
+var equipment_jewelry = [
+	player["amulet"],
+	player["ring_one"],
+	player["ring_two"]
+]
+var equipment_weapon = player["weapon"]
 
 # lor variables
 var current_region = "Lor"
@@ -144,6 +156,6 @@ var princcess_of_lor = {} # offspring dictionary
 var gradian_lor = false # if set true then Gradia has taken over Lor
 
 # data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game.
-var start_items = {
-	"Leather Bottle" : {"finder": "LBE","name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 5,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"equip": false,"equipped": false,"equip_slot": "null","type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0,20],"func_two" : [0],"func_three" : [0]}
-}
+var start_items = [
+	{"finder": "LBE","name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"equip": false,"equipped": false,"equip_slot": "null","type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}
+]

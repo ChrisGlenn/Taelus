@@ -4,21 +4,24 @@ extends CharacterBody2D
 @onready var RAY = $RayCast2D
 @onready var SELECTOR = $Selector
 @onready var ARMOR = $Clothing
-var select_mode = false # if the player is trying to select something w/ the cursor
-var select_pos = 1 # 0 to 3 clockwise from up to left
 var move_dir = 0 # 0 to 3 clockwise from up to left
 var move_to = 0 # position to move to based on the move_dir
 var moving = false # if the player is moving currently
 var combat_steps = 0 # how many steps the player can take in combat
 var minute_check = 0 # checks minutes
 var day_check = 0 # checks days
-# outside scenes
+# selector
+var select_mode = false # if the player is trying to select something w/ the cursor
+var select_pos = 1 # 0 to 3 clockwise from up to left
 var selected = null 
 var sel_coll = false # used to help set hud_control_mode
 
 
 func _ready():
+	# set player globals
 	Globals.player_scene = self # assign player scene to self
+	Globals.player["inventory"] = Globals.start_items
+	print(Globals.player["inventory"])
 	SELECTOR.visible = false # hide the selector on creation
 	if Globals.new_scene_player_set:
 		print("New scene set coords")
@@ -235,7 +238,13 @@ func update_selector():
 
 func update_appearance():
 	ARMOR.frame = Globals.player["armor"]["equip_frame"] + Globals.player["gender_mod"] # update armor
-
+	# calculate the armor class
+	# for n in Globals.equipment_armor.size():
+	# 	if Globals.equipment_armor[n]["armor_class_mod"]:
+	# 		pass
+	# update the player's influence (based on armor)
+	Globals.player["influence"] += Globals.player["armor"]["influence"]
+	print(str(Globals.player["influence"]))
 
 func _on_selector_area_entered(area):
 	if select_mode:
