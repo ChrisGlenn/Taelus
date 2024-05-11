@@ -97,7 +97,15 @@ var player = {
 	"days_left": 5000
 }
 var player_skills = {
-	
+	"alechemy": 0,
+	"blacksmithing": 0,
+	"defense": 0,
+	"unarmored": 0,
+	"light_armor": 0,
+	"medium_armor": 0,
+	"heavy_armor": 0,
+	"riding": 0,
+	"farming": 0	
 }
 # the following used to set the player's AC/DMG/Buffs, ect.
 var equipment_armor = [

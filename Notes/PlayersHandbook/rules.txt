@@ -58,10 +58,14 @@ COMBAT ARMOR AND WEAPONS:
 Armor Class:
 While there are various types of armor throughout Taelus, they are all based on these base types:
 
-Light Armor Types:
+Unarmored:
 Unarmored 2 + END(MOD)
 Clothing 3 + END(MOD)
+
+WIZARD:
 Robes 12 + INT(MOD)
+
+Light Armor Types:
 Padded 10 + END(MOD)
 Leather 11 + END(MOD)
 Studded Leather 12 + END(MOD)

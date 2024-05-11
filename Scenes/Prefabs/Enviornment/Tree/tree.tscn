@@ -1,23 +1,76 @@
-[gd_scene load_steps=4 format=3 uid="uid://jsif1oqedlnm"]
+[gd_scene load_steps=11 format=3 uid="uid://jsif1oqedlnm"]
 
-[ext_resource type="Texture2D" uid="uid://du4h1j70ujpko" path="res://Tilesets/Taelus-Tileset.png" id="1_grgdd"]
-[ext_resource type="Script" path="res://Scenes/Prefabs/Tree/tree.gd" id="1_tf33f"]
+[ext_resource type="Texture2D" uid="uid://ui40d078adae" path="res://Tilesets/Taelus-Trees.png" id="1_22n68"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urtoe"]
+atlas = ExtResource("1_22n68")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm6o7"]
+atlas = ExtResource("1_22n68")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m67op"]
+atlas = ExtResource("1_22n68")
+region = Rect2(288, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8ji8"]
+atlas = ExtResource("1_22n68")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_600yp"]
+atlas = ExtResource("1_22n68")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31oha"]
+atlas = ExtResource("1_22n68")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdfl8"]
+atlas = ExtResource("1_22n68")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qd56f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urtoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm6o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m67op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8ji8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_600yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31oha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdfl8")
+}],
+"loop": true,
+"name": &"chestnut",
+"speed": 0.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdpkw"]
 size = Vector2(16, 16)
 
 [node name="Tree" type="StaticBody2D"]
 scale = Vector2(2, 2)
-script = ExtResource("1_tf33f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("1_grgdd")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qd56f")
+animation = &"chestnut"
+frame = 1
 centered = false
-hframes = 32
-vframes = 16
-frame = 23
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
+position = Vector2(16, 24)
 shape = SubResource("RectangleShape2D_xdpkw")
