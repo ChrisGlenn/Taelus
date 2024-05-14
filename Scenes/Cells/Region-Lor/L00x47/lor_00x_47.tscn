@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b32mf6ncwn8mn"]
+[gd_scene load_steps=4 format=3 uid="uid://b32mf6ncwn8mn"]
 
+[ext_resource type="Script" path="res://Scenes/Cells/Region-Lor/L00x47/lor_00x_47.gd" id="1_k3heo"]
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_oxo33"]
 [ext_resource type="PackedScene" uid="uid://bpn4picfk4k2i" path="res://Scenes/System/InvisibleBlock/invisible_block.tscn" id="2_2k7dh"]
 
 [node name="Lor00x47" type="Node2D"]
+script = ExtResource("1_k3heo")
 
 [node name="Level" parent="." instance=ExtResource("1_oxo33")]
 position = Vector2(0, -8)
@@ -15,3 +17,5 @@ layer_0/tile_data = PackedInt32Array(8, 393216, 0, 65544, 393216, 0, 131080, 262
 position = Vector2(113, 40)
 scale = Vector2(1, 17)
 border = true
+
+[node name="Foliage" type="Node2D" parent="."]

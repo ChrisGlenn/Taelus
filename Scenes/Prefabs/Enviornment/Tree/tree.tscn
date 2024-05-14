@@ -1,22 +1,19 @@
-[gd_scene load_steps=11 format=3 uid="uid://jsif1oqedlnm"]
+[gd_scene load_steps=12 format=3 uid="uid://jsif1oqedlnm"]
 
 [ext_resource type="Texture2D" uid="uid://ui40d078adae" path="res://Tilesets/Taelus-Trees.png" id="1_22n68"]
+[ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Tree/tree.gd" id="1_c4wi4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_urtoe"]
 atlas = ExtResource("1_22n68")
 region = Rect2(192, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qm6o7"]
-atlas = ExtResource("1_22n68")
-region = Rect2(96, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m67op"]
-atlas = ExtResource("1_22n68")
-region = Rect2(288, 32, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8ji8"]
 atlas = ExtResource("1_22n68")
 region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm6o7"]
+atlas = ExtResource("1_22n68")
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_600yp"]
 atlas = ExtResource("1_22n68")
@@ -30,6 +27,10 @@ region = Rect2(256, 0, 32, 32)
 atlas = ExtResource("1_22n68")
 region = Rect2(288, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m67op"]
+atlas = ExtResource("1_22n68")
+region = Rect2(288, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_qd56f"]
 animations = [{
 "frames": [{
@@ -37,13 +38,10 @@ animations = [{
 "texture": SubResource("AtlasTexture_urtoe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qm6o7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m67op")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_u8ji8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm6o7")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_600yp")
@@ -53,6 +51,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gdfl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m67op")
 }],
 "loop": true,
 "name": &"chestnut",
@@ -63,12 +64,14 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="Tree" type="StaticBody2D"]
+z_index = 6
 scale = Vector2(2, 2)
+script = ExtResource("1_c4wi4")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qd56f")
 animation = &"chestnut"
-frame = 1
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -147,8 +147,8 @@ var seasonal_attribute = 4 # the initial stat needed to beat for weather events
 var seasonal_weather_mod = [3,1,2,2] # the odds for a weather event for each season
 var seasonal_rain = 15 # when it rains this gets incremented from 0 and affects crop output
 var days_in_game = 0 # how many days the player has been 'alive' in the game
-var cut_trees = [] # holds trees that have been cut
-var mined_rocks = [] # holds stones that have been mined
+var trees = [] # holds trees that have been cut
+var rocks = [] # holds stones that have been mined
 var crops = [] # holds crops that have been planted and their current statusii
 # DEBUG CHUNK LOADING SYSTEM
 var cam_move_count = 0 # how many times the camera has moved (once it hits a certain number the unneeded chunks are deleted)
