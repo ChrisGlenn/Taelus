@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jsif1oqedlnm"]
+[gd_scene load_steps=13 format=3 uid="uid://jsif1oqedlnm"]
 
 [ext_resource type="Texture2D" uid="uid://ui40d078adae" path="res://Tilesets/Taelus-Trees.png" id="1_22n68"]
 [ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Tree/tree.gd" id="1_c4wi4"]
@@ -31,6 +31,10 @@ region = Rect2(144, 0, 16, 16)
 atlas = ExtResource("1_22n68")
 region = Rect2(144, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwleb"]
+atlas = ExtResource("1_22n68")
+region = Rect2(16, 16, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_qd56f"]
 animations = [{
 "frames": [{
@@ -54,6 +58,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lbsaq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwleb")
 }],
 "loop": true,
 "name": &"chestnut",

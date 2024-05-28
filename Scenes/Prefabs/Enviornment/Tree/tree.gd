@@ -27,8 +27,6 @@ func _ready():
 		for n in Globals.trees.size():
 			if Globals.trees[n]["id"] == tree_id:
 				break
-	else:
-		pass
 	month_check = Globals.month # set to current month
 	year_check = Globals.year # set to current year
 	ANIM_SPRITE.play(tree_species) # set animation based off species
@@ -58,7 +56,19 @@ func tree_aging():
 		else:
 			ANIM_SPRITE.frame = 3 # dead tree
 	# seasonal check
-	# will 
+	# will check the seasons and then update the sprites accordingly
+	# frame references (1 = green 4 = fall 5 = white/winter)
+	if !tree_dead:
+		if tree_age < tree_life_milestones[0]:
+			# child tree
+			if Globals.season == 0:
+				# winter
+				ANIM_SPRITE.frame = 5
+		else:
+			# full grown tree
+			if Globals.season == 0:
+				# winter
+				ANIM_SPRITE.frame = 5
 
 func record():
 	# record the tree into the Globals if not recorded
