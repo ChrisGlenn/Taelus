@@ -2,8 +2,9 @@ extends StaticBody2D
 # TREE SCRIPT
 # a script for the variety of trees in Taelus (starting in the Lor region)
 # see documentation for various tree types lifespan/ect.
+# tree frame reference (0: chopped 1: baby 2: baby fall 3: baby snow 4: baby bare 5: adult 6: adult fruit 7: adult fall 8: adult snow 9: adult dead/bare)
+# fill out the frames to 9 updating what is needed
 @onready var ANIM_SPRITE = $AnimatedSprite2D
-@export var record_tree = false # if set to true WILL RECORD TREE
 @export var hit_points = 10 # hit points for the tree
 @export var tree_id = "" # the ID of the tree
 @export_enum("chestnut", "apple", "pine", "willow") var tree_species = "chestnut" # correlates to the 'animation'
@@ -17,6 +18,7 @@ extends StaticBody2D
 @export var fall_colour = false # if the leaves change color during fall
 @export var tree_life_milestones = [16,800] # goes from small to fully grown, goes into dead
 @export var tree_seasonal_update = [3,1,1,4] # winter, spring, summer, fall the frames for each season (default chestnut)
+var fruit = false # if true then it's fruit time!
 var record_slot # the slot in the Globals array
 var month_rec # records the current month
 var month_check # used to check the passage of months
@@ -30,36 +32,31 @@ func _ready():
 	if Globals.trees.size() > 0:
 		for n in Globals.trees.size():
 			if Globals.trees[n]["id"] == tree_id:
+				record_slot = n # set the record slot
 				print(Globals.trees[n]["id"])
-				break
+				tree_age = Globals.trees[n]["age"] # set the tree_age
+				cut_down = Globals.trees[n]["cut_down"] # set the cut_down
+				tree_dead = Globals.trees[n]["dead"] # set the dead
+				month_rec = Globals.trees[n]["current_month"] # set the month record
+				disabled = Globals.trees[n]["disabled"] # set the disabled field
+				break # break from loop
 	month_check = Globals.month # set to current month
 	year_check = Globals.year # set to current year
-	ANIM_SPRITE.play(tree_species) # set animation based off species
-	if disabled: queue_free() # delete self if disabled
+	if disabled: 
+		if record_slot: Globals.trees.remove_at(record_slot) # erase from the record if there is an entry
+		queue_free() # delete self if disabled
 
 func _process(_delta):
-	tree_aging() # tree growth/aging function
+	tree_life() # tree growth/aging function
 
 
-func tree_aging():
-	# tree aging
+func tree_life():
+	# tree life
 	# check against the current season and change
 	# check months/years and compare it to the set milestones
 	if month_check != Globals.month:
 		tree_age += 1 # increment age (recorded in months)
 		month_rec = Globals.months_in_game # used to record months in game
-	if !tree_dead:
-		if tree_age < tree_life_milestones[0]:
-			ANIM_SPRITE.frame = 0 # baby tree :D
-		elif tree_age >= tree_life_milestones[0] and tree_age < tree_life_milestones[1]:
-			ANIM_SPRITE.frame = 1 # tree
-		elif tree_age >= tree_life_milestones[1]:
-			tree_dead = true # the tree has died
-	else:
-		if tree_age < tree_life_milestones[0]:
-			ANIM_SPRITE.frame = 2 # dead baby tree :(
-		else:
-			ANIM_SPRITE.frame = 3 # dead tree
 	# seasonal check
 	# will check the seasons and then update the sprites accordingly
 	# frame references (1 = green 4 = fall 5 = white/winter)
@@ -69,67 +66,76 @@ func tree_aging():
 			if Globals.season == 0:
 				# winter
 				if winter_snow:
-					ANIM_SPRITE.frame = 7 # snowy
+					ANIM_SPRITE.frame = 3 # snowy
 				else:
-					ANIM_SPRITE.frame = 2 # leafless
+					ANIM_SPRITE.frame = 4 # leafless
 			elif Globals.season == 1:
 				# spring
-				ANIM_SPRITE.frame = 0
+				ANIM_SPRITE.frame = 1
 			elif Globals.season == 2:
 				# summer
-				ANIM_SPRITE.frame = 0
+				ANIM_SPRITE.frame = 1
 			elif Globals.season == 3:
 				# fall
-				ANIM_SPRITE.frame = 8 # yellow
+				if fall_colour:
+					ANIM_SPRITE.frame = 2 # yellow
 		else:
 			# full grown tree
 			if Globals.season == 0:
 				# winter
 				if winter_snow:
-					ANIM_SPRITE.frame = 5 # snowy
+					ANIM_SPRITE.frame = 8 # snowy
 				else:
-					ANIM_SPRITE.frame = 3 # leafless
+					ANIM_SPRITE.frame = 9 # leafless
 			elif Globals.season == 1:
 				# spring
-				ANIM_SPRITE.frame = 1
+				ANIM_SPRITE.frame = 5
 			elif Globals.season == 2:
 				# summer
-				ANIM_SPRITE.frame = 1
+				ANIM_SPRITE.frame = 5
 			elif Globals.season == 3:
 				# fall
-				ANIM_SPRITE.frame = 4 # yellow
+				if fall_colour:
+					ANIM_SPRITE.frame = 7 # yellow
+				else:
+					ANIM_SPRITE.frame = 5 # normal
+		if cut_down: tree_dead = true # kill the tree if it's cut down
 	elif tree_dead:
 		# change the lifespan so the stump will disappear after a certain amount of time
-		pass
+		if !cut_down:
+			if tree_age < tree_life_milestones[0]:
+				ANIM_SPRITE.frame = 4 # baby bare
+			else:
+				ANIM_SPRITE.frame = 9 # adult bare
+		else:
+			ANIM_SPRITE.frame = 0 # cut down
+			disabled = true # disable so it won't load again
 
 func record():
 	# record the tree into the Globals if not recorded
-	if record_tree:
-		if !record_slot:
-			# if there is no previous occurance of the tree in the record
-			var tree_rec = {
-				"id": tree_id,
-				"age": tree_age,
-				"cut_down": cut_down,
-				"dead": tree_dead,
-				"current_month": month_rec,
-				"disabled": disabled
-			}
-			Globals.trees.append(tree_rec) # add to the Globals array
-			record_tree = false # recording done
-		else:
-			# there is a previous occurance of the tree in record will remove the record
-			Globals.trees.remove_at(record_slot)
-			var tree_rec = {
-				"id": tree_id,
-				"age": tree_age,
-				"cut_down": cut_down,
-				"dead": tree_dead,
-				"current_month": month_rec,
-				"disabled": disabled
-			}
-			Globals.trees.append(tree_rec) # add to the Globals array
-			record_tree = false # recording done
+	if !record_slot:
+		# if there is no previous occurance of the tree in the record
+		var tree_rec = {
+			"id": tree_id,
+			"age": tree_age,
+			"cut_down": cut_down,
+			"dead": tree_dead,
+			"current_month": month_rec,
+			"disabled": disabled
+		}
+		Globals.trees.append(tree_rec) # add to the Globals array
+	else:
+		# there is a previous occurance of the tree in record will remove the record
+		Globals.trees.remove_at(record_slot)
+		var tree_rec = {
+			"id": tree_id,
+			"age": tree_age,
+			"cut_down": cut_down,
+			"dead": tree_dead,
+			"current_month": month_rec,
+			"disabled": disabled
+		}
+		Globals.trees.append(tree_rec) # add to the Globals array
 
 func fruit_production():
 	pass

@@ -3,21 +3,29 @@
 [ext_resource type="Texture2D" uid="uid://ui40d078adae" path="res://Tilesets/Taelus-Trees.png" id="1_22n68"]
 [ext_resource type="Script" path="res://Scenes/Prefabs/Enviornment/Tree/tree.gd" id="1_c4wi4"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbsaq"]
+atlas = ExtResource("1_22n68")
+region = Rect2(144, 16, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh7io"]
 atlas = ExtResource("1_22n68")
 region = Rect2(96, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bja22"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p7b3"]
 atlas = ExtResource("1_22n68")
-region = Rect2(96, 0, 16, 16)
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwleb"]
+atlas = ExtResource("1_22n68")
+region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oh3pp"]
 atlas = ExtResource("1_22n68")
 region = Rect2(48, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cr5f2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bja22"]
 atlas = ExtResource("1_22n68")
-region = Rect2(80, 0, 16, 16)
+region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_siqwg"]
 atlas = ExtResource("1_22n68")
@@ -27,32 +35,33 @@ region = Rect2(128, 0, 16, 16)
 atlas = ExtResource("1_22n68")
 region = Rect2(144, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbsaq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cr5f2"]
 atlas = ExtResource("1_22n68")
-region = Rect2(144, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uwleb"]
-atlas = ExtResource("1_22n68")
-region = Rect2(16, 16, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2p7b3"]
-atlas = ExtResource("1_22n68")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qd56f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_lbsaq")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_yh7io")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bja22")
+"texture": SubResource("AtlasTexture_2p7b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwleb")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oh3pp")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cr5f2")
+"texture": SubResource("AtlasTexture_bja22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bja22")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_siqwg")
@@ -61,13 +70,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ib0vu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lbsaq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uwleb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2p7b3")
+"texture": SubResource("AtlasTexture_cr5f2")
 }],
 "loop": true,
 "name": &"chestnut",
@@ -86,6 +89,7 @@ tree_age = 0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qd56f")
 animation = &"chestnut"
+frame = 1
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

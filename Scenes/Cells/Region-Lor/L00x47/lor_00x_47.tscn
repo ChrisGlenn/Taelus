@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b32mf6ncwn8mn"]
+[gd_scene load_steps=5 format=3 uid="uid://b32mf6ncwn8mn"]
 
 [ext_resource type="Script" path="res://Scenes/Cells/Region-Lor/L00x47/lor_00x_47.gd" id="1_k3heo"]
 [ext_resource type="PackedScene" uid="uid://cq70indwp2ajl" path="res://Scenes/Prefabs/TaelusMap/taelus_map.tscn" id="1_oxo33"]
 [ext_resource type="PackedScene" uid="uid://bpn4picfk4k2i" path="res://Scenes/System/InvisibleBlock/invisible_block.tscn" id="2_2k7dh"]
+[ext_resource type="PackedScene" uid="uid://jsif1oqedlnm" path="res://Scenes/Prefabs/Enviornment/Tree/tree.tscn" id="4_w5wx6"]
 
 [node name="Lor00x47" type="Node2D"]
 script = ExtResource("1_k3heo")
@@ -19,3 +20,8 @@ scale = Vector2(1, 17)
 border = true
 
 [node name="Foliage" type="Node2D" parent="."]
+
+[node name="Tree" parent="Foliage" instance=ExtResource("4_w5wx6")]
+position = Vector2(256, 104)
+tree_id = "004701"
+tree_age = 20
