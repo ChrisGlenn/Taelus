@@ -5,9 +5,10 @@ extends StaticBody2D
 # tree frame reference (0: chopped 1: baby 2: baby fall 3: baby snow 4: baby bare 5: adult 6: adult fruit 7: adult fall 8: adult snow 9: adult dead/bare)
 # fill out the frames to 9 updating what is needed
 @onready var ANIM_SPRITE = $AnimatedSprite2D
-@export var TITLE = "Wood Door" # the wooden door title
+@onready var RAY = $RayCast2D
+@export var TITLE = "Tree" # the wooden door title
 @export var FRAME_NO = 35 # the image frame for the door
-@export var DESCRIPTION = "A simple wooden door." # the description for the door
+@export var DESCRIPTION = "A tree." # the description for the door
 @export var HUD_CTRL_MODE = "" # hud control mode
 @export var hit_points = 10 # hit points for the tree
 @export var tree_id = "" # the ID of the tree

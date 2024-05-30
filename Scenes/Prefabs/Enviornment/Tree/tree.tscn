@@ -147,7 +147,9 @@ size = Vector2(8, 8)
 z_index = 6
 scale = Vector2(2, 2)
 script = ExtResource("1_c4wi4")
+DESCRIPTION = "A chestnut tree."
 tree_age = 0
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qd56f")
@@ -157,3 +159,7 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 12)
 shape = SubResource("RectangleShape2D_xdpkw")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)

@@ -58,7 +58,10 @@ Overworld:
 		[] Attack/Bash/Ect...(second function)
 		[] Stealing
 	[] Trees
-		[] Tree System (cutdown, death, growing)
+		[] Tree system
+			[] Cutdown
+			[] Drop Fruit
+			[] Breed
 		[] Chestnut
 		[] Apple
 		[] Pine

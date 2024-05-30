@@ -72,6 +72,14 @@ TITLE = "Ragged Clothing"
 DESCRIPTION = "Some old ragged clothing lay on the stone floor. You doubt anyone would miss it."
 item_amount = 1
 
+[node name="PickUp2" parent="Items" instance=ExtResource("8_s1djp")]
+position = Vector2(352, 240)
+id = "00x48x02"
+finder = "RAPPLE"
+item_name = "Red Apple"
+TITLE = "Red Apple"
+DESCRIPTION = "A red Apple sits on the grass."
+
 [node name="NPCs" type="Node2D" parent="."]
 
 [node name="LorGuard" parent="NPCs" instance=ExtResource("11_p4mc6")]
