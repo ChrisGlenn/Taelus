@@ -304,7 +304,6 @@ icon_type = "hunger"
 icon_position = 5
 
 [node name="Selection" type="Node2D" parent="."]
-visible = false
 
 [node name="SelectedLabel" type="Label" parent="Selection"]
 offset_left = 8.0
@@ -821,6 +820,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Inventory" type="Node2D" parent="."]
+visible = false
 
 [node name="InventoryBackground" type="NinePatchRect" parent="Inventory"]
 offset_left = 208.0

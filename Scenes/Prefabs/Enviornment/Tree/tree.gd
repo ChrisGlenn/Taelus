@@ -5,10 +5,15 @@ extends StaticBody2D
 # tree frame reference (0: chopped 1: baby 2: baby fall 3: baby snow 4: baby bare 5: adult 6: adult fruit 7: adult fall 8: adult snow 9: adult dead/bare)
 # fill out the frames to 9 updating what is needed
 @onready var ANIM_SPRITE = $AnimatedSprite2D
+@export var TITLE = "Wood Door" # the wooden door title
+@export var FRAME_NO = 35 # the image frame for the door
+@export var DESCRIPTION = "A simple wooden door." # the description for the door
+@export var HUD_CTRL_MODE = "" # hud control mode
 @export var hit_points = 10 # hit points for the tree
 @export var tree_id = "" # the ID of the tree
 @export_enum("chestnut", "apple", "pine", "willow") var tree_species = "chestnut" # correlates to the 'animation'
 @export var bear_fruit = false # if true this tree bears fruit
+@export var fruit_season = 5 # defaults to Sunsfir
 @export var tree_age = 19 # age in months
 @export var will_seed = true # if the tree can seed new trees around it during Spring months
 @export var seed_age = 2 # set to years
@@ -41,10 +46,14 @@ func _ready():
 				disabled = Globals.trees[n]["disabled"] # set the disabled field
 				break # break from loop
 	month_check = Globals.month # set to current month
+	month_rec = Globals.months_in_game # set the month record
 	year_check = Globals.year # set to current year
+	ANIM_SPRITE.play(tree_species)
 	if disabled: 
 		if record_slot: Globals.trees.remove_at(record_slot) # erase from the record if there is an entry
 		queue_free() # delete self if disabled
+	else:
+		record() # record the tree
 
 func _process(_delta):
 	tree_life() # tree growth/aging function
@@ -92,13 +101,20 @@ func tree_life():
 				ANIM_SPRITE.frame = 5
 			elif Globals.season == 2:
 				# summer
-				ANIM_SPRITE.frame = 5
+				if fruit:
+					ANIM_SPRITE.frame = 6 # fruit
+				else:
+					ANIM_SPRITE.frame = 5 # no fruit
 			elif Globals.season == 3:
 				# fall
-				if fall_colour:
-					ANIM_SPRITE.frame = 7 # yellow
+				if fruit:
+					ANIM_SPRITE.frame = 6 # fruit
 				else:
-					ANIM_SPRITE.frame = 5 # normal
+					# if no fruit
+					if fall_colour:
+						ANIM_SPRITE.frame = 7 # yellow
+					else:
+						ANIM_SPRITE.frame = 5 # normal
 		if cut_down: tree_dead = true # kill the tree if it's cut down
 	elif tree_dead:
 		# change the lifespan so the stump will disappear after a certain amount of time
@@ -110,6 +126,8 @@ func tree_life():
 		else:
 			ANIM_SPRITE.frame = 0 # cut down
 			disabled = true # disable so it won't load again
+	# recording the tree
+
 
 func record():
 	# record the tree into the Globals if not recorded
@@ -124,6 +142,8 @@ func record():
 			"disabled": disabled
 		}
 		Globals.trees.append(tree_rec) # add to the Globals array
+		get_record_slot() # get the record slot
+		print(Globals.trees)
 	else:
 		# there is a previous occurance of the tree in record will remove the record
 		Globals.trees.remove_at(record_slot)
@@ -137,5 +157,19 @@ func record():
 		}
 		Globals.trees.append(tree_rec) # add to the Globals array
 
+func get_record_slot():
+	# get the current record slot
+	if Globals.trees.size() > 0:
+		for n in Globals.trees.size():
+			if Globals.trees[n]["id"] == tree_id:
+				record_slot = n # set the record slot
+				print("Record Slot: ", record_slot) # DEBUG
+
 func fruit_production():
+	if bear_fruit:
+		# if the tree is set to bear fruit wait until a fall and then switch to fruit frame
+		if Globals.month == fruit_season:
+			fruit = true # set the fruit to true!
+
+func update_hud():
 	pass

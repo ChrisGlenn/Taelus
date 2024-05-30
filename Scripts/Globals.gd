@@ -48,7 +48,9 @@ var hud_control = [
 	{"mode": "sel_door_opened","controls": "ESC = Return\nSPACE = Close"},
 	{"mode": "sel_bed","controls": "ESC = Return\nSPACE = Sleep"},
 	{"mode": "sel_equip","controls": "ESC = Return\nSPACE = Equip\nCTRL = Discard"},
-	{"mode": "sel_unequip","controls": "ESC = Return\nSPACE = Unequip"}
+	{"mode": "sel_unequip","controls": "ESC = Return\nSPACE = Unequip"},
+	{"mode": "sel_tree","controls": "ESC = Return\nSPACE = Cutdown"},
+	{"mode": "sel_tree_harvest","controls": "ESC = Return\nSPACE = Cutdown\nCTRL = Pick Fruit"}
 ]
 
 # player variables

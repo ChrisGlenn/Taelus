@@ -59,12 +59,10 @@ Overworld:
 		[] Stealing
 	[] Trees
 		[] Tree System (cutdown, death, growing)
-		[] Standard
+		[] Chestnut
 		[] Apple
 		[] Pine
-		[] Swamp
-		[] Dead Standard
-		[] Dead Pine
+		[] Willow
 	[] Crops
 		[] Carrot
 		[] Cabbage
