@@ -40,6 +40,7 @@ func _process(_delta):
 				Globals.selector_on = false # turn off selector for auto_off
 				update_hud() # update the hud
 
+
 func update_hud():
 	# open/close the door
 	if door_open:

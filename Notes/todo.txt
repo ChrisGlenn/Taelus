@@ -61,11 +61,14 @@ Overworld:
 		[] Tree system
 			[] Cutdown
 			[] Drop Fruit
-			[] Breed
 		[] Chestnut
 		[] Apple
 		[] Pine
 		[] Willow
+	[] Bushes
+		[] Standard Bush
+		[] Blackberry Bush
+			[] Pick Fruit
 	[] Crops
 		[] Carrot
 		[] Cabbage
@@ -166,6 +169,7 @@ ALPHA BUG/FIX-LIST:
 
 
 ALPHA FUTURE UPDATES???:
+	[] Trees and spawn new trees (check Future folder for documentation regarding this)
 
 
 TO-DO LIST(BETA):

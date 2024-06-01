@@ -143,9 +143,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdpkw"]
 size = Vector2(8, 8)
 
-[node name="Tree" type="StaticBody2D"]
+[node name="Tree" type="Area2D"]
 z_index = 6
 scale = Vector2(2, 2)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_c4wi4")
 DESCRIPTION = "A chestnut tree."
 tree_age = 0
@@ -162,4 +164,7 @@ shape = SubResource("RectangleShape2D_xdpkw")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(8, 8)
-target_position = Vector2(0, 16)
+target_position = Vector2(0, -16)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

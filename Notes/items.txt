@@ -37,6 +37,7 @@ Bread
 Bread (Moldy)
 Salt Fish
 Salt Pork
+Biskit (Hardtack)
 
 
 EQUIPMENT

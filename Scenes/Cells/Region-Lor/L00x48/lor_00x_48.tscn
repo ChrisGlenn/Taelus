@@ -115,3 +115,5 @@ position = Vector2(272, 64)
 position = Vector2(272, 80)
 
 [node name="Lights" type="Node2D" parent="."]
+
+[node name="Foliage" type="Node2D" parent="."]

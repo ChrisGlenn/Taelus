@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 # TREE SCRIPT
 # a script for the variety of trees in Taelus (starting in the Lor region)
 # see documentation for various tree types lifespan/ect.
@@ -9,15 +9,15 @@ extends StaticBody2D
 @export var TITLE = "Tree" # the wooden door title
 @export var FRAME_NO = 35 # the image frame for the door
 @export var DESCRIPTION = "A tree." # the description for the door
-@export var HUD_CTRL_MODE = "" # hud control mode
+@export var HUD_CTRL_MODE = "sel_tree" # hud control mode
 @export var hit_points = 10 # hit points for the tree
 @export var tree_id = "" # the ID of the tree
 @export_enum("chestnut", "apple", "pine", "willow") var tree_species = "chestnut" # correlates to the 'animation'
 @export var bear_fruit = false # if true this tree bears fruit
 @export var fruit_season = 5 # defaults to Sunsfir
+@export var fruit_amount = 1 # how much fruit can be piced before there is no more
 @export var tree_age = 19 # age in months
-@export var will_seed = true # if the tree can seed new trees around it during Spring months
-@export var seed_age = 2 # set to years
+@export var seed_age = 100 # set to months (increments by 100 after seeding)
 @export var cut_down = false # if the tree has been cut down
 @export var tree_dead = false # if the tree is dead or not
 @export var winter_snow = false # if true the tree will have snow during winter, otherwise is leafless
@@ -30,6 +30,7 @@ var month_rec # records the current month
 var month_check # used to check the passage of months
 var year_check # used to check the passage of years
 var disabled = false # if true delete self
+var selector_in = false # if true the selector is colliding
 
 
 func _ready():
@@ -127,7 +128,26 @@ func tree_life():
 		else:
 			ANIM_SPRITE.frame = 0 # cut down
 			disabled = true # disable so it won't load again
-	# recording the tree
+	# bearing fruit
+	if bear_fruit:
+		# if the tree is set to bear fruit wait until the set season and then switch to fruit frame
+		if Globals.month == fruit_season:
+			if fruit_amount > 0:
+				fruit = true # set the fruit to true!
+				if selector_in:
+					pass
+			else:
+				fruit = false # set the tree back to standard fruitless
+	# cutting the tree down
+	if hit_points <= 0:
+		# the tree's hit points are gone so set the tree to cutdown and then spawn
+		# a pickup of some wood
+		if !cut_down:
+			cut_down = true # the check
+	# recording/aging the tree
+	if month_check != Globals.month:
+		tree_age += 1 # increment by one month
+		record() # record the tree
 
 
 func record():
@@ -166,11 +186,11 @@ func get_record_slot():
 				record_slot = n # set the record slot
 				print("Record Slot: ", record_slot) # DEBUG
 
-func fruit_production():
-	if bear_fruit:
-		# if the tree is set to bear fruit wait until a fall and then switch to fruit frame
-		if Globals.month == fruit_season:
-			fruit = true # set the fruit to true!
 
-func update_hud():
-	pass
+func _on_area_entered(area:Area2D):
+	if area.is_in_group("SELECTOR"):
+		selector_in = true
+
+func _on_area_exited(area:Area2D):
+	if area.is_in_group("SELECTOR"):
+		selector_in = false

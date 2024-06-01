@@ -8,7 +8,10 @@ var armor = [
     {"finder": "RAG","name": "Cloth Rags","influence": -5,"class": "Light Armor","type": "Clothing","armor_class_mod": 3,"durability": -4,"inv_frame": 257,"equip_frame": 1}
 ]
 
-var weapon = {}
+var weapon = [
+    {"finder": "BAREHANDS","name": "Bare Hands","influence": 0,"class": "Hand to Hand","armor_class_mod": 0,"durabiliity": -4,"inv_frame": 0,"equip_frame": 0}
+]
+
 var shield = {}
 var helmet = {}
 # rings provide protection/buffs

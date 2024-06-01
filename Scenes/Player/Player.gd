@@ -204,8 +204,6 @@ func selection():
 			$Clothing.flip_h = true
 			$Weapon.flip_h = true
 			select_pos = 3
-		elif Input.is_action_just_pressed("tae_select"):
-			pass
 		elif Input.is_action_just_pressed("tae_cancel"):
 			Globals.hud_controlable = true # can swap huds
 			select_mode = false # turn off select mode

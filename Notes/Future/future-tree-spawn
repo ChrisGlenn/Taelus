@@ -1,0 +1,51 @@
+The issue with spawning new trees is the position for spawning (seems to jump like crazy) and then how to respawn the tree to the new position ONCE the level disappears and then reappears (guess somehow add it to level's ready() function to spawn)
+
+
+@export var will_seed = false # if the tree can seed new trees around it during Spring months	
+
+# spawn/seed new trees
+	if will_seed:
+		if tree_age >= seed_age and Globals.season == 1:
+			# if this tree will seed and the age hits then spawn a new tree (season must be spring)
+			# start cycle thru up, right, down, left (clockwise per normal)
+			var ray_direction = 0 # starts at up
+			if ray_direction < 3:
+				if ray_direction == 0:
+					# up
+					RAY.target_position = Vector2(0,-32)
+					if !RAY.is_colliding():
+						# spawn a new tree at this position
+						var tree_baby : Node = duplicate()
+						tree_baby.tree_age = 0 # it's a baby
+						tree_baby.global_position = Vector2(global_position.x, global_position.y-32) # spawn above
+						tree_baby.tree_id = tree_id + str(ray_direction) # create new unique ID
+						tree_baby.will_seed = true # this tree will also seed
+						tree_baby.seed_age = seed_age # set the same seed age
+						get_parent().add_child(tree_baby)
+						seed_age += 25 # increment seed_age by 25 months (2.5 years)
+					else:
+						ray_direction += 1 # try the next direction
+				elif ray_direction == 1:
+					# right
+					RAY.target_position = Vector2(32,0)
+					if !RAY.is_colliding():
+						# spawn a new tree at this position
+						seed_age += seed_age # increment by set seed_age
+					else:
+						ray_direction += 1 # try the next direction
+				elif ray_direction == 2:
+					# down
+					RAY.target_position = Vector2(0,32)
+					if !RAY.is_colliding():
+						# spawn a new tree at this position
+						seed_age += seed_age # increment by set seed_age
+					else:
+						ray_direction += 1 # try the next direction
+				elif ray_direction == 3:
+					# left
+					RAY.target_position = Vector2(-32,0)
+					if !RAY.is_colliding():
+						# spawn a new tree at this position
+						seed_age += seed_age # increment by set seed_age
+					else:
+						will_seed = false # the tree is blocked by all sides so stop trying to seed

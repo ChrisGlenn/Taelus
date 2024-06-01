@@ -24,4 +24,4 @@ border = true
 [node name="Tree" parent="Foliage" instance=ExtResource("4_w5wx6")]
 position = Vector2(256, 104)
 tree_id = "004701"
-tree_age = 20
+tree_age = 99
