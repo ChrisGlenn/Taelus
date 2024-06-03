@@ -99,15 +99,29 @@ var player = {
 	"days_left": 5000
 }
 var player_skills = {
-	"alechemy": 0,
+	"alchemy": 0,
+	"axemanship": 0,
 	"blacksmithing": 0,
-	"defense": 0,
-	"unarmored": 0,
-	"light_armor": 0,
-	"medium_armor": 0,
+	"farming": 0,
+	"fishing": 0,
+	"folklore": 0,
+	"hand_to_hand": 0,
 	"heavy_armor": 0,
+	"herding": 0,
+	"literacy": 0,
+	"light_armor": 0,
+	"magic": 0,
+	"mathematics": 0,
+	"marksmanship": 0,
+	"medicine": 0,
+	"mercantile": 0,
+	"mining": 0,
+	"musicianship": 0,
+	"navigation": 0,
 	"riding": 0,
-	"farming": 0	
+	"spearmanship": 0,
+	"speechcraft": 0,
+	"swordsmanship": 0
 }
 # the following used to set the player's AC/DMG/Buffs, ect.
 var equipment_armor = [
@@ -171,5 +185,5 @@ var gradian_lor = false # if set true then Gradia has taken over Lor
 
 # data 'chunks', or dictionaries, that will hold data that needs to be kept track of throughout the game.
 var start_items = [
-	{"finder": "LBE","name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"equip": false,"equipped": false,"equip_slot": "null","type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}
+	{"finder": "LBE","name" : "Leather Bottle","description" : "A small empty bottle made of leather.","frame" : 1,"weight" : 0.2,"value" : 2,"amnt" : 0,"max_amnt" : 5,"min_amnt" : -4,"stackable" : false,"equip": false,"equipped": false,"equip_slot": "null","type" : "CONSUME","hud_mode" : "sel_drink","func_one" : [0],"func_two" : [0],"func_three" : [0]}, {"finder": "RAG","name": "Cloth Rags","description": "Some old ragged clothing","frame" : 257,"weight" : 1,"value" : 2,"amnt" : 1,"max_amnt" : 1,"min_amnt" : 1,"stackable" : false,"equip": true,"equipped": true,"equip_slot": "armor","type" : "EQUIP","hud_mode" : "sel_equip","func_one" : [0],"func_two" : [0],"func_three" : [0]}
 ]

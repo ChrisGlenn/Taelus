@@ -56,6 +56,7 @@ var armor_equipped = {} # holds the information for the armor equipped
 var inv_cursor_active = false # if false will be hidden
 var inv_cursor_pos = 0 # corresponds with the inventory slots
 var hud_control_check # keeps track of the hud control mode
+var start_check = false # if true the start check has been completed
 var timer_ctrl = 100 # timer control
 
 
@@ -93,6 +94,10 @@ func _process(delta):
 
 
 func HUD(_clock):
+	# any starting updates that need to be completed go here
+	if Globals.player_scene and !start_check:
+		spawn_check()
+		start_check = true
 	# check the Globals.hud_mode and act accordingly
 	update_controls(true) # update the hud control map/text
 	# ***********************************
@@ -110,6 +115,7 @@ func HUD(_clock):
 		DATE.text = str(Globals.day, " ", Globals.months[Globals.month], " ", Globals.year, " ", Globals.seasons[Globals.season])
 		TIME.text = str(Globals.hour, ":") + str(Globals.minutes).pad_zeros(2) + " " + Globals.weather
 		REGION.text = Globals.current_region + " - " + Globals.current_location # current region/location (city, area, ect...)
+		inv_cursor_pos = 0 # reset the cursor position for the inventory
 		# INPUT
 		if Globals.hud_controlable:
 			if Input.is_action_just_pressed("tae_cancel"):
@@ -189,7 +195,7 @@ func HUD(_clock):
 					if Globals.player["inventory"][inv_cursor_pos]["hud_mode"] == "sel_equip":
 						# equip the armor by running a function to run through the equipment
 						Globals.player["inventory"][inv_cursor_pos]["equipped"] = true # set the flag to true
-						equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"])
+						equip(Globals.player["inventory"][inv_cursor_pos]["finder"], Globals.player["inventory"][inv_cursor_pos]["equip_slot"], true)
 						Globals.player["inventory"][inv_cursor_pos]["hud_mode"] = "sel_unequip" # change the hud_mode
 						update_inventory() # update the inventory
 		if Input.is_action_just_pressed("tae_mode"):
@@ -290,7 +296,7 @@ func inventory_cursor():
 			INVCURSOR.frame = 1
 			inv_cursor_active = false
 
-func equip(finder, equip_slot):
+func equip(finder, equip_slot, message):
 	print(finder, " ", equip_slot)
 	# set the equipment type to find it in the equipment database
 	var equip_type
@@ -301,10 +307,21 @@ func equip(finder, equip_slot):
 	for n in equip_type.size():
 		if equip_type[n]["finder"] == finder:
 			Globals.player[equip_slot] = equip_type[n] # assign equipment to player equipment variable
-			Functions.message(str(equip_type[n]["name"], " have been equipped.")) # create equipped message
+			if message: Functions.message(str(equip_type[n]["name"], " have been equipped.")) # create equipped message
 			# turn on the E
 			Globals.player_scene.update_appearance() # update player's appearance
 			break
+
+func spawn_check():
+	# this will run through the inventory at the start of the game and will automatically equip
+	# any equipment that is set to true for equipped this way the player doesn't start off naked
+	# or unarmed upon loading...
+	if Globals.start_items.size() > 0:
+		# IF the start_items are larger than 0 iterate through and look for any 
+		# items that are set to equipped
+		for n in Globals.start_items.size():
+			if Globals.start_items[n]["equipped"]:
+				equip(Globals.start_items[n]["finder"], Globals.start_items[n]["equip_slot"], false) # equip the set item
 
 func update_status():
 	# update the status information

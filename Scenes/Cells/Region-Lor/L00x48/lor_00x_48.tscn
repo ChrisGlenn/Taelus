@@ -63,16 +63,7 @@ HUD_CTRL_close = "sel_door_opened"
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="PickUp" parent="Items" instance=ExtResource("8_s1djp")]
-position = Vector2(288, 192)
-id = "00x48x01"
-finder = "RAG"
-item_name = "Rags"
-TITLE = "Ragged Clothing"
-DESCRIPTION = "Some old ragged clothing lay on the stone floor. You doubt anyone would miss it."
-item_amount = 1
-
-[node name="PickUp2" parent="Items" instance=ExtResource("8_s1djp")]
+[node name="PU_Apple" parent="Items" instance=ExtResource("8_s1djp")]
 position = Vector2(352, 240)
 id = "00x48x02"
 finder = "RAPPLE"

@@ -61,13 +61,15 @@ Overworld:
 		[] Tree system
 			[] Cutdown
 			[] Drop Fruit
-		[] Chestnut
+		[x] Chestnut
 		[] Apple
-		[] Pine
-		[] Willow
+		[x] Pine
+		[x] Willow
 	[] Bushes
 		[] Standard Bush
 		[] Blackberry Bush
+			[] Pick Fruit
+		[] Raspberry Bush
 			[] Pick Fruit
 	[] Crops
 		[] Carrot
@@ -163,6 +165,7 @@ LEFT OFF:
 	- need to update the pick_up to add the full dictionary for an item
 
 ALPHA BUG/FIX-LIST:
+	[] Starting inventory will auto equip if item is set to 'equipped'
 	[] 'Quick' Messages reset to 1 if it's clear even before countdown finishes(?maybe do this?)
 	[] Loading screen needs the 'Loading... [random word]' feature
 	[] Fix the player carry weight set from endlessly incrementing

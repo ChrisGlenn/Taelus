@@ -164,7 +164,6 @@ func record():
 		}
 		Globals.trees.append(tree_rec) # add to the Globals array
 		get_record_slot() # get the record slot
-		print(Globals.trees)
 	else:
 		# there is a previous occurance of the tree in record will remove the record
 		Globals.trees.remove_at(record_slot)
@@ -184,7 +183,6 @@ func get_record_slot():
 		for n in Globals.trees.size():
 			if Globals.trees[n]["id"] == tree_id:
 				record_slot = n # set the record slot
-				print("Record Slot: ", record_slot) # DEBUG
 
 
 func _on_area_entered(area:Area2D):
