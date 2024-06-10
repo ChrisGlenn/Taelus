@@ -1,0 +1,8 @@
+*** NPC'S ***
+List of NPC's by region and a bit of information about them. These are VIP's that are not randomly generated.
+
+REGION: LOR
+Guards - These are soldiers for the current KING of Lor. They are friendly until you commit a crime. Then they are your enemies.
+
+King/Queen/Heir of Lor.
+There are three regional chieftans.

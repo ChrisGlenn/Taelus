@@ -32,6 +32,6 @@ tree_id = "004702"
 tree_age = 8
 
 [node name="Tree3" parent="Foliage" instance=ExtResource("4_w5wx6")]
-position = Vector2(568, 88)
+position = Vector2(560, 88)
 tree_id = "004703"
 tree_age = 30
